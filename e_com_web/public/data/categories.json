@@ -1,0 +1,38 @@
+[
+  {
+    "id": "all",
+    "name": "All Categories",
+    "icon": "FiGrid",
+    "description": "Explore our complete curated collection"
+  },
+  {
+    "id": "electronics",
+    "name": "Electronics",
+    "icon": "FiHeadphones",
+    "description": "Smart gadgets & audio essentials for everyday flow"
+  },
+  {
+    "id": "fashion",
+    "name": "Fashion",
+    "icon": "FiShoppingBag",
+    "description": "Timeless contemporary wardrobe staples & footwear"
+  },
+  {
+    "id": "home",
+    "name": "Home & Living",
+    "icon": "FiHome",
+    "description": "Minimal aesthetics to elevate your personal spaces"
+  },
+  {
+    "id": "accessories",
+    "name": "Accessories",
+    "icon": "FiWatch",
+    "description": "Handcrafted bags, everyday carry gear & eyewear"
+  },
+  {
+    "id": "beauty",
+    "name": "Beauty & Wellness",
+    "icon": "FiFeather",
+    "description": "Clean, refreshing skincare and self-care rituals"
+  }
+]

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop all products — ShopKart</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="products-data.js" defer></script>
+    <script src="app.js" defer></script>
+    <script src="products-page.js" defer></script>
+  </head>
+  <body>
+    <header id="site-header"></header>
+    <main class="container page-main">
+      <div class="page-title">
+        <div>
+          <span class="eyebrow">THE SHOP</span>
+          <h1>All products</h1>
+          <p class="muted">Find something that fits your day.</p>
+        </div>
+        <span id="results-count" class="results-count"></span>
+      </div>
+      <div class="shop-toolbar">
+        <label class="search-box"
+          ><span>⌕</span
+          ><input
+            id="product-search"
+            type="search"
+            placeholder="Search products..."
+            aria-label="Search products" /></label
+        ><select id="category-filter" aria-label="Filter by category">
+          <option value="All">All categories</option></select
+        ><select id="sort-filter" aria-label="Sort products">
+          <option value="featured">Featured</option>
+          <option value="low-high">Price: low to high</option>
+          <option value="high-low">Price: high to low</option>
+          <option value="rating">Top rated</option>
+        </select>
+      </div>
+      <div class="product-grid" id="all-products"></div>
+      <div id="no-results" class="empty-state hidden">
+        <div>🔎</div>
+        <h2>No products found</h2>
+        <p>Try another search or category.</p>
+        <button class="btn btn-primary" id="reset-filters">
+          Reset filters
+        </button>
+      </div>
+    </main>
+    <footer id="site-footer"></footer>
+  </body>
+</html>

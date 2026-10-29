@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delivery details — ShopKart</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="products-data.js" defer></script>
+    <script src="app.js" defer></script>
+    <script src="delivery-page.js" defer></script>
+  </head>
+  <body>
+    <header id="site-header"></header>
+    <main class="container page-main">
+      <div class="checkout-steps">
+        <span class="step done">1 <b>Cart</b></span
+        ><i></i><span class="step active">2 <b>Delivery</b></span
+        ><i></i><span class="step">3 <b>Confirmation</b></span>
+      </div>
+      <div class="page-title">
+        <div>
+          <span class="eyebrow">CHECKOUT</span>
+          <h1>Where should we deliver?</h1>
+          <p class="muted">Add your delivery details and choose how to pay.</p>
+        </div>
+      </div>
+      <div id="delivery-empty" class="empty-state hidden">
+        <div>🛒</div>
+        <h2>Your cart is empty</h2>
+        <p>Add something to your cart before checkout.</p>
+        <a class="btn btn-primary" href="products.html">Browse products</a>
+      </div>
+      <div id="delivery-layout" class="checkout-layout">
+        <form id="delivery-form" class="panel form-panel" novalidate>
+          <h2>Delivery information</h2>
+          <p class="muted">Fields marked * are required.</p>
+          <div class="form-grid">
+            <label class="field full"
+              >Full name *<input
+                name="name"
+                autocomplete="name"
+                required
+                minlength="2"
+                placeholder="e.g. Sachin Chaurasiya" /></label
+            ><label class="field"
+              >Mobile number *<input
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                inputmode="numeric"
+                pattern="[0-9]{10}"
+                maxlength="10"
+                required
+                placeholder="10-digit mobile number" /></label
+            ><label class="field"
+              >Email address<input
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="you@example.com" /></label
+            ><label class="field full"
+              >House / street / area *<textarea
+                name="address"
+                autocomplete="street-address"
+                rows="3"
+                required
+                minlength="8"
+                placeholder="House no., street, landmark"
+              ></textarea></label
+            ><label class="field"
+              >City *<input
+                name="city"
+                autocomplete="address-level2"
+                required
+                placeholder="Your city" /></label
+            ><label class="field"
+              >State *<input
+                name="state"
+                autocomplete="address-level1"
+                required
+                placeholder="Your state" /></label
+            ><label class="field"
+              >PIN code *<input
+                name="pincode"
+                inputmode="numeric"
+                pattern="[0-9]{6}"
+                maxlength="6"
+                autocomplete="postal-code"
+                required
+                placeholder="6-digit PIN code"
+            /></label>
+          </div>
+          <h2 class="form-subheading">Payment method</h2>
+          <label class="payment-option"
+            ><input
+              type="radio"
+              name="payment"
+              value="Cash on Delivery"
+              checked
+            /><span class="payment-icon">💵</span
+            ><span
+              ><strong>Cash on Delivery</strong
+              ><small>Pay when your order arrives</small></span
+            ></label
+          ><label class="payment-option"
+            ><input type="radio" name="payment" value="UPI (demo)" /><span
+              class="payment-icon"
+              >📱</span
+            ><span
+              ><strong>UPI</strong
+              ><small>Demo option only — no real payment is taken</small></span
+            ></label
+          >
+          <p id="form-error" class="form-error" role="alert"></p>
+          <button class="btn btn-primary btn-block" type="submit">
+            Place order <span>→</span>
+          </button>
+          <p class="secure-note">
+            🔒 Demo checkout — no payment details are collected.
+          </p>
+        </form>
+        <aside id="checkout-summary" class="panel summary-panel"></aside>
+      </div>
+    </main>
+    <footer id="site-footer"></footer>
+  </body>
+</html>
