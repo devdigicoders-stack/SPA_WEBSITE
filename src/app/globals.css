@@ -296,7 +296,7 @@ body {
   z-index: 9999 !important;
   right: 24px !important;
   left: auto !important;
-  bottom: 84px !important;
+  bottom: 124px !important;
   display: flex !important;
   flex-direction: column !important;
   gap: 12px !important;
@@ -304,9 +304,9 @@ body {
 }
 
 html[dir="rtl"] .floating-ctas {
-  right: 24px !important;
-  left: auto !important;
-  bottom: 84px !important;
+  right: auto !important;
+  left: 24px !important;
+  bottom: 124px !important;
 }
 
 .floating-cta,
@@ -507,32 +507,41 @@ html[dir="rtl"] .floating-ctas {
 }
 
 /* Mobile responsive quick actions */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .floating-ctas {
-    right: 14px !important;
+    right: 16px !important;
     left: auto !important;
-    bottom: 74px !important;
-    gap: 9px !important;
+    bottom: 115px !important;
+    gap: 10px !important;
   }
   .floating-cta,
   .cta-btn {
-    min-width: 46px !important;
-    width: 46px !important;
-    height: 46px !important;
-    padding: 0 !important;
-    justify-content: center !important;
-    border-radius: 50% !important;
+    min-width: 124px !important;
+    height: 42px !important;
+    padding: 0 14px !important;
+    font-size: 13px !important;
+    gap: 9px !important;
   }
-  .floating-cta b,
-  .floating-cta span,
-  .cta-btn b,
-  .cta-btn span {
-    display: none !important;
+}
+
+@media (max-width: 480px) {
+  .floating-ctas {
+    right: 12px !important;
+    left: auto !important;
+    bottom: 110px !important;
+    gap: 8px !important;
+  }
+  .floating-cta,
+  .cta-btn {
+    min-width: 116px !important;
+    height: 40px !important;
+    padding: 0 12px !important;
+    font-size: 12px !important;
+    gap: 8px !important;
   }
   .floating-cta i,
   .cta-btn i {
-    font-size: 20px !important;
-    margin: 0 !important;
+    font-size: 16px !important;
   }
 }
 
@@ -770,11 +779,18 @@ html[dir="rtl"] .floating-ctas {
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
   padding-top: 24px !important;
+  padding-bottom: 24px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
   flex-wrap: wrap !important;
-  gap: 14px !important;
+  gap: 16px !important;
+  padding-right: 190px !important;
+}
+
+html[dir="rtl"] .footer-bottom {
+  padding-right: 0 !important;
+  padding-left: 190px !important;
 }
 
 .footer-bottom p,
@@ -1275,3 +1291,1045 @@ html[dir="rtl"] .floating-ctas {
 
 
 
+
+
+/* ========================================================
+   RESPONSIVE HERO SECTION & OPTIMIZED VIDEO FRAMING
+   ======================================================== */
+.hero {
+  position: relative !important;
+  min-height: clamp(480px, 62vh, 600px) !important;
+  max-height: 620px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  overflow: hidden !important;
+  width: 100% !important;
+}
+
+.hero video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 32% !important;
+  filter: brightness(0.96) contrast(1.04) !important;
+  pointer-events: none !important;
+}
+
+.hero-scrim {
+  position: absolute !important;
+  inset: 0 !important;
+  background: 
+    linear-gradient(90deg, rgba(13, 12, 10, 0.92) 0%, rgba(13, 12, 10, 0.70) 48%, rgba(13, 12, 10, 0.25) 100%),
+    linear-gradient(0deg, rgba(13, 12, 10, 0.95) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(13, 12, 10, 0.65) 0%, transparent 26%) !important;
+  pointer-events: none !important;
+}
+
+.hero-content {
+  position: relative !important;
+  z-index: 2 !important;
+  max-width: 720px !important;
+  padding: clamp(86px, 11vh, 105px) clamp(20px, 6vw, 90px) clamp(30px, 4vh, 42px) !important;
+}
+
+.hero .kicker {
+  font-size: clamp(11.5px, 1.2vw, 13px) !important;
+  letter-spacing: 0.16em !important;
+  margin: 0 0 10px 0 !important;
+  color: #c6a15b !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 4vw, 48px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.03em !important;
+  margin: 0 0 14px 0 !important;
+  color: #f7f3eb !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7) !important;
+}
+
+.hero-content > p:not(.kicker) {
+  font-size: clamp(14.5px, 1.5vw, 16.5px) !important;
+  line-height: 1.6 !important;
+  max-width: 540px !important;
+  margin: 0 0 22px 0 !important;
+  color: #d6d0c4 !important;
+}
+
+.hero-actions {
+  display: flex !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+  margin-top: 0 !important;
+}
+
+.hero-actions .button {
+  padding: 12px 28px !important;
+  min-height: 46px !important;
+  font-size: 14.5px !important;
+}
+
+.hero-actions .button-ghost {
+  padding: 11px 26px !important;
+  min-height: 46px !important;
+  font-size: 14.5px !important;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: clamp(440px, 56vh, 520px) !important;
+    max-height: 520px !important;
+  }
+  .hero-content {
+    padding: 86px clamp(18px, 4vw, 36px) 28px !important;
+    max-width: 100% !important;
+  }
+  .hero h1 {
+    font-size: clamp(26px, 5.2vw, 36px) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    min-height: 390px !important;
+    max-height: 440px !important;
+  }
+  .hero-content {
+    padding: 76px 16px 22px !important;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 6.4vw, 29px) !important;
+    line-height: 1.18 !important;
+    margin: 6px 0 10px 0 !important;
+  }
+  .hero-content > p:not(.kicker) {
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 16px !important;
+  }
+  .hero-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .hero-actions .button,
+  .hero-actions .button-ghost {
+    flex: 1 !important;
+    width: auto !important;
+    min-height: 42px !important;
+    padding: 8px 12px !important;
+    font-size: 12.5px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* ========================================================
+   FULL WEBSITE RESPONSIVENESS & MOBILE POLISH
+   ======================================================== */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Branch Grid Responsive 3-columns */
+.branch-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: clamp(16px, 2.5vw, 24px) !important;
+  width: 100% !important;
+}
+
+@media (max-width: 1024px) {
+  .branch-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .branch-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .branch-card {
+    min-height: 410px !important;
+  }
+  .branch-card > div {
+    padding: 20px !important;
+  }
+}
+
+/* Section vertical breathing room */
+.section {
+  padding: clamp(48px, 6vw, 88px) clamp(16px, 5vw, 80px) !important;
+}
+
+.section-heading {
+  margin-bottom: clamp(28px, 4vw, 44px) !important;
+}
+
+.section-heading h2 {
+  font-size: clamp(26px, 4.2vw, 48px) !important;
+  line-height: 1.15 !important;
+}
+
+/* Header & Mobile Toggle */
+@media (max-width: 900px) {
+  .site-header {
+    height: 60px !important;
+    left: 12px !important;
+    right: 12px !important;
+    top: 10px !important;
+    padding: 6px 12px !important;
+  }
+  .site-header .brand img {
+    height: 34px !important;
+    max-width: 170px !important;
+  }
+  .site-header .button-small {
+    min-height: 34px !important;
+    padding: 6px 14px !important;
+    font-size: 12.5px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    height: 52px !important;
+    left: 8px !important;
+    right: 8px !important;
+    top: 8px !important;
+    padding: 4px 10px !important;
+  }
+  .site-header .brand img {
+    height: 28px !important;
+    max-width: 130px !important;
+  }
+  .site-header .button-small {
+    min-height: 30px !important;
+    padding: 4px 10px !important;
+    font-size: 11px !important;
+  }
+}
+
+/* Mobile Nav Overlay */
+.main-nav.open {
+  background: rgba(18, 16, 13, 0.97) !important;
+  border: 1px solid rgba(198, 161, 91, 0.4) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85) !important;
+  border-radius: 20px !important;
+  z-index: 100 !important;
+  top: 72px !important;
+}
+
+.main-nav.open a {
+  padding: 13px 18px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.main-nav.open a:last-child {
+  border-bottom: 0 !important;
+}
+
+/* Trust Badges on Mobile */
+@media (max-width: 600px) {
+  .trust-strip {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 7px !important;
+    padding: 14px 10px !important;
+  }
+  .trust-badge {
+    font-size: 11.5px !important;
+    padding: 6px 11px !important;
+    min-height: 34px !important;
+  }
+}
+
+/* ========================================================
+   MODERN RESPONSIVE 2-STEP BOOKING MODAL
+   ======================================================== */
+.booking-dialog {
+  border: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  max-width: 520px !important;
+  width: calc(100% - 28px) !important;
+  margin: auto !important;
+  border-radius: 24px !important;
+  overflow: visible !important;
+}
+
+.booking-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+.booking-dialog-inner {
+  background: linear-gradient(165deg, #181612 0%, #11100d 100%) !important;
+  border: 1.5px solid rgba(198, 161, 91, 0.45) !important;
+  border-radius: 24px !important;
+  padding: clamp(20px, 4.5vw, 34px) !important;
+  position: relative !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(198, 161, 91, 0.15) !important;
+  color: #f5eedf !important;
+}
+
+.booking-close {
+  position: absolute !important;
+  top: 16px !important;
+  right: 16px !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #ddd5c4 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.booking-close:hover {
+  background: rgba(198, 161, 91, 0.2) !important;
+  border-color: #c6a15b !important;
+  color: #ffffff !important;
+}
+
+.booking-context-banner {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(198, 161, 91, 0.12) !important;
+  border: 1px solid rgba(198, 161, 91, 0.35) !important;
+  padding: 6px 14px !important;
+  border-radius: 999px !important;
+  color: #c6a15b !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  margin-bottom: 16px !important;
+}
+
+.booking-title {
+  font-size: clamp(20px, 3.2vw, 26px) !important;
+  color: #f7f3ec !important;
+  margin: 0 0 6px 0 !important;
+  font-weight: 700 !important;
+}
+
+.booking-sub {
+  font-size: 13.5px !important;
+  color: #a39c8e !important;
+  margin: 0 0 20px 0 !important;
+}
+
+.booking-branches-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.booking-branch-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  padding: 14px 18px !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  width: 100% !important;
+  color: inherit !important;
+}
+
+.booking-branch-card:hover {
+  border-color: #c6a15b !important;
+  background: rgba(198, 161, 91, 0.08) !important;
+  transform: translateY(-2px) !important;
+}
+
+.booking-branch-card.is-closest {
+  border-color: rgba(198, 161, 91, 0.6) !important;
+  background: rgba(198, 161, 91, 0.07) !important;
+}
+
+.booking-branch-name {
+  font-size: 15.5px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+
+.booking-branch-address {
+  font-size: 12.5px !important;
+  color: #bbb4a5 !important;
+  margin-top: 3px !important;
+}
+
+.booking-branch-dist {
+  font-size: 11.5px !important;
+  color: #c6a15b !important;
+  margin-top: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.booking-actions-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.booking-action-btn {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 14px 18px !important;
+  border-radius: 16px !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  border: 1px solid transparent !important;
+}
+
+.booking-action-wa {
+  background: #25d366 !important;
+  color: #ffffff !important;
+}
+
+.booking-action-wa:hover {
+  background: #22be5b !important;
+  transform: translateY(-2px) !important;
+}
+
+.booking-action-call {
+  background: #1e1b15 !important;
+  border-color: rgba(198, 161, 91, 0.4) !important;
+  color: #ffffff !important;
+}
+
+.booking-action-call:hover {
+  border-color: #c6a15b !important;
+  background: #27231c !important;
+  transform: translateY(-2px) !important;
+}
+
+.booking-action-map {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #d8d2c4 !important;
+}
+
+.booking-action-map:hover {
+  border-color: #c6a15b !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+}
+
+.booking-action-btn span {
+  font-size: 14.5px !important;
+  font-weight: 700 !important;
+}
+
+.booking-action-btn small {
+  font-size: 12px !important;
+  opacity: 0.8 !important;
+  margin-top: 2px !important;
+}
+
+.booking-back {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: transparent !important;
+  border: 0 !important;
+  color: #c6a15b !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  margin-bottom: 14px !important;
+  padding: 0 !important;
+}
+
+
+/* ========================================================
+   ABOUT PAGE HERO VIDEO & RESPONSIVE PROPORTIONS
+   ======================================================== */
+.page-hero {
+  min-height: clamp(480px, 65vh, 620px) !important;
+  padding: clamp(90px, 12vh, 120px) clamp(20px, 6vw, 90px) clamp(40px, 6vh, 60px) !important;
+  display: grid !important;
+  grid-template-columns: 1.05fr 1fr !important;
+  gap: clamp(32px, 5vw, 64px) !important;
+  align-items: center !important;
+}
+
+.page-hero h1 {
+  font-size: clamp(32px, 4.2vw, 52px) !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.03em !important;
+  margin: 10px 0 16px 0 !important;
+  color: #f7f3ec !important;
+}
+
+.page-hero > div > p {
+  color: #c5beb1 !important;
+  font-size: clamp(15px, 1.6vw, 17.5px) !important;
+  line-height: 1.65 !important;
+  max-width: 600px !important;
+}
+
+.page-hero-media {
+  position: relative !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+  border: 1.5px solid rgba(198, 161, 91, 0.45) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75), 0 0 35px rgba(198, 161, 91, 0.15) !important;
+  background: #14120e !important;
+  aspect-ratio: 16 / 11 !important;
+}
+
+.page-hero video,
+.page-hero-video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 35% !important;
+  display: block !important;
+  border-radius: 20px !important;
+}
+
+.page-hero-video-badge {
+  position: absolute !important;
+  bottom: 16px !important;
+  left: 16px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 8px 16px !important;
+  border-radius: 999px !important;
+  background: rgba(14, 13, 11, 0.88) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(198, 161, 91, 0.45) !important;
+  color: #f5eedf !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+}
+
+.page-hero-video-badge i {
+  color: #c6a15b !important;
+}
+
+@media (max-width: 900px) {
+  .page-hero {
+    grid-template-columns: 1fr !important;
+    padding: 86px clamp(16px, 5vw, 36px) 36px !important;
+    min-height: auto !important;
+    gap: 28px !important;
+  }
+  .page-hero-media {
+    aspect-ratio: 16 / 10 !important;
+  }
+  .page-hero h1 {
+    font-size: clamp(28px, 6vw, 38px) !important;
+  }
+}
+
+
+/* ========================================================
+   COMPREHENSIVE MULTI-DEVICE RESPONSIVE MASTER STYLES
+   ======================================================== */
+
+/* 1. Global Viewport & Anti-Overflow Guarantee */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  -webkit-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
+
+img, video, iframe, canvas, svg {
+  max-width: 100% !important;
+  height: auto;
+}
+
+p, h1, h2, h3, h4, span, a {
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+}
+
+/* 2. Site Header & Nav for all devices */
+.site-header {
+  transition: all 0.25s ease !important;
+}
+
+.site-header .brand {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+.site-header .header-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-shrink: 0 !important;
+}
+
+.site-header .header-actions .button,
+.site-header .header-actions .button-small {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    height: 58px !important;
+    left: 10px !important;
+    right: 10px !important;
+    top: 8px !important;
+    padding: 6px 12px !important;
+  }
+  .site-header .brand img {
+    height: 32px !important;
+    max-width: 160px !important;
+  }
+  .site-header .header-actions .button,
+  .site-header .header-actions .button-small {
+    min-height: 34px !important;
+    padding: 6px 14px !important;
+    font-size: 12.5px !important;
+  }
+  .menu-toggle {
+    display: grid !important;
+    place-content: center !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    cursor: pointer !important;
+  }
+  .main-nav {
+    display: none !important;
+  }
+  .main-nav.open {
+    display: flex !important;
+    position: fixed !important;
+    top: 72px !important;
+    left: 10px !important;
+    right: 10px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    background: rgba(18, 16, 13, 0.98) !important;
+    border: 1.5px solid rgba(198, 161, 91, 0.45) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9) !important;
+    border-radius: 20px !important;
+    padding: 18px 16px !important;
+    z-index: 1000 !important;
+    gap: 0 !important;
+  }
+  .main-nav.open a {
+    padding: 13px 16px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #dedbd4 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+    text-decoration: none !important;
+  }
+  .main-nav.open a:last-child {
+    border-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    height: 50px !important;
+    left: 6px !important;
+    right: 6px !important;
+    top: 6px !important;
+    padding: 4px 8px !important;
+  }
+  .site-header .brand img {
+    height: 26px !important;
+    max-width: 120px !important;
+  }
+  .site-header .header-actions .button,
+  .site-header .header-actions .button-small {
+    min-height: 28px !important;
+    padding: 4px 10px !important;
+    font-size: 11px !important;
+  }
+  .menu-toggle {
+    min-width: 36px !important;
+    min-height: 36px !important;
+  }
+}
+
+/* 3. Hero Section Fluid Sizing */
+@media (min-width: 1025px) {
+  .hero {
+    min-height: clamp(480px, 62vh, 600px) !important;
+    max-height: 620px !important;
+  }
+  .hero-content {
+    padding: 100px clamp(24px, 6vw, 90px) 40px !important;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 681px) {
+  .hero {
+    min-height: clamp(440px, 56vh, 520px) !important;
+    max-height: 520px !important;
+  }
+  .hero-content {
+    padding: 86px clamp(18px, 4vw, 36px) 28px !important;
+  }
+  .hero h1 {
+    font-size: clamp(26px, 5vw, 38px) !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero {
+    min-height: 390px !important;
+    max-height: 440px !important;
+  }
+  .hero-content {
+    padding: 76px 16px 20px !important;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 6.2vw, 28px) !important;
+    line-height: 1.18 !important;
+    margin: 6px 0 10px 0 !important;
+  }
+  .hero-content > p:not(.kicker) {
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 16px !important;
+  }
+}
+
+/* 4. Trust Strip Mobile Polish */
+@media (max-width: 768px) {
+  .trust-strip {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 14px 10px !important;
+  }
+  .trust-badge {
+    font-size: 12px !important;
+    padding: 6px 12px !important;
+    min-height: 36px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .trust-badge {
+    font-size: 11px !important;
+    padding: 5px 10px !important;
+    min-height: 32px !important;
+    gap: 6px !important;
+  }
+}
+
+/* 5. Bento Grid & Why Section */
+@media (max-width: 960px) {
+  .why-bento {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+  .why-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .why-bento {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .why-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .why-stats article {
+    padding: 16px 12px !important;
+    gap: 10px !important;
+  }
+  .why-stats i {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 16px !important;
+  }
+  .why-stats strong {
+    font-size: 24px !important;
+  }
+  .why-stats span {
+    font-size: 11.5px !important;
+  }
+  .why-card {
+    padding: 22px 18px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .why-stats {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* 6. Branches Hero Tiles & Directory */
+.branches-hero-tiles {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 14px !important;
+}
+
+@media (max-width: 900px) {
+  .branches-hero-tiles {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .branch-hero-tile {
+    aspect-ratio: 16 / 9 !important;
+  }
+}
+
+.branch-destination {
+  padding: clamp(40px, 6vw, 76px) 0 !important;
+}
+
+.branch-destination-header {
+  padding: 0 clamp(16px, 5vw, 80px) !important;
+  margin-bottom: clamp(20px, 3.5vw, 32px) !important;
+}
+
+.branch-destination-header h2 {
+  font-size: clamp(26px, 4.4vw, 50px) !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.025em !important;
+  margin: 10px 0 14px 0 !important;
+}
+
+.branch-destination-header p {
+  font-size: clamp(14px, 1.5vw, 17px) !important;
+  line-height: 1.6 !important;
+}
+
+/* 7. Treatment Cards & Service Track */
+@media (max-width: 680px) {
+  .treatment-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .treatment-card img {
+    aspect-ratio: 16 / 10 !important;
+  }
+  .treatment-card > div {
+    padding: 18px !important;
+  }
+  .treatment-card h2 {
+    font-size: 20px !important;
+  }
+  .card-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .card-actions button,
+  .card-actions a {
+    flex: 1 !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* 8. Price List Mobile Fluidity */
+@media (max-width: 640px) {
+  .price-list-sheet {
+    padding: 24px 16px !important;
+    border-radius: 20px !important;
+  }
+  .price-list-sheet-header h3 {
+    font-size: 20px !important;
+  }
+  .price-sheet-badge {
+    font-size: 11px !important;
+    padding: 5px 12px !important;
+  }
+  .price-item-card {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    text-align: center !important;
+    padding: 16px !important;
+  }
+  .price-item-titles {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+  .price-item-titles h4 {
+    font-size: 17px !important;
+  }
+  .price-item-cost {
+    align-items: center !important;
+  }
+  .price-amount {
+    font-size: 24px !important;
+  }
+  .price-book-btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* 9. Offer Band & Ticket */
+@media (max-width: 1000px) {
+  .offer-ticket {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    justify-items: center !important;
+    gap: 20px !important;
+    padding: 24px 18px !important;
+  }
+  .offer-ticket-stub {
+    border-inline-end: 0 !important;
+    border-bottom: 2px dashed rgba(198, 161, 91, 0.4) !important;
+    padding: 0 0 16px 0 !important;
+    width: 100% !important;
+  }
+  .offer-figure {
+    font-size: clamp(52px, 12vw, 84px) !important;
+  }
+  .offer-ticket-action {
+    width: 100% !important;
+  }
+  .offer-ticket-action .button {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* 10. Footer Responsive 4 -> 2 -> 1 */
+@media (max-width: 960px) {
+  .footer-top,
+  .footer-columns {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+  .footer-brand {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer-top,
+  .footer-columns {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .site-footer {
+    padding: 48px 16px 24px !important;
+  }
+  .footer-bottom {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 10px !important;
+  }
+}
+
+/* 11. Generic inner-hero for content pages */
+.inner-hero {
+  padding: clamp(90px, 12vh, 120px) clamp(20px, 6vw, 90px) clamp(36px, 5vh, 50px) !important;
+  text-align: center !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+}
+
+.inner-hero h1 {
+  font-size: clamp(30px, 5vw, 56px) !important;
+  line-height: 1.1 !important;
+  margin: 12px 0 16px 0 !important;
+}
+
+.inner-hero p {
+  font-size: clamp(14.5px, 1.8vw, 18px) !important;
+  line-height: 1.65 !important;
+  max-width: 680px !important;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 640px) {
+  .inner-hero {
+    padding: 80px 16px 28px !important;
+  }
+  .inner-hero h1 {
+    font-size: clamp(24px, 7vw, 34px) !important;
+  }
+}
+
+/* 12. Floating Action Buttons Responsive Safe Area */
+@media (max-width: 768px) {
+  .floating-ctas {
+    right: 16px !important;
+    bottom: 115px !important;
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-ctas {
+    right: 12px !important;
+    bottom: 110px !important;
+    gap: 8px !important;
+  }
+  .floating-cta,
+  .cta-btn {
+    min-width: 116px !important;
+    height: 40px !important;
+    padding: 0 12px !important;
+    font-size: 12px !important;
+    gap: 8px !important;
+  }
+  .floating-cta i,
+  .cta-btn i {
+    font-size: 16px !important;
+  }
+}
+
+/* 13. Map Iframes & Video Containers */
+iframe {
+  max-width: 100% !important;
+  border: 0 !important;
+}

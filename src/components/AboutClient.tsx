@@ -192,15 +192,43 @@ export default function AboutClient() {
             <p className="kicker">Our Story</p>
             <h1>Thoughtful wellness, rooted in Doha</h1>
             <p>
-              Just Relax Spa brings centuries-old Moroccan bath rituals, Turkish hammam traditions, and modern sports massage expertise together across two premier Doha destinations.
+              Just Relax Spa brings centuries-old Moroccan bath rituals, Turkish hammam traditions, and modern sports massage expertise together across premier Doha destinations.
             </p>
+            <div className="hero-actions" style={{ marginTop: "24px" }}>
+              <button className="button" type="button" onClick={() => openModal()}>
+                Book Your Ritual
+              </button>
+              <Link className="button button-ghost" href="/our-branches">
+                Explore Branches
+              </Link>
+            </div>
           </div>
-          <img
-            src="/assets/just-relax/branches/west-bay/west-bay-hero.jpg"
-            width="900"
-            height="700"
-            alt="Just Relax Spa luxury VIP suite in Doha, Qatar"
-          />
+          <div className="page-hero-media">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              ref={(video) => {
+                if (video) {
+                  video.muted = true;
+                  video.defaultMuted = true;
+                  video.volume = 0;
+                }
+              }}
+              poster="/assets/just-relax/branches/west-bay/west-bay-hero.jpg"
+              width="900"
+              height="700"
+              className="page-hero-video"
+            >
+              <source src="/assets/video/about-hero-vid.mp4" type="video/mp4" />
+            </video>
+            <div className="page-hero-video-badge">
+              <i className="fa-solid fa-award" aria-hidden="true"></i>
+              <span>Authentic Moroccan &amp; Hammam Sanctuary</span>
+            </div>
+          </div>
         </section>
 
         {/* PROSE SECTION */}

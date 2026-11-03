@@ -241,12 +241,20 @@ export default function HomePage() {
             loop
             playsInline
             preload="auto"
+            ref={(video) => {
+              if (video) {
+                video.muted = true;
+                video.defaultMuted = true;
+                video.volume = 0;
+              }
+            }}
             poster="/assets/video/hero-poster.jpg"
             width="1920"
             height="1080"
           >
+            <source src="/assets/video/hero-spa-vid.mp4" type="video/mp4" />
+            <source src="/assets/video/hero%20spa%20vid.mp4" type="video/mp4" />
             <source src="/assets/video/hero-video.mp4" type="video/mp4" />
-            <source src="/assets/video/spa-hero-massage.mp4" type="video/mp4" />
           </video>
           <div className="hero-scrim"></div>
 
@@ -388,7 +396,7 @@ export default function HomePage() {
               <article>
                 <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
                 <div>
-                  <strong>2</strong>
+                  <strong>3</strong>
                   <span>Doha Branches</span>
                 </div>
               </article>
@@ -424,7 +432,7 @@ export default function HomePage() {
             <h2>Three Premier Doha Sanctuaries</h2>
             <p>Flagship 4-star hotel wellness at Jouri Murwab Hotel, plus private executive suites in West Bay and The Pearl-Qatar.</p>
           </div>
-          <div className="branch-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))" }}>
+          <div className="branch-grid">
             {/* Jouri Hotel Branch (Flagship) */}
             <article className="branch-card">
               <img

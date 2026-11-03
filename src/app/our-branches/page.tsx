@@ -304,47 +304,29 @@ export default function OurBranchesPage() {
               role="list"
               aria-label="Just Relax Spa branches"
             >
-              <a
-                className="branch-hero-tile"
-                role="listitem"
-                href="#branch-west-bay"
-              >
-                <img
-                  src="/assets/just-relax/branches/west-bay/west-bay-hero.jpg"
-                  width="640"
-                  height="420"
-                  loading="lazy"
-                  decoding="async"
-                  alt="West Bay Diplomatic Suite men's spa in Doha"
-                />
-                <span className="tile-label">
-                  <strong>West Bay Diplomatic Suite</strong>
-                  <em>
-                    <i className="fa-solid fa-star" aria-hidden="true"></i> 4.95
-                  </em>
-                </span>
-              </a>
-
-              <a
-                className="branch-hero-tile"
-                role="listitem"
-                href="#branch-the-pearl"
-              >
-                <img
-                  src="/assets/just-relax/branches/the-pearl/the-pearl-hero.jpg"
-                  width="640"
-                  height="420"
-                  loading="lazy"
-                  decoding="async"
-                  alt="The Pearl-Qatar & Lusail Marina Suite men's spa in Doha"
-                />
-                <span className="tile-label">
-                  <strong>The Pearl & Lusail Marina</strong>
-                  <em>
-                    <i className="fa-solid fa-star" aria-hidden="true"></i> 4.94
-                  </em>
-                </span>
-              </a>
+              {branches.map((b) => (
+                <a
+                  key={b.slug}
+                  className="branch-hero-tile"
+                  role="listitem"
+                  href={`#branch-${b.slug}`}
+                >
+                  <img
+                    src={b.gallery[0] || "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg"}
+                    width="640"
+                    height="420"
+                    loading="lazy"
+                    decoding="async"
+                    alt={`${b.name} men's spa in Doha`}
+                  />
+                  <span className="tile-label">
+                    <strong>{b.name}</strong>
+                    <em>
+                      <i className="fa-solid fa-star" aria-hidden="true"></i> {b.rating}
+                    </em>
+                  </span>
+                </a>
+              ))}
             </div>
           </div>
         </section>
