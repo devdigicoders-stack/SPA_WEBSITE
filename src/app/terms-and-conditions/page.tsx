@@ -146,7 +146,7 @@ export default function TermsAndConditionsPage() {
                 <Link href="/our-branches/west-bay">West Bay Diplomatic Suite</Link>
               </li>
               <li>
-                <Link href="/our-branches/the-pearl">The Pearl-Qatar Suite</Link>
+                <Link href="/our-branches/jouri-hotel">Jouri, a Murwab Hotel (Old Salata)</Link>
               </li>
             </ul>
           </div>

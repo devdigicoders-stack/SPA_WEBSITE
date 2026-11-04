@@ -72,8 +72,8 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2>Location permission</h2>
             <p>
-              If you choose Find Closest Branch, your browser supplies coordinates to calculate distance to our West Bay
-              or The Pearl branches locally in your browser. Precise coordinates are never sent to our servers or stored.
+              If you choose Find Closest Branch, your browser supplies coordinates to calculate distance to our Jouri Murwab Hotel
+              or West Bay branches locally in your browser. Precise coordinates are never sent to our servers or stored.
               You may also select a branch manually.
             </p>
           </section>
@@ -147,7 +147,7 @@ export default function PrivacyPolicyPage() {
                 <Link href="/our-branches/west-bay">West Bay Diplomatic Suite</Link>
               </li>
               <li>
-                <Link href="/our-branches/the-pearl">The Pearl-Qatar Suite</Link>
+                <Link href="/our-branches/jouri-hotel">Jouri, a Murwab Hotel (Old Salata)</Link>
               </li>
             </ul>
           </div>

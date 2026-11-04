@@ -75,9 +75,9 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
     photos: [
       "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
       "/assets/just-relax/branches/west-bay/west-bay-moroccan-bath.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-turkish-hammam.jpg",
+      "/assets/just-relax/branches/west-bay/west-bay-relaxation.jpg",
       "/assets/just-relax/branches/west-bay/west-bay-massage-suite.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-lounge.jpg",
+      "/assets/just-relax/branches/west-bay/west-bay-amenities.jpg",
       "/assets/just-relax/branches/west-bay/west-bay-jacuzzi.jpg",
     ],
     reviews: [
@@ -190,87 +190,7 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
     mapIframe:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14424.484218318285!2d51.523098544555664!3d25.322830800000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c531d0411a75%3A0x6b093f48651c6b12!2sWest%20Bay%2C%20Doha%2C%20Qatar!5e0!3m2!1sen!2sqa!4v1700000000000!5m2!1sen!2sqa",
   },
-  {
-    slug: "the-pearl",
-    name: "The Pearl-Qatar & Lusail Marina Suite",
-    h1: "Authentic Turkish Hammam & Luxury Spa at The Pearl-Qatar",
-    district: "Porto Arabia, The Pearl-Qatar & Lusail",
-    rating: "★ 4.94 on Google",
-    hours: "Daily 10:00 AM – 3:00 AM",
-    address: "Porto Arabia Boardwalk, Tower 12, The Pearl-Qatar, Doha",
-    heroImg: "/assets/just-relax/branches/the-pearl/the-pearl-hero.jpg",
-    phone: "+974 4495 7777",
-    whatsappNumber: "97455887799",
-    instagram: "@justrelaxspa.qa",
-    amenities: [
-      {
-        icon: "fa-solid fa-spa",
-        label: "Heated Marble Turkish Gobek Tasi",
-      },
-      {
-        icon: "fa-solid fa-water",
-        label: "Underwater Hydrotherapy Jacuzzi",
-      },
-      {
-        icon: "fa-solid fa-door-closed",
-        label: "Luxury Executive Single & VIP Suites",
-      },
-      {
-        icon: "fa-solid fa-leaf",
-        label: "Moroccan Atlas Herb Infusions",
-      },
-      {
-        icon: "fa-solid fa-umbrella-beach",
-        label: "Waterfront Boardwalk Access",
-      },
-      {
-        icon: "fa-solid fa-moon",
-        label: "Open Late Night Till 3:00 AM",
-      },
-    ],
-    photos: [
-      "/assets/just-relax/branches/the-pearl/the-pearl-hero.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-turkish-hammam.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-hydrotherapy.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-couples-suite.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-steam-room.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-lounge.jpg",
-    ],
-    reviews: [
-      {
-        stars: "★★★★★",
-        text: "The Turkish bath on the heated marble slab is pure art. Incredible foam massage and soothing ambiance.",
-        author: "Khalid Al-Nuaimi",
-      },
-      {
-        stars: "★★★★★",
-        text: "Stunning location at Porto Arabia. Ideal for a rejuvenating weekend ritual after yachting or golf.",
-        author: "Abdullah Al-Kuwari",
-      },
-      {
-        stars: "★★★★★",
-        text: "Unrivaled luxury and hygiene standards in Qatar. Master therapists who understand deep muscle release.",
-        author: "Mohammed Al-Khater",
-      },
-      {
-        stars: "★★★★★",
-        text: "Very discreet, high-class atmosphere. The organic salt jacuzzi followed by Argan massage is heaven.",
-        author: "Sultan Al-Hajri",
-      },
-    ],
-    areaCopy: [
-      "Located on the Mediterranean-inspired marina boardwalk of Porto Arabia at The Pearl-Qatar, this branch features our flagship heated marble Turkish Hammam and aquatic hydrotherapy suites.",
-      "Conveniently connected to both The Pearl and Lusail Marina, welcoming gentlemen daily until 3:00 AM.",
-    ],
-    landmarks: [
-      "Medina Centrale · 2 min",
-      "Lusail Marina Promenade · 5 min",
-      "Katara Cultural Village · 7 min",
-      "Lusail Iconic Stadium · 10 min",
-    ],
-    mapIframe:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14417.896472851458!2d51.53859664457814!3d25.3670923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c4867160759f%3A0xc3c94806a6442f4c!2sThe%20Pearl-Qatar%2C%20Doha!5e0!3m2!1sen!2sqa!4v1700000000000!5m2!1sen!2sqa",
-  },
+
   // Legacy aliases mapped gracefully
   {
     slug: "sh-zayed",
@@ -309,15 +229,15 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
   },
   {
     slug: "business-bay",
-    name: "The Pearl-Qatar & Lusail Marina Suite",
-    h1: "Authentic Turkish Hammam & Luxury Spa at The Pearl-Qatar",
-    district: "Porto Arabia, The Pearl-Qatar & Lusail",
-    rating: "★ 4.94 on Google",
+    name: "Jouri, a Murwab Hotel",
+    h1: "Men's Luxury Spa & Moroccan Bath at Jouri Murwab Hotel Doha",
+    district: "Al Muthaf St, Old Salata / Corniche, Doha",
+    rating: "★ 4.96 on Google (2.2K+ Hotel Reviews)",
     hours: "Daily 10:00 AM – 3:00 AM",
-    address: "Porto Arabia Boardwalk, Tower 12, The Pearl-Qatar, Doha",
-    heroImg: "/assets/just-relax/branches/the-pearl/the-pearl-hero.jpg",
-    phone: "+974 4495 7777",
-    whatsappNumber: "97455887799",
+    address: "Al Muthaf Street, Street 137, Building 31, Zone 18, Old Salata, Doha, Qatar",
+    heroImg: "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
+    phone: "+974 4004 1000",
+    whatsappNumber: "97455883421",
     instagram: "@justrelaxspa.qa",
     amenities: [
       { icon: "fa-solid fa-spa", label: "Heated Marble Turkish Hammam" },
@@ -325,8 +245,8 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
       { icon: "fa-solid fa-moon", label: "Open Till 3:00 AM" },
     ],
     photos: [
-      "/assets/just-relax/branches/the-pearl/the-pearl-hero.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-turkish-hammam.jpg",
+      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
+      "/assets/just-relax/branches/west-bay/west-bay-moroccan-bath.jpg",
     ],
     reviews: [
       {
@@ -336,7 +256,7 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
       },
     ],
     areaCopy: [
-      "Located on the Mediterranean-inspired marina boardwalk of Porto Arabia at The Pearl-Qatar.",
+      "Located inside 4-star Jouri Murwab Hotel near Doha Corniche and Old Salata.",
     ],
     landmarks: ["Medina Centrale · 2 min", "Lusail Marina · 5 min"],
     mapIframe: "",
@@ -362,15 +282,15 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
   },
   {
     slug: "garhoud",
-    name: "The Pearl-Qatar & Lusail Marina Suite",
-    h1: "Authentic Turkish Hammam & Luxury Spa at The Pearl-Qatar",
-    district: "Porto Arabia, The Pearl-Qatar & Lusail",
-    rating: "★ 4.94 on Google",
+    name: "Jouri, a Murwab Hotel",
+    h1: "Men's Luxury Spa & Moroccan Bath at Jouri Murwab Hotel Doha",
+    district: "Al Muthaf St, Old Salata / Corniche, Doha",
+    rating: "★ 4.96 on Google (2.2K+ Hotel Reviews)",
     hours: "Daily 10:00 AM – 3:00 AM",
-    address: "Porto Arabia Boardwalk, Tower 12, The Pearl-Qatar, Doha",
-    heroImg: "/assets/just-relax/branches/the-pearl/the-pearl-hero.jpg",
-    phone: "+974 4495 7777",
-    whatsappNumber: "97455887799",
+    address: "Al Muthaf Street, Street 137, Building 31, Zone 18, Old Salata, Doha, Qatar",
+    heroImg: "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
+    phone: "+974 4004 1000",
+    whatsappNumber: "97455883421",
     instagram: "@justrelaxspa.qa",
     amenities: [],
     photos: [],

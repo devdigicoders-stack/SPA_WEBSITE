@@ -44,14 +44,14 @@ export default function GalleryPage() {
       map_link: "https://maps.google.com/?q=West+Bay+Diplomatic+Area+Doha+Qatar",
       image: "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
     },
-    "the-pearl": {
-      name: "The Pearl-Qatar & Lusail Marina Suite",
-      call_number: "+97444957777",
-      whatsapp_number: "97455887799",
-      whatsapp_msg: "Hello Just Relax Spa The Pearl! I would like to book a suite appointment.",
-      address: "Porto Arabia Boardwalk, Tower 12, The Pearl-Qatar, Doha",
-      map_link: "https://maps.google.com/?q=The+Pearl+Qatar+Porto+Arabia+Doha",
-      image: "/assets/just-relax/branches/the-pearl/the-pearl-hero.jpg",
+    "jouri-hotel": {
+      name: "Jouri, a Murwab Hotel",
+      call_number: "+97440041000",
+      whatsapp_number: "97455883421",
+      whatsapp_msg: "Hello Just Relax Spa at Jouri Murwab Hotel! I would like to book a suite appointment.",
+      address: "Al Muthaf St, Street 137, Building 31, Zone 18, Old Salata, Doha",
+      map_link: "https://maps.google.com/?q=Jouri+a+Murwab+Hotel+Doha",
+      image: "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
     },
   };
 
@@ -155,7 +155,7 @@ export default function GalleryPage() {
               Videos &amp; Photo Gallery
             </h1>
             <p className="text-base sm:text-lg text-[#aaa49a] leading-relaxed">
-              Step inside Just Relax Spa across our West Bay Diplomatic and The Pearl-Qatar locations. Explore our private VIP treatment rooms, authentic heated hammams, and therapeutic facilities.
+              Step inside Just Relax Spa across our Jouri Murwab Hotel and West Bay Diplomatic Suite locations. Explore our private VIP treatment rooms, authentic heated hammams, and therapeutic facilities.
             </p>
           </div>
 
@@ -366,14 +366,7 @@ export default function GalleryPage() {
               >
                 <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>West Bay
               </a>
-              <a
-                href="https://wa.me/97455887799"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="The Pearl Branch WhatsApp"
-              >
-                <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>The Pearl
-              </a>
+
             </div>
             <button className="button" type="button" onClick={() => openModal()}>
               Book Your Visit
@@ -394,7 +387,7 @@ export default function GalleryPage() {
           <div className="footer-column">
             <h2>Doha Branches</h2>
             <Link href="/our-branches#branch-west-bay">West Bay Diplomatic Suite</Link>
-            <Link href="/our-branches#branch-the-pearl">The Pearl &amp; Lusail Suite</Link>
+            <Link href="/our-branches#branch-jouri-hotel">Jouri, a Murwab Hotel</Link>
           </div>
 
           <div className="footer-column">
@@ -470,23 +463,23 @@ export default function GalleryPage() {
               <button
                 type="button"
                 className="booking-branch"
-                onClick={() => handleSelectBranch("the-pearl")}
+                onClick={() => handleSelectBranch("jouri-hotel")}
               >
                 <img
-                  src="/assets/just-relax/branches/the-pearl/the-pearl-hero.jpg"
+                  src="/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg"
                   width="88"
                   height="88"
                   loading="lazy"
-                  alt="The Pearl-Qatar & Lusail Marina Suite"
+                  alt="Jouri, a Murwab Hotel"
                 />
                 <span className="booking-branch-body">
-                  <strong>The Pearl &amp; Lusail Suite</strong>
+                  <strong>Jouri, a Murwab Hotel</strong>
                   <span className="booking-branch-meta">
-                    <i className="fa-solid fa-star" aria-hidden="true"></i>4.9
+                    <i className="fa-solid fa-star" aria-hidden="true"></i>4.96
                     <em className="booking-branch-open is-open">Open now</em>
                   </span>
                   <span className="booking-branch-address">
-                    Porto Arabia Boardwalk, Tower 12, The Pearl-Qatar
+                    Al Muthaf St, Old Salata / Corniche, Doha
                   </span>
                 </span>
                 <i className="fa-solid fa-chevron-right booking-branch-chevron" aria-hidden="true"></i>

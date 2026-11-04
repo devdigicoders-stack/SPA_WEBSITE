@@ -296,7 +296,7 @@ body {
   z-index: 9999 !important;
   right: 24px !important;
   left: auto !important;
-  bottom: 124px !important;
+  bottom: 175px !important;
   display: flex !important;
   flex-direction: column !important;
   gap: 12px !important;
@@ -306,7 +306,7 @@ body {
 html[dir="rtl"] .floating-ctas {
   right: auto !important;
   left: 24px !important;
-  bottom: 124px !important;
+  bottom: 175px !important;
 }
 
 .floating-cta,
@@ -511,7 +511,7 @@ html[dir="rtl"] .floating-ctas {
   .floating-ctas {
     right: 16px !important;
     left: auto !important;
-    bottom: 115px !important;
+    bottom: 155px !important;
     gap: 10px !important;
   }
   .floating-cta,
@@ -528,7 +528,7 @@ html[dir="rtl"] .floating-ctas {
   .floating-ctas {
     right: 12px !important;
     left: auto !important;
-    bottom: 110px !important;
+    bottom: 135px !important;
     gap: 8px !important;
   }
   .floating-cta,
@@ -660,7 +660,7 @@ html[dir="rtl"] .floating-ctas {
    FOOTER ENHANCEMENT & GRID STYLING
    ======================================================== */
 .site-footer {
-  padding: clamp(55px, 8vw, 95px) clamp(20px, 6vw, 90px) 30px !important;
+  padding: clamp(55px, 8vw, 95px) clamp(20px, 6vw, 90px) 70px !important;
   background: radial-gradient(circle at 12% 0%, #211b11, transparent 34%), #080807 !important;
   border-top: 1px solid #29251e !important;
 }
@@ -785,12 +785,12 @@ html[dir="rtl"] .floating-ctas {
   justify-content: space-between !important;
   flex-wrap: wrap !important;
   gap: 16px !important;
-  padding-right: 190px !important;
+  padding-right: 210px !important;
 }
 
 html[dir="rtl"] .footer-bottom {
   padding-right: 0 !important;
-  padding-left: 190px !important;
+  padding-left: 210px !important;
 }
 
 .footer-bottom p,
@@ -2259,13 +2259,14 @@ p, h1, h2, h3, h4, span, a {
     gap: 24px !important;
   }
   .site-footer {
-    padding: 48px 16px 24px !important;
+    padding: 48px 16px 85px !important;
   }
   .footer-bottom {
     flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 10px !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 12px !important;
+    padding-right: 140px !important;
   }
 }
 
@@ -2303,7 +2304,7 @@ p, h1, h2, h3, h4, span, a {
 @media (max-width: 768px) {
   .floating-ctas {
     right: 16px !important;
-    bottom: 115px !important;
+    bottom: 155px !important;
     gap: 10px !important;
   }
 }
@@ -2311,7 +2312,7 @@ p, h1, h2, h3, h4, span, a {
 @media (max-width: 480px) {
   .floating-ctas {
     right: 12px !important;
-    bottom: 110px !important;
+    bottom: 135px !important;
     gap: 8px !important;
   }
   .floating-cta,
@@ -2332,4 +2333,46 @@ p, h1, h2, h3, h4, span, a {
 iframe {
   max-width: 100% !important;
   border: 0 !important;
+}
+
+
+/* Hero Sound Toggle Button */
+.hero-sound-toggle {
+  position: absolute !important;
+  bottom: 28px !important;
+  right: 28px !important;
+  z-index: 10 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(13, 13, 12, 0.82) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(198, 161, 91, 0.5) !important;
+  color: #c6a15b !important;
+  padding: 8px 16px !important;
+  border-radius: 999px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
+}
+.hero-sound-toggle:hover {
+  background: #c6a15b !important;
+  color: #0d0d0c !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(198, 161, 91, 0.35) !important;
+}
+.hero-sound-toggle i {
+  font-size: 14px !important;
+}
+@media (max-width: 768px) {
+  .hero-sound-toggle {
+    bottom: 18px !important;
+    right: 16px !important;
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+  }
 }

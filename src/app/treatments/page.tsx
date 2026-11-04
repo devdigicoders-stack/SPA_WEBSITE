@@ -49,17 +49,7 @@ export default function TreatmentsPage() {
       lat: 25.3216,
       lng: 51.5312,
     },
-    {
-      id: 3,
-      slug: "the-pearl",
-      name: "The Pearl-Qatar & Lusail Marina Suite",
-      address: "Porto Arabia Boardwalk, Tower 12, The Pearl-Qatar, Doha",
-      phone: "+97444957777",
-      whatsappNumber: "97455887799",
-      whatsappMsg: "Hello Just Relax Spa The Pearl! I would like to book a treatment.",
-      lat: 25.3678,
-      lng: 51.5517,
-    },
+
   ];
 
   const currentBranch = branches.find((b) => b.slug === selectedBranchSlug) || branches[0];
@@ -311,7 +301,7 @@ export default function TreatmentsPage() {
                 <Link href="/our-branches/west-bay">West Bay Diplomatic Suite</Link>
               </li>
               <li>
-                <Link href="/our-branches/the-pearl">The Pearl &amp; Lusail Suite</Link>
+                <Link href="/our-branches/jouri-hotel">Jouri, a Murwab Hotel (Old Salata)</Link>
               </li>
             </ul>
           </div>

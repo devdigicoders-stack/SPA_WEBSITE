@@ -51,9 +51,9 @@ const CONTACT_BRANCHES: BranchContactData[] = [
     photos: [
       "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
       "/assets/just-relax/branches/west-bay/west-bay-moroccan-bath.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-turkish-hammam.jpg",
+      "/assets/just-relax/branches/west-bay/west-bay-relaxation.jpg",
       "/assets/just-relax/branches/west-bay/west-bay-massage-suite.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-lounge.jpg",
+      "/assets/just-relax/branches/west-bay/west-bay-amenities.jpg",
       "/assets/just-relax/branches/west-bay/west-bay-jacuzzi.jpg",
     ],
   },
@@ -87,36 +87,7 @@ const CONTACT_BRANCHES: BranchContactData[] = [
       "/assets/just-relax/branches/west-bay/west-bay-amenities.jpg",
     ],
   },
-  {
-    id: 3,
-    slug: "the-pearl",
-    tabNum: "03",
-    name: "The Pearl-Qatar & Lusail Marina Suite",
-    rating: "★ 4.94",
-    ratingUrl: "https://maps.google.com/?q=The+Pearl+Qatar+Doha",
-    openBadge: "Open now (Till 3:00 AM)",
-    address: "Porto Arabia Boardwalk, Tower 12, The Pearl-Qatar, Doha",
-    hours: "Daily 10:00 AM – 3:00 AM",
-    instagram: "https://www.instagram.com/justrelaxspa.qa",
-    instagramHandle: "@justrelaxspa.qa",
-    phone: "+97444957777",
-    phoneDisplay: "+974 4495 7777",
-    whatsappNumber: "97455887799",
-    whatsappMsg: "Hello Just Relax Spa The Pearl! I would like to book an appointment.",
-    mapIframe:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14421.325983796856!2d51.5435948!3d25.3670669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c47bfa6fa589%3A0xbcebcefc7f369f69!2sThe%20Pearl-Qatar%2C%20Doha!5e0!3m2!1sen!2sqa!4v1700000000000!5m2!1sen!2sqa",
-    mapDirectionsUrl: "https://maps.google.com/?q=The+Pearl+Qatar+Doha",
-    lat: 25.3678,
-    lng: 51.5517,
-    photos: [
-      "/assets/just-relax/branches/the-pearl/the-pearl-hero.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-turkish-hammam.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-hydrotherapy.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-couples-suite.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-steam-room.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-lounge.jpg",
-    ],
-  },
+
 ];
 
 export default function ContactPage() {
@@ -430,10 +401,10 @@ export default function ContactPage() {
             <p className="footer-heading">Branches</p>
             <ul>
               <li>
-                <Link href="/our-branches/west-bay">West Bay Diplomatic Suite</Link>
+                <Link href="/our-branches/jouri-hotel">Jouri, a Murwab Hotel (Old Salata)</Link>
               </li>
               <li>
-                <Link href="/our-branches/the-pearl">The Pearl &amp; Lusail Suite</Link>
+                <Link href="/our-branches/west-bay">West Bay Diplomatic Suite</Link>
               </li>
             </ul>
           </div>

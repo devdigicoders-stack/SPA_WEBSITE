@@ -63,9 +63,9 @@ export default function OurBranchesPage() {
       gallery: [
         "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
         "/assets/just-relax/branches/west-bay/west-bay-moroccan-bath.jpg",
-        "/assets/just-relax/branches/the-pearl/the-pearl-turkish-hammam.jpg",
+        "/assets/just-relax/branches/west-bay/west-bay-relaxation.jpg",
         "/assets/just-relax/branches/west-bay/west-bay-massage-suite.jpg",
-        "/assets/just-relax/branches/the-pearl/the-pearl-lounge.jpg",
+        "/assets/just-relax/branches/west-bay/west-bay-amenities.jpg",
         "/assets/just-relax/branches/west-bay/west-bay-jacuzzi.jpg",
       ],
     },
@@ -104,41 +104,7 @@ export default function OurBranchesPage() {
         "/assets/just-relax/branches/west-bay/west-bay-amenities.jpg",
       ],
     },
-    {
-      id: 3,
-      slug: "the-pearl",
-      name: "The Pearl-Qatar & Lusail Marina Suite",
-      rating: "4.94",
-      description:
-        "Located directly on the Porto Arabia marina promenade at The Pearl-Qatar, minutes from Lusail Marina. Houses our heated marble Turkish Hammam, underwater hydrotherapy, and royal Moroccan bathing chambers in absolute discretion.",
-      address: "Porto Arabia Boardwalk, Tower 12, The Pearl-Qatar, Doha",
-      hours: "Daily 10:00 AM – 3:00 AM",
-      phone: "+974 4495 7777",
-      whatsappNumber: "97455887799",
-      whatsappMsg:
-        "Hello Just Relax Spa The Pearl! I would like to book an appointment.",
-      instagram: "https://www.instagram.com/justrelaxspa.qa",
-      instagramHandle: "@justrelaxspa.qa",
-      mapIframe:
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14421.325983796856!2d51.5435948!3d25.3670669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c47bfa6fa589%3A0xbcebcefc7f369f69!2sThe%20Pearl-Qatar%2C%20Doha!5e0!3m2!1sen!2sqa!4v1700000000000!5m2!1sen!2sqa",
-      mapLink: "https://maps.google.com/?q=The+Pearl+Qatar+Doha",
-      lat: 25.3678,
-      lng: 51.5517,
-      landmarks: [
-        { name: "Porto Arabia Boardwalk", mins: 1 },
-        { name: "Medina Centrale", mins: 4 },
-        { name: "Lusail Marina Promenade", mins: 7 },
-        { name: "Katara Cultural Village", mins: 8 },
-      ],
-      gallery: [
-        "/assets/just-relax/branches/the-pearl/the-pearl-hero.jpg",
-        "/assets/just-relax/branches/the-pearl/the-pearl-turkish-hammam.jpg",
-        "/assets/just-relax/branches/the-pearl/the-pearl-hydrotherapy.jpg",
-        "/assets/just-relax/branches/the-pearl/the-pearl-couples-suite.jpg",
-        "/assets/just-relax/branches/the-pearl/the-pearl-steam-room.jpg",
-        "/assets/just-relax/branches/the-pearl/the-pearl-lounge.jpg",
-      ],
-    },
+
   ];
 
   const openModal = (preferredAction?: string, preselectBranch?: string) => {
@@ -288,7 +254,7 @@ export default function OurBranchesPage() {
               <h1>A sanctuary of distinction at every branch</h1>
               <p>
                 Compare locations, distance, facilities, and real interior
-                photography across West Bay and The Pearl-Qatar, then choose the destination that fits your day.
+                photography across Jouri Murwab Hotel and West Bay, then choose the destination that fits your day.
               </p>
               <button
                 className="button"
@@ -551,14 +517,7 @@ export default function OurBranchesPage() {
               >
                 <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>West Bay: +974 5588 3421
               </a>
-              <a
-                href="https://wa.me/97455887799"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="The Pearl WhatsApp Concierge"
-              >
-                <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>The Pearl: +974 5588 7799
-              </a>
+
             </div>
             <button className="button" type="button" onClick={() => openModal()}>
               Book Your Visit
@@ -577,11 +536,11 @@ export default function OurBranchesPage() {
 
           <div className="footer-column">
             <h2>Doha Branches</h2>
+            <Link href="/our-branches/jouri-hotel?lang=en">
+              Jouri, a Murwab Hotel (Old Salata)
+            </Link>
             <Link href="/our-branches/west-bay?lang=en">
               West Bay Diplomatic Suite
-            </Link>
-            <Link href="/our-branches/the-pearl?lang=en">
-              The Pearl &amp; Lusail Suite
             </Link>
           </div>
 

@@ -39,14 +39,14 @@ export default function TherapistsPage() {
     },
     {
       id: 2,
-      slug: "the-pearl",
-      name: "The Pearl-Qatar & Lusail Marina Suite",
-      address: "Porto Arabia Boardwalk, Tower 12, The Pearl-Qatar, Doha",
-      phone: "+97444957777",
-      whatsappNumber: "97455887799",
-      whatsappMsg: "Hello Just Relax Spa The Pearl! I would like to book a session with a therapist.",
-      lat: 25.3678,
-      lng: 51.5517,
+      slug: "jouri-hotel",
+      name: "Jouri, a Murwab Hotel",
+      address: "Al Muthaf St, Street 137, Building 31, Zone 18, Old Salata, Doha",
+      phone: "+97440041000",
+      whatsappNumber: "97455883421",
+      whatsappMsg: "Hello Just Relax Spa at Jouri Murwab Hotel! I would like to book a session with a therapist.",
+      lat: 25.2892,
+      lng: 51.5434,
     },
   ];
 
@@ -190,7 +190,7 @@ export default function TherapistsPage() {
 
         {/* BRANCH TEAMS */}
         {THERAPISTS_DATA.filter(
-          (branch) => branch.branchSlug === "west-bay" || branch.branchSlug === "the-pearl"
+          (branch) => branch.branchSlug === "west-bay" || branch.branchSlug === "jouri-hotel"
         ).map((branch) => (
           <section
             key={branch.branchSlug}
@@ -280,7 +280,7 @@ export default function TherapistsPage() {
                 <Link href="/our-branches/west-bay">West Bay Diplomatic Suite</Link>
               </li>
               <li>
-                <Link href="/our-branches/the-pearl">The Pearl &amp; Lusail Suite</Link>
+                <Link href="/our-branches/jouri-hotel">Jouri, a Murwab Hotel (Old Salata)</Link>
               </li>
             </ul>
           </div>

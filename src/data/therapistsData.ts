@@ -69,40 +69,40 @@ export const THERAPISTS_DATA: BranchTeam[] = [
     ],
   },
   {
-    branchSlug: "the-pearl",
-    branchName: "The Pearl-Qatar & Lusail Marina Suite",
+    branchSlug: "jouri-hotel",
+    branchName: "Jouri, a Murwab Hotel",
     therapists: [
       {
-        id: "tp-1",
+        id: "jh-1",
         name: "Sofia",
         nationality: "Moroccan",
         languages: "Arabic · French · English",
         image: "/assets/just-relax/therapists/sofia.jpg",
-        thankYouUrl: "/contact?branch=the-pearl&therapist=Sofia",
+        thankYouUrl: "/contact?branch=jouri-hotel&therapist=Sofia",
       },
       {
-        id: "tp-2",
+        id: "jh-2",
         name: "Maya",
         nationality: "Syrian",
         languages: "Arabic · English",
         image: "/assets/just-relax/therapists/maya.jpg",
-        thankYouUrl: "/contact?branch=the-pearl&therapist=Maya",
+        thankYouUrl: "/contact?branch=jouri-hotel&therapist=Maya",
       },
       {
-        id: "tp-3",
+        id: "jh-3",
         name: "Master Karim",
         nationality: "Moroccan",
         languages: "Arabic · French · English",
         image: "/assets/just-relax/therapists/karim.jpg",
-        thankYouUrl: "/contact?branch=the-pearl&therapist=Karim",
+        thankYouUrl: "/contact?branch=jouri-hotel&therapist=Karim",
       },
       {
-        id: "tp-4",
+        id: "jh-4",
         name: "Youssef",
         nationality: "Moroccan",
         languages: "Arabic · French · English",
         image: "/assets/just-relax/therapists/youssef.jpg",
-        thankYouUrl: "/contact?branch=the-pearl&therapist=Youssef",
+        thankYouUrl: "/contact?branch=jouri-hotel&therapist=Youssef",
       },
     ],
   },
@@ -131,7 +131,7 @@ export const THERAPISTS_DATA: BranchTeam[] = [
   },
   {
     branchSlug: "business-bay",
-    branchName: "The Pearl-Qatar & Lusail Marina Suite",
+    branchName: "Jouri, a Murwab Hotel",
     therapists: [
       {
         id: "tp-1",
@@ -139,7 +139,7 @@ export const THERAPISTS_DATA: BranchTeam[] = [
         nationality: "Moroccan",
         languages: "Arabic · French · English",
         image: "/assets/just-relax/therapists/sofia.jpg",
-        thankYouUrl: "/contact?branch=the-pearl&therapist=Sofia",
+        thankYouUrl: "/contact?branch=jouri-hotel&therapist=Sofia",
       },
       {
         id: "tp-2",
@@ -147,7 +147,7 @@ export const THERAPISTS_DATA: BranchTeam[] = [
         nationality: "Syrian",
         languages: "Arabic · English",
         image: "/assets/just-relax/therapists/maya.jpg",
-        thankYouUrl: "/contact?branch=the-pearl&therapist=Maya",
+        thankYouUrl: "/contact?branch=jouri-hotel&therapist=Maya",
       },
     ],
   },
@@ -158,7 +158,7 @@ export const THERAPISTS_DATA: BranchTeam[] = [
   },
   {
     branchSlug: "garhoud",
-    branchName: "The Pearl-Qatar & Lusail Marina Suite",
+    branchName: "Jouri, a Murwab Hotel",
     therapists: [],
   },
 ];

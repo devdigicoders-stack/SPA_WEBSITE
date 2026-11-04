@@ -56,20 +56,6 @@ export default function AboutClient() {
       rating: "4.9",
       image: "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
     },
-    "the-pearl": {
-      name: "The Pearl-Qatar & Lusail Marina Suite",
-      call_number: "+97444957777",
-      whatsapp_number: "97455887799",
-      whatsapp_msg: "Hello Just Relax Spa The Pearl! I would like to book an appointment.",
-      address: "Porto Arabia Boardwalk, Tower 12, The Pearl-Qatar, Doha",
-      map_link: "https://maps.google.com/?q=The+Pearl+Qatar+Porto+Arabia+Doha",
-      lat: 25.3678,
-      lng: 51.5517,
-      opens: "10:00",
-      closes: "03:00",
-      rating: "4.9",
-      image: "/assets/just-relax/branches/the-pearl/the-pearl-hero.jpg",
-    },
   };
 
   const openModal = (preferredAction?: string, preselectBranch?: string) => {
@@ -295,7 +281,7 @@ export default function AboutClient() {
 
             <div className="license-qr">
               <img
-                src="/assets/just-relax/branches/the-pearl/the-pearl-vip.jpg"
+                src="/assets/just-relax/branches/west-bay/west-bay-moroccan-bath.jpg"
                 width="200"
                 height="200"
                 loading="lazy"
@@ -327,7 +313,7 @@ export default function AboutClient() {
           </article>
           <article>
             <h3>Two Doha Destinations</h3>
-            <p>Conveniently situated in West Bay Diplomatic District and Porto Arabia Boardwalk at The Pearl-Qatar.</p>
+            <p>Conveniently situated at Jouri Murwab Hotel (Old Salata) and the West Bay Diplomatic District.</p>
           </article>
         </section>
 
@@ -338,11 +324,11 @@ export default function AboutClient() {
           </div>
           <details>
             <summary>How do I book an appointment?</summary>
-            <p>Tap Book Now, select your preferred Doha branch (West Bay or The Pearl), then message us directly on WhatsApp or Call our concierge.</p>
+            <p>Tap Book Now, select your preferred Doha branch (Jouri Murwab Hotel or West Bay), then message us directly on WhatsApp or Call our concierge.</p>
           </details>
           <details>
             <summary>Which branch is closest to me?</summary>
-            <p>Use the "Find closest branch" button in our booking dialog to see distance in real time. We are located in West Bay and The Pearl-Qatar.</p>
+            <p>Use the "Find closest branch" button in our booking dialog to see distance in real time. We are located at Jouri Murwab Hotel and West Bay.</p>
           </details>
           <details>
             <summary>When should I arrive?</summary>
@@ -362,7 +348,7 @@ export default function AboutClient() {
           </details>
           <details>
             <summary>Is there a daily Golden Hours offer?</summary>
-            <p>Yes — enjoy our Golden Hours Privilege with 25% off all rituals every day between 11:00 AM and 5:00 PM at both West Bay and The Pearl branches.</p>
+            <p>Yes — enjoy our Golden Hours Privilege with 25% off all rituals every day between 11:00 AM and 5:00 PM at both Jouri Murwab Hotel and West Bay branches.</p>
           </details>
           <details>
             <summary>What are your opening hours?</summary>
@@ -400,14 +386,7 @@ export default function AboutClient() {
               >
                 <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>West Bay
               </a>
-              <a
-                href="https://wa.me/97455887799"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="The Pearl Branch WhatsApp"
-              >
-                <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>The Pearl
-              </a>
+
             </div>
             <button className="button" type="button" onClick={() => openModal()}>
               Book Your Visit
@@ -427,7 +406,7 @@ export default function AboutClient() {
           <div className="footer-column">
             <h2>Doha Branches</h2>
             <Link href="/our-branches#branch-west-bay">West Bay Diplomatic Suite</Link>
-            <Link href="/our-branches#branch-the-pearl">The Pearl &amp; Lusail Suite</Link>
+            <Link href="/our-branches#branch-jouri-hotel">Jouri, a Murwab Hotel</Link>
           </div>
 
           <div className="footer-column">
@@ -563,33 +542,6 @@ export default function AboutClient() {
                 <i className="fa-solid fa-chevron-right booking-branch-chevron" aria-hidden="true"></i>
               </button>
 
-              {/* The Pearl */}
-              <button
-                type="button"
-                className="booking-branch"
-                onClick={() => handleSelectBranch("the-pearl")}
-              >
-                <img
-                  src="/assets/just-relax/branches/the-pearl/the-pearl-hero.jpg"
-                  width="88"
-                  height="88"
-                  loading="lazy"
-                  decoding="async"
-                  alt="The Pearl-Qatar & Lusail Marina Suite"
-                />
-                <span className="booking-branch-body">
-                  <strong>The Pearl &amp; Lusail Suite</strong>
-                  <span className="booking-branch-meta">
-                    <i className="fa-solid fa-star" aria-hidden="true"></i>4.9
-                    <em className="booking-branch-open is-open">Open now</em>
-                  </span>
-                  <span className="booking-branch-address">
-                    Porto Arabia Boardwalk, Tower 12, The Pearl-Qatar
-                  </span>
-                  {branchDistances["the-pearl"] && <em>{branchDistances["the-pearl"]}</em>}
-                </span>
-                <i className="fa-solid fa-chevron-right booking-branch-chevron" aria-hidden="true"></i>
-              </button>
             </div>
           </section>
         )}

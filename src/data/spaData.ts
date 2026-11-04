@@ -86,7 +86,7 @@ export const SPA_INFO = {
   name: "Just Relax Spa",
   arabicName: "جيست ريلاكس سبا",
   tagline: "Ultra-Luxury Men's Spa & Wellness Sanctuary",
-  locationOverview: "Jouri Murwab Hotel, West Bay & The Pearl — Doha, Qatar",
+  locationOverview: "Jouri Murwab Hotel & West Bay Diplomatic Suite — Doha, Qatar",
   phone: "+974 4004 1000",
   whatsapp: "+974 5588 3421",
   email: "concierge@justrelaxspa.qa",
@@ -178,9 +178,9 @@ export const BRANCHES: Branch[] = [
     gallery: [
       "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
       "/assets/just-relax/branches/west-bay/west-bay-moroccan-bath.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-turkish-hammam.jpg",
+      "/assets/just-relax/branches/west-bay/west-bay-relaxation.jpg",
       "/assets/just-relax/branches/west-bay/west-bay-massage-suite.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-lounge.jpg",
+      "/assets/just-relax/branches/west-bay/west-bay-amenities.jpg",
       "/assets/just-relax/branches/west-bay/west-bay-jacuzzi.jpg",
     ],
     features: [
@@ -241,48 +241,7 @@ export const BRANCHES: Branch[] = [
     badge: "Executive Favorite",
     description: "Nestled in the prestigious diplomatic quarter of Doha, our West Bay branch offers executives, diplomats, and gentlemen an elite, private haven designed for total muscular recovery, stress detox, and peaceful quietude.",
   },
-  {
-    id: "the-pearl",
-    name: "Just Relax Spa – The Pearl-Qatar & Lusail Marina",
-    shortName: "The Pearl Branch",
-    district: "Porto Arabia, The Pearl",
-    address: "Porto Arabia Marina Boardwalk, Tower 12, The Pearl-Qatar, Doha",
-    landmark: "Direct Marina Walkway access, minutes from Lusail",
-    city: "Doha",
-    country: "Qatar",
-    phone: "+974 4495 7777",
-    whatsapp: "+974 5588 7799",
-    whatsappMessage: "Hello Just Relax Spa, I would like to reserve a Moroccan bath / treatment at The Pearl Branch.",
-    rating: 4.93,
-    reviewCount: 630,
-    hours: "10:00 AM – 3:00 AM Daily",
-    opens: "10:00",
-    closes: "03:00",
-    image: "/assets/just-relax/branches/the-pearl/the-pearl-hero.jpg",
-    gallery: [
-      "/assets/just-relax/branches/the-pearl/the-pearl-hero.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-turkish-hammam.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-hydrotherapy.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-couples-suite.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-steam-room.jpg",
-      "/assets/just-relax/branches/the-pearl/the-pearl-lounge.jpg",
-    ],
-    features: [
-      "Authentic Heated Marble Hammam",
-      "Moroccan Steam Chambers",
-      "Volcanic Hot Stone Suite",
-      "Dead Sea Salt Jacuzzi",
-      "VIP Private Lounges",
-      "Private Yacht Concierge Booking",
-    ],
-    coordinates: {
-      lat: 25.3678,
-      lng: 51.5517,
-    },
-    googleMapsUrl: "https://maps.google.com/?q=The+Pearl+Qatar+Doha",
-    badge: "Royal Hammam Sanctuary",
-    description: "Located right on the tranquil Porto Arabia marina promenade, this signature facility houses our authentic heated marble Turkish Hammam and Royal Moroccan Bath suites, pairing centuries-old bathing artistry with five-star luxury.",
-  },
+
 ];
 
 export const TREATMENTS: Treatment[] = [
@@ -504,7 +463,7 @@ export const THERAPISTS: Therapist[] = [
     specialties: ["Royal Moroccan Bath", "Traditional Kessa Exfoliation", "Atlas Ghassoul Rituals"],
     bio: "Trained under royal hammam masters in Fez, Hassan brings over 12 years of authentic Moroccan bathing mastery, known for his respectful precision, calming demeanor, and thorough technique.",
     avatar: "/assets/just-relax/therapists/karim.jpg",
-    branches: ["the-pearl", "west-bay"],
+    branches: ["jouri-hotel", "west-bay"],
   },
   {
     id: "somchai-prasert",
@@ -530,7 +489,7 @@ export const THERAPISTS: Therapist[] = [
     specialties: ["Marble Hammam Soap Cloud", "Ottoman Body Peeling", "Warm Towel Therapy"],
     bio: "Hailing from Istanbul's historic bath traditions, Mehmet is a master of warm marble foam massage, creating weightless foam clouds that deeply ease tension and rebalance physical harmony.",
     avatar: "/assets/just-relax/therapists/rashid.jpg",
-    branches: ["the-pearl"],
+    branches: ["jouri-hotel"],
   },
   {
     id: "alexandre-dubois",
@@ -543,7 +502,7 @@ export const THERAPISTS: Therapist[] = [
     specialties: ["Swedish Massage", "Volcanic Hot Stone", "Four-Hands Choreography"],
     bio: "A certified practitioner with luxury hotel spa experience in Paris and Dubai, Alexandre customizes pure essential oil therapies to soothe insomnia, high anxiety, and sensory fatigue.",
     avatar: "/assets/just-relax/therapists/tarek.jpg",
-    branches: ["west-bay", "the-pearl"],
+    branches: ["west-bay", "jouri-hotel"],
   },
 ];
 
@@ -573,7 +532,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     type: "video",
     title: "Moroccan Hammam Heated Steam & Mist",
     category: "hammam",
-    thumbnail: "/assets/just-relax/branches/the-pearl/the-pearl-vip.jpg",
+    thumbnail: "/assets/just-relax/branches/west-bay/west-bay-moroccan-bath.jpg",
     src: "/assets/video/spa-hero-steam.mp4",
     videoUrl: "/assets/video/spa-hero-steam.mp4",
     description: "Centuries-old steam purification ritual on heated marble slabs for full body rejuvenation.",
@@ -585,7 +544,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: "hammam",
     thumbnail: "/assets/just-relax/treatments/royal-moroccan.jpg",
     src: "/assets/just-relax/treatments/royal-moroccan.jpg",
-    description: "Watch our master therapists prepare eucalyptus black soap and warm mist steam inside The Pearl Hammam.",
+    description: "Watch our master therapists prepare eucalyptus black soap and warm mist steam inside our private Hammam.",
   },
   {
     id: "g3",
@@ -601,8 +560,8 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     type: "image",
     title: "Traditional Heated Marble Turkish Hammam",
     category: "hammam",
-    thumbnail: "/assets/just-relax/branches/the-pearl/the-pearl-turkish-hammam.jpg",
-    src: "/assets/just-relax/branches/the-pearl/the-pearl-turkish-hammam.jpg",
+    thumbnail: "/assets/just-relax/branches/west-bay/west-bay-moroccan-bath.jpg",
+    src: "/assets/just-relax/branches/west-bay/west-bay-moroccan-bath.jpg",
     description: "Carved from premium Calacatta marble with integrated underfloor heating for authentic Ottoman foam ceremonies.",
   },
   {
@@ -635,11 +594,11 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: "g8",
     type: "image",
-    title: "The Pearl-Qatar VIP Lounge",
+    title: "Jouri Murwab Hotel Wellness Suite",
     category: "ambiance",
-    thumbnail: "/assets/just-relax/branches/the-pearl/the-pearl-lounge.jpg",
-    src: "/assets/just-relax/branches/the-pearl/the-pearl-lounge.jpg",
-    description: "Waterfront tranquility along Porto Arabia marina promenade for gentlemen seeking peace after late work hours.",
+    thumbnail: "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
+    src: "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
+    description: "Tranquil wellness suite inside 4-star Jouri Murwab Hotel for gentlemen seeking relaxation after a long day in Doha.",
   },
 ];
 
@@ -658,7 +617,7 @@ export const REVIEWS: Review[] = [
     id: "r2",
     author: "Tariq Mansoori",
     location: "Lusail, Qatar",
-    branch: "The Pearl-Qatar Branch",
+    branch: "Jouri Murwab Hotel Branch",
     rating: 5,
     date: "September 2026",
     text: "The Royal Moroccan bath with Hassan was extraordinary. Authentic black soap, immaculate hygiene, and heated marble that feels heavenly. Booking directly on WhatsApp took less than 30 seconds. A true 5-star standard.",
@@ -677,8 +636,8 @@ export const REVIEWS: Review[] = [
   {
     id: "r4",
     author: "Fahad Al-Kuwari",
-    location: "The Pearl, Doha",
-    branch: "The Pearl-Qatar Branch",
+    location: "Old Salata, Doha",
+    branch: "Jouri Murwab Hotel Branch",
     rating: 5,
     date: "October 2026",
     text: "Tried the Four-Hands Royal ritual for my birthday. Two therapists in perfect synchronization - it was an unreal relaxation experience. Just Relax Spa is now my go-to weekly sanctuary.",
@@ -697,7 +656,7 @@ export const FAQS = [
   },
   {
     question: "What are your operating hours in Doha?",
-    answer: "Both our West Bay and The Pearl branches are open daily from 10:00 AM until 3:00 AM after midnight, providing the perfect slot for daytime rejuvenation or late-night unwinding after a flight or business engagement.",
+    answer: "Both our Jouri Murwab Hotel and West Bay branches are open daily from 10:00 AM until 3:00 AM after midnight, providing the perfect slot for daytime rejuvenation or late-night unwinding after a flight or business engagement.",
   },
   {
     question: "How do I choose between the Moroccan Bath and Turkish Hammam?",
@@ -705,7 +664,7 @@ export const FAQS = [
   },
   {
     question: "Is valet parking available at your branches?",
-    answer: "Yes, complimentary private valet parking is provided for all spa guests at both our West Bay Tower suite and The Pearl-Qatar Porto Arabia marina locations.",
+    answer: "Yes, complimentary private valet parking is provided for all spa guests at both our Jouri Murwab Hotel and West Bay Diplomatic Suite locations.",
   },
 ];
 

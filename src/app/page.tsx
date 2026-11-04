@@ -8,6 +8,8 @@ export default function HomePage() {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [navOpen, setNavOpen] = useState(false);
   const [bookingStep, setBookingStep] = useState<"branches" | "actions">("branches");
+  const heroVideoRef = useRef<HTMLVideoElement | null>(null);
+  const [isVideoMuted, setIsVideoMuted] = useState(false);
   const [selectedBranchSlug, setSelectedBranchSlug] = useState<string>("west-bay");
   const [bookingContext, setBookingContext] = useState<{ icon: string; text: string } | null>(null);
   const [branchDistances, setBranchDistances] = useState<Record<string, string>>({});
@@ -56,19 +58,6 @@ export default function HomePage() {
       closes: "03:00",
       rating: "4.95",
     },
-    "the-pearl": {
-      name: "The Pearl-Qatar & Lusail Marina Suite",
-      call_number: "+97444957777",
-      whatsapp_number: "97455887799",
-      whatsapp_msg: "Hello Just Relax Spa The Pearl! I would like to book an appointment.",
-      address: "Porto Arabia Boardwalk, Tower 12, The Pearl-Qatar, Doha",
-      map_link: "https://maps.google.com/?q=The+Pearl+Qatar+Doha",
-      lat: 25.3671,
-      lng: 51.5386,
-      opens: "10:00",
-      closes: "03:00",
-      rating: "4.94",
-    },
     // Aliases for legacy compatibility
     "sh-zayed": {
       name: "West Bay Diplomatic Suite",
@@ -84,17 +73,17 @@ export default function HomePage() {
       rating: "4.95",
     },
     "business-bay": {
-      name: "The Pearl-Qatar & Lusail Marina Suite",
-      call_number: "+97444957777",
-      whatsapp_number: "97455887799",
-      whatsapp_msg: "Hello Just Relax Spa The Pearl! I would like to book an appointment.",
-      address: "Porto Arabia Boardwalk, Tower 12, The Pearl-Qatar, Doha",
-      map_link: "https://maps.google.com/?q=The+Pearl+Qatar+Doha",
-      lat: 25.3671,
-      lng: 51.5386,
+      name: "Jouri, a Murwab Hotel",
+      call_number: "+97440041000",
+      whatsapp_number: "97455883421",
+      whatsapp_msg: "Hello Just Relax Spa at Jouri Murwab Hotel! I would like to book an appointment.",
+      address: "Al Muthaf Street, Street 137, Building 31, Zone 18, Old Salata, Doha",
+      map_link: "https://maps.google.com/?q=Jouri+a+Murwab+Hotel+Doha",
+      lat: 25.2892,
+      lng: 51.5434,
       opens: "10:00",
       closes: "03:00",
-      rating: "4.94",
+      rating: "4.96",
     },
   };
 
@@ -117,6 +106,56 @@ export default function HomePage() {
     const interval = setInterval(updateTimer, 60000);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+
+    video.volume = 0.75;
+    video.muted = false;
+
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Browser autoplay restricted sound; play muted until user gesture
+        video.muted = true;
+        setIsVideoMuted(true);
+        video.play().catch(() => {});
+      });
+    }
+
+    const handleFirstGesture = () => {
+      if (heroVideoRef.current) {
+        heroVideoRef.current.muted = false;
+        heroVideoRef.current.volume = 0.75;
+        setIsVideoMuted(false);
+      }
+      window.removeEventListener("click", handleFirstGesture);
+      window.removeEventListener("touchstart", handleFirstGesture);
+    };
+
+    window.addEventListener("click", handleFirstGesture, { once: true });
+    window.addEventListener("touchstart", handleFirstGesture, { once: true });
+
+    return () => {
+      window.removeEventListener("click", handleFirstGesture);
+      window.removeEventListener("touchstart", handleFirstGesture);
+    };
+  }, []);
+
+  const toggleSound = () => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+    if (video.muted) {
+      video.muted = false;
+      video.volume = 0.75;
+      setIsVideoMuted(false);
+      video.play().catch(() => {});
+    } else {
+      video.muted = true;
+      setIsVideoMuted(true);
+    }
+  };
 
   const openModal = (preferredAction?: string, preselectBranch?: string) => {
     if (preselectBranch && branchData[preselectBranch]) {
@@ -161,7 +200,7 @@ export default function HomePage() {
         let closestSlug = "west-bay";
         let minD = Infinity;
 
-        ["west-bay", "the-pearl"].forEach((slug) => {
+        ["jouri-hotel", "west-bay"].forEach((slug) => {
           const data = branchData[slug];
           const d = Math.hypot(latitude - data.lat, longitude - data.lng) * 111;
           distances[slug] = `${d.toFixed(1)} km away`;
@@ -237,17 +276,10 @@ export default function HomePage() {
         <section className="hero">
           <video
             autoPlay
-            muted
             loop
             playsInline
             preload="auto"
-            ref={(video) => {
-              if (video) {
-                video.muted = true;
-                video.defaultMuted = true;
-                video.volume = 0;
-              }
-            }}
+            ref={heroVideoRef}
             poster="/assets/video/hero-poster.jpg"
             width="1920"
             height="1080"
@@ -258,11 +290,22 @@ export default function HomePage() {
           </video>
           <div className="hero-scrim"></div>
 
+          <button
+            type="button"
+            className="hero-sound-toggle"
+            onClick={toggleSound}
+            aria-label={isVideoMuted ? "Unmute hero video sound" : "Mute hero video sound"}
+            title={isVideoMuted ? "Click to play audio" : "Click to mute audio"}
+          >
+            <i className={`fa-solid ${isVideoMuted ? "fa-volume-xmark" : "fa-volume-high"}`} aria-hidden="true"></i>
+            <span>{isVideoMuted ? "Sound Off" : "Sound On"}</span>
+          </button>
+
           <div className="hero-content">
             <p className="kicker">Ultra-Luxury Men&apos;s Sanctuary &amp; Hammam</p>
             <h1>Authentic Moroccan Baths &amp; Therapeutic Massage in Doha</h1>
             <p>
-              Private VIP suites across West Bay and The Pearl-Qatar. Certified master therapists, heated marble hammam, and bespoke executive wellness.
+              Private VIP suites across Jouri Murwab Hotel and West Bay Diplomatic District. Certified master therapists, heated marble hammam, and bespoke executive wellness.
             </p>
             <div className="hero-actions">
               <button className="button" type="button" onClick={() => openModal()}>
@@ -299,8 +342,8 @@ export default function HomePage() {
           <div className="why-hero-grid">
             <div className="why-image-wrapper">
               <img
-                src="/assets/just-relax/branches/the-pearl/the-pearl-turkish-hammam.jpg"
-                alt="Just Relax Spa Heated Marble Turkish Hammam & VIP Gentlemen Suite in Doha"
+                src="/assets/just-relax/branches/west-bay/west-bay-moroccan-bath.jpg"
+                alt="Just Relax Spa Heated Marble Moroccan Hammam & VIP Gentlemen Suite in Doha"
                 className="why-main-image"
                 width="640"
                 height="480"
@@ -364,7 +407,7 @@ export default function HomePage() {
               <i className="fa-solid fa-building" aria-hidden="true"></i>
               <h3>Prestigious Doha Locations</h3>
               <p>
-                Located in West Bay Diplomatic District and The Pearl-Qatar Porto Arabia Marina, offering convenient access with complimentary valet parking.
+                Located at Jouri Murwab Hotel (Old Salata) and the West Bay Diplomatic District, offering convenient access with complimentary valet parking.
               </p>
             </article>
 
@@ -429,8 +472,8 @@ export default function HomePage() {
         <section className="section">
           <div className="section-heading">
             <p className="kicker">Sanctuary Locations</p>
-            <h2>Three Premier Doha Sanctuaries</h2>
-            <p>Flagship 4-star hotel wellness at Jouri Murwab Hotel, plus private executive suites in West Bay and The Pearl-Qatar.</p>
+            <h2>Two Premier Doha Sanctuaries</h2>
+            <p>Flagship 4-star hotel wellness at Jouri Murwab Hotel, plus private executive suites in the West Bay Diplomatic District.</p>
           </div>
           <div className="branch-grid">
             {/* Jouri Hotel Branch (Flagship) */}
@@ -511,44 +554,7 @@ export default function HomePage() {
               </div>
             </article>
 
-            {/* The Pearl Branch */}
-            <article className="branch-card">
-              <img
-                src="/assets/just-relax/branches/the-pearl/the-pearl-hero.jpg"
-                width="800"
-                height="600"
-                loading="lazy"
-                decoding="async"
-                alt="The Pearl-Qatar & Lusail Marina Suite — Just Relax Spa Doha"
-              />
-              <div>
-                <span className="rating-row">
-                  <a
-                    className="rating"
-                    href="https://maps.google.com/?q=The+Pearl+Qatar+Doha"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    ★ 4.94
-                  </a>
-                  <span className="open-badge is-open" data-opens="10:00" data-closes="03:00">
-                    Open now
-                  </span>
-                </span>
-                <h3>The Pearl &amp; Lusail Marina Suite</h3>
-                <p>Porto Arabia Boardwalk, Tower 12, The Pearl-Qatar, Doha</p>
-                <p className="branch-card-hours">
-                  <i className="fa-regular fa-clock" aria-hidden="true"></i>Daily 10:00 AM – 3:00 AM
-                </p>
-                <button
-                  className="button button-small"
-                  type="button"
-                  onClick={() => openModal(undefined, "the-pearl")}
-                >
-                  Book This Branch
-                </button>
-              </div>
-            </article>
+
           </div>
         </section>
 
@@ -597,7 +603,7 @@ export default function HomePage() {
 
               <div className="price-list-sheet-footer">
                 <span><i className="fa-solid fa-award"></i> Licensed MOCI CR No. 184920</span>
-                <span><i className="fa-solid fa-hotel"></i> Available at Jouri Murwab Hotel, West Bay &amp; The Pearl</span>
+                <span><i className="fa-solid fa-hotel"></i> Available at Jouri Murwab Hotel &amp; West Bay Diplomatic Suite</span>
                 <span><i className="fa-brands fa-whatsapp"></i> Instant WhatsApp VIP Confirmation</span>
               </div>
             </div>
@@ -803,7 +809,7 @@ export default function HomePage() {
               />
               <div className="sanctuary-badge-top">
                 <i className="fa-solid fa-gem" aria-hidden="true"></i>
-                <span>West Bay &amp; The Pearl-Qatar</span>
+                <span>Jouri Murwab Hotel &amp; West Bay</span>
               </div>
               <div className="sanctuary-badge-bottom">
                 <i className="fa-solid fa-shield-halved" aria-hidden="true"></i>
@@ -815,7 +821,7 @@ export default function HomePage() {
               <p className="kicker">Doha Gentlemen&apos;s Sanctuary</p>
               <h2>Men&apos;s Wellness Sanctuary Across Two Key Doha Destinations</h2>
               <p>
-                Just Relax Spa is a premier licensed men&apos;s sanctuary in Doha with branches in the West Bay Diplomatic District and Porto Arabia Boardwalk at The Pearl-Qatar — each featuring soundproof private treatment rooms. Searching for a private men&apos;s massage in Doha? Guests can book directly via WhatsApp or phone with immediate VIP confirmation.
+                Just Relax Spa is a premier licensed men&apos;s sanctuary in Doha with branches at Jouri Murwab Hotel (Old Salata) and the West Bay Diplomatic District — each featuring soundproof private treatment rooms. Searching for a private men&apos;s massage in Doha? Guests can book directly via WhatsApp or phone with immediate VIP confirmation.
               </p>
               <p>
                 Our treatments include authentic Royal Moroccan Baths, heated marble Turkish Hammams, Swedish, deep tissue and sports recovery massage, hot volcanic stones, virgin Argan oil therapies, and hydrotherapy. Every ritual is conducted in 100% privacy with single-use sterile amenities.
@@ -900,7 +906,7 @@ export default function HomePage() {
               />
             </Link>
             <p>
-              Just Relax Spa is an elite men&apos;s wellness sanctuary in Doha, Qatar, delivering authentic Moroccan baths, Turkish hammams, and therapeutic recovery massages across West Bay and The Pearl.
+              Just Relax Spa is an elite men&apos;s wellness sanctuary in Doha, Qatar, delivering authentic Moroccan baths, Turkish hammams, and therapeutic recovery massages across Jouri Murwab Hotel and West Bay.
             </p>
             <p className="footer-license">
               Licensed by Ministry of Commerce &amp; Industry (MOCI Qatar) · CR No. 184920
@@ -914,14 +920,7 @@ export default function HomePage() {
               >
                 <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>West Bay
               </a>
-              <a
-                href="https://wa.me/97455887799"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="The Pearl Branch WhatsApp"
-              >
-                <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>The Pearl
-              </a>
+
             </div>
           </div>
 
@@ -929,7 +928,6 @@ export default function HomePage() {
             <h2>Doha Branches</h2>
             <Link href="/our-branches/jouri-hotel">Jouri, a Murwab Hotel (Old Salata)</Link>
             <Link href="/our-branches/west-bay">West Bay Diplomatic Suite</Link>
-            <Link href="/our-branches/the-pearl">The Pearl-Qatar &amp; Lusail</Link>
           </div>
 
           <div className="footer-column">
@@ -953,11 +951,14 @@ export default function HomePage() {
         </div>
 
         <div className="footer-bottom">
-          <div>
+          <div className="footer-legal-wrap">
             <small>© 2026 Just Relax Spa Doha. All rights reserved.</small>
             <small className="footer-legal-name">JUST RELAX SPA - MEN&apos;S SANCTUARY | MOCI Qatar CR No. 184920</small>
+            <Link href="/contact" className="footer-city-link" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "6px", color: "#c6a15b" }}>
+              <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span>Doha, State of Qatar</span>
+            </Link>
           </div>
-          <Link href="/contact">Doha, State of Qatar</Link>
         </div>
       </footer>
 
@@ -1023,7 +1024,7 @@ export default function HomePage() {
               </h2>
               <p className="booking-sub">Select your preferred sanctuary in Doha</p>
               <div className="booking-branches-list">
-                {["jouri-hotel", "west-bay", "the-pearl"].map((slug) => {
+                {["jouri-hotel", "west-bay"].map((slug) => {
                   const b = branchData[slug];
                   return (
                     <button

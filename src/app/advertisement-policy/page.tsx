@@ -90,7 +90,7 @@ export default function AdvertisementPolicyPage() {
             <h2>Reviews</h2>
             <p>
               Reviews are displayed from genuine guest feedback. Review text and guest names reflect authentic experiences
-              at our West Bay and The Pearl-Qatar locations.
+              at our Jouri Murwab Hotel and West Bay locations.
             </p>
           </section>
 
@@ -146,7 +146,7 @@ export default function AdvertisementPolicyPage() {
                 <Link href="/our-branches/west-bay">West Bay Diplomatic Suite</Link>
               </li>
               <li>
-                <Link href="/our-branches/the-pearl">The Pearl-Qatar Suite</Link>
+                <Link href="/our-branches/jouri-hotel">Jouri, a Murwab Hotel (Old Salata)</Link>
               </li>
             </ul>
           </div>

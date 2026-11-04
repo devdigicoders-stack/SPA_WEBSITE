@@ -49,16 +49,18 @@ export default function BookingModal() {
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         const { latitude, longitude } = pos.coords;
-        // Simple distance calculation to both branches
-        const distWestBay = Math.hypot(latitude - BRANCHES[0].coordinates.lat, longitude - BRANCHES[0].coordinates.lng);
-        const distPearl = Math.hypot(latitude - BRANCHES[1].coordinates.lat, longitude - BRANCHES[1].coordinates.lng);
+        // Proximity calculation across our Doha branches
+        const branch0 = BRANCHES[0];
+        const branch1 = BRANCHES[1];
+        const dist0 = Math.hypot(latitude - branch0.coordinates.lat, longitude - branch0.coordinates.lng);
+        const dist1 = branch1 ? Math.hypot(latitude - branch1.coordinates.lat, longitude - branch1.coordinates.lng) : Infinity;
 
-        if (distWestBay <= distPearl) {
-          setSelectedBranch("west-bay");
-          setClosestNotice("Closest match: West Bay Diplomatic Suite selected based on your location.");
+        if (dist0 <= dist1) {
+          setSelectedBranch(branch0.id);
+          setClosestNotice(`Closest match: ${branch0.name} selected based on your location.`);
         } else {
-          setSelectedBranch("the-pearl");
-          setClosestNotice("Closest match: The Pearl-Qatar & Lusail Marina selected based on your location.");
+          setSelectedBranch(branch1.id);
+          setClosestNotice(`Closest match: ${branch1.name} selected based on your location.`);
         }
       },
       () => {
