@@ -72,8 +72,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2>Location permission</h2>
             <p>
-              If you choose Find Closest Branch, your browser supplies coordinates to calculate distance to our Jouri Murwab Hotel
-              or West Bay branches locally in your browser. Precise coordinates are never sent to our servers or stored.
+              If you choose Find Closest Branch, your browser supplies coordinates to calculate distance to our Jouri Murwab Hotel or Retaj Salwa branches locally in your browser. Precise coordinates are never sent to our servers or stored.
               You may also select a branch manually.
             </p>
           </section>

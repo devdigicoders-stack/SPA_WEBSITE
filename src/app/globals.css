@@ -2376,3 +2376,42 @@ iframe {
     font-size: 12px !important;
   }
 }
+
+
+/* About Video Sound Toggle Button */
+.about-sound-toggle {
+  position: absolute !important;
+  top: 20px !important;
+  right: 20px !important;
+  z-index: 10 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(13, 13, 12, 0.82) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(198, 161, 91, 0.5) !important;
+  color: #c6a15b !important;
+  padding: 8px 16px !important;
+  border-radius: 999px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
+}
+.about-sound-toggle:hover {
+  background: #c6a15b !important;
+  color: #0d0d0c !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(198, 161, 91, 0.35) !important;
+}
+@media (max-width: 768px) {
+  .about-sound-toggle {
+    top: 14px !important;
+    right: 14px !important;
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+  }
+}

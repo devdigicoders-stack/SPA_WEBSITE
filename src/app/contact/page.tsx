@@ -33,7 +33,7 @@ const CONTACT_BRANCHES: BranchContactData[] = [
     tabNum: "01",
     name: "Jouri, a Murwab Hotel",
     rating: "★ 4.96",
-    ratingUrl: "https://maps.google.com/?q=Jouri+a+Murwab+Hotel+Doha",
+    ratingUrl: "https://maps.app.goo.gl/JbsB9BgUa1nxUPYeA?g_st=ac",
     openBadge: "Open now (Till 3:00 AM)",
     address: "Al Muthaf Street, Street 137, Building 31, Zone 18, Old Salata, Doha, Qatar",
     hours: "Daily 10:00 AM – 3:00 AM",
@@ -45,7 +45,7 @@ const CONTACT_BRANCHES: BranchContactData[] = [
     whatsappMsg: "Hello Just Relax Spa Jouri Hotel! I would like to book a treatment.",
     mapIframe:
       "https://maps.google.com/maps?q=Jouri+a+Murwab+Hotel+Doha&t=&z=15&ie=UTF8&iwloc=&output=embed",
-    mapDirectionsUrl: "https://maps.google.com/?q=Jouri+a+Murwab+Hotel+Doha",
+    mapDirectionsUrl: "https://maps.app.goo.gl/JbsB9BgUa1nxUPYeA?g_st=ac",
     lat: 25.2892,
     lng: 51.5434,
     photos: [
@@ -59,25 +59,25 @@ const CONTACT_BRANCHES: BranchContactData[] = [
   },
   {
     id: 2,
-    slug: "west-bay",
+    slug: "retaj-salwa",
     tabNum: "02",
-    name: "West Bay Diplomatic Suite",
+    name: "Retaj Salwa Resort & Spa",
     rating: "★ 4.95",
-    ratingUrl: "https://maps.google.com/?q=West+Bay+Doha+Qatar",
+    ratingUrl: "https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac",
     openBadge: "Open now (Till 3:00 AM)",
-    address: "Tower 1, Diplomatic District, West Bay, Doha, Qatar",
+    address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
     hours: "Daily 10:00 AM – 3:00 AM",
     instagram: "https://www.instagram.com/justrelaxspa.qa",
     instagramHandle: "@justrelaxspa.qa",
-    phone: "+97444928888",
-    phoneDisplay: "+974 4492 8888",
+    phone: "+97444298888",
+    phoneDisplay: "+974 4429 8888",
     whatsappNumber: "97455883421",
-    whatsappMsg: "Hello Just Relax Spa West Bay! I would like to book a private suite appointment.",
+    whatsappMsg: "Hello Just Relax Spa Retaj Salwa! I would like to book a private suite appointment.",
     mapIframe:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14424.484218318285!2d51.523098544555664!3d25.322830800000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c531d0411a75%3A0x6b093f48651c6b12!2sWest%20Bay%2C%20Doha%2C%20Qatar!5e0!3m2!1sen!2sqa!4v1700000000000!5m2!1sen!2sqa",
-    mapDirectionsUrl: "https://maps.google.com/?q=West+Bay+Doha+Qatar",
-    lat: 25.3216,
-    lng: 51.5312,
+      "https://maps.google.com/maps?q=Retaj+Salwa+Resort+%26+Spa+Doha&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    mapDirectionsUrl: "https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac",
+    lat: 25.1686,
+    lng: 51.3158,
     photos: [
       "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
       "/assets/just-relax/branches/west-bay/west-bay-massage-suite.jpg",
@@ -104,55 +104,6 @@ export default function ContactPage() {
     CONTACT_BRANCHES.find((b) => b.slug === activeBranchSlug) || CONTACT_BRANCHES[0];
   const currentBranch =
     CONTACT_BRANCHES.find((b) => b.slug === selectedBranchSlug) || CONTACT_BRANCHES[0];
-
-  // Geolocation computation
-  useEffect(() => {
-    if (typeof window !== "undefined" && "geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(
-        (pos) => {
-          const userLat = pos.coords.latitude;
-          const userLng = pos.coords.longitude;
-
-          const toRad = (v: number) => (v * Math.PI) / 180;
-          const calcDist = (lat1: number, lon1: number, lat2: number, lon2: number) => {
-            const R = 6371;
-            const dLat = toRad(lat2 - lat1);
-            const dLon = toRad(lon2 - lon1);
-            const a =
-              Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-              Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
-            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            return R * c;
-          };
-
-          const dists: Record<string, number> = {};
-          CONTACT_BRANCHES.forEach((b) => {
-            dists[b.slug] = calcDist(userLat, userLng, b.lat, b.lng);
-          });
-
-          let minSlug = CONTACT_BRANCHES[0].slug;
-          let minDist = dists[CONTACT_BRANCHES[0].slug];
-          for (const b of CONTACT_BRANCHES) {
-            if (dists[b.slug] < minDist) {
-              minDist = dists[b.slug];
-              minSlug = b.slug;
-            }
-          }
-
-          const distStrings: Record<string, string> = {};
-          CONTACT_BRANCHES.forEach((b) => {
-            const d = dists[b.slug];
-            distStrings[b.slug] = d < 1 ? `${Math.round(d * 1000)} m away` : `${d.toFixed(1)} km away`;
-          });
-
-          setBranchDistances(distStrings);
-          setClosestBranchSlug(minSlug);
-        },
-        () => {},
-        { timeout: 8000 }
-      );
-    }
-  }, []);
 
   const openBookingModal = (branchSlug?: string, context?: { icon: string; text: string }) => {
     if (branchSlug) {
@@ -404,7 +355,7 @@ export default function ContactPage() {
                 <Link href="/our-branches/jouri-hotel">Jouri, a Murwab Hotel (Old Salata)</Link>
               </li>
               <li>
-                <Link href="/our-branches/west-bay">West Bay Diplomatic Suite</Link>
+                <Link href="/our-branches/retaj-salwa">Retaj Salwa Resort &amp; Spa</Link>
               </li>
             </ul>
           </div>

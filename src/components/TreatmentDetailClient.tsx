@@ -63,55 +63,6 @@ export default function TreatmentDetailClient({
     treatment.relatedSlugs.includes(t.slug)
   ).slice(0, 3);
 
-  // Geolocation computation
-  useEffect(() => {
-    if (typeof window !== "undefined" && "geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(
-        (pos) => {
-          const userLat = pos.coords.latitude;
-          const userLng = pos.coords.longitude;
-
-          const toRad = (v: number) => (v * Math.PI) / 180;
-          const calcDist = (lat1: number, lon1: number, lat2: number, lon2: number) => {
-            const R = 6371;
-            const dLat = toRad(lat2 - lat1);
-            const dLon = toRad(lon2 - lon1);
-            const a =
-              Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-              Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
-            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            return R * c;
-          };
-
-          const dists: Record<string, number> = {};
-          branches.forEach((b) => {
-            dists[b.slug] = calcDist(userLat, userLng, b.lat, b.lng);
-          });
-
-          let minSlug = branches[0].slug;
-          let minDist = dists[branches[0].slug];
-          for (const b of branches) {
-            if (dists[b.slug] < minDist) {
-              minDist = dists[b.slug];
-              minSlug = b.slug;
-            }
-          }
-
-          const distStrings: Record<string, string> = {};
-          branches.forEach((b) => {
-            const d = dists[b.slug];
-            distStrings[b.slug] = d < 1 ? `${Math.round(d * 1000)} m away` : `${d.toFixed(1)} km away`;
-          });
-
-          setBranchDistances(distStrings);
-          setClosestBranchSlug(minSlug);
-        },
-        () => {},
-        { timeout: 8000 }
-      );
-    }
-  }, []);
-
   const openBookingModal = (customContext?: { icon: string; text: string }) => {
     if (customContext) setBookingContext(customContext);
     setBookingStep("branches");

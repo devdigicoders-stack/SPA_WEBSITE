@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function AboutClient() {
@@ -10,6 +10,62 @@ export default function AboutClient() {
   const [selectedBranchSlug, setSelectedBranchSlug] = useState<string>("west-bay");
   const [bookingContext, setBookingContext] = useState<{ icon: string; text: string } | null>(null);
   const [branchDistances, setBranchDistances] = useState<Record<string, string>>({});
+  const aboutVideoRef = useRef<HTMLVideoElement | null>(null);
+  const [isAudioMuted, setIsAudioMuted] = useState(false);
+
+  useEffect(() => {
+    const video = aboutVideoRef.current;
+    if (!video) return;
+
+    video.volume = 0.85;
+    video.muted = false;
+
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Fallback: autoplay with sound was restricted by browser prior to interaction
+        video.muted = true;
+        video.play().catch(() => {});
+      });
+    }
+
+    const unmuteOnUserAction = () => {
+      if (aboutVideoRef.current) {
+        aboutVideoRef.current.muted = false;
+        aboutVideoRef.current.volume = 0.85;
+      }
+      window.removeEventListener("click", unmuteOnUserAction);
+      window.removeEventListener("touchstart", unmuteOnUserAction);
+      window.removeEventListener("scroll", unmuteOnUserAction);
+      window.removeEventListener("keydown", unmuteOnUserAction);
+    };
+
+    window.addEventListener("click", unmuteOnUserAction, { once: true });
+    window.addEventListener("touchstart", unmuteOnUserAction, { once: true });
+    window.addEventListener("scroll", unmuteOnUserAction, { once: true });
+    window.addEventListener("keydown", unmuteOnUserAction, { once: true });
+
+    return () => {
+      window.removeEventListener("click", unmuteOnUserAction);
+      window.removeEventListener("touchstart", unmuteOnUserAction);
+      window.removeEventListener("scroll", unmuteOnUserAction);
+      window.removeEventListener("keydown", unmuteOnUserAction);
+    };
+  }, []);
+
+  const toggleAboutSound = () => {
+    const video = aboutVideoRef.current;
+    if (!video) return;
+    if (video.muted) {
+      video.muted = false;
+      video.volume = 0.85;
+      setIsAudioMuted(false);
+      video.play().catch(() => {});
+    } else {
+      video.muted = true;
+      setIsAudioMuted(true);
+    }
+  };
 
   const branchData: Record<
     string,
@@ -34,7 +90,7 @@ export default function AboutClient() {
       whatsapp_number: "97455883421",
       whatsapp_msg: "Hello Just Relax Spa Jouri Hotel! I would like to book an appointment.",
       address: "Al Muthaf Street, Old Salata / Corniche, Doha, Qatar",
-      map_link: "https://maps.google.com/?q=Jouri+a+Murwab+Hotel+Doha",
+      map_link: "https://maps.app.goo.gl/JbsB9BgUa1nxUPYeA?g_st=ac",
       lat: 25.2892,
       lng: 51.5434,
       opens: "10:00",
@@ -42,18 +98,32 @@ export default function AboutClient() {
       rating: "4.96",
       image: "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
     },
-    "west-bay": {
-      name: "West Bay Diplomatic Suite",
-      call_number: "+97444928888",
+    "retaj-salwa": {
+      name: "Retaj Salwa Resort & Spa",
+      call_number: "+97444298888",
       whatsapp_number: "97455883421",
-      whatsapp_msg: "Hello Just Relax Spa West Bay! I would like to book an appointment.",
-      address: "Tower 1, Diplomatic District, West Bay, Doha, Qatar",
-      map_link: "https://maps.google.com/?q=West+Bay+Diplomatic+Area+Doha+Qatar",
-      lat: 25.3216,
-      lng: 51.5312,
+      whatsapp_msg: "Hello Just Relax Spa Retaj Salwa! I would like to book an appointment.",
+      address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
+      map_link: "https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac",
+      lat: 25.1686,
+      lng: 51.3158,
       opens: "10:00",
       closes: "03:00",
-      rating: "4.9",
+      rating: "4.95",
+      image: "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
+    },
+    "west-bay": {
+      name: "Retaj Salwa Resort & Spa",
+      call_number: "+97444298888",
+      whatsapp_number: "97455883421",
+      whatsapp_msg: "Hello Just Relax Spa Retaj Salwa! I would like to book an appointment.",
+      address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
+      map_link: "https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac",
+      lat: 25.1686,
+      lng: 51.3158,
+      opens: "10:00",
+      closes: "03:00",
+      rating: "4.95",
       image: "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
     },
   };
@@ -189,27 +259,31 @@ export default function AboutClient() {
               </Link>
             </div>
           </div>
-          <div className="page-hero-media">
+          <div className="page-hero-media" style={{ position: "relative" }}>
             <video
               autoPlay
-              muted
               loop
               playsInline
               preload="auto"
-              ref={(video) => {
-                if (video) {
-                  video.muted = true;
-                  video.defaultMuted = true;
-                  video.volume = 0;
-                }
-              }}
+              ref={aboutVideoRef}
               poster="/assets/just-relax/branches/west-bay/west-bay-hero.jpg"
               width="900"
               height="700"
               className="page-hero-video"
+              onClick={toggleAboutSound}
+              style={{ cursor: "pointer" }}
             >
               <source src="/assets/video/about-hero-vid.mp4" type="video/mp4" />
             </video>
+            <button
+              type="button"
+              onClick={toggleAboutSound}
+              className="about-sound-toggle"
+              aria-label={isAudioMuted ? "Unmute Video Sound" : "Mute Video Sound"}
+            >
+              <i className={`fa-solid ${isAudioMuted ? "fa-volume-xmark" : "fa-volume-high"}`} aria-hidden="true"></i>
+              <span>{isAudioMuted ? "Sound Off (Tap to Play)" : "Sound Playing"}</span>
+            </button>
             <div className="page-hero-video-badge">
               <i className="fa-solid fa-award" aria-hidden="true"></i>
               <span>Authentic Moroccan &amp; Hammam Sanctuary</span>
@@ -313,7 +387,7 @@ export default function AboutClient() {
           </article>
           <article>
             <h3>Two Doha Destinations</h3>
-            <p>Conveniently situated at Jouri Murwab Hotel (Old Salata) and the West Bay Diplomatic District.</p>
+            <p>Conveniently situated at Jouri Murwab Hotel (Old Salata) and Retaj Salwa Resort & Spa (Salwa Road).</p>
           </article>
         </section>
 
@@ -324,11 +398,11 @@ export default function AboutClient() {
           </div>
           <details>
             <summary>How do I book an appointment?</summary>
-            <p>Tap Book Now, select your preferred Doha branch (Jouri Murwab Hotel or West Bay), then message us directly on WhatsApp or Call our concierge.</p>
+            <p>Tap Book Now, select your preferred Doha branch (Jouri Murwab Hotel or Retaj Salwa Resort), then message us directly on WhatsApp or Call our concierge.</p>
           </details>
           <details>
             <summary>Which branch is closest to me?</summary>
-            <p>Use the "Find closest branch" button in our booking dialog to see distance in real time. We are located at Jouri Murwab Hotel and West Bay.</p>
+            <p>Use the "Find closest branch" button in our booking dialog to see distance in real time. We are located at Jouri Murwab Hotel and Retaj Salwa Resort & Spa.</p>
           </details>
           <details>
             <summary>When should I arrive?</summary>
@@ -348,7 +422,7 @@ export default function AboutClient() {
           </details>
           <details>
             <summary>Is there a daily Golden Hours offer?</summary>
-            <p>Yes — enjoy our Golden Hours Privilege with 25% off all rituals every day between 11:00 AM and 5:00 PM at both Jouri Murwab Hotel and West Bay branches.</p>
+            <p>Yes — enjoy our Golden Hours Privilege with 25% off all rituals every day between 11:00 AM and 5:00 PM at both Jouri Murwab Hotel and Retaj Salwa Resort branches.</p>
           </details>
           <details>
             <summary>What are your opening hours?</summary>
@@ -405,7 +479,7 @@ export default function AboutClient() {
 
           <div className="footer-column">
             <h2>Doha Branches</h2>
-            <Link href="/our-branches#branch-west-bay">West Bay Diplomatic Suite</Link>
+            <Link href="/our-branches#branch-retaj-salwa">Retaj Salwa Resort &amp; Spa</Link>
             <Link href="/our-branches#branch-jouri-hotel">Jouri, a Murwab Hotel</Link>
           </div>
 
@@ -529,13 +603,13 @@ export default function AboutClient() {
                   alt="West Bay Diplomatic Suite"
                 />
                 <span className="booking-branch-body">
-                  <strong>West Bay Diplomatic Suite</strong>
+                  <strong>Retaj Salwa Resort &amp; Spa</strong>
                   <span className="booking-branch-meta">
                     <i className="fa-solid fa-star" aria-hidden="true"></i>4.9
                     <em className="booking-branch-open is-open">Open now</em>
                   </span>
                   <span className="booking-branch-address">
-                    Tower 1, Diplomatic District, West Bay, Doha
+                    Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha
                   </span>
                   {branchDistances["west-bay"] && <em>{branchDistances["west-bay"]}</em>}
                 </span>

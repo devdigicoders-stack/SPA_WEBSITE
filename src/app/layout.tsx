@@ -5,7 +5,7 @@ import { BookingProvider } from "@/context/BookingContext";
 export const metadata: Metadata = {
   title: "Just Relax Spa | Ultra-Luxury Men's Spa & Moroccan Hammam in Doha, Qatar",
   description:
-    "Experience Doha's premier sanctuary for gentlemen. Authentic Moroccan baths, deep tissue therapy, jacuzzi hydrotherapy, and private VIP suites across Jouri Murwab Hotel and West Bay Diplomatic Suite.",
+    "Experience Doha's premier sanctuary for gentlemen. Authentic Moroccan baths, deep tissue therapy, jacuzzi hydrotherapy, and private VIP suites across Jouri Murwab Hotel and Retaj Salwa Resort & Spa.",
   icons: {
     icon: [
       { url: "/assets/images/favicon.ico", sizes: "any" },

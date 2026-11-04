@@ -46,7 +46,7 @@ export default function FloatingCTAs() {
 
       {/* Google Maps Directions */}
       <a
-        href="https://maps.google.com/?q=West+Bay+Doha+Qatar"
+        href="https://maps.app.goo.gl/JbsB9BgUa1nxUPYeA?g_st=ac"
         target="_blank"
         rel="noopener noreferrer"
         className="group flex items-center gap-2 px-3 py-2  l bg-[#161410] hover:bg-[#201d16] border border-[#2c2923] text-[#dedbd4] hover:text-white font-medium text-xs shadow-md hover:scale-105 active:scale-95 transition-all duration-200"

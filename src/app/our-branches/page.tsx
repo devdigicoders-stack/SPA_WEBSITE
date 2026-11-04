@@ -51,7 +51,7 @@ export default function OurBranchesPage() {
       instagramHandle: "@justrelaxspa.qa",
       mapIframe:
         "https://maps.google.com/maps?q=Jouri+a+Murwab+Hotel+Doha&t=&z=15&ie=UTF8&iwloc=&output=embed",
-      mapLink: "https://maps.google.com/?q=Jouri+a+Murwab+Hotel+Doha",
+      mapLink: "https://maps.app.goo.gl/JbsB9BgUa1nxUPYeA?g_st=ac",
       lat: 25.2892,
       lng: 51.5434,
       landmarks: [
@@ -71,29 +71,29 @@ export default function OurBranchesPage() {
     },
     {
       id: 2,
-      slug: "west-bay",
-      name: "West Bay Diplomatic Suite",
+      slug: "retaj-salwa",
+      name: "Retaj Salwa Resort & Spa",
       rating: "4.95",
       description:
-        "Positioned in the prestigious diplomatic and financial quarter of Doha, West Bay provides gentlemen and executives an elite, confidential wellness haven. Private soundproof VIP suites, authentic Moroccan Beldi bath chambers, and late-night appointments.",
-      address: "Tower 1, Diplomatic District, West Bay, Doha, Qatar",
+        "Nestled within the 5-star Retaj Salwa Resort & Spa on Salwa Road, Abu Nakhlah, this peaceful sanctuary provides gentlemen and executives an elite wellness retreat. Private soundproof VIP suites, authentic Moroccan Beldi bath chambers, hydrotherapy, and late-night appointments.",
+      address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
       hours: "Daily 10:00 AM – 3:00 AM",
-      phone: "+974 4492 8888",
+      phone: "+974 4429 8888",
       whatsappNumber: "97455883421",
       whatsappMsg:
-        "Hello Just Relax Spa West Bay! I would like to book a private suite appointment.",
+        "Hello Just Relax Spa Retaj Salwa! I would like to book a private suite appointment.",
       instagram: "https://www.instagram.com/justrelaxspa.qa",
       instagramHandle: "@justrelaxspa.qa",
       mapIframe:
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14424.484218318285!2d51.523098544555664!3d25.322830800000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c531d0411a75%3A0x6b093f48651c6b12!2sWest%20Bay%2C%20Doha%2C%20Qatar!5e0!3m2!1sen!2sqa!4v1700000000000!5m2!1sen!2sqa",
-      mapLink: "https://maps.google.com/?q=West+Bay+Doha+Qatar",
-      lat: 25.3216,
-      lng: 51.5312,
+        "https://maps.google.com/maps?q=Retaj+Salwa+Resort+%26+Spa+Doha&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      mapLink: "https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac",
+      lat: 25.1686,
+      lng: 51.3158,
       landmarks: [
-        { name: "Doha Corniche Promenade", mins: 3 },
-        { name: "DECC Metro Station", mins: 4 },
-        { name: "City Center Doha", mins: 5 },
-        { name: "Souq Waqif", mins: 10 },
+        { name: "Salwa Road (Exit 29 / 31)", mins: 1 },
+        { name: "Abu Nakhlah Oasis", mins: 3 },
+        { name: "Villaggio Mall & Aspire Zone", mins: 15 },
+        { name: "Hamad International Airport", mins: 25 },
       ],
       gallery: [
         "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
@@ -254,7 +254,7 @@ export default function OurBranchesPage() {
               <h1>A sanctuary of distinction at every branch</h1>
               <p>
                 Compare locations, distance, facilities, and real interior
-                photography across Jouri Murwab Hotel and West Bay, then choose the destination that fits your day.
+                photography across Jouri Murwab Hotel and Retaj Salwa Resort & Spa, then choose the destination that fits your day.
               </p>
               <button
                 className="button"
@@ -515,7 +515,7 @@ export default function OurBranchesPage() {
                 rel="noopener noreferrer"
                 aria-label="West Bay WhatsApp Concierge"
               >
-                <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>West Bay: +974 5588 3421
+                <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>Retaj Salwa: +974 5588 3421
               </a>
 
             </div>
@@ -539,8 +539,8 @@ export default function OurBranchesPage() {
             <Link href="/our-branches/jouri-hotel?lang=en">
               Jouri, a Murwab Hotel (Old Salata)
             </Link>
-            <Link href="/our-branches/west-bay?lang=en">
-              West Bay Diplomatic Suite
+            <Link href="/our-branches/retaj-salwa?lang=en">
+              Retaj Salwa Resort &amp; Spa
             </Link>
           </div>
 

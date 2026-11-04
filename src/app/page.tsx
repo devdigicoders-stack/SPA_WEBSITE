@@ -8,8 +8,6 @@ export default function HomePage() {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [navOpen, setNavOpen] = useState(false);
   const [bookingStep, setBookingStep] = useState<"branches" | "actions">("branches");
-  const heroVideoRef = useRef<HTMLVideoElement | null>(null);
-  const [isVideoMuted, setIsVideoMuted] = useState(false);
   const [selectedBranchSlug, setSelectedBranchSlug] = useState<string>("west-bay");
   const [bookingContext, setBookingContext] = useState<{ icon: string; text: string } | null>(null);
   const [branchDistances, setBranchDistances] = useState<Record<string, string>>({});
@@ -38,22 +36,35 @@ export default function HomePage() {
       whatsapp_number: "97455883421",
       whatsapp_msg: "Hello Just Relax Spa at Jouri Murwab Hotel! I would like to book a treatment.",
       address: "Al Muthaf Street, Street 137, Building 31, Zone 18, Old Salata, Doha",
-      map_link: "https://maps.google.com/?q=Jouri+a+Murwab+Hotel+Doha",
+      map_link: "https://maps.app.goo.gl/JbsB9BgUa1nxUPYeA?g_st=ac",
       lat: 25.2892,
       lng: 51.5434,
       opens: "10:00",
       closes: "03:00",
       rating: "4.96",
     },
-    "west-bay": {
-      name: "West Bay Diplomatic Suite",
-      call_number: "+97444928888",
+    "retaj-salwa": {
+      name: "Retaj Salwa Resort & Spa",
+      call_number: "+97444298888",
       whatsapp_number: "97455883421",
-      whatsapp_msg: "Hello Just Relax Spa West Bay! I would like to book a private suite appointment.",
-      address: "Tower 1, Diplomatic District, West Bay, Doha, Qatar",
-      map_link: "https://maps.google.com/?q=West+Bay+Doha+Qatar",
-      lat: 25.3216,
-      lng: 51.5312,
+      whatsapp_msg: "Hello Just Relax Spa Retaj Salwa! I would like to book a private suite appointment.",
+      address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
+      map_link: "https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac",
+      lat: 25.1686,
+      lng: 51.3158,
+      opens: "10:00",
+      closes: "03:00",
+      rating: "4.95",
+    },
+    "west-bay": {
+      name: "Retaj Salwa Resort & Spa",
+      call_number: "+97444298888",
+      whatsapp_number: "97455883421",
+      whatsapp_msg: "Hello Just Relax Spa Retaj Salwa! I would like to book a private suite appointment.",
+      address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
+      map_link: "https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac",
+      lat: 25.1686,
+      lng: 51.3158,
       opens: "10:00",
       closes: "03:00",
       rating: "4.95",
@@ -65,7 +76,7 @@ export default function HomePage() {
       whatsapp_number: "97455883421",
       whatsapp_msg: "Hello Just Relax Spa West Bay! I would like to book an appointment.",
       address: "Tower 1, Diplomatic District, West Bay, Doha, Qatar",
-      map_link: "https://maps.google.com/?q=West+Bay+Doha+Qatar",
+      map_link: "https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac",
       lat: 25.3216,
       lng: 51.5312,
       opens: "10:00",
@@ -78,7 +89,7 @@ export default function HomePage() {
       whatsapp_number: "97455883421",
       whatsapp_msg: "Hello Just Relax Spa at Jouri Murwab Hotel! I would like to book an appointment.",
       address: "Al Muthaf Street, Street 137, Building 31, Zone 18, Old Salata, Doha",
-      map_link: "https://maps.google.com/?q=Jouri+a+Murwab+Hotel+Doha",
+      map_link: "https://maps.app.goo.gl/JbsB9BgUa1nxUPYeA?g_st=ac",
       lat: 25.2892,
       lng: 51.5434,
       opens: "10:00",
@@ -107,55 +118,7 @@ export default function HomePage() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const video = heroVideoRef.current;
-    if (!video) return;
 
-    video.volume = 0.75;
-    video.muted = false;
-
-    const playPromise = video.play();
-    if (playPromise !== undefined) {
-      playPromise.catch(() => {
-        // Browser autoplay restricted sound; play muted until user gesture
-        video.muted = true;
-        setIsVideoMuted(true);
-        video.play().catch(() => {});
-      });
-    }
-
-    const handleFirstGesture = () => {
-      if (heroVideoRef.current) {
-        heroVideoRef.current.muted = false;
-        heroVideoRef.current.volume = 0.75;
-        setIsVideoMuted(false);
-      }
-      window.removeEventListener("click", handleFirstGesture);
-      window.removeEventListener("touchstart", handleFirstGesture);
-    };
-
-    window.addEventListener("click", handleFirstGesture, { once: true });
-    window.addEventListener("touchstart", handleFirstGesture, { once: true });
-
-    return () => {
-      window.removeEventListener("click", handleFirstGesture);
-      window.removeEventListener("touchstart", handleFirstGesture);
-    };
-  }, []);
-
-  const toggleSound = () => {
-    const video = heroVideoRef.current;
-    if (!video) return;
-    if (video.muted) {
-      video.muted = false;
-      video.volume = 0.75;
-      setIsVideoMuted(false);
-      video.play().catch(() => {});
-    } else {
-      video.muted = true;
-      setIsVideoMuted(true);
-    }
-  };
 
   const openModal = (preferredAction?: string, preselectBranch?: string) => {
     if (preselectBranch && branchData[preselectBranch]) {
@@ -200,7 +163,7 @@ export default function HomePage() {
         let closestSlug = "west-bay";
         let minD = Infinity;
 
-        ["jouri-hotel", "west-bay"].forEach((slug) => {
+        ["jouri-hotel", "retaj-salwa"].forEach((slug) => {
           const data = branchData[slug];
           const d = Math.hypot(latitude - data.lat, longitude - data.lng) * 111;
           distances[slug] = `${d.toFixed(1)} km away`;
@@ -276,10 +239,10 @@ export default function HomePage() {
         <section className="hero">
           <video
             autoPlay
+            muted
             loop
             playsInline
             preload="auto"
-            ref={heroVideoRef}
             poster="/assets/video/hero-poster.jpg"
             width="1920"
             height="1080"
@@ -290,22 +253,13 @@ export default function HomePage() {
           </video>
           <div className="hero-scrim"></div>
 
-          <button
-            type="button"
-            className="hero-sound-toggle"
-            onClick={toggleSound}
-            aria-label={isVideoMuted ? "Unmute hero video sound" : "Mute hero video sound"}
-            title={isVideoMuted ? "Click to play audio" : "Click to mute audio"}
-          >
-            <i className={`fa-solid ${isVideoMuted ? "fa-volume-xmark" : "fa-volume-high"}`} aria-hidden="true"></i>
-            <span>{isVideoMuted ? "Sound Off" : "Sound On"}</span>
-          </button>
+
 
           <div className="hero-content">
             <p className="kicker">Ultra-Luxury Men&apos;s Sanctuary &amp; Hammam</p>
             <h1>Authentic Moroccan Baths &amp; Therapeutic Massage in Doha</h1>
             <p>
-              Private VIP suites across Jouri Murwab Hotel and West Bay Diplomatic District. Certified master therapists, heated marble hammam, and bespoke executive wellness.
+              Private VIP suites across Jouri Murwab Hotel and Retaj Salwa Resort & Spa. Certified master therapists, heated marble hammam, and bespoke executive wellness.
             </p>
             <div className="hero-actions">
               <button className="button" type="button" onClick={() => openModal()}>
@@ -407,7 +361,7 @@ export default function HomePage() {
               <i className="fa-solid fa-building" aria-hidden="true"></i>
               <h3>Prestigious Doha Locations</h3>
               <p>
-                Located at Jouri Murwab Hotel (Old Salata) and the West Bay Diplomatic District, offering convenient access with complimentary valet parking.
+                Located at Jouri Murwab Hotel (Old Salata) and Retaj Salwa Resort & Spa (Salwa Road), offering convenient access with complimentary resort & hotel valet parking.
               </p>
             </article>
 
@@ -439,8 +393,8 @@ export default function HomePage() {
               <article>
                 <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
                 <div>
-                  <strong>3</strong>
-                  <span>Doha Branches</span>
+                  <strong>2</strong>
+                  <span>Doha Sanctuaries</span>
                 </div>
               </article>
               <article>
@@ -473,7 +427,7 @@ export default function HomePage() {
           <div className="section-heading">
             <p className="kicker">Sanctuary Locations</p>
             <h2>Two Premier Doha Sanctuaries</h2>
-            <p>Flagship 4-star hotel wellness at Jouri Murwab Hotel, plus private executive suites in the West Bay Diplomatic District.</p>
+            <p>Flagship 4-star hotel wellness at Jouri Murwab Hotel, plus luxury private suites at Retaj Salwa Resort & Spa.</p>
           </div>
           <div className="branch-grid">
             {/* Jouri Hotel Branch (Flagship) */}
@@ -490,7 +444,7 @@ export default function HomePage() {
                 <span className="rating-row">
                   <a
                     className="rating"
-                    href="https://maps.google.com/?q=Jouri+a+Murwab+Hotel+Doha"
+                    href="https://maps.app.goo.gl/JbsB9BgUa1nxUPYeA?g_st=ac"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -515,7 +469,7 @@ export default function HomePage() {
               </div>
             </article>
 
-            {/* West Bay Branch */}
+            {/* Retaj Salwa Branch */}
             <article className="branch-card">
               <img
                 src="/assets/just-relax/branches/west-bay/west-bay-hero.jpg"
@@ -523,13 +477,13 @@ export default function HomePage() {
                 height="600"
                 loading="lazy"
                 decoding="async"
-                alt="West Bay Diplomatic Suite — Just Relax Spa Doha"
+                alt="Retaj Salwa Resort & Spa — Just Relax Spa Doha"
               />
               <div>
                 <span className="rating-row">
                   <a
                     className="rating"
-                    href="https://maps.google.com/?q=West+Bay+Doha+Qatar"
+                    href="https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -539,15 +493,15 @@ export default function HomePage() {
                     Open now
                   </span>
                 </span>
-                <h3>West Bay Diplomatic Suite</h3>
-                <p>Tower 1, Diplomatic District, West Bay, Doha, Qatar</p>
+                <h3>Retaj Salwa Resort &amp; Spa</h3>
+                <p>Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar</p>
                 <p className="branch-card-hours">
-                  <i className="fa-regular fa-clock" aria-hidden="true"></i>Daily 10:00 AM – 3:00 AM
+                  <i className="fa-regular fa-clock" aria-hidden="true"></i>Daily 10:00 AM – 3:00 AM · Tel: +974 4429 8888
                 </p>
                 <button
                   className="button button-small"
                   type="button"
-                  onClick={() => openModal(undefined, "west-bay")}
+                  onClick={() => openModal(undefined, "retaj-salwa")}
                 >
                   Book This Branch
                 </button>
@@ -603,7 +557,7 @@ export default function HomePage() {
 
               <div className="price-list-sheet-footer">
                 <span><i className="fa-solid fa-award"></i> Licensed MOCI CR No. 184920</span>
-                <span><i className="fa-solid fa-hotel"></i> Available at Jouri Murwab Hotel &amp; West Bay Diplomatic Suite</span>
+                <span><i className="fa-solid fa-hotel"></i> Available at Jouri Murwab Hotel &amp; Retaj Salwa Resort &amp; Spa</span>
                 <span><i className="fa-brands fa-whatsapp"></i> Instant WhatsApp VIP Confirmation</span>
               </div>
             </div>
@@ -809,7 +763,7 @@ export default function HomePage() {
               />
               <div className="sanctuary-badge-top">
                 <i className="fa-solid fa-gem" aria-hidden="true"></i>
-                <span>Jouri Murwab Hotel &amp; West Bay</span>
+                <span>Jouri Murwab Hotel &amp; Retaj Salwa</span>
               </div>
               <div className="sanctuary-badge-bottom">
                 <i className="fa-solid fa-shield-halved" aria-hidden="true"></i>
@@ -821,7 +775,7 @@ export default function HomePage() {
               <p className="kicker">Doha Gentlemen&apos;s Sanctuary</p>
               <h2>Men&apos;s Wellness Sanctuary Across Two Key Doha Destinations</h2>
               <p>
-                Just Relax Spa is a premier licensed men&apos;s sanctuary in Doha with branches at Jouri Murwab Hotel (Old Salata) and the West Bay Diplomatic District — each featuring soundproof private treatment rooms. Searching for a private men&apos;s massage in Doha? Guests can book directly via WhatsApp or phone with immediate VIP confirmation.
+                Just Relax Spa is a premier licensed men&apos;s sanctuary in Doha with branches at Jouri Murwab Hotel (Old Salata) and Retaj Salwa Resort & Spa (Salwa Road) — each featuring soundproof private treatment rooms. Searching for a private men&apos;s massage in Doha? Guests can book directly via WhatsApp or phone with immediate VIP confirmation.
               </p>
               <p>
                 Our treatments include authentic Royal Moroccan Baths, heated marble Turkish Hammams, Swedish, deep tissue and sports recovery massage, hot volcanic stones, virgin Argan oil therapies, and hydrotherapy. Every ritual is conducted in 100% privacy with single-use sterile amenities.
@@ -906,7 +860,7 @@ export default function HomePage() {
               />
             </Link>
             <p>
-              Just Relax Spa is an elite men&apos;s wellness sanctuary in Doha, Qatar, delivering authentic Moroccan baths, Turkish hammams, and therapeutic recovery massages across Jouri Murwab Hotel and West Bay.
+              Just Relax Spa is an elite men&apos;s wellness sanctuary in Doha, Qatar, delivering authentic Moroccan baths, Turkish hammams, and therapeutic recovery massages across Jouri Murwab Hotel and Retaj Salwa Resort & Spa.
             </p>
             <p className="footer-license">
               Licensed by Ministry of Commerce &amp; Industry (MOCI Qatar) · CR No. 184920
@@ -918,7 +872,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 aria-label="West Bay Branch WhatsApp"
               >
-                <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>West Bay
+                <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>Retaj Salwa
               </a>
 
             </div>
@@ -927,7 +881,7 @@ export default function HomePage() {
           <div className="footer-column">
             <h2>Doha Branches</h2>
             <Link href="/our-branches/jouri-hotel">Jouri, a Murwab Hotel (Old Salata)</Link>
-            <Link href="/our-branches/west-bay">West Bay Diplomatic Suite</Link>
+            <Link href="/our-branches/retaj-salwa">Retaj Salwa Resort &amp; Spa (Salwa Rd)</Link>
           </div>
 
           <div className="footer-column">
@@ -1024,7 +978,7 @@ export default function HomePage() {
               </h2>
               <p className="booking-sub">Select your preferred sanctuary in Doha</p>
               <div className="booking-branches-list">
-                {["jouri-hotel", "west-bay"].map((slug) => {
+                {["jouri-hotel", "retaj-salwa"].map((slug) => {
                   const b = branchData[slug];
                   return (
                     <button

@@ -110,18 +110,22 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
     mapIframe: "https://maps.google.com/maps?q=Jouri+a+Murwab+Hotel+Doha&t=&z=15&ie=UTF8&iwloc=&output=embed",
   },
   {
-    slug: "west-bay",
-    name: "West Bay Diplomatic Suite",
-    h1: "Men's Luxury Spa & Moroccan Hammam in West Bay, Doha",
-    district: "Diplomatic District, West Bay, Doha",
+    slug: "retaj-salwa",
+    name: "Retaj Salwa Resort & Spa",
+    h1: "Men's Luxury Spa & Moroccan Hammam at Retaj Salwa Resort Doha",
+    district: "Salwa Road, Abu Nakhlah, Doha",
     rating: "★ 4.95 on Google",
     hours: "Daily 10:00 AM – 3:00 AM",
-    address: "Tower 1, Diplomatic District, West Bay, Doha, Qatar",
+    address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
     heroImg: "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
-    phone: "+974 4492 8888",
+    phone: "+974 4429 8888",
     whatsappNumber: "97455883421",
     instagram: "@justrelaxspa.qa",
     amenities: [
+      {
+        icon: "fa-solid fa-hotel",
+        label: "Located in 5-Star Retaj Salwa Resort",
+      },
       {
         icon: "fa-solid fa-door-closed",
         label: "Private Soundproof VIP Suites",
@@ -140,7 +144,7 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
       },
       {
         icon: "fa-solid fa-square-parking",
-        label: "Complimentary VIP Valet Parking",
+        label: "Complimentary Resort Valet Parking",
       },
       {
         icon: "fa-solid fa-moon",
@@ -158,37 +162,61 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
     reviews: [
       {
         stars: "★★★★★",
-        text: "The most distinguished men's spa in Doha. The Moroccan bath with master Karim is truly royal and unmatched for recovery.",
+        text: "The most distinguished men's spa in Doha. The Moroccan bath with master Karim inside Retaj Salwa Resort is truly royal and unmatched for recovery.",
         author: "Sheikh Nasser Al-Thani",
       },
       {
         stars: "★★★★★",
-        text: "Exceptional privacy, spotless suites, and certified master therapists. Best deep tissue massage in West Bay.",
+        text: "Exceptional privacy, spotless suites, and certified master therapists. Best deep tissue massage at Retaj Salwa.",
         author: "Mansoor Al-Kuwari",
       },
       {
         stars: "★★★★★",
-        text: "Very professional reception, valet service at the door, and authentic Moroccan mint tea. 10/10 gentlemen experience.",
+        text: "Very professional reception, valet service at the resort door, and authentic Moroccan mint tea. 10/10 gentlemen experience.",
         author: "Fahad Al-Sulaiti",
       },
       {
         stars: "★★★★★",
-        text: "The soundproofing in the VIP suites is remarkable. You forget you are in the center of the financial district.",
+        text: "The peaceful resort setting and soundproofing in the VIP suites is remarkable. Perfect escape from city rush.",
         author: "Dr. Hamad Al-Marri",
       },
     ],
     areaCopy: [
-      "Positioned in Doha's prestigious diplomatic and financial quarter, our West Bay branch provides dignitaries, executives, and gentlemen an elite, confidential wellness sanctuary.",
+      "Nestled within the peaceful luxury of Retaj Salwa Resort & Spa on Salwa Road, our branch provides dignitaries, executives, and gentlemen an elite, confidential wellness sanctuary.",
       "Every suite is completely private with en-suite showers, acoustic soundproofing, and dedicated Hammam chambers. Open daily until 3:00 AM for late-evening post-business recovery.",
     ],
     landmarks: [
-      "Doha Corniche Promenade · 3 min",
-      "DECC Metro Station · 4 min",
-      "City Center Doha · 5 min",
-      "Souq Waqif · 10 min",
+      "Salwa Road Abu Nakhlah (Exit 29 / 31)",
+      "Direct resort valet at Retaj Salwa entrance",
+      "15 minutes from Villaggio Mall & Aspire Zone",
+      "25 minutes from Hamad International Airport",
     ],
     mapIframe:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14424.484218318285!2d51.523098544555664!3d25.322830800000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c531d0411a75%3A0x6b093f48651c6b12!2sWest%20Bay%2C%20Doha%2C%20Qatar!5e0!3m2!1sen!2sqa!4v1700000000000!5m2!1sen!2sqa",
+      "https://maps.google.com/maps?q=Retaj+Salwa+Resort+%26+Spa+Doha&t=&z=15&ie=UTF8&iwloc=&output=embed",
+  },
+  // Legacy alias west-bay preserved
+  {
+    slug: "west-bay",
+    name: "Retaj Salwa Resort & Spa",
+    h1: "Men's Luxury Spa & Moroccan Hammam at Retaj Salwa Resort Doha",
+    district: "Salwa Road, Abu Nakhlah, Doha",
+    rating: "★ 4.95 on Google",
+    hours: "Daily 10:00 AM – 3:00 AM",
+    address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
+    heroImg: "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
+    phone: "+974 4429 8888",
+    whatsappNumber: "97455883421",
+    instagram: "@justrelaxspa.qa",
+    amenities: [],
+    photos: [
+      "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
+      "/assets/just-relax/branches/west-bay/west-bay-massage-suite.jpg",
+    ],
+    reviews: [],
+    areaCopy: ["Located at 5-star Retaj Salwa Resort & Spa on Salwa Road."],
+    landmarks: ["Salwa Road Exit 29 / 31"],
+    mapIframe:
+      "https://maps.google.com/maps?q=Retaj+Salwa+Resort+%26+Spa+Doha&t=&z=15&ie=UTF8&iwloc=&output=embed",
   },
 
   // Legacy aliases mapped gracefully

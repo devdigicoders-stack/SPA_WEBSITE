@@ -90,7 +90,7 @@ export default function AdvertisementPolicyPage() {
             <h2>Reviews</h2>
             <p>
               Reviews are displayed from genuine guest feedback. Review text and guest names reflect authentic experiences
-              at our Jouri Murwab Hotel and West Bay locations.
+              at our Jouri Murwab Hotel and Retaj Salwa Resort locations.
             </p>
           </section>
 

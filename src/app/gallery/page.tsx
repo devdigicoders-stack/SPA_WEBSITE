@@ -35,13 +35,22 @@ export default function GalleryPage() {
       image: string;
     }
   > = {
-    "west-bay": {
-      name: "West Bay Diplomatic Suite",
-      call_number: "+97444928888",
+    "retaj-salwa": {
+      name: "Retaj Salwa Resort & Spa",
+      call_number: "+97444298888",
       whatsapp_number: "97455883421",
-      whatsapp_msg: "Hello Just Relax Spa West Bay! I would like to book a suite appointment.",
-      address: "Tower 1, Diplomatic District, West Bay, Doha, Qatar",
-      map_link: "https://maps.google.com/?q=West+Bay+Diplomatic+Area+Doha+Qatar",
+      whatsapp_msg: "Hello Just Relax Spa Retaj Salwa! I would like to book a suite appointment.",
+      address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
+      map_link: "https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac",
+      image: "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
+    },
+    "west-bay": {
+      name: "Retaj Salwa Resort & Spa",
+      call_number: "+97444298888",
+      whatsapp_number: "97455883421",
+      whatsapp_msg: "Hello Just Relax Spa Retaj Salwa! I would like to book a suite appointment.",
+      address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
+      map_link: "https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac",
       image: "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
     },
     "jouri-hotel": {
@@ -50,7 +59,7 @@ export default function GalleryPage() {
       whatsapp_number: "97455883421",
       whatsapp_msg: "Hello Just Relax Spa at Jouri Murwab Hotel! I would like to book a suite appointment.",
       address: "Al Muthaf St, Street 137, Building 31, Zone 18, Old Salata, Doha",
-      map_link: "https://maps.google.com/?q=Jouri+a+Murwab+Hotel+Doha",
+      map_link: "https://maps.app.goo.gl/JbsB9BgUa1nxUPYeA?g_st=ac",
       image: "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
     },
   };
