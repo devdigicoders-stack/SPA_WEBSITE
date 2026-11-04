@@ -150,38 +150,6 @@ export default function OurBranchesPage() {
     setBookingStep("actions");
   };
 
-  const handleLocateClosest = () => {
-    if (!navigator.geolocation) return;
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const { latitude, longitude } = pos.coords;
-        const distances: Record<string, string> = {};
-        let closest = "west-bay";
-        let minD = Infinity;
-
-        branches.forEach((b) => {
-          const d = Math.hypot(latitude - b.lat, longitude - b.lng) * 111;
-          distances[b.slug] = `${d.toFixed(1)} km away`;
-          if (d < minD) {
-            minD = d;
-            closest = b.slug;
-          }
-        });
-
-        setBranchDistances(distances);
-        setClosestBranchSlug(closest);
-
-        // Scroll to the closest branch
-        const el = document.getElementById(`branch-${closest}`);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
-        }
-      },
-      (err) => {
-        console.warn("Geolocation permission error:", err);
-      }
-    );
-  };
 
   const currentBranch =
     branches.find((b) => b.slug === selectedBranchSlug) || branches[0];
@@ -256,13 +224,7 @@ export default function OurBranchesPage() {
                 Compare locations, distance, facilities, and real interior
                 photography across Jouri Murwab Hotel and Retaj Salwa Resort & Spa, then choose the destination that fits your day.
               </p>
-              <button
-                className="button"
-                type="button"
-                onClick={handleLocateClosest}
-              >
-                Show Closest First
-              </button>
+              <a className="button" href="#branch-jouri-hotel">Explore Branches</a>
             </div>
 
             <div
@@ -632,17 +594,7 @@ export default function OurBranchesPage() {
               </p>
             )}
 
-            <button
-              className="location-button"
-              type="button"
-              onClick={handleLocateClosest}
-            >
-              <i
-                className="fa-solid fa-location-crosshairs"
-                aria-hidden="true"
-              ></i>
-              Find closest branch
-            </button>
+            
 
             <div className="booking-branches">
               {branches.map((b) => (

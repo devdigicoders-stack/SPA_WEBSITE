@@ -162,32 +162,6 @@ export default function AboutClient() {
     setBookingStep("actions");
   };
 
-  const handleLocateClosest = () => {
-    if (!navigator.geolocation) return;
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const { latitude, longitude } = pos.coords;
-        const distances: Record<string, string> = {};
-        let closestSlug = "west-bay";
-        let minD = Infinity;
-
-        Object.entries(branchData).forEach(([slug, data]) => {
-          const d = Math.hypot(latitude - data.lat, longitude - data.lng) * 111;
-          distances[slug] = `${d.toFixed(1)} km away`;
-          if (d < minD) {
-            minD = d;
-            closestSlug = slug;
-          }
-        });
-
-        setBranchDistances(distances);
-        setSelectedBranchSlug(closestSlug);
-      },
-      (err) => {
-        console.warn("Geolocation permission denied:", err);
-      }
-    );
-  };
 
   const currentBranch = branchData[selectedBranchSlug] || branchData["west-bay"];
 
@@ -555,9 +529,7 @@ export default function AboutClient() {
               </p>
             )}
 
-            <button className="location-button" type="button" onClick={handleLocateClosest}>
-              <i className="fa-solid fa-location-crosshairs" aria-hidden="true"></i>Find closest branch
-            </button>
+            
 
             <div className="booking-branches">
               {/* Jouri Hotel */}

@@ -154,34 +154,6 @@ export default function HomePage() {
     setBookingStep("actions");
   };
 
-  const handleLocateClosest = () => {
-    if (typeof window === "undefined" || !navigator.geolocation) return;
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const { latitude, longitude } = pos.coords;
-        const distances: Record<string, string> = {};
-        let closestSlug = "west-bay";
-        let minD = Infinity;
-
-        ["jouri-hotel", "retaj-salwa"].forEach((slug) => {
-          const data = branchData[slug];
-          const d = Math.hypot(latitude - data.lat, longitude - data.lng) * 111;
-          distances[slug] = `${d.toFixed(1)} km away`;
-          if (d < minD) {
-            minD = d;
-            closestSlug = slug;
-          }
-        });
-
-        setBranchDistances(distances);
-        setClosestBranchSlug(closestSlug);
-        setSelectedBranchSlug(closestSlug);
-      },
-      (err) => {
-        console.warn("Geolocation permission denied:", err);
-      }
-    );
-  };
 
   const currentBranch = branchData[selectedBranchSlug] || branchData["west-bay"];
 

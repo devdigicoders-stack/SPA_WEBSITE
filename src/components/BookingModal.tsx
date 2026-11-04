@@ -40,34 +40,6 @@ export default function BookingModal() {
   const currentBranchObj = BRANCHES.find((b) => b.id === selectedBranch) || BRANCHES[0];
   const currentTreatmentObj = TREATMENTS.find((t) => t.id === selectedTreatment) || TREATMENTS[0];
 
-  const handleLocateClosest = () => {
-    if (!navigator.geolocation) {
-      setClosestNotice("Location access is not supported by your browser.");
-      return;
-    }
-    setClosestNotice("Calculating proximity in Doha...");
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const { latitude, longitude } = pos.coords;
-        // Proximity calculation across our Doha branches
-        const branch0 = BRANCHES[0];
-        const branch1 = BRANCHES[1];
-        const dist0 = Math.hypot(latitude - branch0.coordinates.lat, longitude - branch0.coordinates.lng);
-        const dist1 = branch1 ? Math.hypot(latitude - branch1.coordinates.lat, longitude - branch1.coordinates.lng) : Infinity;
-
-        if (dist0 <= dist1) {
-          setSelectedBranch(branch0.id);
-          setClosestNotice(`Closest match: ${branch0.name} selected based on your location.`);
-        } else {
-          setSelectedBranch(branch1.id);
-          setClosestNotice(`Closest match: ${branch1.name} selected based on your location.`);
-        }
-      },
-      () => {
-        setClosestNotice("Could not access location. Showing both Doha locations below.");
-      }
-    );
-  };
 
   const handleWhatsAppBooking = () => {
     const message = `Hello Just Relax Spa Doha!%0A%0A*New VIP Reservation Request*%0A- *Branch:* ${currentBranchObj.name}%0A- *Treatment:* ${currentTreatmentObj.title}%0A- *Duration:* ${selectedDuration}%0A- *Date:* ${date}%0A- *Time:* ${time}%0A- *Guest Name:* ${guestName || "Gentleman Guest"}%0A- *Phone:* ${guestPhone || "Via WhatsApp"}%0A${notes ? `- *Notes:* ${encodeURIComponent(notes)}%0A` : ""}%0APlease confirm suite availability.`;
@@ -170,14 +142,7 @@ export default function BookingModal() {
                     <p className="text-sm text-[#dedbd4]">
                       Select which of our two premier Doha locations is most convenient:
                     </p>
-                    <button
-                      type="button"
-                      onClick={handleLocateClosest}
-                      className="text-xs text-[#c6a15b] hover:underline flex items-center gap-1"
-                    >
-                      <MapPin className="w-3.5 h-3.5" />
-                      <span>Find Closest</span>
-                    </button>
+                    
                   </div>
 
                   {closestNotice && (

@@ -188,52 +188,10 @@
         branchCards.forEach((card) => jumpObserver.observe(card));
     }
 
+    // Location sorting disabled - visitors can browse Doha branches directly
     const sortButton = document.querySelector('[data-sort-branches]');
     sortButton?.addEventListener('click', () => {
-        if (!navigator.geolocation) return;
-        navigator.geolocation.getCurrentPosition(({ coords }) => {
-            const toRad = (value) => value * Math.PI / 180;
-            const distance = (card) => {
-                const lat = Number(card.dataset.lat);
-                const lng = Number(card.dataset.lng);
-                const dLat = toRad(lat - coords.latitude);
-                const dLng = toRad(lng - coords.longitude);
-                const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(coords.latitude)) * Math.cos(toRad(lat)) * Math.sin(dLng / 2) ** 2;
-                return 6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            };
-            [...document.querySelectorAll('[data-branch-card]')].map((card) => ({ card, km: distance(card) })).sort((a, b) => a.km - b.km).forEach(({ card, km }, index) => {
-                const closest = index === 0;
-                card.classList.toggle('closest-branch', closest);
-                card.setAttribute('aria-label', closest ? 'Closest Laguna Global branch' : 'Laguna Global branch');
-                card.querySelector('[data-branch-distance]').textContent = `${km.toFixed(1)} km${closest ? ' · Closest' : ''}`;
-                const label = card.querySelector('[data-closest-label]');
-                if (label) label.hidden = !closest;
-                card.parentElement.append(card);
-            });
-            document.querySelector('[data-branch-card]')?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
-        }, () => {}, { timeout: 8000, maximumAge: 300000 });
-    });
-
-    dialog?.querySelector('[data-locate]')?.addEventListener('click', () => {
-        if (!navigator.geolocation) return;
-        navigator.geolocation.getCurrentPosition(({ coords }) => {
-            const toRad = (value) => value * Math.PI / 180;
-            const distance = (lat, lng) => {
-                const dLat = toRad(lat - coords.latitude);
-                const dLng = toRad(lng - coords.longitude);
-                const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(coords.latitude)) * Math.cos(toRad(lat)) * Math.sin(dLng / 2) ** 2;
-                return 6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            };
-            const cards = [...dialog.querySelectorAll('[data-branch]')].map((card) => ({ card, km: distance(Number(card.dataset.lat), Number(card.dataset.lng)) })).sort((a, b) => a.km - b.km);
-            cards.forEach(({ card, km }, index) => {
-                const closest = index === 0;
-                card.classList.toggle('recommended', closest);
-                card.classList.toggle('closest-choice', closest);
-                card.setAttribute('aria-label', closest ? 'Closest recommended branch' : 'Branch option');
-                card.querySelector('[data-distance]').textContent = `${km.toFixed(1)} km${closest ? ' · Closest' : ''}`;
-                card.parentElement.append(card);
-            });
-        }, () => {}, { timeout: 8000, maximumAge: 300000 });
+        document.querySelector('[data-branch-card]')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 })();
 

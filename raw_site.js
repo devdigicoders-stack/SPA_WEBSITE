@@ -190,8 +190,8 @@
 
     const sortButton = document.querySelector('[data-sort-branches]');
     sortButton?.addEventListener('click', () => {
-        if (!navigator.geolocation) return;
-        navigator.geolocation.getCurrentPosition(({ coords }) => {
+        if (!/* disabled */) return;
+        /* disabled */.getCurrentPosition(({ coords }) => {
             const toRad = (value) => value * Math.PI / 180;
             const distance = (card) => {
                 const lat = Number(card.dataset.lat);
@@ -215,8 +215,8 @@
     });
 
     dialog?.querySelector('[data-locate]')?.addEventListener('click', () => {
-        if (!navigator.geolocation) return;
-        navigator.geolocation.getCurrentPosition(({ coords }) => {
+        if (!/* disabled */) return;
+        /* disabled */.getCurrentPosition(({ coords }) => {
             const toRad = (value) => value * Math.PI / 180;
             const distance = (lat, lng) => {
                 const dLat = toRad(lat - coords.latitude);
