@@ -314,7 +314,7 @@ export default function TreatmentsPage() {
           <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
           <b>WhatsApp</b>
         </a>
-        <a href="tel:+97444928888" className="floating-cta floating-call" aria-label="Call Just Relax Spa">
+        <a href="tel:+97440041000" className="floating-cta floating-call" aria-label="Call Just Relax Spa">
           <i className="fa-solid fa-phone" aria-hidden="true"></i>
           <b>Call</b>
         </a>

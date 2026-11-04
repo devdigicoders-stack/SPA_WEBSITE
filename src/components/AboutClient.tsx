@@ -476,28 +476,31 @@ export default function AboutClient() {
 
       {/* FLOATING CTAs */}
       <aside className="floating-ctas" aria-label="Quick booking options">
-        <button
-          type="button"
+        <a
+          href="https://wa.me/97455883421"
           className="floating-cta floating-whatsapp"
-          onClick={() => openModal("whatsapp")}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat on WhatsApp"
         >
           <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
           <b>WhatsApp</b>
-        </button>
-        <button
-          type="button"
+        </a>
+        <a
+          href="tel:+97440041000"
           className="floating-cta floating-call"
-          onClick={() => openModal("call")}
+          aria-label="Call Just Relax Spa"
         >
           <i className="fa-solid fa-phone" aria-hidden="true"></i>
           <b>Call</b>
-        </button>
+        </a>
         <button
           type="button"
           className="floating-cta floating-book"
           onClick={() => openModal()}
+          aria-label="Book an appointment"
         >
-          <i className="fa-solid fa-calendar-check" aria-hidden="true"></i>
+          <i className="fa-regular fa-calendar-check" aria-hidden="true"></i>
           <b>Book</b>
         </button>
       </aside>
