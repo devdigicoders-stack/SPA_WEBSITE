@@ -22,17 +22,24 @@ export default function AboutClient() {
 
     const playPromise = video.play();
     if (playPromise !== undefined) {
-      playPromise.catch(() => {
-        // Fallback: autoplay with sound was restricted by browser prior to interaction
-        video.muted = true;
-        video.play().catch(() => {});
-      });
+      playPromise
+        .then(() => {
+          setIsAudioMuted(false);
+        })
+        .catch(() => {
+          // Autoplay with sound restricted prior to user gesture
+          video.muted = true;
+          setIsAudioMuted(true);
+          video.play().catch(() => {});
+        });
     }
 
     const unmuteOnUserAction = () => {
       if (aboutVideoRef.current) {
         aboutVideoRef.current.muted = false;
         aboutVideoRef.current.volume = 0.85;
+        setIsAudioMuted(false);
+        aboutVideoRef.current.play().catch(() => {});
       }
       window.removeEventListener("click", unmuteOnUserAction);
       window.removeEventListener("touchstart", unmuteOnUserAction);
@@ -40,16 +47,31 @@ export default function AboutClient() {
       window.removeEventListener("keydown", unmuteOnUserAction);
     };
 
-    window.addEventListener("click", unmuteOnUserAction, { once: true });
-    window.addEventListener("touchstart", unmuteOnUserAction, { once: true });
-    window.addEventListener("scroll", unmuteOnUserAction, { once: true });
-    window.addEventListener("keydown", unmuteOnUserAction, { once: true });
+    window.addEventListener("click", unmuteOnUserAction);
+    window.addEventListener("touchstart", unmuteOnUserAction);
+    window.addEventListener("scroll", unmuteOnUserAction, { passive: true });
+    window.addEventListener("keydown", unmuteOnUserAction);
+
+    // Pause when page unmounts or tab is hidden
+    const handleVisibility = () => {
+      if (document.hidden && aboutVideoRef.current) {
+        aboutVideoRef.current.pause();
+      } else if (!document.hidden && aboutVideoRef.current) {
+        aboutVideoRef.current.play().catch(() => {});
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
 
     return () => {
       window.removeEventListener("click", unmuteOnUserAction);
       window.removeEventListener("touchstart", unmuteOnUserAction);
       window.removeEventListener("scroll", unmuteOnUserAction);
       window.removeEventListener("keydown", unmuteOnUserAction);
+      document.removeEventListener("visibilitychange", handleVisibility);
+      if (video) {
+        video.pause();
+        video.muted = true;
+      }
     };
   }, []);
 
@@ -216,15 +238,39 @@ export default function AboutClient() {
 
       {/* MAIN CONTENT */}
       <main id="main">
-        {/* PAGE HERO */}
-        <section className="page-hero">
-          <div>
-            <p className="kicker">Our Story</p>
-            <h1>Thoughtful wellness, rooted in Doha</h1>
+        {/* ABOUT FULL HERO SECTION */}
+        <section className="hero about-hero">
+          <video
+            ref={aboutVideoRef}
+            autoPlay
+            loop
+            playsInline
+            preload="auto"
+            poster="/assets/video/hero-poster.jpg"
+            width="1920"
+            height="1080"
+          >
+            <source src="/assets/video/about-hero-vid.mp4" type="video/mp4" />
+          </video>
+          <div className="hero-scrim"></div>
+
+          <button
+            type="button"
+            onClick={toggleAboutSound}
+            className="hero-sound-toggle"
+            aria-label={isAudioMuted ? "Unmute Video Sound" : "Mute Video Sound"}
+          >
+            <i className={`fa-solid ${isAudioMuted ? "fa-volume-xmark" : "fa-volume-high"}`} aria-hidden="true"></i>
+            <span>{isAudioMuted ? "Sound Off (Tap to Play)" : "Sound Playing"}</span>
+          </button>
+
+          <div className="hero-content">
+            <p className="kicker">Our Story · Doha Sanctuary</p>
+            <h1>Thoughtful Wellness, Rooted in Doha</h1>
             <p>
               Just Relax Spa brings centuries-old Moroccan bath rituals, Turkish hammam traditions, and modern sports massage expertise together across premier Doha destinations.
             </p>
-            <div className="hero-actions" style={{ marginTop: "24px" }}>
+            <div className="hero-actions">
               <button className="button" type="button" onClick={() => openModal()}>
                 Book Your Ritual
               </button>
@@ -233,37 +279,26 @@ export default function AboutClient() {
               </Link>
             </div>
           </div>
-          <div className="page-hero-media" style={{ position: "relative" }}>
-            <video
-              autoPlay
-              loop
-              playsInline
-              preload="auto"
-              ref={aboutVideoRef}
-              poster="/assets/just-relax/branches/west-bay/west-bay-hero.jpg"
-              width="900"
-              height="700"
-              className="page-hero-video"
-              onClick={toggleAboutSound}
-              style={{ cursor: "pointer" }}
-            >
-              <source src="/assets/video/about-hero-vid.mp4" type="video/mp4" />
-            </video>
-            <button
-              type="button"
-              onClick={toggleAboutSound}
-              className="about-sound-toggle"
-              aria-label={isAudioMuted ? "Unmute Video Sound" : "Mute Video Sound"}
-            >
-              <i className={`fa-solid ${isAudioMuted ? "fa-volume-xmark" : "fa-volume-high"}`} aria-hidden="true"></i>
-              <span>{isAudioMuted ? "Sound Off (Tap to Play)" : "Sound Playing"}</span>
-            </button>
-            <div className="page-hero-video-badge">
-              <i className="fa-solid fa-award" aria-hidden="true"></i>
-              <span>Authentic Moroccan &amp; Hammam Sanctuary</span>
-            </div>
-          </div>
         </section>
+
+        {/* TRUST STRIP */}
+        <div className="trust-strip" aria-label="Why Just Relax Spa">
+          <span className="trust-badge">
+            <i className="fa-solid fa-award" aria-hidden="true"></i>Licensed by MOCI Qatar
+          </span>
+          <span className="trust-badge">
+            <i className="fa-solid fa-shield-halved" aria-hidden="true"></i>Commercial Reg. No. 184920
+          </span>
+          <span className="trust-badge">
+            <i className="fa-solid fa-door-closed" aria-hidden="true"></i>100% Private Soundproof Suites
+          </span>
+          <span className="trust-badge">
+            <i className="fa-regular fa-moon" aria-hidden="true"></i>Open Daily Until 3:00 AM
+          </span>
+          <span className="trust-badge">
+            <i className="fa-solid fa-location-dot" aria-hidden="true"></i>Two Premier Doha Destinations
+          </span>
+        </div>
 
         {/* PROSE SECTION */}
         <section className="prose-section">
@@ -475,30 +510,32 @@ export default function AboutClient() {
       </footer>
 
       {/* FLOATING CTAs */}
-      <aside className="floating-ctas" aria-label="Quick booking options">
+      <aside className="floating-ctas" aria-label="Quick contact actions">
         <a
           href="https://wa.me/97455883421"
           className="floating-cta floating-whatsapp"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
+          title="WhatsApp"
         >
           <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
-          <b>WhatsApp</b>
         </a>
         <a
           href="tel:+97440041000"
           className="floating-cta floating-call"
           aria-label="Call Just Relax Spa"
+          title="Call"
         >
           <i className="fa-solid fa-phone" aria-hidden="true"></i>
-          <b>Call</b>
         </a>
         <button
           type="button"
           className="floating-cta floating-book"
+          data-book
           onClick={() => openModal()}
           aria-label="Book an appointment"
+          title="Book Appointment"
         >
           <i className="fa-regular fa-calendar-check" aria-hidden="true"></i>
           <b>Book</b>

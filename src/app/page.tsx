@@ -13,6 +13,8 @@ export default function HomePage() {
   const [branchDistances, setBranchDistances] = useState<Record<string, string>>({});
   const [closestBranchSlug, setClosestBranchSlug] = useState<string | null>(null);
   const [offerTimerText, setOfferTimerText] = useState("Offer runs daily 11:00 AM – 5:00 PM");
+  const heroVideoRef = useRef<HTMLVideoElement | null>(null);
+  const [isHomeAudioMuted, setIsHomeAudioMuted] = useState(false);
 
   const branchData: Record<
     string,
@@ -118,6 +120,83 @@ export default function HomePage() {
     return () => clearInterval(interval);
   }, []);
 
+  // Home Hero Video Sound Playback
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+
+    video.volume = 0.85;
+    video.muted = false;
+
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setIsHomeAudioMuted(false);
+        })
+        .catch(() => {
+          // Browser autoplay policy prevented sound prior to interaction
+          video.muted = true;
+          setIsHomeAudioMuted(true);
+          video.play().catch(() => {});
+        });
+    }
+
+    const unmuteOnInteraction = () => {
+      if (heroVideoRef.current) {
+        heroVideoRef.current.muted = false;
+        heroVideoRef.current.volume = 0.85;
+        setIsHomeAudioMuted(false);
+        heroVideoRef.current.play().catch(() => {});
+      }
+      window.removeEventListener("click", unmuteOnInteraction);
+      window.removeEventListener("touchstart", unmuteOnInteraction);
+      window.removeEventListener("scroll", unmuteOnInteraction);
+      window.removeEventListener("keydown", unmuteOnInteraction);
+    };
+
+    window.addEventListener("click", unmuteOnInteraction);
+    window.addEventListener("touchstart", unmuteOnInteraction);
+    window.addEventListener("scroll", unmuteOnInteraction, { passive: true });
+    window.addEventListener("keydown", unmuteOnInteraction);
+
+    // Pause when page unmounts or browser tab is hidden
+    const handleVisibility = () => {
+      if (document.hidden && heroVideoRef.current) {
+        heroVideoRef.current.pause();
+      } else if (!document.hidden && heroVideoRef.current) {
+        heroVideoRef.current.play().catch(() => {});
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
+
+    return () => {
+      window.removeEventListener("click", unmuteOnInteraction);
+      window.removeEventListener("touchstart", unmuteOnInteraction);
+      window.removeEventListener("scroll", unmuteOnInteraction);
+      window.removeEventListener("keydown", unmuteOnInteraction);
+      document.removeEventListener("visibilitychange", handleVisibility);
+      if (video) {
+        video.pause();
+        video.muted = true;
+      }
+    };
+  }, []);
+
+  const toggleHomeSound = () => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+    if (video.muted) {
+      video.muted = false;
+      video.volume = 0.85;
+      setIsHomeAudioMuted(false);
+      video.play().catch(() => {});
+    } else {
+      video.muted = true;
+      setIsHomeAudioMuted(true);
+    }
+  };
+
 
 
   const openModal = (preferredAction?: string, preselectBranch?: string) => {
@@ -210,8 +289,8 @@ export default function HomePage() {
         {/* HERO SECTION */}
         <section className="hero">
           <video
+            ref={heroVideoRef}
             autoPlay
-            muted
             loop
             playsInline
             preload="auto"
@@ -224,6 +303,16 @@ export default function HomePage() {
             <source src="/assets/video/hero-video.mp4" type="video/mp4" />
           </video>
           <div className="hero-scrim"></div>
+
+          <button
+            type="button"
+            onClick={toggleHomeSound}
+            className="hero-sound-toggle"
+            aria-label={isHomeAudioMuted ? "Unmute Video Sound" : "Mute Video Sound"}
+          >
+            <i className={`fa-solid ${isHomeAudioMuted ? "fa-volume-xmark" : "fa-volume-high"}`} aria-hidden="true"></i>
+            <span>{isHomeAudioMuted ? "Sound Off (Tap to Play)" : "Sound Playing"}</span>
+          </button>
 
 
 
@@ -896,20 +985,25 @@ export default function HomePage() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
+          title="WhatsApp"
         >
           <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
-          <b>WhatsApp</b>
         </a>
-        <a href="tel:+97440041000" className="floating-cta floating-call" aria-label="Call Just Relax Spa">
+        <a
+          href="tel:+97440041000"
+          className="floating-cta floating-call"
+          aria-label="Call Just Relax Spa"
+          title="Call"
+        >
           <i className="fa-solid fa-phone" aria-hidden="true"></i>
-          <b>Call</b>
         </a>
         <button
           type="button"
           className="floating-cta floating-book"
           data-book
           onClick={() => openModal()}
-          aria-label="Open booking dialog"
+          aria-label="Book an appointment"
+          title="Book Appointment"
         >
           <i className="fa-regular fa-calendar-check" aria-hidden="true"></i>
           <b>Book</b>

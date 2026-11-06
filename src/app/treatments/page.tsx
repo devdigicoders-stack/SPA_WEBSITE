@@ -310,20 +310,25 @@ export default function TreatmentsPage() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
+          title="WhatsApp"
         >
           <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
-          <b>WhatsApp</b>
         </a>
-        <a href="tel:+97440041000" className="floating-cta floating-call" aria-label="Call Just Relax Spa">
+        <a
+          href="tel:+97440041000"
+          className="floating-cta floating-call"
+          aria-label="Call Just Relax Spa"
+          title="Call"
+        >
           <i className="fa-solid fa-phone" aria-hidden="true"></i>
-          <b>Call</b>
         </a>
         <button
           type="button"
           className="floating-cta floating-book"
           data-book
           onClick={() => openBookingModal()}
-          aria-label="Open booking dialog"
+          aria-label="Book an appointment"
+          title="Book Appointment"
         >
           <i className="fa-regular fa-calendar-check" aria-hidden="true"></i>
           <b>Book</b>
