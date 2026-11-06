@@ -345,13 +345,31 @@ export default function TreatmentFinderPage() {
       {/* 2. MAIN CONTENT */}
       <main id="main">
         {/* INNER HERO */}
-        <section className="inner-hero finder-hero">
-          <p className="kicker">Tell us how you feel</p>
-          <h1>Find Your Ritual</h1>
-          <p>
-            Tap where you feel tension on the body map, choose your goal and pressure — and we&apos;ll
-            recommend the right treatment from our menu.
-          </p>
+        <section className="hero page-hero finder-hero">
+          <img
+            src="/assets/just-relax/branches/retaj-salwa/retaj-salwa-massage-suite.jpg"
+            alt="Find Your Bespoke Spa Ritual in Doha"
+            className="hero-bg-img"
+            width="1920"
+            height="1080"
+          />
+          <div className="hero-scrim"></div>
+
+          <div className="hero-content">
+            <p className="kicker">Interactive Ritual Recommendation</p>
+            <h1>Find Your Bespoke Ritual</h1>
+            <p>
+              Tap where you feel tension on our interactive body map, select your pressure preference, and discover your tailored recovery treatment.
+            </p>
+            <div className="hero-actions">
+              <a className="button" href="#finder-stage">
+                Start Ritual Finder
+              </a>
+              <Link className="button button-ghost" href="/treatments">
+                Browse Full Menu
+              </Link>
+            </div>
+          </div>
         </section>
 
         {/* FINDER SECTION */}

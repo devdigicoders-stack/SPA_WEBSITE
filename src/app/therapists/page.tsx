@@ -131,12 +131,31 @@ export default function TherapistsPage() {
       {/* 2. MAIN CONTENT */}
       <main id="main">
         {/* INNER HERO */}
-        <section className="inner-hero">
-          <p className="kicker">Certified Master Artisans</p>
-          <h1>Meet our Doha therapists &amp; hammam masters</h1>
-          <p>
-            A certified, multilingual team of Moroccan bath masters and sports recovery physiotherapists caring for every detail of your session.
-          </p>
+        <section className="hero page-hero therapists-hero">
+          <img
+            src="/assets/just-relax/branches/jouri-hotel/jouri-hotel-relaxation.jpg"
+            alt="Certified Master Therapists and Moroccan Bath Masters"
+            className="hero-bg-img"
+            width="1920"
+            height="1080"
+          />
+          <div className="hero-scrim"></div>
+
+          <div className="hero-content">
+            <p className="kicker">Certified Master Artisans</p>
+            <h1>Meet Our Doha Therapists &amp; Hammam Masters</h1>
+            <p>
+              Certified, multilingual master practitioners from Morocco, Turkey, and Southeast Asia delivering bespoke deep tissue therapy and authentic royal hammam rituals.
+            </p>
+            <div className="hero-actions">
+              <button className="button" type="button" onClick={() => openBookingModal()}>
+                Reserve with Master
+              </button>
+              <Link className="button button-ghost" href="/treatments">
+                View Treatments
+              </Link>
+            </div>
+          </div>
         </section>
 
         {/* BRANCH TEAMS */}

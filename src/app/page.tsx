@@ -304,7 +304,7 @@ export default function HomePage() {
           </video>
           <div className="hero-scrim"></div>
 
-          <button
+          {/* <button
             type="button"
             onClick={toggleHomeSound}
             className="hero-sound-toggle"
@@ -312,7 +312,7 @@ export default function HomePage() {
           >
             <i className={`fa-solid ${isHomeAudioMuted ? "fa-volume-xmark" : "fa-volume-high"}`} aria-hidden="true"></i>
             <span>{isHomeAudioMuted ? "Sound Off (Tap to Play)" : "Sound Playing"}</span>
-          </button>
+          </button> */}
 
 
 

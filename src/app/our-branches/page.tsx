@@ -214,47 +214,30 @@ export default function OurBranchesPage() {
 
       {/* MAIN CONTENT */}
       <main id="main">
-        {/* BRANCHES HERO */}
-        <section className="branches-hero">
-          <div className="branches-hero-inner">
-            <div className="branches-hero-copy">
-              <p className="kicker">Two Doha destinations</p>
-              <h1>A sanctuary of distinction at every branch</h1>
-              <p>
-                Compare locations, distance, facilities, and real interior
-                photography across Jouri Murwab Hotel and Retaj Salwa Resort & Spa, then choose the destination that fits your day.
-              </p>
-              <a className="button" href="#branch-jouri-hotel">Explore Branches</a>
-            </div>
+        {/* FULL BLEED BRANCHES HERO */}
+        <section className="hero page-hero branches-hero">
+          <img
+            src="/assets/just-relax/branches/retaj-salwa/retaj-salwa-hero.jpg"
+            alt="Just Relax Spa Premier Doha Branches"
+            className="hero-bg-img"
+            width="1920"
+            height="1080"
+          />
+          <div className="hero-scrim"></div>
 
-            <div
-              className="branches-hero-tiles"
-              role="list"
-              aria-label="Just Relax Spa branches"
-            >
-              {branches.map((b) => (
-                <a
-                  key={b.slug}
-                  className="branch-hero-tile"
-                  role="listitem"
-                  href={`#branch-${b.slug}`}
-                >
-                  <img
-                    src={b.gallery[0] || "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg"}
-                    width="640"
-                    height="420"
-                    loading="lazy"
-                    decoding="async"
-                    alt={`${b.name} men's spa in Doha`}
-                  />
-                  <span className="tile-label">
-                    <strong>{b.name}</strong>
-                    <em>
-                      <i className="fa-solid fa-star" aria-hidden="true"></i> {b.rating}
-                    </em>
-                  </span>
-                </a>
-              ))}
+          <div className="hero-content">
+            <p className="kicker">Two Premier Doha Destinations</p>
+            <h1>A Sanctuary of Distinction at Every Branch</h1>
+            <p>
+              Compare locations, private VIP suites, authentic heated marble hammams, and real interior facilities across Jouri Murwab Hotel and Retaj Salwa Resort &amp; Spa.
+            </p>
+            <div className="hero-actions">
+              <a className="button" href="#branch-jouri-hotel">
+                Explore Jouri Hotel
+              </a>
+              <a className="button button-ghost" href="#branch-retaj-salwa">
+                Explore Retaj Salwa
+              </a>
             </div>
           </div>
         </section>

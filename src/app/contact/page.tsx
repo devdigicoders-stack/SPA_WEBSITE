@@ -177,13 +177,31 @@ export default function ContactPage() {
       {/* 2. MAIN CONTENT */}
       <main id="main">
         {/* INNER HERO */}
-        <section className="inner-hero contact-hero">
-          <p className="kicker">Contact a branch directly</p>
-          <h1>Choose a branch, then choose how to connect</h1>
-          <p>
-            Move through our four branches, review interiors, location, and details, without completing
-            a contact form.
-          </p>
+        <section className="hero page-hero contact-hero">
+          <img
+            src="/assets/just-relax/branches/jouri-hotel/jouri-hotel-amenities.jpg"
+            alt="Contact Just Relax Spa Doha Concierge"
+            className="hero-bg-img"
+            width="1920"
+            height="1080"
+          />
+          <div className="hero-scrim"></div>
+
+          <div className="hero-content">
+            <p className="kicker">Direct 24/7 Concierge &amp; Reservations</p>
+            <h1>Connect Directly With Our Doha Sanctuaries</h1>
+            <p>
+              Direct concierge access for private VIP suites, Moroccan hammam bookings, and directions across Jouri Murwab Hotel and Retaj Salwa Resort &amp; Spa.
+            </p>
+            <div className="hero-actions">
+              <a className="button" href="https://wa.me/97455883421" target="_blank" rel="noopener noreferrer">
+                <i className="fa-brands fa-whatsapp" style={{ marginInlineEnd: 8 }}></i>Chat on WhatsApp
+              </a>
+              <a className="button button-ghost" href="tel:+97440041000">
+                <i className="fa-solid fa-phone" style={{ marginInlineEnd: 8 }}></i>Call Concierge
+              </a>
+            </div>
+          </div>
         </section>
 
         {/* CONTACT EXPERIENCE */}

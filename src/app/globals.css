@@ -1283,7 +1283,8 @@ html[dir="rtl"] .footer-bottom {
    RESPONSIVE HERO SECTION & OPTIMIZED VIDEO FRAMING - LUXURY SANCTUARY
    ======================================================== */
 .hero,
-.hero.about-hero {
+.hero.about-hero,
+.hero.page-hero {
   position: relative !important;
   min-height: 100vh !important;
   min-height: 100dvh !important;
@@ -1299,6 +1300,11 @@ html[dir="rtl"] .footer-bottom {
   background: #0d0d0c !important;
 }
 
+.hero.page-hero {
+  min-height: max(580px, 82vh) !important;
+  min-height: max(580px, 82dvh) !important;
+}
+
 .hero video,
 .hero.about-hero video {
   position: absolute !important;
@@ -1307,16 +1313,31 @@ html[dir="rtl"] .footer-bottom {
   height: 100% !important;
   object-fit: cover !important;
   object-position: center 30% !important;
-  filter: brightness(0.92) contrast(1.05) !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  image-rendering: -webkit-optimize-contrast !important;
+  transform: translateZ(0) !important;
   pointer-events: none !important;
+}
+
+.hero-bg-img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  pointer-events: none !important;
+  transform: scale(1.02) !important;
+  image-rendering: -webkit-optimize-contrast !important;
 }
 
 .hero-scrim {
   position: absolute !important;
   inset: 0 !important;
   background: 
-    linear-gradient(90deg, rgba(10, 9, 8, 0.94) 0%, rgba(10, 9, 8, 0.78) 42%, rgba(10, 9, 8, 0.35) 75%, rgba(10, 9, 8, 0.2) 100%),
-    linear-gradient(180deg, rgba(10, 9, 8, 0.8) 0%, transparent 22%, transparent 70%, rgba(10, 9, 8, 0.95) 100%) !important;
+    linear-gradient(90deg, rgba(10, 9, 8, 0.84) 0%, rgba(10, 9, 8, 0.54) 40%, rgba(10, 9, 8, 0.08) 72%, transparent 100%),
+    linear-gradient(180deg, rgba(10, 9, 8, 0.45) 0%, transparent 22%, transparent 78%, rgba(10, 9, 8, 0.85) 100%) !important;
   pointer-events: none !important;
   z-index: 2 !important;
 }

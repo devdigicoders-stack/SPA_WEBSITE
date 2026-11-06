@@ -121,12 +121,40 @@ export default function TreatmentsPage() {
       {/* 2. MAIN CONTENT */}
       <main id="main">
         {/* INNER HERO */}
-        <section className="inner-hero">
-          <p className="kicker">Men&apos;s Rituals &amp; Therapies</p>
-          <h1>Spa and massage treatments in Doha</h1>
-          <p>
-            Choose an authentic Moroccan hammam ritual, targeted deep tissue recovery, or an experience created for total gentlemen&apos;s rejuvenation.
-          </p>
+        <section className="hero page-hero treatments-hero">
+          <img
+            src="/assets/just-relax/branches/retaj-salwa/retaj-salwa-moroccan-bath.jpg"
+            alt="Authentic Moroccan Baths and Spa Treatments in Doha"
+            className="hero-bg-img"
+            width="1920"
+            height="1080"
+          />
+          <div className="hero-scrim"></div>
+
+          <div className="hero-content">
+            <p className="kicker">Men's Rituals &amp; Therapeutic Recovery</p>
+            <h1>Spa and Massage Treatments in Doha</h1>
+            <p>
+              Authentic Moroccan hammam rituals, targeted deep tissue therapy, jacuzzi hydrotherapy, and custom rituals crafted for gentlemen's executive recovery.
+            </p>
+            <div className="hero-actions">
+              <button
+                className="button"
+                type="button"
+                onClick={() =>
+                  openBookingModal({
+                    icon: "fa-tag",
+                    text: "Applying 25% OFF Golden Hours (Daily 11 AM - 5 PM)",
+                  })
+                }
+              >
+                Book a Treatment
+              </button>
+              <Link className="button button-ghost" href="/treatment-finder">
+                Find Your Ritual
+              </Link>
+            </div>
+          </div>
         </section>
 
         {/* OFFER BAND */}
