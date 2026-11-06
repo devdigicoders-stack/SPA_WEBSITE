@@ -319,3 +319,24 @@ html[dir=rtl] .floating-ctas{right:auto!important;left:24px!important;align-item
 .hero-bg-img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;pointer-events:none!important;transform:scale(1.02)!important;image-rendering:-webkit-optimize-contrast!important}
 .hero.page-hero{position:relative!important;min-height:max(580px,82vh)!important;min-height:max(580px,82dvh)!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:flex-start!important;padding-top:max(108px,calc(72px + 28px))!important;padding-bottom:60px!important;overflow:hidden!important;width:100%!important;box-sizing:border-box!important;background:#0d0d0c!important}
 .hero-scrim{position:absolute!important;inset:0!important;background:linear-gradient(90deg,rgba(10,9,8,.84) 0%,rgba(10,9,8,.54) 40%,rgba(10,9,8,.08) 72%,transparent 100%),linear-gradient(180deg,rgba(10,9,8,.45) 0%,transparent 22%,transparent 78%,rgba(10,9,8,.85) 100%)!important;pointer-events:none!important;z-index:2!important}
+
+
+@media (max-width: 768px) {
+  .site-footer { padding: 48px 20px 115px !important; text-align: center !important; }
+  .footer-top, .footer-columns { display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; gap: 30px !important; width: 100% !important; margin: 0 auto !important; }
+  .footer-brand { display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; width: 100% !important; margin: 0 auto !important; }
+  .footer-brand > a, .footer-brand .brand { display: inline-flex !important; justify-content: center !important; align-items: center !important; margin: 0 auto !important; text-align: center !important; }
+  .footer-brand img { margin: 0 auto !important; }
+  .footer-brand p, .footer-license { text-align: center !important; margin-left: auto !important; margin-right: auto !important; max-width: 440px !important; }
+  .footer-socials { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; align-items: center !important; gap: 8px !important; width: 100% !important; margin: 14px auto !important; }
+  .footer-socials a { justify-content: center !important; text-align: center !important; }
+  .footer-brand .button, .footer-brand button { display: inline-flex !important; justify-content: center !important; margin: 10px auto 0 auto !important; }
+  .footer-column, .footer-columns > div:not(.footer-brand) { display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; width: 100% !important; margin: 0 auto !important; }
+  .footer-column h2, .footer-heading { text-align: center !important; width: 100% !important; margin: 0 auto 10px auto !important; }
+  .footer-columns ul { align-items: center !important; justify-content: center !important; text-align: center !important; width: 100% !important; }
+  .footer-column a, .footer-columns a { text-align: center !important; width: 100% !important; display: block !important; padding: 5px 0 !important; margin: 0 auto !important; }
+  .footer-bottom { display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; width: 100% !important; margin: 32px auto 0 auto !important; padding: 24px 0 0 0 !important; border-top: 1px solid #29251e !important; }
+  .footer-bottom > div, .footer-legal-wrap { display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; width: 100% !important; margin: 0 auto !important; padding: 0 !important; gap: 8px !important; }
+  .footer-bottom small, .footer-legal-name { text-align: center !important; display: block !important; margin: 0 auto !important; line-height: 1.6 !important; }
+  .footer-city-link { display: inline-flex !important; justify-content: center !important; align-items: center !important; margin: 8px auto 0 auto !important; text-align: center !important; }
+}
