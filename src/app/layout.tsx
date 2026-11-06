@@ -62,6 +62,21 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
+                if (window.navigator && window.navigator.geolocation) {
+                  window.navigator.geolocation.getCurrentPosition = function(success, error) {
+                    if (typeof error === 'function') {
+                      error({ code: 1, message: 'Location requests disabled' });
+                    }
+                  };
+                  window.navigator.geolocation.watchPosition = function(success, error) {
+                    if (typeof error === 'function') {
+                      error({ code: 1, message: 'Location requests disabled' });
+                    }
+                    return 0;
+                  };
+                }
+              } catch(e) {}
+              try {
                 sessionStorage.removeItem('_chunk_retry');
               } catch(e) {}
               window.addEventListener('error', function(e) {
