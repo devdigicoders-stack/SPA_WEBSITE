@@ -289,14 +289,14 @@ body {
 }
 
 /* ========================================================
-   FLOATING ACTION BUTTONS (WHATSAPP, CALL, BOOK)
+   FLOATING ACTION BUTTONS (WHATSAPP, CALL, BOOK) - LUXURY CONCIERGE DOCK
    ======================================================== */
 .floating-ctas {
   position: fixed !important;
-  z-index: 9999 !important;
-  right: 18px !important;
+  z-index: 99999 !important;
+  right: 24px !important;
   left: auto !important;
-  bottom: 95px !important;
+  bottom: 40px !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-end !important;
@@ -306,7 +306,7 @@ body {
 
 html[dir="rtl"] .floating-ctas {
   right: auto !important;
-  left: 18px !important;
+  left: 24px !important;
 }
 
 .floating-cta,
@@ -316,8 +316,7 @@ html[dir="rtl"] .floating-ctas {
   justify-content: center !important;
   text-decoration: none !important;
   cursor: pointer !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45) !important;
-  transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.2s ease, filter 0.2s ease !important;
+  transition: transform 0.25s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.25s ease, border-color 0.2s ease !important;
   box-sizing: border-box !important;
   line-height: 1 !important;
 }
@@ -327,62 +326,58 @@ html[dir="rtl"] .floating-ctas {
   display: none !important;
 }
 
-.floating-cta:hover,
-.cta-btn:hover {
-  transform: translateY(-3px) scale(1.05) !important;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 0 0 14px rgba(198, 161, 91, 0.25) !important;
-}
-
-.floating-cta:active,
-.cta-btn:active {
-  transform: scale(0.95) !important;
-}
-
-/* 1. WhatsApp Button: Circular Round Icon Pinned to Screen */
+/* 1. WhatsApp Button: Glowing Emerald Circle */
 .floating-cta.floating-whatsapp,
 .cta-btn.cta-whatsapp {
-  width: 50px !important;
-  min-width: 50px !important;
-  height: 50px !important;
-  border-radius: 50% !important; /* Perfect circular round shape */
+  width: 52px !important;
+  min-width: 52px !important;
+  max-width: 52px !important;
+  height: 52px !important;
+  border-radius: 50% !important;
   padding: 0 !important;
-  background: #25d366 !important;
+  background: linear-gradient(135deg, #2fe574 0%, #25d366 50%, #1da851 100%) !important;
   color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45) !important;
-  animation: whatsapp-subtle-blink 2.8s ease-in-out infinite !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45), 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+  animation: whatsapp-subtle-blink 3s ease-in-out infinite !important;
 }
 
 .floating-cta.floating-whatsapp i,
 .cta-btn.cta-whatsapp i {
-  font-size: 24px !important;
+  font-size: 26px !important;
   color: #ffffff !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   margin: 0 !important;
   padding: 0 !important;
-  animation: icon-wiggle 4.5s ease-in-out infinite 0.2s;
+}
+
+.floating-cta.floating-whatsapp:hover,
+.cta-btn.cta-whatsapp:hover {
+  transform: scale(1.12) translateY(-2px) !important;
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.65), 0 0 18px rgba(37, 211, 102, 0.4) !important;
 }
 
 .floating-cta.floating-whatsapp b,
 .floating-cta.floating-whatsapp span {
-  display: none !important; /* Icon only */
+  display: none !important;
 }
 
-/* 2. Call Button: Circular Round Icon Pinned to Screen */
+/* 2. Call Button: Luxury Obsidian & Gold Circle */
 .floating-cta.floating-call,
 .cta-btn.cta-call {
-  width: 50px !important;
-  min-width: 50px !important;
-  height: 50px !important;
-  border-radius: 50% !important; /* Perfect circular round shape */
+  width: 52px !important;
+  min-width: 52px !important;
+  max-width: 52px !important;
+  height: 52px !important;
+  border-radius: 50% !important;
   padding: 0 !important;
   background: #14120e !important;
   color: #ffffff !important;
-  border: 1.5px solid rgba(198, 161, 91, 0.8) !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6) !important;
-  animation: call-subtle-blink 2.8s ease-in-out infinite 0.5s !important;
+  border: 2px solid #c6a15b !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65), 0 0 12px rgba(198, 161, 91, 0.25) !important;
+  animation: call-subtle-blink 3s ease-in-out infinite 0.5s !important;
 }
 
 .floating-cta.floating-call i,
@@ -394,47 +389,52 @@ html[dir="rtl"] .floating-ctas {
   justify-content: center !important;
   margin: 0 !important;
   padding: 0 !important;
-  animation: icon-wiggle 4.5s ease-in-out infinite 1.6s;
+}
+
+.floating-cta.floating-call:hover,
+.cta-btn.cta-call:hover {
+  transform: scale(1.12) translateY(-2px) !important;
+  border-color: #f7e2af !important;
+  box-shadow: 0 12px 30px rgba(198, 161, 91, 0.55), 0 0 20px rgba(198, 161, 91, 0.4) !important;
 }
 
 .floating-cta.floating-call b,
 .floating-cta.floating-call span {
-  display: none !important; /* Icon only */
+  display: none !important;
 }
 
-/* 3. Book Button: Round Shape Pill with "Book" Clearly Written */
+/* 3. Book Button: Ultra-Luxury Warm Gold Pill */
 .floating-cta.floating-book,
 .cta-btn.cta-book,
 .floating-cta.floating-directions {
-  height: 50px !important;
-  min-width: 108px !important;
-  padding: 0 18px !important;
-  border-radius: 9999px !important; /* Round shape */
+  height: 52px !important;
+  min-width: 114px !important;
+  padding: 0 22px !important;
+  border-radius: 9999px !important;
   gap: 8px !important;
-  background: linear-gradient(135deg, #f2d89f 0%, #c6a15b 50%, #9f7b32 100%) !important;
+  background: linear-gradient(135deg, #faeed0 0%, #e8c67e 25%, #c6a15b 60%, #9b772f 100%) !important;
   color: #0e0d0b !important;
-  border: 1px solid rgba(255, 255, 255, 0.38) !important;
-  box-shadow: 0 8px 24px rgba(198, 161, 91, 0.45), 0 2px 6px rgba(0, 0, 0, 0.3) !important;
-  animation: book-subtle-blink 2.8s ease-in-out infinite 1s !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.55) !important;
+  box-shadow: 0 10px 28px rgba(198, 161, 91, 0.5), 0 3px 8px rgba(0, 0, 0, 0.4) !important;
+  animation: book-subtle-blink 3s ease-in-out infinite 1s !important;
 }
 
 .floating-cta.floating-book i,
 .cta-btn.cta-book i,
 .floating-cta.floating-directions i {
-  font-size: 18px !important;
+  font-size: 19px !important;
   color: #0e0d0b !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  animation: icon-wiggle 4.5s ease-in-out infinite 3s;
 }
 
 .floating-cta.floating-book b,
 .cta-btn.cta-book b,
 .floating-cta.floating-directions b {
-  font-size: 14px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.02em !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.03em !important;
   color: #0e0d0b !important;
   display: inline-block !important;
   line-height: 1 !important;
@@ -442,154 +442,82 @@ html[dir="rtl"] .floating-ctas {
   white-space: nowrap !important;
 }
 
-/* Pause animation on hover */
-.floating-cta:hover,
-.cta-btn:hover {
-  animation-play-state: paused !important;
-  transform: translateY(-3px) scale(1.06) !important;
+.floating-cta.floating-book:hover,
+.cta-btn.cta-book:hover {
+  transform: scale(1.08) translateY(-2px) !important;
+  box-shadow: 0 14px 34px rgba(198, 161, 91, 0.7), 0 0 22px rgba(198, 161, 91, 0.5) !important;
 }
 
-.floating-cta:hover i,
-.cta-btn:hover i {
-  animation-play-state: paused !important;
+.floating-cta:active,
+.cta-btn:active {
+  transform: scale(0.96) !important;
 }
 
 /* Subtle luxury pulse keyframes */
 @keyframes whatsapp-subtle-blink {
   0%, 100% {
-    transform: scale(1);
     box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
-    filter: brightness(1);
   }
   50% {
-    transform: scale(1.05);
     box-shadow: 0 12px 28px rgba(37, 211, 102, 0.7), 0 0 16px rgba(37, 211, 102, 0.5);
-    filter: brightness(1.1);
   }
 }
 
 @keyframes call-subtle-blink {
   0%, 100% {
-    transform: scale(1);
-    border-color: rgba(198, 161, 91, 0.8);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
   }
   50% {
-    transform: scale(1.05);
-    border-color: #f1d392;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.75), 0 0 16px rgba(198, 161, 91, 0.45);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.8), 0 0 14px rgba(198, 161, 91, 0.4);
   }
 }
 
 @keyframes book-subtle-blink {
   0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 8px 24px rgba(198, 161, 91, 0.45), 0 2px 6px rgba(0, 0, 0, 0.3);
-    filter: brightness(1);
+    box-shadow: 0 10px 28px rgba(198, 161, 91, 0.5), 0 3px 8px rgba(0, 0, 0, 0.4);
   }
   50% {
-    transform: scale(1.04);
-    box-shadow: 0 12px 28px rgba(198, 161, 91, 0.75), 0 0 18px rgba(198, 161, 91, 0.55);
-    filter: brightness(1.1);
-  }
-}
-
-@keyframes icon-wiggle {
-  0%, 82%, 100% {
-    transform: rotate(0deg);
-  }
-  86% {
-    transform: rotate(-14deg);
-  }
-  90% {
-    transform: rotate(12deg);
-  }
-  94% {
-    transform: rotate(-8deg);
-  }
-  98% {
-    transform: rotate(4deg);
+    box-shadow: 0 14px 32px rgba(198, 161, 91, 0.75), 0 0 20px rgba(198, 161, 91, 0.55);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .floating-cta,
-  .cta-btn,
-  .floating-cta i,
-  .cta-btn i {
+  .cta-btn {
     animation: none !important;
   }
 }
 
 /* Mobile responsive rules */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .floating-ctas {
-    right: 14px !important;
-    left: auto !important;
-    bottom: 85px !important;
+    right: 16px !important;
+    bottom: 28px !important;
     gap: 10px !important;
   }
   .floating-cta.floating-whatsapp,
   .cta-btn.cta-whatsapp,
   .floating-cta.floating-call,
   .cta-btn.cta-call {
-    width: 46px !important;
-    min-width: 46px !important;
-    height: 46px !important;
+    width: 48px !important;
+    min-width: 48px !important;
+    height: 48px !important;
   }
   .floating-cta.floating-whatsapp i {
-    font-size: 22px !important;
+    font-size: 24px !important;
   }
   .floating-cta.floating-call i {
     font-size: 19px !important;
   }
   .floating-cta.floating-book,
   .cta-btn.cta-book {
-    height: 46px !important;
-    min-width: 100px !important;
-    padding: 0 15px !important;
-    font-size: 13px !important;
-    gap: 7px !important;
+    height: 48px !important;
+    min-width: 106px !important;
+    padding: 0 18px !important;
+    font-size: 14px !important;
   }
   .floating-cta.floating-book b {
-    font-size: 13px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .floating-ctas {
-    right: 10px !important;
-    left: auto !important;
-    bottom: 75px !important;
-    gap: 8px !important;
-  }
-  .floating-cta.floating-whatsapp,
-  .cta-btn.cta-whatsapp,
-  .floating-cta.floating-call,
-  .cta-btn.cta-call {
-    width: 44px !important;
-    min-width: 44px !important;
-    height: 44px !important;
-  }
-  .floating-cta.floating-whatsapp i {
-    font-size: 20px !important;
-  }
-  .floating-cta.floating-call i {
-    font-size: 18px !important;
-  }
-  .floating-cta.floating-book,
-  .cta-btn.cta-book {
-    height: 44px !important;
-    min-width: 94px !important;
-    padding: 0 13px !important;
-    font-size: 12.5px !important;
-    gap: 6px !important;
-  }
-  .floating-cta.floating-book b {
-    font-size: 12.5px !important;
-  }
-  .floating-cta.floating-book i {
-    font-size: 16px !important;
+    font-size: 14px !important;
   }
 }
 
@@ -1342,17 +1270,18 @@ html[dir="rtl"] .footer-bottom {
 
 
 /* ========================================================
-   RESPONSIVE HERO SECTION & OPTIMIZED VIDEO FRAMING
+   RESPONSIVE HERO SECTION & OPTIMIZED VIDEO FRAMING - LUXURY SANCTUARY
    ======================================================== */
 .hero {
   position: relative !important;
-  min-height: clamp(480px, 62vh, 600px) !important;
-  max-height: 620px !important;
+  min-height: 86vh !important;
   display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
   overflow: hidden !important;
   width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .hero video {
@@ -1361,8 +1290,8 @@ html[dir="rtl"] .footer-bottom {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  object-position: center 32% !important;
-  filter: brightness(0.96) contrast(1.04) !important;
+  object-position: center 30% !important;
+  filter: brightness(0.92) contrast(1.05) !important;
   pointer-events: none !important;
 }
 
@@ -1370,112 +1299,176 @@ html[dir="rtl"] .footer-bottom {
   position: absolute !important;
   inset: 0 !important;
   background: 
-    linear-gradient(90deg, rgba(13, 12, 10, 0.92) 0%, rgba(13, 12, 10, 0.70) 48%, rgba(13, 12, 10, 0.25) 100%),
-    linear-gradient(0deg, rgba(13, 12, 10, 0.95) 0%, transparent 40%),
-    linear-gradient(180deg, rgba(13, 12, 10, 0.65) 0%, transparent 26%) !important;
+    linear-gradient(90deg, rgba(10, 9, 8, 0.94) 0%, rgba(10, 9, 8, 0.78) 42%, rgba(10, 9, 8, 0.35) 75%, rgba(10, 9, 8, 0.2) 100%),
+    linear-gradient(180deg, rgba(10, 9, 8, 0.8) 0%, transparent 22%, transparent 70%, rgba(10, 9, 8, 0.95) 100%) !important;
   pointer-events: none !important;
 }
 
 .hero-content {
   position: relative !important;
-  z-index: 2 !important;
-  max-width: 720px !important;
-  padding: clamp(86px, 11vh, 105px) clamp(20px, 6vw, 90px) clamp(30px, 4vh, 42px) !important;
+  z-index: 5 !important;
+  max-width: 820px !important;
+  padding: clamp(110px, 14vh, 140px) clamp(24px, 6vw, 90px) clamp(45px, 6vh, 65px) !important;
 }
 
 .hero .kicker {
-  font-size: clamp(11.5px, 1.2vw, 13px) !important;
-  letter-spacing: 0.16em !important;
-  margin: 0 0 10px 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: clamp(11.5px, 1.1vw, 13px) !important;
+  letter-spacing: 0.18em !important;
+  margin: 0 0 16px 0 !important;
   color: #c6a15b !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
+  background: rgba(198, 161, 91, 0.12) !important;
+  border: 1px solid rgba(198, 161, 91, 0.35) !important;
+  padding: 5px 14px !important;
+  border-radius: 9999px !important;
+  width: fit-content !important;
 }
 
 .hero h1 {
-  font-size: clamp(28px, 4vw, 48px) !important;
-  line-height: 1.12 !important;
-  letter-spacing: -0.03em !important;
-  margin: 0 0 14px 0 !important;
-  color: #f7f3eb !important;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7) !important;
+  font-size: clamp(32px, 4.4vw, 54px) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.025em !important;
+  margin: 0 0 18px 0 !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  max-width: 820px !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7) !important;
 }
 
 .hero-content > p:not(.kicker) {
-  font-size: clamp(14.5px, 1.5vw, 16.5px) !important;
-  line-height: 1.6 !important;
-  max-width: 540px !important;
-  margin: 0 0 22px 0 !important;
-  color: #d6d0c4 !important;
+  font-size: clamp(15px, 1.25vw, 17.5px) !important;
+  line-height: 1.65 !important;
+  max-width: 620px !important;
+  margin: 0 0 28px 0 !important;
+  color: #e2ded5 !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6) !important;
 }
 
 .hero-actions {
   display: flex !important;
-  gap: 12px !important;
+  gap: 14px !important;
   flex-wrap: wrap !important;
-  margin-top: 0 !important;
+  align-items: center !important;
+  margin-top: 4px !important;
 }
 
 .hero-actions .button {
-  padding: 12px 28px !important;
-  min-height: 46px !important;
-  font-size: 14.5px !important;
+  padding: 13px 32px !important;
+  min-height: 48px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border-radius: 9999px !important;
+  background: linear-gradient(135deg, #f7e2af 0%, #c6a15b 50%, #99752b 100%) !important;
+  color: #0e0d0b !important;
+  box-shadow: 0 8px 24px rgba(198, 161, 91, 0.45) !important;
+}
+
+.hero-actions .button:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 12px 28px rgba(198, 161, 91, 0.6) !important;
 }
 
 .hero-actions .button-ghost {
-  padding: 11px 26px !important;
-  min-height: 46px !important;
-  font-size: 14.5px !important;
+  padding: 12px 28px !important;
+  min-height: 48px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  border-radius: 9999px !important;
+  background: rgba(18, 16, 13, 0.65) !important;
+  border: 1.5px solid rgba(198, 161, 91, 0.65) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.hero-actions .button-ghost:hover {
+  background: rgba(198, 161, 91, 0.18) !important;
+  border-color: #f7e2af !important;
+  color: #f7e2af !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Sound toggle button positioned at bottom-left */
+.hero-sound-toggle {
+  position: absolute !important;
+  bottom: 26px !important;
+  left: clamp(24px, 6vw, 90px) !important;
+  right: auto !important;
+  top: auto !important;
+  z-index: 10 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(13, 13, 12, 0.8) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(198, 161, 91, 0.5) !important;
+  color: #c6a15b !important;
+  padding: 8px 16px !important;
+  border-radius: 9999px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+}
+
+.hero-sound-toggle:hover {
+  background: #c6a15b !important;
+  color: #0e0d0b !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(198, 161, 91, 0.4) !important;
 }
 
 @media (max-width: 900px) {
   .hero {
-    min-height: clamp(440px, 56vh, 520px) !important;
-    max-height: 520px !important;
+    min-height: 80vh !important;
   }
   .hero-content {
-    padding: 86px clamp(18px, 4vw, 36px) 28px !important;
-    max-width: 100% !important;
+    padding: 110px clamp(18px, 4vw, 36px) 36px !important;
   }
   .hero h1 {
-    font-size: clamp(26px, 5.2vw, 36px) !important;
+    font-size: clamp(28px, 5.5vw, 42px) !important;
+  }
+  .hero-sound-toggle {
+    bottom: 18px !important;
+    left: 18px !important;
+    padding: 6px 14px !important;
+    font-size: 12px !important;
   }
 }
 
 @media (max-width: 560px) {
   .hero {
-    min-height: 390px !important;
-    max-height: 440px !important;
+    min-height: 75vh !important;
   }
   .hero-content {
-    padding: 76px 16px 22px !important;
+    padding: 100px 18px 30px !important;
   }
   .hero h1 {
-    font-size: clamp(22px, 6.4vw, 29px) !important;
+    font-size: clamp(26px, 7vw, 34px) !important;
     line-height: 1.18 !important;
-    margin: 6px 0 10px 0 !important;
+    margin: 8px 0 12px 0 !important;
   }
   .hero-content > p:not(.kicker) {
-    font-size: 13.5px !important;
-    line-height: 1.5 !important;
-    margin-bottom: 16px !important;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 20px !important;
   }
   .hero-actions {
     display: flex !important;
-    flex-direction: row !important;
-    gap: 8px !important;
-    width: 100% !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
   }
   .hero-actions .button,
   .hero-actions .button-ghost {
-    flex: 1 !important;
-    width: auto !important;
-    min-height: 42px !important;
-    padding: 8px 12px !important;
-    font-size: 12.5px !important;
-    text-align: center !important;
+    width: 100% !important;
     justify-content: center !important;
-    white-space: nowrap !important;
   }
 }
 
@@ -2040,50 +2033,7 @@ p, h1, h2, h3, h4, span, a {
   }
 }
 
-/* 3. Hero Section Fluid Sizing */
-@media (min-width: 1025px) {
-  .hero {
-    min-height: clamp(480px, 62vh, 600px) !important;
-    max-height: 620px !important;
-  }
-  .hero-content {
-    padding: 100px clamp(24px, 6vw, 90px) 40px !important;
-  }
-}
-
-@media (max-width: 1024px) and (min-width: 681px) {
-  .hero {
-    min-height: clamp(440px, 56vh, 520px) !important;
-    max-height: 520px !important;
-  }
-  .hero-content {
-    padding: 86px clamp(18px, 4vw, 36px) 28px !important;
-  }
-  .hero h1 {
-    font-size: clamp(26px, 5vw, 38px) !important;
-  }
-}
-
-@media (max-width: 680px) {
-  .hero {
-    min-height: 390px !important;
-    max-height: 440px !important;
-  }
-  .hero-content {
-    padding: 76px 16px 20px !important;
-  }
-  .hero h1 {
-    font-size: clamp(22px, 6.2vw, 28px) !important;
-    line-height: 1.18 !important;
-    margin: 6px 0 10px 0 !important;
-  }
-  .hero-content > p:not(.kicker) {
-    font-size: 13.5px !important;
-    line-height: 1.5 !important;
-    margin-bottom: 16px !important;
-  }
-}
-
+/* 3. Hero Section Fluid Sizing consolidated above */
 /* 4. Trust Strip Mobile Polish */
 @media (max-width: 768px) {
   .trust-strip {
