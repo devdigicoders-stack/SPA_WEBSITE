@@ -113,11 +113,11 @@ export default function TherapistsPage() {
           data-nav
         >
           <Link href="/">Home</Link>
-          <Link href="/about-laguna">About</Link>
+          <Link href="/about">About</Link>
           <Link href="/our-branches">Our Branches</Link>
           <Link href="/treatments">Treatments</Link>
           <Link href="/treatment-finder">Find Your Ritual</Link>
-          <Link href="/therapists" className="is-active">Therapists</Link>
+          <Link href="/therapists" className="active is-active">Therapists</Link>
           <Link href="/contact">Contact</Link>
         </nav>
 

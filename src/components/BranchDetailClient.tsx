@@ -115,7 +115,7 @@ export default function BranchDetailClient({
         >
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
-          <Link href="/our-branches" className="is-active">Our Branches</Link>
+          <Link href="/our-branches" className="active is-active">Our Branches</Link>
           <Link href="/treatments">Treatments</Link>
           <Link href="/treatment-finder">Find Your Ritual</Link>
           <Link href="/therapists">Therapists</Link>

@@ -137,14 +137,12 @@ export default function GalleryPage() {
           data-nav
         >
           <Link href="/">Home</Link>
-          <Link href="/about-laguna">About</Link>
+          <Link href="/about">About</Link>
           <Link href="/our-branches">Our Branches</Link>
           <Link href="/treatments">Treatments</Link>
           <Link href="/treatment-finder">Find Your Ritual</Link>
           <Link href="/therapists">Therapists</Link>
-          <Link href="/gallery" className="is-active">
-            Gallery
-          </Link>
+          <Link href="/gallery" className="active is-active">Gallery</Link>
           <Link href="/contact">Contact</Link>
         </nav>
 

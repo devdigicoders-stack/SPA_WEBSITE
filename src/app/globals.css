@@ -2557,3 +2557,413 @@ iframe {
     font-size: 12px !important;
   }
 }
+
+
+/* ==========================================================================
+   NAVBAR ACTIVE LINK STYLING
+   ========================================================================== */
+.main-nav {
+  display: flex !important;
+  gap: 16px !important;
+  align-items: center !important;
+}
+
+.main-nav a {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 7px 14px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #dedbd4 !important;
+  text-decoration: none !important;
+  border-radius: 999px !important;
+  border: 1px solid transparent !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  color: #c6a15b !important;
+  background: rgba(198, 161, 91, 0.08) !important;
+  border-color: rgba(198, 161, 91, 0.25) !important;
+}
+
+.main-nav a.active,
+.main-nav a.is-active {
+  color: #c6a15b !important;
+  font-weight: 600 !important;
+  background: rgba(198, 161, 91, 0.14) !important;
+  border-color: rgba(198, 161, 91, 0.45) !important;
+  box-shadow: 0 0 16px rgba(198, 161, 91, 0.22) !important;
+}
+
+.main-nav a.active::after,
+.main-nav a.is-active::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: 2px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 16px !important;
+  height: 2px !important;
+  background: #c6a15b !important;
+  border-radius: 999px !important;
+  box-shadow: 0 0 8px #c6a15b !important;
+}
+
+/* Mobile Nav Drawer Active State */
+@media (max-width: 1000px) {
+  .main-nav {
+    display: none !important;
+  }
+  .main-nav.open {
+    display: flex !important;
+    position: fixed !important;
+    top: 86px !important;
+    left: 14px !important;
+    right: 14px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    background: #11100e !important;
+    border: 1px solid rgba(198, 161, 91, 0.3) !important;
+    padding: 20px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8) !important;
+    z-index: 9999 !important;
+    gap: 8px !important;
+  }
+  .main-nav.open a {
+    justify-content: flex-start !important;
+    padding: 12px 18px !important;
+    font-size: 15px !important;
+    border-radius: 12px !important;
+  }
+  .main-nav.open a.active,
+  .main-nav.open a.is-active {
+    color: #c6a15b !important;
+    background: rgba(198, 161, 91, 0.15) !important;
+    border-left: 3px solid #c6a15b !important;
+    border-color: rgba(198, 161, 91, 0.4) !important;
+    border-left-color: #c6a15b !important;
+    box-shadow: none !important;
+  }
+  .main-nav.open a.active::after,
+  .main-nav.open a.is-active::after {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   CONTACT PAGE: CENTERED BRANCH SELECTOR CARDS (01 & 02)
+   ========================================================================== */
+.contact-experience {
+  max-width: 1540px !important;
+  margin: 0 auto !important;
+  padding: 50px clamp(16px, 4vw, 60px) 90px !important;
+}
+
+.contact-experience-header {
+  text-align: center !important;
+  max-width: 760px !important;
+  margin: 0 auto 36px auto !important;
+}
+
+.contact-experience-kicker {
+  display: inline-flex !important;
+  align-items: center !important;
+  font-size: 12px !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  color: #c6a15b !important;
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+}
+
+.contact-experience-title {
+  font-size: clamp(28px, 4.2vw, 48px) !important;
+  line-height: 1.15 !important;
+  color: #ffffff !important;
+  margin: 0 0 12px 0 !important;
+  letter-spacing: -0.02em !important;
+  font-family: var(--font-sans) !important;
+}
+
+.contact-experience-subtitle {
+  font-size: 16px !important;
+  color: #aaa49a !important;
+  margin: 0 auto !important;
+  max-width: 640px !important;
+  line-height: 1.6 !important;
+}
+
+/* Centered Horizontal Selector Grid for 01 & 02 */
+.contact-branch-nav {
+  position: static !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(280px, 460px)) !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  gap: 24px !important;
+  margin: 0 auto 52px auto !important;
+  max-width: 980px !important;
+  width: 100% !important;
+  padding: 0 !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border-radius: 0 !important;
+}
+
+.branch-select-card {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  text-align: left !important;
+  padding: 26px 28px !important;
+  background: linear-gradient(145deg, #181714, #0f0e0c) !important;
+  border: 1.5px solid #2e2b24 !important;
+  border-radius: 22px !important;
+  color: #e5e0d8 !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.45) !important;
+  min-height: 184px !important;
+  text-decoration: none !important;
+}
+
+.branch-select-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(198, 161, 91, 0.6) !important;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6), 0 0 24px rgba(198, 161, 91, 0.18) !important;
+}
+
+.branch-select-card.active {
+  background: linear-gradient(145deg, #242018, #14120e) !important;
+  border: 2px solid #c6a15b !important;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.7), 0 0 32px rgba(198, 161, 91, 0.28) !important;
+  transform: translateY(-2px) !important;
+}
+
+.branch-select-card .card-top-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 14px !important;
+}
+
+.branch-select-card .branch-card-num {
+  font-family: var(--font-serif, Georgia, serif) !important;
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  color: #c6a15b !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+}
+
+.branch-select-card .branch-card-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  padding: 5px 12px !important;
+  border-radius: 999px !important;
+  background: rgba(34, 197, 94, 0.14) !important;
+  color: #4ade80 !important;
+  border: 1px solid rgba(34, 197, 94, 0.3) !important;
+}
+
+.branch-select-card .branch-card-dot {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: #22c55e !important;
+  box-shadow: 0 0 8px #22c55e !important;
+  display: inline-block !important;
+}
+
+.branch-select-card .branch-card-title {
+  font-size: 21px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin: 0 0 8px 0 !important;
+  line-height: 1.25 !important;
+}
+
+.branch-select-card.active .branch-card-title {
+  color: #f7eedb !important;
+}
+
+.branch-select-card .branch-card-meta {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-size: 13.5px !important;
+  color: #aaa49a !important;
+  margin-bottom: 16px !important;
+  flex-wrap: wrap !important;
+}
+
+.branch-select-card .branch-card-rating {
+  color: #c6a15b !important;
+  font-weight: 600 !important;
+}
+
+.branch-select-card .branch-card-divider {
+  color: #555047 !important;
+}
+
+.branch-select-card .branch-card-loc {
+  display: inline-flex !important;
+  align-items: center !important;
+  color: #d1cbc0 !important;
+}
+
+.branch-select-card .branch-card-footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding-top: 14px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  font-size: 12.5px !important;
+  color: #8f887b !important;
+}
+
+.branch-select-card.active .branch-card-footer {
+  color: #c6a15b !important;
+}
+
+.branch-select-card .branch-card-indicator {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+}
+
+/* ==========================================================================
+   CONTACT PAGE: FULL-WIDTH SCREEN GOOGLE MAP (LAPTOP) & RESPONSIVE (MOBILE)
+   ========================================================================== */
+.contact-map-showcase {
+  width: 100% !important;
+  margin: 50px 0 0 0 !important;
+}
+
+.contact-map-card {
+  background: #12110e !important;
+  border: 1px solid #2e2b24 !important;
+  border-radius: 26px !important;
+  padding: clamp(20px, 3.5vw, 38px) !important;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.65) !important;
+}
+
+.contact-map-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-end !important;
+  margin-bottom: 24px !important;
+  gap: 20px !important;
+  flex-wrap: wrap !important;
+}
+
+.contact-map-kicker {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.14em !important;
+  color: #c6a15b !important;
+  font-weight: 600 !important;
+  margin-bottom: 6px !important;
+}
+
+.contact-map-title h3 {
+  font-size: clamp(24px, 2.8vw, 34px) !important;
+  margin: 0 0 6px 0 !important;
+  color: #ffffff !important;
+  font-family: var(--font-sans) !important;
+  letter-spacing: -0.02em !important;
+}
+
+.contact-map-title p {
+  color: #aaa49a !important;
+  font-size: 15px !important;
+  margin: 0 !important;
+  max-width: 720px !important;
+}
+
+.button-gold-direct {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: linear-gradient(135deg, #c6a15b, #a67c32) !important;
+  color: #0d0d0c !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  padding: 12px 24px !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  box-shadow: 0 6px 18px rgba(198, 161, 91, 0.3) !important;
+  transition: all 0.25s ease !important;
+  white-space: nowrap !important;
+}
+
+.button-gold-direct:hover {
+  background: linear-gradient(135deg, #d8b26a, #b88d40) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(198, 161, 91, 0.45) !important;
+  color: #0d0d0c !important;
+}
+
+.contact-map-frame-wrapper {
+  position: relative !important;
+  width: 100% !important;
+  height: clamp(380px, 50vh, 540px) !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(198, 161, 91, 0.3) !important;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.7) !important;
+  background: #171613 !important;
+}
+
+.contact-map-frame-wrapper iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  display: block !important;
+}
+
+@media (max-width: 768px) {
+  .contact-branch-nav {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-bottom: 34px !important;
+  }
+  .branch-select-card {
+    min-height: auto !important;
+    padding: 20px 22px !important;
+  }
+  .contact-map-card {
+    padding: 16px !important;
+    border-radius: 20px !important;
+  }
+  .contact-map-frame-wrapper {
+    height: 320px !important;
+    border-radius: 14px !important;
+  }
+  .contact-map-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+  .contact-map-actions,
+  .button-gold-direct {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}

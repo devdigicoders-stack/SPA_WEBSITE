@@ -192,13 +192,13 @@ export default function OurBranchesPage() {
           aria-label="Main navigation"
           data-nav
         >
-          <Link href="/?lang=en">Home</Link>
-          <Link href="/about-laguna?lang=en">About</Link>
-          <Link href="/our-branches?lang=en">Our Branches</Link>
-          <Link href="/treatments?lang=en">Treatments</Link>
-          <Link href="/treatment-finder?lang=en">Find Your Ritual</Link>
-          <Link href="/therapists?lang=en">Therapists</Link>
-          <Link href="/contact?lang=en">Contact</Link>
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+          <Link href="/our-branches" className="active is-active">Our Branches</Link>
+          <Link href="/treatments">Treatments</Link>
+          <Link href="/treatment-finder">Find Your Ritual</Link>
+          <Link href="/therapists">Therapists</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
 
         <div className="header-actions">

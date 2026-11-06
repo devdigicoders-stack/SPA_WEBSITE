@@ -327,10 +327,10 @@ export default function TreatmentFinderPage() {
           data-nav
         >
           <Link href="/">Home</Link>
-          <Link href="/about-laguna">About</Link>
+          <Link href="/about">About</Link>
           <Link href="/our-branches">Our Branches</Link>
           <Link href="/treatments">Treatments</Link>
-          <Link href="/treatment-finder" className="is-active">Find Your Ritual</Link>
+          <Link href="/treatment-finder" className="active is-active">Find Your Ritual</Link>
           <Link href="/therapists">Therapists</Link>
           <Link href="/contact">Contact</Link>
         </nav>

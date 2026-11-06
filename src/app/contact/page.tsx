@@ -50,11 +50,11 @@ const CONTACT_BRANCHES: BranchContactData[] = [
     lng: 51.5434,
     photos: [
       "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-moroccan-bath.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-relaxation.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-massage-suite.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-amenities.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-jacuzzi.jpg",
+      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-moroccan-bath.jpg",
+      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-relaxation.jpg",
+      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-massage-suite.jpg",
+      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-amenities.jpg",
+      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-jacuzzi.jpg",
     ],
   },
   {
@@ -79,12 +79,12 @@ const CONTACT_BRANCHES: BranchContactData[] = [
     lat: 25.1686,
     lng: 51.3158,
     photos: [
-      "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-massage-suite.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-moroccan-bath.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-jacuzzi.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-relaxation.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-amenities.jpg",
+      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-hero.jpg",
+      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-moroccan-bath.jpg",
+      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-relaxation.jpg",
+      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-massage-suite.jpg",
+      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-amenities.jpg",
+      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-jacuzzi.jpg",
     ],
   },
 
@@ -93,9 +93,9 @@ const CONTACT_BRANCHES: BranchContactData[] = [
 export default function ContactPage() {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [navOpen, setNavOpen] = useState(false);
-  const [activeBranchSlug, setActiveBranchSlug] = useState<string>("west-bay");
+  const [activeBranchSlug, setActiveBranchSlug] = useState<string>("jouri-hotel");
   const [bookingStep, setBookingStep] = useState<"branches" | "actions">("branches");
-  const [selectedBranchSlug, setSelectedBranchSlug] = useState<string>("west-bay");
+  const [selectedBranchSlug, setSelectedBranchSlug] = useState<string>("jouri-hotel");
   const [bookingContext, setBookingContext] = useState<{ icon: string; text: string } | null>(null);
   const [branchDistances, setBranchDistances] = useState<Record<string, string>>({});
   const [closestBranchSlug, setClosestBranchSlug] = useState<string | null>(null);
@@ -159,12 +159,12 @@ export default function ContactPage() {
           data-nav
         >
           <Link href="/">Home</Link>
-          <Link href="/about-laguna">About</Link>
+          <Link href="/about">About</Link>
           <Link href="/our-branches">Our Branches</Link>
           <Link href="/treatments">Treatments</Link>
           <Link href="/treatment-finder">Find Your Ritual</Link>
           <Link href="/therapists">Therapists</Link>
-          <Link href="/contact" className="is-active">Contact</Link>
+          <Link href="/contact" className="active is-active">Contact</Link>
         </nav>
 
         <div className="header-actions">
@@ -206,20 +206,70 @@ export default function ContactPage() {
 
         {/* CONTACT EXPERIENCE */}
         <section className="contact-experience" data-contact-experience>
-          {/* BRANCH NAV TABS */}
+          <div className="contact-experience-header">
+            <span className="contact-experience-kicker">
+              <i className="fa-solid fa-location-dot" style={{ marginInlineEnd: 6 }} />
+              Doha Spa Locations
+            </span>
+            <h2 className="contact-experience-title">Select Your Sanctuary</h2>
+            <p className="contact-experience-subtitle">
+              Switch between our Doha destinations to view private suite photo galleries, operational hours, and direct navigation.
+            </p>
+          </div>
+
+          {/* CENTERED LUXURY BRANCH CARDS (01 & 02) */}
           <nav className="contact-branch-nav" aria-label="Choose a branch">
-            {CONTACT_BRANCHES.map((b) => (
-              <button
-                key={b.slug}
-                type="button"
-                data-contact-button={b.slug}
-                className={activeBranchSlug === b.slug ? "active" : ""}
-                onClick={() => setActiveBranchSlug(b.slug)}
-              >
-                <span>{b.tabNum}</span>
-                {b.name}
-              </button>
-            ))}
+            {CONTACT_BRANCHES.map((b) => {
+              const isSelected = activeBranchSlug === b.slug;
+              const locationArea = b.slug === "jouri-hotel" ? "Old Salata, Doha" : "Abu Nakhlah, Salwa Road";
+              return (
+                <button
+                  key={b.slug}
+                  type="button"
+                  data-contact-button={b.slug}
+                  className={`branch-select-card ${isSelected ? "active" : ""}`}
+                  onClick={() => setActiveBranchSlug(b.slug)}
+                  aria-pressed={isSelected}
+                >
+                  <div className="card-top-row">
+                    <span className="branch-card-num">{b.tabNum}</span>
+                    <span className="branch-card-badge">
+                      <span className="branch-card-dot" />
+                      {b.openBadge}
+                    </span>
+                  </div>
+                  <h3 className="branch-card-title">{b.name}</h3>
+                  <div className="branch-card-meta">
+                    <span className="branch-card-rating">
+                      <i className="fa-solid fa-star" style={{ color: "var(--gold)", marginInlineEnd: 4 }} />
+                      {b.rating.replace("★ ", "")}
+                    </span>
+                    <span className="branch-card-divider">•</span>
+                    <span className="branch-card-loc">
+                      <i className="fa-solid fa-location-dot" style={{ marginInlineEnd: 4 }} />
+                      {locationArea}
+                    </span>
+                  </div>
+                  <div className="branch-card-footer">
+                    <span className="branch-card-hours">
+                      <i className="fa-regular fa-clock" style={{ marginInlineEnd: 6 }} />
+                      {b.hours}
+                    </span>
+                    <span className="branch-card-indicator">
+                      {isSelected ? (
+                        <>
+                          <i className="fa-solid fa-circle-check" /> Active Sanctuary
+                        </>
+                      ) : (
+                        <>
+                          Select Branch <i className="fa-solid fa-arrow-right" style={{ marginInlineStart: 4 }} />
+                        </>
+                      )}
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
           </nav>
 
           {/* ACTIVE BRANCH PANEL */}
@@ -305,19 +355,46 @@ export default function ContactPage() {
                     help confirm duration, availability, and suitable facilities.
                   </p>
                 </div>
-
-                <iframe
-                  src={activeBranch.mapIframe}
-                  title={`${activeBranch.name} map`}
-                  width="600"
-                  height="450"
-                  loading="lazy"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                ></iframe>
               </div>
             </article>
           </div>
+
+          {/* FULL SCREEN / FULL WIDTH MAP SHOWCASE */}
+          <section className="contact-map-showcase" aria-label="Interactive Location Map">
+            <div className="contact-map-card">
+              <div className="contact-map-header">
+                <div className="contact-map-title">
+                  <span className="contact-map-kicker">
+                    <i className="fa-solid fa-map-location-dot" style={{ marginInlineEnd: 6 }} />
+                    Live Google Map &amp; Navigation
+                  </span>
+                  <h3>{activeBranch.name}</h3>
+                  <p>{activeBranch.address}</p>
+                </div>
+                <div className="contact-map-actions">
+                  <a
+                    className="button button-gold-direct"
+                    href={activeBranch.mapDirectionsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fa-solid fa-diamond-turn-right" style={{ marginInlineEnd: 8 }} />
+                    Open Google Maps Directions
+                  </a>
+                </div>
+              </div>
+
+              <div className="contact-map-frame-wrapper">
+                <iframe
+                  src={activeBranch.mapIframe}
+                  title={`${activeBranch.name} live map Doha Qatar`}
+                  className="contact-map-iframe"
+                  loading="lazy"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </section>
         </section>
 
         {/* GUIDANCE SECTION */}

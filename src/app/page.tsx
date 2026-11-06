@@ -268,7 +268,7 @@ export default function HomePage() {
           aria-label="Main navigation"
           data-nav
         >
-          <Link href="/" className="active">Home</Link>
+          <Link href="/" className="active is-active">Home</Link>
           <Link href="/about">About</Link>
           <Link href="/our-branches">Our Branches</Link>
           <Link href="/treatments">Treatments</Link>

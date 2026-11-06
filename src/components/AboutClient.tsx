@@ -221,7 +221,7 @@ export default function AboutClient() {
           data-nav
         >
           <Link href="/">Home</Link>
-          <Link href="/about">About Us</Link>
+          <Link href="/about" className="active is-active">About</Link>
           <Link href="/our-branches">Our Branches</Link>
           <Link href="/treatments">Treatments</Link>
           <Link href="/treatment-finder">Find Your Ritual</Link>
@@ -254,7 +254,7 @@ export default function AboutClient() {
           </video>
           <div className="hero-scrim"></div>
 
-          <button
+          {/* <button
             type="button"
             onClick={toggleAboutSound}
             className="hero-sound-toggle"
@@ -262,7 +262,7 @@ export default function AboutClient() {
           >
             <i className={`fa-solid ${isAudioMuted ? "fa-volume-xmark" : "fa-volume-high"}`} aria-hidden="true"></i>
             <span>{isAudioMuted ? "Sound Off (Tap to Play)" : "Sound Playing"}</span>
-          </button>
+          </button> */}
 
           <div className="hero-content">
             <p className="kicker">Our Story · Doha Sanctuary</p>

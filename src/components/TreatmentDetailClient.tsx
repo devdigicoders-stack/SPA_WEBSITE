@@ -114,7 +114,7 @@ export default function TreatmentDetailClient({
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
           <Link href="/our-branches">Our Branches</Link>
-          <Link href="/treatments" className="is-active">Treatments</Link>
+          <Link href="/treatments" className="active is-active">Treatments</Link>
           <Link href="/treatment-finder">Find Your Ritual</Link>
           <Link href="/therapists">Therapists</Link>
           <Link href="/contact">Contact</Link>
