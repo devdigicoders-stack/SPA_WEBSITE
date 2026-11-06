@@ -61,12 +61,22 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
+              try {
+                sessionStorage.removeItem('_chunk_retry');
+              } catch(e) {}
               window.addEventListener('error', function(e) {
-                if (e && (e.message && (/Loading chunk .* failed/i.test(e.message) || e.message.indexOf('ChunkLoadError') !== -1))) {
-                  console.warn('ChunkLoadError detected: Auto-refreshing to sync with new server chunks...');
-                  window.location.reload();
-                }
-              });
+                try {
+                  var isScriptError = e.target && e.target.tagName === 'SCRIPT' && e.target.src && e.target.src.indexOf('/_next/') !== -1;
+                  var isChunkError = e.message && (/Loading chunk .* failed/i.test(e.message) || e.message.indexOf('ChunkLoadError') !== -1);
+                  if (isScriptError || isChunkError) {
+                    if (!sessionStorage.getItem('_chunk_retry')) {
+                      sessionStorage.setItem('_chunk_retry', '1');
+                      console.warn('Syncing with updated server chunks...');
+                      window.location.reload();
+                    }
+                  }
+                } catch(err) {}
+              }, true);
             `,
           }}
         />
