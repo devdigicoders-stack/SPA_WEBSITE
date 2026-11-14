@@ -42,8 +42,8 @@ export default function Header() {
       <header
         className={`fixed top-3 left-3 right-3 md:left-6 md:right-6 lg:left-10 lg:right-10 z-50 transition-all duration-300 rounded-full border ${
           isScrolled
-            ? "bg-white/95 border-[#c6a15b]/40 shadow-xl backdrop-blur-xl py-2 px-4 md:px-6"
-            : "bg-white/90 border-[#e8e1d5] shadow-sm backdrop-blur-md py-2.5 px-4 md:px-7"
+            ? "bg-[#FCFBF8]/95 border-[#e8dfd1] shadow-xl backdrop-blur-xl py-2 px-4 md:px-6"
+            : "bg-[#FCFBF8]/90 border-[#e8dfd1] shadow-sm backdrop-blur-md py-2.5 px-4 md:px-7"
         }`}
       >
         <div className="flex items-center justify-between gap-4">
@@ -103,9 +103,9 @@ export default function Header() {
 
       {/* Mobile Drawer / Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-white/98 backdrop-blur-2xl xl:hidden pt-24 px-6 pb-8 overflow-y-auto animate-in fade-in duration-200 border-b border-[#e8e1d5]">
+        <div className="fixed inset-0 z-40 bg-[#FCFBF8]/98 backdrop-blur-2xl xl:hidden pt-24 px-6 pb-8 overflow-y-auto animate-in fade-in duration-200 border-b border-[#e8dfd1]">
           <div className="flex flex-col gap-5 max-w-md mx-auto">
-            <div className="border-b border-[#e8e1d5] pb-4">
+            <div className="border-b border-[#e8dfd1] pb-4">
               <p className="text-[11px] font-bold uppercase tracking-widest text-[#a67c32]">Navigation</p>
               <h3 className="text-xl font-serif text-[#221910] mt-1 font-semibold">
                 Luxury Gentlemen Sanctuary
@@ -122,7 +122,7 @@ export default function Header() {
                     className={`text-base font-medium py-2.5 px-3.5 rounded-xl transition-all ${
                       isActive
                         ? "bg-[#a67c32]/12 text-[#a67c32] font-semibold border-l-4 border-[#a67c32]"
-                        : "text-[#3c342a] hover:bg-[#f7f4ed] hover:text-[#221910]"
+                        : "text-[#3c342a] hover:bg-[#F7F1E7] hover:text-[#221910]"
                     }`}
                   >
                     {link.label}
@@ -131,7 +131,7 @@ export default function Header() {
               })}
             </nav>
 
-            <div className="pt-4 border-t border-[#e8e1d5] flex flex-col gap-3">
+            <div className="pt-4 border-t border-[#e8dfd1] flex flex-col gap-3">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
@@ -148,14 +148,14 @@ export default function Header() {
                   href={`https://wa.me/${SPA_INFO.whatsapp.replace(/\D/g, "")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 py-2.5 rounded-full bg-[#f4efe6] border border-[#e0d6c4] text-[#221910] hover:text-[#1b9a59] text-xs font-semibold"
+                  className="inline-flex items-center justify-center gap-2 py-2.5 rounded-full bg-[#F7F1E7] border border-[#e8dfd1] text-[#221910] hover:text-[#1b9a59] text-xs font-semibold"
                 >
                   <MessageSquare className="w-4 h-4 text-[#1b9a59]" />
                   <span>WhatsApp</span>
                 </a>
                 <a
                   href={`tel:${SPA_INFO.phone.replace(/\D/g, "")}`}
-                  className="inline-flex items-center justify-center gap-2 py-2.5 rounded-full bg-[#f4efe6] border border-[#e0d6c4] text-[#221910] hover:text-[#a67c32] text-xs font-semibold"
+                  className="inline-flex items-center justify-center gap-2 py-2.5 rounded-full bg-[#F7F1E7] border border-[#e8dfd1] text-[#221910] hover:text-[#a67c32] text-xs font-semibold"
                 >
                   <Phone className="w-4 h-4 text-[#a67c32]" />
                   <span>Call Spa</span>

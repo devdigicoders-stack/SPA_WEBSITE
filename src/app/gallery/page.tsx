@@ -158,16 +158,16 @@ export default function GalleryPage() {
         <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="max-w-3xl space-y-4">
             <p className="kicker">Visual Showcase</p>
-            <h1 className="text-4xl sm:text-6xl font-serif font-bold text-white tracking-tight leading-tight">
+            <h1 className="text-4xl sm:text-6xl font-serif font-bold text-[#221910] tracking-tight leading-tight">
               Videos &amp; Photo Gallery
             </h1>
-            <p className="text-base sm:text-lg text-[#aaa49a] leading-relaxed">
+            <p className="text-base sm:text-lg text-[#665d52] leading-relaxed">
               Step inside Just Relax Spa across our Jouri Murwab Hotel and West Bay Diplomatic Suite locations. Explore our private VIP treatment rooms, authentic heated hammams, and therapeutic facilities.
             </p>
           </div>
 
           {/* Filter Pills */}
-          <div className="flex gap-2.5 mt-8 border-b border-[#2c2923] pb-4 overflow-x-auto">
+          <div className="flex gap-2.5 mt-8 border-b border-[#e8dfd1] pb-4 overflow-x-auto">
             {categories.map((cat) => {
               const isActive = activeCategory === cat.id;
               return (
@@ -177,7 +177,7 @@ export default function GalleryPage() {
                   className={`px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
                     isActive
                       ? "bg-[#a67c32] text-white shadow-md"
-                      : "bg-white text-[#383025] hover:text-[#a67c32] border border-[#dfd6c4] shadow-sm"
+                      : "bg-[#F7F1E7] text-[#221910] hover:text-[#a67c32] border border-[#e8dfd1] shadow-sm"
                   }`}
                 >
                   {cat.label}
@@ -194,7 +194,7 @@ export default function GalleryPage() {
               <VideoIcon className="w-4 h-4" />
               <span>Cinematic Video Tours</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#221910]">
               Watch the Just Relax Experience
             </h2>
           </div>
@@ -204,7 +204,7 @@ export default function GalleryPage() {
               <div
                 key={video.id}
                 onClick={() => setSelectedMedia(video)}
-                className="luxury-card overflow-hidden group cursor-pointer border-[#2c2923] hover:border-[#c6a15b]/60"
+                className="luxury-card overflow-hidden group cursor-pointer border-[#e8dfd1] hover:border-[#c6a15b]/60"
               >
                 <div className="relative h-60 w-full overflow-hidden">
                   <Image
@@ -230,10 +230,10 @@ export default function GalleryPage() {
                 </div>
 
                 <div className="p-5 space-y-2">
-                  <h3 className="text-lg font-serif font-bold text-white group-hover:text-[#c6a15b] transition-colors">
+                  <h3 className="text-lg font-serif font-bold text-[#221910] group-hover:text-[#a67c32] transition-colors">
                     {video.title}
                   </h3>
-                  <p className="text-xs text-[#aaa49a] line-clamp-2">
+                  <p className="text-xs text-[#665d52] line-clamp-2">
                     {video.description}
                   </p>
                   <span className="inline-flex items-center gap-1 text-xs text-[#c6a15b] font-semibold pt-1">
@@ -253,7 +253,7 @@ export default function GalleryPage() {
               <Camera className="w-4 h-4" />
               <span>High-Resolution Photography</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#221910]">
               Architecture, Suites &amp; Atmosphere
             </h2>
           </div>
@@ -263,7 +263,7 @@ export default function GalleryPage() {
               <div
                 key={item.id}
                 onClick={() => setSelectedMedia(item)}
-                className="relative h-72 rounded-2xl overflow-hidden border border-[#2c2923] group cursor-pointer"
+                className="relative h-72 rounded-2xl overflow-hidden border border-[#e8dfd1] group cursor-pointer"
               >
                 <Image
                   src={item.src}
@@ -283,10 +283,10 @@ export default function GalleryPage() {
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#c6a15b] block mb-1">
                     {item.category}
                   </span>
-                  <h3 className="text-sm font-serif font-bold text-white line-clamp-1">
+                  <h3 className="text-sm font-serif font-bold text-[#221910] line-clamp-1">
                     {item.title}
                   </h3>
-                  <p className="text-[11px] text-[#aaa49a] line-clamp-1 mt-0.5">
+                  <p className="text-[11px] text-[#665d52] line-clamp-1 mt-0.5">
                     {item.description}
                   </p>
                 </div>
@@ -298,8 +298,8 @@ export default function GalleryPage() {
         {/* LIGHTBOX MODAL */}
         {selectedMedia && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-in fade-in duration-200">
-            <div className="relative max-w-4xl w-full bg-white border border-[#dfd6c4] rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
-              <div className="p-4 sm:p-5 border-b border-[#e5ded0] flex items-center justify-between bg-[#faf7f0]">
+            <div className="relative max-w-4xl w-full bg-[#F7F1E7] border border-[#e8dfd1] rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+              <div className="p-4 sm:p-5 border-b border-[#e8dfd1] flex items-center justify-between bg-[#FCFBF8]">
                 <h3 className="text-lg font-serif font-bold text-[#221910]">
                   {selectedMedia.title}
                 </h3>
@@ -333,7 +333,7 @@ export default function GalleryPage() {
                 )}
               </div>
 
-              <div className="p-5 border-t border-[#e5ded0] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-[#faf7f0]">
+              <div className="p-5 border-t border-[#e8dfd1] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-[#FCFBF8]">
                 <p className="text-xs sm:text-sm text-[#554d42]">
                   {selectedMedia.description}
                 </p>

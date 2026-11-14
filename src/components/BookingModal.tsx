@@ -53,9 +53,9 @@ export default function BookingModal() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/60 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-2xl bg-white border border-[#dfd6c4] rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
+      <div className="relative w-full max-w-2xl bg-[#F7F1E7] border border-[#e8dfd1] rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
         {/* Modal Header */}
-        <div className="p-5 sm:p-6 border-b border-[#e5ded0] flex items-center justify-between bg-[#faf7f0]">
+        <div className="p-5 sm:p-6 border-b border-[#e8dfd1] flex items-center justify-between bg-[#FCFBF8]">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-[#a67c32]/15 flex items-center justify-center text-[#a67c32]">
               <Sparkles className="w-4 h-4" />
@@ -75,7 +75,7 @@ export default function BookingModal() {
 
           <button
             onClick={closeBooking}
-            className="w-9 h-9 rounded-full bg-[#f0ebe0] hover:bg-[#a67c32] text-[#554d42] hover:text-white flex items-center justify-center transition-colors"
+            className="w-9 h-9 rounded-full bg-[#F7F1E7] hover:bg-[#a67c32] text-[#554d42] hover:text-white flex items-center justify-center transition-colors"
             aria-label="Close booking modal"
           >
             <X className="w-5 h-5" />
@@ -83,7 +83,7 @@ export default function BookingModal() {
         </div>
 
         {/* Progress Bar */}
-        <div className="h-1 bg-[#ebe4d5] w-full">
+        <div className="h-1 bg-[#e8dfd1] w-full">
           <div
             className="h-full bg-gradient-to-r from-[#a67c32] to-[#d4b370] transition-all duration-300"
             style={{ width: `${(step / 3) * 100}%` }}
@@ -91,7 +91,7 @@ export default function BookingModal() {
         </div>
 
         {/* Modal Body */}
-        <div className="p-5 sm:p-7 overflow-y-auto flex-1 space-y-6 bg-[#fcfbf9]">
+        <div className="p-5 sm:p-7 overflow-y-auto flex-1 space-y-6 bg-[#FCFBF8]">
           {isSuccess ? (
             <div className="py-8 text-center space-y-5 animate-in zoom-in-95 duration-200">
               <div className="w-16 h-16 rounded-full bg-emerald-500/15 text-emerald-600 mx-auto flex items-center justify-center border border-emerald-500/30">
@@ -106,16 +106,16 @@ export default function BookingModal() {
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-white border border-[#dfd6c4] max-w-md mx-auto text-left text-xs space-y-2 shadow-sm">
-                <div className="flex justify-between py-1 border-b border-[#f0e9dc]">
+              <div className="p-4 rounded-2xl bg-white border border-[#e8dfd1] max-w-md mx-auto text-left text-xs space-y-2 shadow-sm">
+                <div className="flex justify-between py-1 border-b border-[#e8dfd1]">
                   <span className="text-[#695f53]">Branch:</span>
                   <span className="font-semibold text-[#221910]">{currentBranchObj.name}</span>
                 </div>
-                <div className="flex justify-between py-1 border-b border-[#f0e9dc]">
+                <div className="flex justify-between py-1 border-b border-[#e8dfd1]">
                   <span className="text-[#695f53]">Treatment:</span>
                   <span className="font-semibold text-[#221910]">{currentTreatmentObj.title}</span>
                 </div>
-                <div className="flex justify-between py-1 border-b border-[#f0e9dc]">
+                <div className="flex justify-between py-1 border-b border-[#e8dfd1]">
                   <span className="text-[#695f53]">Schedule:</span>
                   <span className="font-semibold text-[#221910]">{date} at {time} ({selectedDuration})</span>
                 </div>
@@ -161,12 +161,12 @@ export default function BookingModal() {
                           }}
                           className={`relative p-4 sm:p-5 rounded-2xl border cursor-pointer transition-all duration-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 ${
                             isSelected
-                              ? "bg-[#faf6ee] border-[#a67c32] shadow-md"
-                              : "bg-white border-[#dfd6c4] hover:border-[#a67c32]/60 shadow-sm"
+                              ? "bg-[#FCFBF8] border-[#a67c32] shadow-md"
+                              : "bg-[#F7F1E7] border-[#e8dfd1] hover:border-[#a67c32]/60 shadow-sm"
                           }`}
                         >
                           <div className="flex items-start gap-3.5">
-                            <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden shrink-0 border border-[#dfd6c4]">
+                            <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden shrink-0 border border-[#e8dfd1]">
                               <Image
                                 src={branch.image}
                                 alt={branch.name}
@@ -258,8 +258,8 @@ export default function BookingModal() {
                           }}
                           className={`p-3.5 rounded-2xl border cursor-pointer transition-all flex flex-col justify-between ${
                             isSelected
-                              ? "bg-[#faf6ee] border-[#a67c32] shadow-sm"
-                              : "bg-white border-[#dfd6c4] hover:border-[#a67c32]/50 shadow-sm"
+                              ? "bg-[#FCFBF8] border-[#a67c32] shadow-sm"
+                              : "bg-[#F7F1E7] border-[#e8dfd1] hover:border-[#a67c32]/50 shadow-sm"
                           }`}
                         >
                           <div>
@@ -279,7 +279,7 @@ export default function BookingModal() {
                             </p>
                           </div>
 
-                          <div className="mt-3 pt-2 border-t border-[#f0e9dc] flex items-center justify-between text-xs">
+                          <div className="mt-3 pt-2 border-t border-[#e8dfd1] flex items-center justify-between text-xs">
                             <span className="text-[#554d42]">{treatment.duration}</span>
                             <span
                               className={`text-[11px] font-semibold ${
@@ -309,7 +309,7 @@ export default function BookingModal() {
                             className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all ${
                               selectedDuration === dur
                                 ? "bg-[#a67c32] text-white border-[#a67c32]"
-                                : "bg-white text-[#383025] border-[#dfd6c4] hover:border-[#a67c32]"
+                                : "bg-white text-[#383025] border-[#e8dfd1] hover:border-[#a67c32]"
                             }`}
                           >
                             {dur}
@@ -343,7 +343,7 @@ export default function BookingModal() {
               {step === 3 && (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {/* Summary Bar */}
-                  <div className="p-3 rounded-xl bg-white border border-[#dfd6c4] text-xs flex flex-wrap items-center justify-between gap-2 shadow-sm">
+                  <div className="p-3 rounded-xl bg-white border border-[#e8dfd1] text-xs flex flex-wrap items-center justify-between gap-2 shadow-sm">
                     <div>
                       <strong className="text-[#221910] block font-serif">{currentTreatmentObj.title}</strong>
                       <span className="text-[#695f53]">{currentBranchObj.shortName} • {selectedDuration}</span>
@@ -363,7 +363,7 @@ export default function BookingModal() {
                         required
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
-                        className="w-full bg-white border border-[#dfd6c4] rounded-xl px-3.5 py-2.5 text-sm text-[#221910] focus:outline-none focus:border-[#a67c32]"
+                        className="w-full bg-[#FCFBF8] border border-[#e8dfd1] rounded-xl px-3.5 py-2.5 text-sm text-[#221910] focus:outline-none focus:border-[#a67c32]"
                       />
                     </div>
 
@@ -374,7 +374,7 @@ export default function BookingModal() {
                       <select
                         value={time}
                         onChange={(e) => setTime(e.target.value)}
-                        className="w-full bg-white border border-[#dfd6c4] rounded-xl px-3.5 py-2.5 text-sm text-[#221910] focus:outline-none focus:border-[#a67c32]"
+                        className="w-full bg-[#FCFBF8] border border-[#e8dfd1] rounded-xl px-3.5 py-2.5 text-sm text-[#221910] focus:outline-none focus:border-[#a67c32]"
                       >
                         <option value="11:00">11:00 AM (Golden Hours 25% Off)</option>
                         <option value="13:00">1:00 PM (Golden Hours 25% Off)</option>
@@ -398,7 +398,7 @@ export default function BookingModal() {
                         placeholder="e.g. Mr. Al-Kuwari / John Smith"
                         value={guestName}
                         onChange={(e) => setGuestName(e.target.value)}
-                        className="w-full bg-white border border-[#dfd6c4] rounded-xl px-3.5 py-2.5 text-sm text-[#221910] focus:outline-none focus:border-[#a67c32]"
+                        className="w-full bg-[#FCFBF8] border border-[#e8dfd1] rounded-xl px-3.5 py-2.5 text-sm text-[#221910] focus:outline-none focus:border-[#a67c32]"
                       />
                     </div>
 
@@ -412,7 +412,7 @@ export default function BookingModal() {
                         placeholder="+974 XX XXX XXX"
                         value={guestPhone}
                         onChange={(e) => setGuestPhone(e.target.value)}
-                        className="w-full bg-white border border-[#dfd6c4] rounded-xl px-3.5 py-2.5 text-sm text-[#221910] focus:outline-none focus:border-[#a67c32]"
+                        className="w-full bg-[#FCFBF8] border border-[#e8dfd1] rounded-xl px-3.5 py-2.5 text-sm text-[#221910] focus:outline-none focus:border-[#a67c32]"
                       />
                     </div>
                   </div>
@@ -426,11 +426,11 @@ export default function BookingModal() {
                       placeholder="Pressure preference, focus areas (e.g. lower back, shoulders), or health condition..."
                       value={notes}
                       onChange={(e) => setNotes(e.target.value)}
-                      className="w-full bg-white border border-[#dfd6c4] rounded-xl px-3.5 py-2 text-sm text-[#221910] focus:outline-none focus:border-[#a67c32] resize-none"
+                      className="w-full bg-[#FCFBF8] border border-[#e8dfd1] rounded-xl px-3.5 py-2 text-sm text-[#221910] focus:outline-none focus:border-[#a67c32] resize-none"
                     />
                   </div>
 
-                  <div className="p-3 rounded-xl bg-[#faf7f0] border border-[#dfd6c4] flex items-center gap-2 text-[11px] text-[#695f53]">
+                  <div className="p-3 rounded-xl bg-[#faf7f0] border border-[#e8dfd1] flex items-center gap-2 text-[11px] text-[#695f53]">
                     <ShieldCheck className="w-4 h-4 text-[#a67c32] shrink-0" />
                     <span>Your privacy and data are protected with strict confidentiality in Doha.</span>
                   </div>

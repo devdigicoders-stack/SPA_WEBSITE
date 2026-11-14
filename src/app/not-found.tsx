@@ -12,8 +12,8 @@ export default function NotFound() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#0d0d0c",
-        color: "#ffffff",
+        backgroundColor: "#FCFBF8",
+        color: "#221910",
         padding: "24px",
         textAlign: "center",
       }}
@@ -24,7 +24,7 @@ export default function NotFound() {
             fontSize: "13px",
             letterSpacing: "0.2em",
             textTransform: "uppercase",
-            color: "#c6a15b",
+            color: "#a67c32",
             fontWeight: 700,
             marginBottom: "12px",
           }}
@@ -36,7 +36,7 @@ export default function NotFound() {
             fontSize: "clamp(32px, 5vw, 48px)",
             fontWeight: 800,
             lineHeight: 1.1,
-            color: "#f5f3ef",
+            color: "#221910",
             marginBottom: "16px",
           }}
         >
@@ -45,7 +45,7 @@ export default function NotFound() {
         <p
           style={{
             fontSize: "15px",
-            color: "#dedbd4",
+            color: "#665d52",
             lineHeight: 1.6,
             marginBottom: "32px",
           }}

@@ -10,13 +10,13 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          DEFAULT: "#fcfbf8",
-          dark: "#f5f1e8",
-          surface: "#ffffff",
-          card: "#ffffff",
-          cardElevated: "#fbf9f4",
-          border: "#e8e1d5",
-          borderLight: "rgba(0, 0, 0, 0.07)",
+          DEFAULT: "#FCFBF8",
+          dark: "#F7F1E7",
+          surface: "#F7F1E7",
+          card: "#F7F1E7",
+          cardElevated: "#FCFBF8",
+          border: "#e8dfd1",
+          borderLight: "rgba(166, 124, 50, 0.15)",
         },
         gold: {
           light: "#d4b370",

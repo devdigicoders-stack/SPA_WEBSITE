@@ -10,12 +10,12 @@ export default function Footer() {
   const { openBooking } = useBooking();
 
   return (
-    <footer className="bg-[#f5f0e6] border-t border-[#dfd6c4] text-[#554d42] pt-16 pb-12 relative overflow-hidden">
+    <footer className="bg-[#F7F1E7] border-t border-[#e8dfd1] text-[#554d42] pt-16 pb-12 relative overflow-hidden">
       {/* Background Subtle Ambient Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-[#a67c32]/5 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#dfd6c4]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#e8dfd1]">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="inline-block group">
@@ -35,7 +35,7 @@ export default function Footer() {
                 href={`https://wa.me/${SPA_INFO.whatsapp.replace(/\D/g, "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#dfd6c4] hover:border-[#1b9a59] text-xs text-[#383025] hover:text-[#1b9a59] shadow-sm transition-colors"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FCFBF8] border border-[#e8dfd1] hover:border-[#1b9a59] text-xs text-[#383025] hover:text-[#1b9a59] shadow-sm transition-colors"
               >
                 <MessageSquare className="w-3.5 h-3.5 text-[#1b9a59]" />
                 <span>WhatsApp Concierge</span>
@@ -44,7 +44,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#dfd6c4] hover:border-[#a67c32] text-xs text-[#383025] hover:text-[#a67c32] shadow-sm transition-colors"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FCFBF8] border border-[#e8dfd1] hover:border-[#a67c32] text-xs text-[#383025] hover:text-[#a67c32] shadow-sm transition-colors"
               >
                 <Instagram className="w-3.5 h-3.5 text-[#a67c32]" />
                 <span>@justrelaxspa.doha</span>
@@ -120,7 +120,7 @@ export default function Footer() {
             </h3>
             <div className="space-y-3.5 text-xs">
               {BRANCHES.map((branch) => (
-                <div key={branch.id} className="p-3 rounded-xl bg-white border border-[#dfd6c4] shadow-sm space-y-1.5">
+                <div key={branch.id} className="p-3 rounded-xl bg-[#FCFBF8] border border-[#e8dfd1] shadow-sm space-y-1.5">
                   <strong className="text-[#221910] block text-sm font-semibold">
                     {branch.shortName}
                   </strong>

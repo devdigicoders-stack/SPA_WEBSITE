@@ -5,15 +5,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Tajawal:wght@400;500;700&family=Cairo:wght@400;600;700&display=swap');
 
 :root {
-  --ink: #fcfbf8;
-  --surface: #ffffff;
-  --surface-elevated: #f7f4ed;
+  --ink: #FCFBF8;
+  --surface: #F7F1E7;
+  --surface-elevated: #FCFBF8;
   --paper: #221910;
   --gold: #a67c32;
   --gold-hover: #8c6522;
   --gold-subtle: rgba(166, 124, 50, 0.12);
   --muted: #665d52;
-  --border: #e8e1d5;
+  --border: #e8dfd1;
   --radius: 18px;
   --ease: cubic-bezier(0.23, 1, 0.32, 1);
   --font-sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -66,7 +66,7 @@ body {
 
 /* Luxury Card */
 .luxury-card {
-  background: #ffffff;
+  background: #F7F1E7;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   transition: transform 300ms var(--ease), border-color 300ms var(--ease), box-shadow 300ms var(--ease);
@@ -377,7 +377,7 @@ html[dir="rtl"] .floating-ctas {
   height: 52px !important;
   border-radius: 50% !important;
   padding: 0 !important;
-  background: #14120e !important;
+  background: #F7F1E7 !important;
   color: #c6a15b !important;
   border: 2px solid #c6a15b !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 12px rgba(198, 161, 91, 0.25) !important;
@@ -418,7 +418,7 @@ html[dir="rtl"] .floating-ctas {
   border-radius: 9999px !important;
   gap: 8px !important;
   background: linear-gradient(135deg, #faeed0 0%, #dfb76c 30%, #c6a15b 70%, #9e7a32 100%) !important;
-  color: #0e0d0b !important;
+  color: #221910 !important;
   border: 1.5px solid rgba(255, 255, 255, 0.55) !important;
   box-shadow: 0 10px 28px rgba(198, 161, 91, 0.5), 0 3px 8px rgba(0, 0, 0, 0.4) !important;
   animation: book-subtle-blink 3s ease-in-out infinite 1s !important;
@@ -428,7 +428,7 @@ html[dir="rtl"] .floating-ctas {
 .cta-btn.cta-book i,
 .floating-cta.floating-directions i {
   font-size: 18px !important;
-  color: #0e0d0b !important;
+  color: #221910 !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -440,7 +440,7 @@ html[dir="rtl"] .floating-ctas {
   font-size: 15px !important;
   font-weight: 800 !important;
   letter-spacing: 0.03em !important;
-  color: #0e0d0b !important;
+  color: #221910 !important;
   display: inline-block !important;
   line-height: 1 !important;
   margin: 0 !important;
@@ -828,7 +828,7 @@ html[dir="rtl"] .footer-bottom {
   overflow: hidden;
   border: 1px solid rgba(198, 161, 91, 0.35);
   box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.75), 0 0 30px rgba(198, 161, 91, 0.12);
-  background: #14120e;
+  background: #F7F1E7;
   aspect-ratio: 4 / 3;
 }
 
@@ -963,7 +963,7 @@ html[dir="rtl"] .footer-bottom {
   overflow: hidden;
   border: 1px solid rgba(198, 161, 91, 0.4);
   box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(198, 161, 91, 0.12);
-  background: #14120e;
+  background: #F7F1E7;
   aspect-ratio: 4 / 3;
 }
 
@@ -1100,7 +1100,7 @@ html[dir="rtl"] .footer-bottom {
 }
 
 .price-list-sheet {
-  background: #ffffff;
+  background: #F7F1E7;
   border: 1.5px solid rgba(166, 124, 50, 0.35);
   border-radius: 24px;
   padding: clamp(28px, 4vw, 44px);
@@ -1164,7 +1164,7 @@ html[dir="rtl"] .footer-bottom {
   align-items: center;
   gap: 20px;
   padding: 16px 20px;
-  background: #faf7f2;
+  background: #FCFBF8;
   border: 1px solid #e8e1d5;
   border-radius: 16px;
   transition: all 0.25s ease;
@@ -1608,7 +1608,7 @@ html, body {
 
 /* Mobile Nav Overlay */
 .main-nav.open {
-  background: #ffffff !important;
+  background: #F7F1E7 !important;
   border: 1px solid #dfd6c4 !important;
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
@@ -1667,7 +1667,7 @@ html, body {
 }
 
 .booking-dialog-inner {
-  background: #ffffff !important;
+  background: #F7F1E7 !important;
   border: 1.5px solid rgba(166, 124, 50, 0.35) !important;
   border-radius: 24px !important;
   padding: clamp(20px, 4.5vw, 34px) !important;
@@ -1684,7 +1684,7 @@ html, body {
   height: 36px !important;
   border-radius: 50% !important;
   border: 1px solid #e8e1d5 !important;
-  background: #faf7f2 !important;
+  background: #FCFBF8 !important;
   color: #554d42 !important;
   display: flex !important;
   align-items: center !important;
@@ -1737,7 +1737,7 @@ html, body {
   flex-direction: column !important;
   align-items: flex-start !important;
   padding: 14px 18px !important;
-  background: #faf7f2 !important;
+  background: #FCFBF8 !important;
   border: 1px solid #e8e1d5 !important;
   border-radius: 16px !important;
   text-align: left !important;
@@ -1806,7 +1806,7 @@ html, body {
 }
 
 .booking-action-call {
-  background: #faf7f2 !important;
+  background: #FCFBF8 !important;
   border-color: #dfd6c4 !important;
   color: #221910 !important;
 }
@@ -1818,7 +1818,7 @@ html, body {
 }
 
 .booking-action-map {
-  background: #ffffff !important;
+  background: #FCFBF8 !important;
   border-color: #dfd6c4 !important;
   color: #554d42 !important;
 }
@@ -2042,7 +2042,7 @@ p, h1, h2, h3, h4, span, a {
     right: 10px !important;
     flex-direction: column !important;
     align-items: stretch !important;
-    background: #ffffff !important;
+    background: #F7F1E7 !important;
     border: 1.5px solid rgba(166, 124, 50, 0.35) !important;
     backdrop-filter: blur(24px) !important;
     -webkit-backdrop-filter: blur(24px) !important;
@@ -2645,7 +2645,7 @@ iframe {
     right: 14px !important;
     flex-direction: column !important;
     align-items: stretch !important;
-    background: #ffffff !important;
+    background: #F7F1E7 !important;
     border: 1px solid #dfd6c4 !important;
     padding: 20px !important;
     border-radius: 20px !important;
@@ -2742,7 +2742,7 @@ iframe {
   justify-content: space-between !important;
   text-align: left !important;
   padding: 26px 28px !important;
-  background: #ffffff !important;
+  background: #F7F1E7 !important;
   border: 1.5px solid #dfd6c4 !important;
   border-radius: 22px !important;
   color: #221910 !important;
@@ -2760,7 +2760,7 @@ iframe {
 }
 
 .branch-select-card.active {
-  background: #faf6ee !important;
+  background: #FCFBF8 !important;
   border: 2px solid #a67c32 !important;
   box-shadow: 0 14px 36px rgba(50, 30, 10, 0.08), 0 0 20px rgba(166, 124, 50, 0.15) !important;
   transform: translateY(-2px) !important;
@@ -2874,7 +2874,7 @@ iframe {
 }
 
 .contact-map-card {
-  background: #ffffff !important;
+  background: #F7F1E7 !important;
   border: 1px solid #dfd6c4 !important;
   border-radius: 26px !important;
   padding: clamp(20px, 3.5vw, 38px) !important;
@@ -2948,7 +2948,7 @@ iframe {
   overflow: hidden !important;
   border: 1px solid rgba(166, 124, 50, 0.3) !important;
   box-shadow: 0 12px 30px rgba(50, 30, 10, 0.08) !important;
-  background: #faf7f2 !important;
+  background: #FCFBF8 !important;
 }
 
 .contact-map-frame-wrapper iframe {
