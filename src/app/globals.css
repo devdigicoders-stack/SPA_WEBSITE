@@ -625,9 +625,9 @@ html[dir="rtl"] .floating-ctas {
 }
 
 .card-actions a {
-  background: rgba(255, 255, 255, 0.08) !important;
-  color: #dedbd4 !important;
-  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  background: #FCFBF8 !important;
+  color: #221910 !important;
+  border: 1.5px solid #e8dfd1 !important;
   border-radius: 999px !important;
   padding: 9px 18px !important;
   font-size: 13.5px !important;
@@ -640,9 +640,9 @@ html[dir="rtl"] .floating-ctas {
 }
 
 .card-actions a:hover {
-  border-color: #c6a15b !important;
-  color: #ffffff !important;
-  background: rgba(198, 161, 91, 0.15) !important;
+  border-color: #a67c32 !important;
+  color: #a67c32 !important;
+  background: #F7F1E7 !important;
 }
 
 /* ========================================================
@@ -907,10 +907,11 @@ html[dir="rtl"] .footer-bottom {
 
 .why-heading-content h2 {
   margin: 12px 0 16px 0 !important;
+  color: #1e150c !important;
 }
 
 .why-heading-content p {
-  color: #c5beb1 !important;
+  color: #554d42 !important;
   font-size: 16.5px !important;
   line-height: 1.65 !important;
 }
@@ -926,9 +927,9 @@ html[dir="rtl"] .footer-bottom {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #eae5da;
+  color: #221910 !important;
   font-size: 14.5px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .why-pillar i {
@@ -1037,12 +1038,13 @@ html[dir="rtl"] .footer-bottom {
   font-size: clamp(28px, 3.6vw, 44px) !important;
   line-height: 1.15 !important;
   margin: 0 0 18px 0 !important;
-  color: #f7f3ec !important;
+  color: #1e150c !important;
   letter-spacing: -0.02em !important;
+  font-weight: 800 !important;
 }
 
 .sanctuary-content p {
-  color: #c5beb1 !important;
+  color: #554d42 !important;
   font-size: 15.5px !important;
   line-height: 1.7 !important;
   margin: 0 0 14px 0 !important;
