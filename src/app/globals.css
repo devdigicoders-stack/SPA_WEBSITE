@@ -2988,3 +2988,108 @@ iframe {
   }
 }
 
+
+
+/* SITE HEADER LUXURY LIGHT PILL */
+.site-header {
+  background: rgba(252, 251, 248, 0.96) !important;
+  border: 1.5px solid #e8dfd1 !important;
+  border-radius: 999px !important;
+  box-shadow: 0 8px 30px rgba(50, 30, 10, 0.08) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+}
+
+.site-header .brand img,
+.brand img {
+  filter: drop-shadow(0 2px 6px rgba(67, 34, 0, 0.12)) !important;
+}
+
+.main-nav a {
+  color: #221910 !important;
+  font-weight: 600 !important;
+  font-size: 14.5px !important;
+  text-decoration: none !important;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  color: #a67c32 !important;
+  background: rgba(166, 124, 50, 0.08) !important;
+}
+
+.main-nav a.active,
+.main-nav a.is-active {
+  color: #a67c32 !important;
+  font-weight: 700 !important;
+  background: rgba(166, 124, 50, 0.12) !important;
+  border: 1px solid rgba(166, 124, 50, 0.35) !important;
+  box-shadow: 0 2px 8px rgba(166, 124, 50, 0.15) !important;
+}
+
+/* HIGH-CONTRAST HEADINGS & PARAGRAPHS */
+.hero h1,
+.hero.page-hero h1,
+.hero.about-hero h1,
+.section-heading h2,
+.final-cta h2,
+.contact-experience-title,
+.contact-map-title h3,
+.inner-hero h1,
+.branches-hero-copy h1,
+.branch-hero-copy h1,
+.getting-here-copy h2,
+.therapist-branch-head h2,
+.therapist-info h3,
+.page-hero h1,
+.why-card h3,
+.why-heading-content h2,
+.service-card h3,
+.treatment-card h3 {
+  color: #1e150c !important;
+  text-shadow: none !important;
+}
+
+.hero-content > p:not(.kicker),
+.hero p,
+.section-heading p,
+.inner-hero p,
+.branches-hero-copy > p:not(.kicker),
+.getting-here-address,
+.branch-hero-address,
+.branch-review-card p,
+.finder-result-copy p,
+.therapist-langs,
+.contact-experience-subtitle,
+.contact-map-title p,
+.why-card p,
+.why-heading-content p,
+.why-pillars span,
+.why-stats span,
+.service-card p,
+.treatment-card p,
+.branch-card p {
+  color: #554d42 !important;
+  text-shadow: none !important;
+}
+
+.trust-strip {
+  background: #F7F1E7 !important;
+  border-bottom: 1px solid #e8dfd1 !important;
+}
+
+.trust-badge {
+  background: #FCFBF8 !important;
+  color: #221910 !important;
+  border: 1px solid #e8dfd1 !important;
+  font-weight: 600 !important;
+}
+
+.trust-badge i {
+  color: #a67c32 !important;
+}
+
+.why-stats strong {
+  color: #221910 !important;
+  font-weight: 800 !important;
+}
