@@ -5,18 +5,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Tajawal:wght@400;500;700&family=Cairo:wght@400;600;700&display=swap');
 
 :root {
-  --ink: #ffffff;
-  --surface: #f8fafc;
-  --surface-elevated: #ffffff;
-  --paper: #1e293b;
-  --gold: #a8792f;
-   --gold-hover: #c08b3c;
-  --gold-subtle: rgba(168, 121, 47, 0.12);
-   --muted: #64748b;
-  --border: #e2e8f0;
+  --ink: #0d0d0c;
+  --surface: #141310;
+  --surface-elevated: #1a1814;
+  --paper: #f2eee5;
+  --gold: #c6a15b;
+  --gold-hover: #d8b26a;
+  --gold-subtle: rgba(198, 161, 91, 0.15);
+  --muted: #aaa49a;
+  --border: #2c2923;
   --radius: 18px;
   --ease: cubic-bezier(0.23, 1, 0.32, 1);
- --font-sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-arabic: 'Tajawal', 'Cairo', sans-serif;
 }
@@ -1085,7 +1085,7 @@ html[dir="rtl"] .footer-bottom {
    ======================================================== */
 .price-list-section {
   padding: clamp(50px, 7vw, 90px) clamp(20px, 6vw, 90px);
-  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.08), transparent 70%), #ffffff;
+  background: radial-gradient(circle at 50% 0%, rgba(198, 161, 91, 0.08), transparent 70%), #0d0c0a;
 }
 
 .price-list-container {
@@ -2967,13 +2967,4 @@ iframe {
     justify-content: center !important;
   }
 }
-
-
-
-
-
-
-
-
-
 

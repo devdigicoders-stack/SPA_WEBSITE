@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -44,8 +43,8 @@ export default function Header() {
       <header
         className={`fixed top-3 left-3 right-3 md:left-6 md:right-6 lg:left-10 lg:right-10 z-50 transition-all duration-300 rounded-full border ${
           isScrolled
-            ? "bg-[#ffffff]/95 border-[#c6a15b]/40 shadow-2xl backdrop-blur-xl py-2 px-4 md:px-6"
-            : "bg-[#ffffff]/90 border-[#e8e1d5] backdrop-blur-md py-3 px-4 md:px-7"
+            ? "bg-[#0d0d0c]/90 border-[#c6a15b]/30 shadow-2xl backdrop-blur-xl py-2 px-4 md:px-6"
+            : "bg-[#0d0d0c]/75 border-white/10 backdrop-blur-md py-3 px-4 md:px-7"
         }`}
       >
         <div className="flex items-center justify-between gap-4">
@@ -59,7 +58,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center gap-6 text-[13.5px] font-medium text-[#514b42]">
+          <nav className="hidden xl:flex items-center gap-6 text-[13.5px] font-medium text-[#dedbd4]">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -68,8 +67,8 @@ export default function Header() {
                   href={link.href}
                   className={`transition-colors duration-200 py-1 relative ${
                     isActive
-                      ? "text-[#a77d32] font-semibold"
-                      : "hover:text-[#a77d32]"
+                      ? "text-[#c6a15b] font-semibold"
+                      : "hover:text-[#c6a15b]"
                   }`}
                 >
                   {link.label}
@@ -94,7 +93,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden p-2 text-[#514b42] hover:text-[#a77d32] focus:outline-none"
+              className="xl:hidden p-2 text-[#dedbd4] hover:text-[#c6a15b] focus:outline-none"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -105,11 +104,11 @@ export default function Header() {
 
       {/* Mobile Drawer / Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#ffffff]/98 backdrop-blur-2xl xl:hidden pt-28 px-6 pb-8 overflow-y-auto animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-40 bg-[#0d0d0c]/95 backdrop-blur-2xl xl:hidden pt-28 px-6 pb-8 overflow-y-auto animate-in fade-in duration-200">
           <div className="flex flex-col gap-6 max-w-md mx-auto">
-            <div className="border-b border-[#e8e1d5] pb-4">
+            <div className="border-b border-[#2c2923] pb-4">
               <p className="kicker">Navigation</p>
-              <h3 className="text-xl font-serif text-[#29251f] mt-1">
+              <h3 className="text-xl font-serif text-[#f2eee5] mt-1">
                 Luxury Gentlemen Sanctuary
               </h3>
             </div>
@@ -123,8 +122,8 @@ export default function Header() {
                     href={link.href}
                     className={`text-lg py-2 px-3 rounded-xl transition-all ${
                       isActive
-                        ? "bg-[#c6a15b]/15 text-[#a77d32] font-semibold border-l-4 border-[#c6a15b]"
-                        : "text-[#514b42] hover:bg-[#f5f1e9] hover:text-[#29251f]"
+                        ? "bg-[#c6a15b]/15 text-[#c6a15b] font-semibold border-l-4 border-[#c6a15b]"
+                        : "text-[#dedbd4] hover:bg-white/5 hover:text-white"
                     }`}
                   >
                     {link.label}
@@ -133,7 +132,7 @@ export default function Header() {
               })}
             </nav>
 
-            <div className="pt-4 border-t border-[#e8e1d5] flex flex-col gap-3">
+            <div className="pt-4 border-t border-[#2c2923] flex flex-col gap-3">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
@@ -152,20 +151,20 @@ export default function Header() {
                   rel="noopener noreferrer"
                   className="btn-ghost w-full justify-center text-xs !py-3"
                 >
-                  <MessageSquare className="w-4 h-4 text-emerald-600" />
+                  <MessageSquare className="w-4 h-4 text-emerald-400" />
                   <span>WhatsApp</span>
                 </a>
                 <a
                   href={`tel:${SPA_INFO.phone.replace(/\D/g, "")}`}
                   className="btn-ghost w-full justify-center text-xs !py-3"
                 >
-                  <Phone className="w-4 h-4 text-[#a77d32]" />
+                  <Phone className="w-4 h-4 text-[#c6a15b]" />
                   <span>Call Spa</span>
                 </a>
               </div>
 
-              <div className="text-center text-xs text-[#81796d] mt-4 flex items-center justify-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#a77d32]" />
+              <div className="text-center text-xs text-[#aaa49a] mt-4 flex items-center justify-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-[#c6a15b]" />
                 <span>Licensed Gents Spa in Doha • Open Daily until 3:00 AM</span>
               </div>
             </div>
