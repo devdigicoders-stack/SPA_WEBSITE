@@ -10,26 +10,26 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          DEFAULT: "#0d0d0c",
-          dark: "#080807",
-          surface: "#141310",
-          card: "#1a1814",
-          cardElevated: "#211e19",
-          border: "#2c2923",
-          borderLight: "rgba(255, 255, 255, 0.12)",
+          DEFAULT: "#fcfbf8",
+          dark: "#f5f1e8",
+          surface: "#ffffff",
+          card: "#ffffff",
+          cardElevated: "#fbf9f4",
+          border: "#e8e1d5",
+          borderLight: "rgba(0, 0, 0, 0.07)",
         },
         gold: {
-          light: "#ecd095",
-          DEFAULT: "#c6a15b",
-          hover: "#d4af65",
-          deep: "#9e7d3b",
-          glow: "rgba(198, 161, 91, 0.18)",
+          light: "#d4b370",
+          DEFAULT: "#a67c32",
+          hover: "#8c6522",
+          deep: "#6e4d12",
+          glow: "rgba(166, 124, 50, 0.2)",
         },
         paper: {
-          DEFAULT: "#f2eee5",
-          muted: "#aaa49a",
-          subtle: "#7d776d",
-          light: "#faf8f4",
+          DEFAULT: "#221910",
+          muted: "#665d52",
+          subtle: "#857a6d",
+          light: "#110b06",
         },
       },
       fontFamily: {
@@ -42,8 +42,8 @@ const config: Config = {
         pill: "9999px",
       },
       boxShadow: {
-        goldGlow: "0 0 35px -5px rgba(198, 161, 91, 0.25)",
-        luxuryCard: "0 10px 30px -10px rgba(0, 0, 0, 0.6)",
+        goldGlow: "0 4px 25px -2px rgba(166, 124, 50, 0.25)",
+        luxuryCard: "0 10px 30px -10px rgba(50, 30, 10, 0.08)",
       },
       animation: {
         "spin-slow": "spin 20s linear infinite",
@@ -55,4 +55,3 @@ const config: Config = {
 };
 
 export default config;
-

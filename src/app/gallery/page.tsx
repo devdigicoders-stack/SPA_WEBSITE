@@ -176,8 +176,8 @@ export default function GalleryPage() {
                   onClick={() => setActiveCategory(cat.id)}
                   className={`px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
                     isActive
-                      ? "bg-[#c6a15b] text-black shadow-lg"
-                      : "bg-[#181612] text-[#dedbd4] hover:text-white border border-[#2c2923]"
+                      ? "bg-[#a67c32] text-white shadow-md"
+                      : "bg-white text-[#383025] hover:text-[#a67c32] border border-[#dfd6c4] shadow-sm"
                   }`}
                 >
                   {cat.label}
@@ -298,14 +298,14 @@ export default function GalleryPage() {
         {/* LIGHTBOX MODAL */}
         {selectedMedia && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-in fade-in duration-200">
-            <div className="relative max-w-4xl w-full bg-[#14120e] border border-[#c6a15b]/30 rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
-              <div className="p-4 sm:p-5 border-b border-[#2c2923] flex items-center justify-between bg-[#191712]">
-                <h3 className="text-lg font-serif font-bold text-white">
+            <div className="relative max-w-4xl w-full bg-white border border-[#dfd6c4] rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+              <div className="p-4 sm:p-5 border-b border-[#e5ded0] flex items-center justify-between bg-[#faf7f0]">
+                <h3 className="text-lg font-serif font-bold text-[#221910]">
                   {selectedMedia.title}
                 </h3>
                 <button
                   onClick={() => setSelectedMedia(null)}
-                  className="w-8 h-8 rounded-full bg-[#221f19] text-[#aaa49a] hover:text-white flex items-center justify-center"
+                  className="w-8 h-8 rounded-full bg-[#f0ebe0] text-[#554d42] hover:bg-[#a67c32] hover:text-white flex items-center justify-center transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -333,8 +333,8 @@ export default function GalleryPage() {
                 )}
               </div>
 
-              <div className="p-5 border-t border-[#2c2923] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-[#14120e]">
-                <p className="text-xs sm:text-sm text-[#dedbd4]">
+              <div className="p-5 border-t border-[#e5ded0] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-[#faf7f0]">
+                <p className="text-xs sm:text-sm text-[#554d42]">
                   {selectedMedia.description}
                 </p>
 

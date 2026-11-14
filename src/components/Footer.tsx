@@ -10,32 +10,24 @@ export default function Footer() {
   const { openBooking } = useBooking();
 
   return (
-    <footer className="bg-[#0a0908] border-t border-[#232019] text-[#aaa49a] pt-16 pb-12 relative overflow-hidden">
+    <footer className="bg-[#f5f0e6] border-t border-[#dfd6c4] text-[#554d42] pt-16 pb-12 relative overflow-hidden">
       {/* Background Subtle Ambient Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-[#c6a15b]/5 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-[#a67c32]/5 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#232019]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#dfd6c4]">
           {/* Brand Info */}
-          <div className="lg:col-span-2 space-y-5">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#c6a15b] to-[#7d602a] flex items-center justify-center p-[2px] shadow-lg">
-                <div className="w-full h-full bg-[#0d0d0c] rounded-full flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-[#c6a15b]" />
-                </div>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-sm font-bold tracking-[0.2em] text-[#c6a15b] uppercase font-serif">
-                  JUST RELAX SPA
-                </span>
-                <span className="text-[10px] tracking-widest text-[#aaa49a] uppercase">
-                  DOHA • MENS LUXURY WELLNESS
-                </span>
-              </div>
+          <div className="lg:col-span-2 space-y-4">
+            <Link href="/" className="inline-block group">
+              <img
+                src="/assets/images/logo.png"
+                alt="Just Relax Spa Doha"
+                className="h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+              />
             </Link>
 
-            <p className="text-[#dedbd4] text-sm leading-relaxed max-w-sm">
-              Doha&apos;s sanctuary for gentlemen seeking authentic Moroccan baths, Turkish marble foam hammam, and therapeutic deep tissue recovery in 100% private VIP suites.
+            <p className="text-[#453c30] text-sm leading-relaxed max-w-sm">
+              Doha&apos;s premier sanctuary for gentlemen seeking authentic Moroccan baths, Turkish marble foam hammam, and therapeutic deep tissue recovery in 100% private VIP suites.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-1">
@@ -43,18 +35,18 @@ export default function Footer() {
                 href={`https://wa.me/${SPA_INFO.whatsapp.replace(/\D/g, "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1b1915] border border-[#2c2923] hover:border-[#c6a15b] text-xs text-[#dedbd4] hover:text-[#c6a15b] transition-colors"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#dfd6c4] hover:border-[#1b9a59] text-xs text-[#383025] hover:text-[#1b9a59] shadow-sm transition-colors"
               >
-                <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
+                <MessageSquare className="w-3.5 h-3.5 text-[#1b9a59]" />
                 <span>WhatsApp Concierge</span>
               </a>
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1b1915] border border-[#2c2923] hover:border-[#c6a15b] text-xs text-[#dedbd4] hover:text-[#c6a15b] transition-colors"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#dfd6c4] hover:border-[#a67c32] text-xs text-[#383025] hover:text-[#a67c32] shadow-sm transition-colors"
               >
-                <Instagram className="w-3.5 h-3.5 text-pink-400" />
+                <Instagram className="w-3.5 h-3.5 text-[#a67c32]" />
                 <span>@justrelaxspa.doha</span>
               </a>
             </div>
@@ -62,9 +54,9 @@ export default function Footer() {
             <div className="pt-2">
               <button
                 onClick={() => openBooking()}
-                className="btn-gold !py-2.5 !px-6 text-xs md:text-sm"
+                className="inline-flex items-center gap-2 py-2.5 px-6 rounded-full bg-[#a67c32] hover:bg-[#8c6522] text-white font-semibold text-xs md:text-sm shadow-md transition-all duration-200"
               >
-                <Sparkles className="w-4 h-4" />
+                <Sparkles className="w-4 h-4 text-amber-200" />
                 <span>Book Your Visit Today</span>
               </button>
             </div>
@@ -72,49 +64,49 @@ export default function Footer() {
 
           {/* Column 2: Navigation Links */}
           <div className="space-y-4">
-            <h3 className="text-xs uppercase tracking-widest text-[#c6a15b] font-bold">
+            <h3 className="text-xs uppercase tracking-widest text-[#a67c32] font-bold">
               Explore
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/about" className="hover:text-[#c6a15b] transition-colors flex items-center gap-1.5">
-                  <ChevronRight className="w-3 h-3 text-[#c6a15b]" />
+                <Link href="/about" className="hover:text-[#a67c32] transition-colors flex items-center gap-1.5">
+                  <ChevronRight className="w-3 h-3 text-[#a67c32]" />
                   <span>About Just Relax</span>
                 </Link>
               </li>
               <li>
-                <Link href="/branches" className="hover:text-[#c6a15b] transition-colors flex items-center gap-1.5">
-                  <ChevronRight className="w-3 h-3 text-[#c6a15b]" />
+                <Link href="/branches" className="hover:text-[#a67c32] transition-colors flex items-center gap-1.5">
+                  <ChevronRight className="w-3 h-3 text-[#a67c32]" />
                   <span>Our 2 Doha Branches</span>
                 </Link>
               </li>
               <li>
-                <Link href="/treatments" className="hover:text-[#c6a15b] transition-colors flex items-center gap-1.5">
-                  <ChevronRight className="w-3 h-3 text-[#c6a15b]" />
+                <Link href="/treatments" className="hover:text-[#a67c32] transition-colors flex items-center gap-1.5">
+                  <ChevronRight className="w-3 h-3 text-[#a67c32]" />
                   <span>Treatments Menu</span>
                 </Link>
               </li>
               <li>
-                <Link href="/treatment-finder" className="hover:text-[#c6a15b] transition-colors flex items-center gap-1.5">
-                  <ChevronRight className="w-3 h-3 text-[#c6a15b]" />
+                <Link href="/treatment-finder" className="hover:text-[#a67c32] transition-colors flex items-center gap-1.5">
+                  <ChevronRight className="w-3 h-3 text-[#a67c32]" />
                   <span>Find Your Ritual</span>
                 </Link>
               </li>
               <li>
-                <Link href="/therapists" className="hover:text-[#c6a15b] transition-colors flex items-center gap-1.5">
-                  <ChevronRight className="w-3 h-3 text-[#c6a15b]" />
+                <Link href="/therapists" className="hover:text-[#a67c32] transition-colors flex items-center gap-1.5">
+                  <ChevronRight className="w-3 h-3 text-[#a67c32]" />
                   <span>Certified Therapists</span>
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="hover:text-[#c6a15b] transition-colors flex items-center gap-1.5">
-                  <ChevronRight className="w-3 h-3 text-[#c6a15b]" />
+                <Link href="/gallery" className="hover:text-[#a67c32] transition-colors flex items-center gap-1.5">
+                  <ChevronRight className="w-3 h-3 text-[#a67c32]" />
                   <span>Videos & Photos</span>
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-[#c6a15b] transition-colors flex items-center gap-1.5">
-                  <ChevronRight className="w-3 h-3 text-[#c6a15b]" />
+                <Link href="/contact" className="hover:text-[#a67c32] transition-colors flex items-center gap-1.5">
+                  <ChevronRight className="w-3 h-3 text-[#a67c32]" />
                   <span>Contact & Location</span>
                 </Link>
               </li>
@@ -123,31 +115,31 @@ export default function Footer() {
 
           {/* Column 3: Doha Branches */}
           <div className="space-y-4">
-            <h3 className="text-xs uppercase tracking-widest text-[#c6a15b] font-bold">
+            <h3 className="text-xs uppercase tracking-widest text-[#a67c32] font-bold">
               Doha Branches
             </h3>
-            <div className="space-y-4 text-xs">
+            <div className="space-y-3.5 text-xs">
               {BRANCHES.map((branch) => (
-                <div key={branch.id} className="p-3 rounded-xl bg-[#14120e] border border-[#232019] space-y-1.5">
-                  <strong className="text-[#f2eee5] block text-sm font-semibold">
+                <div key={branch.id} className="p-3 rounded-xl bg-white border border-[#dfd6c4] shadow-sm space-y-1.5">
+                  <strong className="text-[#221910] block text-sm font-semibold">
                     {branch.shortName}
                   </strong>
-                  <p className="text-[#aaa49a]">{branch.address}</p>
-                  <p className="text-[#c6a15b] flex items-center gap-1 font-medium">
+                  <p className="text-[#695f53]">{branch.address}</p>
+                  <p className="text-[#a67c32] flex items-center gap-1 font-medium">
                     <Clock className="w-3 h-3" />
                     <span>{branch.hours}</span>
                   </p>
                   <div className="pt-1 flex items-center gap-2">
                     <a
                       href={`tel:${branch.phone.replace(/\D/g, "")}`}
-                      className="text-[#dedbd4] hover:text-[#c6a15b] font-mono text-[11px]"
+                      className="text-[#383025] hover:text-[#a67c32] font-mono text-[11px]"
                     >
                       {branch.phone}
                     </a>
-                    <span className="text-zinc-600">•</span>
+                    <span className="text-zinc-400">•</span>
                     <button
                       onClick={() => openBooking({ branchId: branch.id })}
-                      className="text-[#c6a15b] underline text-[11px]"
+                      className="text-[#a67c32] underline text-[11px] font-semibold"
                     >
                       Reserve Suite
                     </button>
@@ -159,29 +151,29 @@ export default function Footer() {
 
           {/* Column 4: Hours & Standards */}
           <div className="space-y-4">
-            <h3 className="text-xs uppercase tracking-widest text-[#c6a15b] font-bold">
+            <h3 className="text-xs uppercase tracking-widest text-[#a67c32] font-bold">
               Concierge & Hours
             </h3>
-            <ul className="space-y-2 text-xs">
-              <li className="flex items-start gap-2 text-[#dedbd4]">
-                <Clock className="w-4 h-4 text-[#c6a15b] shrink-0 mt-0.5" />
+            <ul className="space-y-2.5 text-xs">
+              <li className="flex items-start gap-2 text-[#453c30]">
+                <Clock className="w-4 h-4 text-[#a67c32] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="block text-white">Daily 10:00 AM – 3:00 AM</strong>
-                  <span>Open late night for executive and post-flight recovery</span>
+                  <strong className="block text-[#221910]">Daily 10:00 AM – 3:00 AM</strong>
+                  <span className="text-[#695f53]">Open late night for executive and post-flight recovery</span>
                 </div>
               </li>
-              <li className="flex items-start gap-2 text-[#dedbd4]">
-                <ShieldCheck className="w-4 h-4 text-[#c6a15b] shrink-0 mt-0.5" />
+              <li className="flex items-start gap-2 text-[#453c30]">
+                <ShieldCheck className="w-4 h-4 text-[#a67c32] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="block text-white">100% Private Suites</strong>
-                  <span>Complete discretion, private rain shower & locker</span>
+                  <strong className="block text-[#221910]">100% Private Suites</strong>
+                  <span className="text-[#695f53]">Complete discretion, private rain shower & locker</span>
                 </div>
               </li>
-              <li className="flex items-start gap-2 text-[#dedbd4]">
-                <Phone className="w-4 h-4 text-[#c6a15b] shrink-0 mt-0.5" />
+              <li className="flex items-start gap-2 text-[#453c30]">
+                <Phone className="w-4 h-4 text-[#a67c32] shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-zinc-400">Direct Hotline</span>
-                  <a href={`tel:${SPA_INFO.phone.replace(/\D/g, "")}`} className="text-white hover:text-[#c6a15b] font-mono">
+                  <span className="block text-[#7c7162]">Direct Hotline</span>
+                  <a href={`tel:${SPA_INFO.phone.replace(/\D/g, "")}`} className="text-[#221910] hover:text-[#a67c32] font-mono font-semibold">
                     {SPA_INFO.phone}
                   </a>
                 </div>
@@ -191,7 +183,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#7d776d]">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#7c7162]">
           <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-center sm:text-left">
             <span>© 2026 Just Relax Spa Doha. All rights reserved.</span>
             <span className="hidden sm:inline">•</span>
@@ -199,19 +191,18 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="hover:text-[#dedbd4] transition-colors">
+            <Link href="/privacy" className="hover:text-[#221910] transition-colors">
               Privacy Policy
             </Link>
             <span>•</span>
-            <Link href="/terms" className="hover:text-[#dedbd4] transition-colors">
+            <Link href="/terms" className="hover:text-[#221910] transition-colors">
               Terms of Service
             </Link>
             <span>•</span>
-            <span className="text-[#c6a15b] font-serif">سبا جست ريلاكس - الدوحة</span>
+            <span className="text-[#a67c32] font-serif font-semibold">سبا جست ريلاكس - الدوحة</span>
           </div>
         </div>
       </div>
     </footer>
   );
 }
-

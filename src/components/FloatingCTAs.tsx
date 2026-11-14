@@ -16,9 +16,9 @@ export default function FloatingCTAs() {
       {/* Quick Booking Button */}
       <button
         onClick={() => openBooking()}
-        className="group flex items-center gap-2.5 px-4 py-2.5  bg-gradient-to-r from-[#c6a15b] to-[#a8823b] text-[#11100e] font-semibold text-xs md:text-sm shadow-xl hover:shadow-goldGlow hover:scale-105 active:scale-95 transition-all duration-200"
+        className="group flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-gradient-to-r from-[#a67c32] to-[#8c6522] text-white font-semibold text-xs md:text-sm shadow-xl hover:scale-105 active:scale-95 transition-all duration-200"
       >
-        <Calendar className="w-4 h-4 text-[#11100e]" />
+        <Calendar className="w-4 h-4 text-amber-200" />
         <span className="font-bold">Book Visit</span>
       </button>
 
@@ -27,7 +27,7 @@ export default function FloatingCTAs() {
         href={`https://wa.me/${SPA_INFO.whatsapp.replace(/\D/g, "")}?text=Hello%20Just%20Relax%20Spa,%20I%20would%20like%20to%20inquire%20about%20booking%20a%20treatment%20in%20Doha.`}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-2 px-3.5 py-2   bg-[#1b9a59] hover:bg-[#18884e] text-white font-medium text-xs shadow-lg hover:scale-105 active:scale-95 transition-all duration-200"
+        className="group flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#1b9a59] hover:bg-[#18884e] text-white font-medium text-xs shadow-lg hover:scale-105 active:scale-95 transition-all duration-200"
         title="Chat on WhatsApp"
       >
         <MessageSquare className="w-4 h-4 fill-white" />
@@ -37,10 +37,10 @@ export default function FloatingCTAs() {
       {/* Direct Call Button */}
       <a
         href={`tel:${SPA_INFO.phone.replace(/\D/g, "")}`}
-        className="group flex items-center gap-2 px-3.5 py-2   bg-[#1e1c17] hover:bg-[#28251e] border border-[#c6a15b]/40 text-[#f2eee5] hover:text-[#c6a15b] font-medium text-xs shadow-lg hover:scale-105 active:scale-95 transition-all duration-200"
+        className="group flex items-center gap-2 px-3.5 py-2 rounded-full bg-white hover:bg-[#faf7f0] border border-[#dfd6c4] text-[#221910] hover:text-[#a67c32] font-medium text-xs shadow-md hover:scale-105 active:scale-95 transition-all duration-200"
         title="Call Spa Reception"
       >
-        <Phone className="w-4 h-4 text-[#c6a15b]" />
+        <Phone className="w-4 h-4 text-[#a67c32]" />
         <span className="hidden sm:inline font-semibold">Call Now</span>
       </a>
 
@@ -49,13 +49,12 @@ export default function FloatingCTAs() {
         href="https://maps.app.goo.gl/JbsB9BgUa1nxUPYeA?g_st=ac"
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-2 px-3 py-2  l bg-[#161410] hover:bg-[#201d16] border border-[#2c2923] text-[#dedbd4] hover:text-white font-medium text-xs shadow-md hover:scale-105 active:scale-95 transition-all duration-200"
+        className="group flex items-center gap-2 px-3 py-2 rounded-full bg-white hover:bg-[#faf7f0] border border-[#dfd6c4] text-[#554d42] hover:text-[#221910] font-medium text-xs shadow-sm hover:scale-105 active:scale-95 transition-all duration-200"
         title="Get Directions in Doha"
       >
-        <Navigation className="w-3.5 h-3.5 text-[#aaa49a] group-hover:text-[#c6a15b]" />
+        <Navigation className="w-3.5 h-3.5 text-[#a67c32]" />
         <span className="hidden md:inline">Directions</span>
       </a>
     </aside>
   );
 }
-
