@@ -579,7 +579,7 @@ html[dir=rtl] .floating-ctas{right:auto!important;left:24px!important;align-item
 }
 
 .branch-select-card.active .branch-card-title {
-  color: #f7eedb !important;
+  color: #1e150c !important; font-weight: 700 !important;
 }
 
 .branch-select-card .branch-card-meta {

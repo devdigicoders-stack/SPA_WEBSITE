@@ -3295,3 +3295,111 @@ iframe {
   box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4) !important;
 }
 
+/* CONTACT BRANCH SELECT CARDS - DARK HIGH CONTRAST TYPOGRAPHY */
+.branch-select-card {
+  background: #F7F1E7 !important;
+  border: 1.5px solid #dfd6c4 !important;
+  color: #221910 !important;
+}
+
+.branch-select-card .branch-card-num {
+  color: #a67c32 !important;
+}
+
+.branch-select-card .branch-card-title,
+.branch-select-card.active .branch-card-title,
+.branch-card-title {
+  color: #1e150c !important;
+  font-weight: 700 !important;
+}
+
+.branch-select-card .branch-card-loc,
+.branch-select-card .branch-card-hours,
+.branch-select-card .branch-card-meta {
+  color: #554d42 !important;
+  font-weight: 500 !important;
+}
+
+.branch-select-card.active {
+  background: #FCFBF8 !important;
+  border: 2px solid #a67c32 !important;
+}
+
+.branch-select-card.active .branch-card-indicator {
+  color: #16a34a !important;
+  font-weight: 700 !important;
+}
+
+.branch-select-card.active .branch-card-indicator i {
+  color: #16a34a !important;
+}
+
+/* SITE FOOTER & FOOTER BOTTOM CLEAN LAYOUT (NO EXTRA BOTTOM GAP) */
+.site-footer {
+  padding-bottom: 24px !important;
+  background: #F7F1E7 !important;
+  border-top: 1px solid #e8dfd1 !important;
+}
+
+.footer-bottom {
+  margin-top: 36px !important;
+  padding-top: 20px !important;
+  padding-bottom: 0 !important;
+  border-top: 1px solid #e8dfd1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+html[dir="rtl"] .footer-bottom {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.footer-bottom p,
+.footer-bottom small,
+.footer-bottom div,
+.footer-legal-wrap {
+  margin: 0 !important;
+  line-height: 1.5 !important;
+  color: #554d42 !important;
+  font-size: 13px !important;
+}
+
+.footer-legal-name {
+  color: #777064 !important;
+  font-size: 12px !important;
+  display: inline-block !important;
+  margin-top: 4px !important;
+}
+
+.footer-bottom a,
+.footer-city-link {
+  color: #a67c32 !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+.footer-bottom a:hover,
+.footer-city-link:hover {
+  text-decoration: underline !important;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding-bottom: 95px !important; /* space for mobile floating ctas */
+  }
+  .footer-bottom {
+    margin-top: 28px !important;
+    padding-top: 18px !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 8px !important;
+  }
+}
+
+
