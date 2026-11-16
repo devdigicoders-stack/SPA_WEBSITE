@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { TREATMENTS_DATA, TreatmentItem } from "@/data/treatmentsData";
+import WhatsAppModal from "@/components/WhatsAppModal";
 
 interface BranchItem {
   id: number;
@@ -23,6 +24,7 @@ export default function TreatmentDetailClient({
 }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [navOpen, setNavOpen] = useState(false);
+  const [whatsAppModalOpen, setWhatsAppModalOpen] = useState(false);
   const [bookingStep, setBookingStep] = useState<"branches" | "actions">("branches");
   const [selectedBranchSlug, setSelectedBranchSlug] = useState<string>("west-bay");
   const [bookingContext, setBookingContext] = useState<{ icon: string; text: string } | null>({
@@ -362,16 +364,15 @@ export default function TreatmentDetailClient({
 
       {/* 4. FLOATING QUICK CTAS */}
       <aside className="floating-ctas" aria-label="Quick contact actions">
-        <a
-          href="https://wa.me/97455883421"
+        <button
+          type="button"
           className="floating-cta floating-whatsapp"
-          target="_blank"
-          rel="noopener noreferrer"
+          onClick={() => setWhatsAppModalOpen(true)}
           aria-label="Chat on WhatsApp"
           title="WhatsApp"
         >
           <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
-        </a>
+        </button>
         <a
           href="tel:+97440041000"
           className="floating-cta floating-call"
@@ -497,6 +498,11 @@ export default function TreatmentDetailClient({
           )}
         </div>
       </dialog>
+
+      <WhatsAppModal
+        isOpen={whatsAppModalOpen}
+        onClose={() => setWhatsAppModalOpen(false)}
+      />
     </>
   );
 }

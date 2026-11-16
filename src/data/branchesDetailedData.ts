@@ -15,6 +15,7 @@ export interface DetailedBranchItem {
   h1: string;
   district: string;
   rating: string;
+  licenseNo?: string;
   hours: string;
   address: string;
   heroImg: string;
@@ -36,6 +37,7 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
     h1: "Men's Luxury Spa & Moroccan Bath at Jouri Murwab Hotel Doha",
     district: "Al Muthaf St, Old Salata / Corniche, Doha",
     rating: "★ 4.96 on Google (2.2K+ Hotel Reviews)",
+    licenseNo: "316057",
     hours: "Daily 10:00 AM – 3:00 AM",
     address: "Al Muthaf Street, Street 137, Building 31, Zone 18, Old Salata, Doha, Qatar",
     heroImg: "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
@@ -115,6 +117,7 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
     h1: "Men's Luxury Spa & Moroccan Hammam at Retaj Salwa Resort Doha",
     district: "Salwa Road, Abu Nakhlah, Doha",
     rating: "★ 4.95 on Google",
+    licenseNo: "288593",
     hours: "Daily 10:00 AM – 3:00 AM",
     address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
     heroImg: "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
@@ -201,6 +204,7 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
     h1: "Men's Luxury Spa & Moroccan Hammam at Retaj Salwa Resort Doha",
     district: "Salwa Road, Abu Nakhlah, Doha",
     rating: "★ 4.95 on Google",
+    licenseNo: "288593",
     hours: "Daily 10:00 AM – 3:00 AM",
     address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
     heroImg: "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
@@ -226,6 +230,7 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
     h1: "Men's Luxury Spa & Moroccan Hammam in West Bay, Doha",
     district: "Diplomatic District, West Bay, Doha",
     rating: "★ 4.95 on Google",
+    licenseNo: "316057",
     hours: "Daily 10:00 AM – 3:00 AM",
     address: "Tower 1, Diplomatic District, West Bay, Doha, Qatar",
     heroImg: "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",

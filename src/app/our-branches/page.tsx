@@ -2,12 +2,14 @@
 
 import React, { useRef, useState } from "react";
 import Link from "next/link";
+import WhatsAppModal from "@/components/WhatsAppModal";
 
 interface BranchItem {
   id: number;
   slug: string;
   name: string;
   rating: string;
+  licenseNo: string;
   description: string;
   address: string;
   hours: string;
@@ -27,6 +29,7 @@ interface BranchItem {
 export default function OurBranchesPage() {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [navOpen, setNavOpen] = useState(false);
+  const [whatsAppModalOpen, setWhatsAppModalOpen] = useState(false);
   const [bookingStep, setBookingStep] = useState<"branches" | "actions">("branches");
   const [selectedBranchSlug, setSelectedBranchSlug] = useState<string>("west-bay");
   const [bookingContext, setBookingContext] = useState<{ icon: string; text: string } | null>(null);
@@ -39,6 +42,7 @@ export default function OurBranchesPage() {
       slug: "jouri-hotel",
       name: "Jouri, a Murwab Hotel",
       rating: "4.96",
+      licenseNo: "316057",
       description:
         "Flagship 4-star hotel sanctuary situated inside Jouri, a Murwab Hotel on Al Muthaf Street in Old Salata, Doha. Features authentic Moroccan baths, heated hammam, private soundproof treatment rooms, indoor heated pool and jacuzzi.",
       address: "Al Muthaf Street, Street 137, Building 31, Zone 18, Old Salata, Doha, Qatar",
@@ -74,6 +78,7 @@ export default function OurBranchesPage() {
       slug: "retaj-salwa",
       name: "Retaj Salwa Resort & Spa",
       rating: "4.95",
+      licenseNo: "288593",
       description:
         "Nestled within the 5-star Retaj Salwa Resort & Spa on Salwa Road, Abu Nakhlah, this peaceful sanctuary provides gentlemen and executives an elite wellness retreat. Private soundproof VIP suites, authentic Moroccan Beldi bath chambers, hydrotherapy, and late-night appointments.",
       address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
@@ -255,7 +260,7 @@ export default function OurBranchesPage() {
               data-branch-slug={b.slug}
             >
               <header className="branch-destination-header">
-                <div>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap", marginBottom: "8px" }}>
                   <a
                     className="rating"
                     href={b.mapLink}
@@ -265,6 +270,10 @@ export default function OurBranchesPage() {
                     ★ {b.rating}
                   </a>
                   <span className="open-badge is-open">Open now</span>
+                  <span className="license-badge" title="Official Qatar Municipality License Number">
+                    <i className="fa-solid fa-award" aria-hidden="true"></i>
+                    L.n : {b.licenseNo}
+                  </span>
                   {closestBranchSlug === b.slug && (
                     <span className="closest-label">Closest to you</span>
                   )}
@@ -300,6 +309,13 @@ export default function OurBranchesPage() {
 
               {/* INFORMATION GRID */}
               <div className="branch-information-grid">
+                <section>
+                  <span>Municipal License</span>
+                  <p className="info-line">
+                    <i className="fa-solid fa-award" aria-hidden="true" style={{ color: "#a67c32" }}></i>
+                    <strong style={{ color: "#a67c32", fontWeight: 700 }}>L.n : {b.licenseNo}</strong>
+                  </p>
+                </section>
                 <section>
                   <span>Location</span>
                   <p>{b.address}</p>
@@ -511,16 +527,15 @@ export default function OurBranchesPage() {
 
       {/* FLOATING CTAs */}
       <aside className="floating-ctas" aria-label="Quick contact actions">
-        <a
-          href="https://wa.me/97455883421"
+        <button
+          type="button"
           className="floating-cta floating-whatsapp"
-          target="_blank"
-          rel="noopener noreferrer"
+          onClick={() => setWhatsAppModalOpen(true)}
           aria-label="Chat on WhatsApp"
           title="WhatsApp"
         >
           <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
-        </a>
+        </button>
         <a
           href="tel:+97440041000"
           className="floating-cta floating-call"
@@ -606,6 +621,9 @@ export default function OurBranchesPage() {
                       <i className="fa-solid fa-star" aria-hidden="true"></i>
                       {b.rating}
                       <em className="booking-branch-open is-open">Open now</em>
+                      <span className="license-badge" style={{ fontSize: "11px", padding: "2px 7px" }}>
+                        L.n : {b.licenseNo}
+                      </span>
                     </span>
                     <span className="booking-branch-address">{b.address}</span>
                     {branchDistances[b.slug] && (
@@ -664,6 +682,11 @@ export default function OurBranchesPage() {
           </section>
         )}
       </dialog>
+
+      <WhatsAppModal
+        isOpen={whatsAppModalOpen}
+        onClose={() => setWhatsAppModalOpen(false)}
+      />
     </>
   );
 }

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { DetailedBranchItem } from "@/data/branchesDetailedData";
 import { THERAPISTS_DATA } from "@/data/therapistsData";
 import { TREATMENTS_DATA } from "@/data/treatmentsData";
+import WhatsAppModal from "@/components/WhatsAppModal";
 
 interface BranchItem {
   id: number;
@@ -25,6 +26,7 @@ export default function BranchDetailClient({
 }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [navOpen, setNavOpen] = useState(false);
+  const [whatsAppModalOpen, setWhatsAppModalOpen] = useState(false);
   const [bookingStep, setBookingStep] = useState<"branches" | "actions">("actions");
   const [selectedBranchSlug, setSelectedBranchSlug] = useState<string>(branch.slug);
   const [bookingContext, setBookingContext] = useState<{ icon: string; text: string } | null>({
@@ -149,6 +151,10 @@ export default function BranchDetailClient({
                 <span className="open-badge is-open" data-open-badge>
                   Open now
                 </span>
+                <span className="license-badge">
+                  <i className="fa-solid fa-award" aria-hidden="true"></i>
+                  L.n : {branch.licenseNo}
+                </span>
                 <span className="branch-hero-hours">
                   <i className="fa-regular fa-clock" aria-hidden="true"></i>
                   {branch.hours}
@@ -170,7 +176,7 @@ export default function BranchDetailClient({
                 <a
                   className="button button-ghost"
                   href={`https://wa.me/${branch.whatsappNumber}?text=${encodeURIComponent(
-                    `Hello Laguna Spa, I would like directions or details for ${branch.name}.`
+                    `Hello Just Relax Spa, I would like directions or details for ${branch.name}.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -194,6 +200,13 @@ export default function BranchDetailClient({
         {/* GLANCE SECTION */}
         <section className="branch-glance section">
           <div className="detail-band branch-info-band">
+            <article>
+              <i className="fa-solid fa-award" aria-hidden="true"></i>
+              <div>
+                <span>Municipal License</span>
+                <strong>L.n : {branch.licenseNo}</strong>
+              </div>
+            </article>
             <article>
               <i className="fa-regular fa-clock" aria-hidden="true"></i>
               <div>
@@ -525,16 +538,15 @@ export default function BranchDetailClient({
 
       {/* 4. FLOATING QUICK CTAS */}
       <aside className="floating-ctas" aria-label="Quick contact actions">
-        <a
-          href="https://wa.me/97455883421"
+        <button
+          type="button"
           className="floating-cta floating-whatsapp"
-          target="_blank"
-          rel="noopener noreferrer"
+          onClick={() => setWhatsAppModalOpen(true)}
           aria-label="Chat on WhatsApp"
           title="WhatsApp"
         >
           <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
-        </a>
+        </button>
         <a
           href="tel:+97440041000"
           className="floating-cta floating-call"
@@ -660,6 +672,11 @@ export default function BranchDetailClient({
           )}
         </div>
       </dialog>
+
+      <WhatsAppModal
+        isOpen={whatsAppModalOpen}
+        onClose={() => setWhatsAppModalOpen(false)}
+      />
     </>
   );
 }

@@ -3,11 +3,13 @@
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { TREATMENTS_DATA, TreatmentItem } from "@/data/treatmentsData";
+import WhatsAppModal from "@/components/WhatsAppModal";
 
 interface BranchItem {
   id: number;
   slug: string;
   name: string;
+  licenseNo: string;
   address: string;
   phone: string;
   whatsappNumber: string;
@@ -19,6 +21,7 @@ interface BranchItem {
 export default function TreatmentsPage() {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [navOpen, setNavOpen] = useState(false);
+  const [whatsAppModalOpen, setWhatsAppModalOpen] = useState(false);
   const [bookingStep, setBookingStep] = useState<"branches" | "actions">("branches");
   const [selectedBranchSlug, setSelectedBranchSlug] = useState<string>("west-bay");
   const [bookingContext, setBookingContext] = useState<{ icon: string; text: string } | null>(null);
@@ -31,6 +34,7 @@ export default function TreatmentsPage() {
       id: 1,
       slug: "jouri-hotel",
       name: "Jouri, a Murwab Hotel",
+      licenseNo: "316057",
       address: "Al Muthaf Street, Old Salata / Corniche, Doha",
       phone: "+97440041000",
       whatsappNumber: "97455883421",
@@ -40,14 +44,15 @@ export default function TreatmentsPage() {
     },
     {
       id: 2,
-      slug: "west-bay",
-      name: "West Bay Diplomatic Suite",
-      address: "Tower 1, Diplomatic District, West Bay, Doha, Qatar",
-      phone: "+97444928888",
+      slug: "retaj-salwa",
+      name: "Retaj Salwa Resort & Spa",
+      licenseNo: "288593",
+      address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
+      phone: "+97444298888",
       whatsappNumber: "97455883421",
-      whatsappMsg: "Hello Just Relax Spa West Bay! I would like to book a treatment.",
-      lat: 25.3216,
-      lng: 51.5312,
+      whatsappMsg: "Hello Just Relax Spa Retaj Salwa! I would like to book a treatment.",
+      lat: 25.1686,
+      lng: 51.3158,
     },
 
   ];
@@ -332,16 +337,15 @@ export default function TreatmentsPage() {
 
       {/* 4. FLOATING QUICK CTAS */}
       <aside className="floating-ctas" aria-label="Quick contact actions">
-        <a
-          href="https://wa.me/97455883421"
+        <button
+          type="button"
           className="floating-cta floating-whatsapp"
-          target="_blank"
-          rel="noopener noreferrer"
+          onClick={() => setWhatsAppModalOpen(true)}
           aria-label="Chat on WhatsApp"
           title="WhatsApp"
         >
           <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
-        </a>
+        </button>
         <a
           href="tel:+97440041000"
           className="floating-cta floating-call"
@@ -406,7 +410,10 @@ export default function TreatmentsPage() {
                     }`}
                     onClick={() => handleSelectBranch(b.slug)}
                   >
-                    <span className="booking-branch-name">{b.name}</span>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%", gap: "8px" }}>
+                      <span className="booking-branch-name">{b.name}</span>
+                      <span className="license-badge" style={{ fontSize: "11px", padding: "2px 7px" }}>L.n : {b.licenseNo}</span>
+                    </div>
                     <span className="booking-branch-address">{b.address}</span>
                     {branchDistances[b.slug] && (
                       <span className="booking-branch-dist">
@@ -467,6 +474,11 @@ export default function TreatmentsPage() {
           )}
         </div>
       </dialog>
+
+      <WhatsAppModal
+        isOpen={whatsAppModalOpen}
+        onClose={() => setWhatsAppModalOpen(false)}
+      />
     </>
   );
 }

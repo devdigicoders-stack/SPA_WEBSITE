@@ -2,8 +2,10 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
+import WhatsAppModal from "@/components/WhatsAppModal";
 
 interface BranchContactData {
+  licenseNo?: string;
   id: number;
   slug: string;
   tabNum: string;
@@ -32,6 +34,7 @@ const CONTACT_BRANCHES: BranchContactData[] = [
     slug: "jouri-hotel",
     tabNum: "01",
     name: "Jouri, a Murwab Hotel",
+    licenseNo: "316057",
     rating: "★ 4.96",
     ratingUrl: "https://maps.app.goo.gl/JbsB9BgUa1nxUPYeA?g_st=ac",
     openBadge: "Open now (Till 3:00 AM)",
@@ -62,6 +65,7 @@ const CONTACT_BRANCHES: BranchContactData[] = [
     slug: "retaj-salwa",
     tabNum: "02",
     name: "Retaj Salwa Resort & Spa",
+    licenseNo: "288593",
     rating: "★ 4.95",
     ratingUrl: "https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac",
     openBadge: "Open now (Till 3:00 AM)",
@@ -93,6 +97,7 @@ const CONTACT_BRANCHES: BranchContactData[] = [
 export default function ContactPage() {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [navOpen, setNavOpen] = useState(false);
+  const [whatsAppModalOpen, setWhatsAppModalOpen] = useState(false);
   const [activeBranchSlug, setActiveBranchSlug] = useState<string>("jouri-hotel");
   const [bookingStep, setBookingStep] = useState<"branches" | "actions">("branches");
   const [selectedBranchSlug, setSelectedBranchSlug] = useState<string>("jouri-hotel");
@@ -502,16 +507,15 @@ export default function ContactPage() {
 
       {/* 4. FLOATING QUICK CTAS */}
       <aside className="floating-ctas" aria-label="Quick contact actions">
-        <a
-          href="https://wa.me/97455883421"
+        <button
+          type="button"
           className="floating-cta floating-whatsapp"
-          target="_blank"
-          rel="noopener noreferrer"
+          onClick={() => setWhatsAppModalOpen(true)}
           aria-label="Chat on WhatsApp"
           title="WhatsApp"
         >
           <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
-        </a>
+        </button>
         <a
           href="tel:+97440041000"
           className="floating-cta floating-call"
@@ -576,7 +580,10 @@ export default function ContactPage() {
                     }`}
                     onClick={() => handleSelectBranch(b.slug)}
                   >
-                    <span className="booking-branch-name">{b.name}</span>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%", gap: "8px" }}>
+                      <span className="booking-branch-name">{b.name}</span>
+                      <span className="license-badge" style={{ fontSize: "11px", padding: "2px 7px" }}>L.n : {b.licenseNo}</span>
+                    </div>
                     <span className="booking-branch-address">{b.address}</span>
                     {branchDistances[b.slug] && (
                       <span className="booking-branch-dist">
@@ -637,6 +644,11 @@ export default function ContactPage() {
           )}
         </div>
       </dialog>
+
+      <WhatsAppModal
+        isOpen={whatsAppModalOpen}
+        onClose={() => setWhatsAppModalOpen(false)}
+      />
     </>
   );
 }

@@ -1323,7 +1323,7 @@ html[dir="rtl"] .footer-bottom {
   object-position: center 30% !important;
   filter: none !important;
   -webkit-filter: none !important;
-  image-rendering: -webkit-optimize-contrast !important;
+  image-rendering: auto !important;
   transform: translateZ(0) !important;
   pointer-events: none !important;
 }
@@ -1336,16 +1336,18 @@ html[dir="rtl"] .footer-bottom {
   object-fit: cover !important;
   object-position: center !important;
   pointer-events: none !important;
-  transform: scale(1.02) !important;
-  image-rendering: -webkit-optimize-contrast !important;
+  transform: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  image-rendering: auto !important;
 }
 
 .hero-scrim {
   position: absolute !important;
   inset: 0 !important;
   background: 
-    linear-gradient(90deg, rgba(253, 251, 247, 0.94) 0%, rgba(253, 251, 247, 0.72) 48%, rgba(253, 251, 247, 0.22) 85%, transparent 100%),
-    linear-gradient(180deg, rgba(253, 251, 247, 0.5) 0%, transparent 28%, transparent 72%, rgba(253, 251, 247, 0.96) 100%) !important;
+    linear-gradient(90deg, rgba(12, 10, 8, 0.78) 0%, rgba(12, 10, 8, 0.46) 42%, rgba(12, 10, 8, 0.05) 75%, transparent 100%),
+    linear-gradient(180deg, rgba(12, 10, 8, 0.35) 0%, transparent 25%, transparent 78%, rgba(12, 10, 8, 0.65) 100%) !important;
   pointer-events: none !important;
   z-index: 2 !important;
 }
@@ -1365,14 +1367,16 @@ html[dir="rtl"] .footer-bottom {
   font-size: clamp(11px, 1.1vw, 12.5px) !important;
   letter-spacing: 0.18em !important;
   margin: 0 0 16px 0 !important;
-  color: #a67c32 !important;
+  color: #f7d58b !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
-  background: rgba(166, 124, 50, 0.12) !important;
-  border: 1px solid rgba(166, 124, 50, 0.35) !important;
+  background: rgba(166, 124, 50, 0.22) !important;
+  border: 1px solid rgba(220, 175, 95, 0.5) !important;
   padding: 6px 14px !important;
   border-radius: 9999px !important;
   width: fit-content !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
 }
 
 .hero h1 {
@@ -1380,10 +1384,10 @@ html[dir="rtl"] .footer-bottom {
   line-height: 1.15 !important;
   letter-spacing: -0.025em !important;
   margin: 0 0 16px 0 !important;
-  color: #1e150c !important;
+  color: #ffffff !important;
   font-weight: 800 !important;
   max-width: 800px !important;
-  text-shadow: none !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.75), 0 4px 30px rgba(0, 0, 0, 0.5) !important;
 }
 
 .hero-content > p:not(.kicker) {
@@ -1391,8 +1395,8 @@ html[dir="rtl"] .footer-bottom {
   line-height: 1.65 !important;
   max-width: 620px !important;
   margin: 0 0 26px 0 !important;
-  color: #453c30 !important;
-  text-shadow: none !important;
+  color: #f0ebe1 !important;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.8) !important;
 }
 
 .hero-actions {
@@ -1409,9 +1413,9 @@ html[dir="rtl"] .footer-bottom {
   font-size: 15px !important;
   font-weight: 700 !important;
   border-radius: 9999px !important;
-  background: linear-gradient(135deg, #a67c32 0%, #8c6522 100%) !important;
+  background: linear-gradient(135deg, #c6a15b 0%, #9e7a32 100%) !important;
   color: #ffffff !important;
-  box-shadow: 0 8px 24px rgba(166, 124, 50, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
 }
 
 .hero-actions .button:hover {
@@ -1425,17 +1429,18 @@ html[dir="rtl"] .footer-bottom {
   font-size: 15px !important;
   font-weight: 600 !important;
   border-radius: 9999px !important;
-  background: #ffffff !important;
-  border: 1.5px solid #dfd6c4 !important;
-  color: #221910 !important;
-  backdrop-filter: blur(8px) !important;
-  box-shadow: 0 4px 12px rgba(50, 30, 10, 0.05) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
 }
 
 .hero-actions .button-ghost:hover {
-  background: #faf6ee !important;
-  border-color: #a67c32 !important;
-  color: #a67c32 !important;
+  background: rgba(255, 255, 255, 0.28) !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
   transform: translateY(-2px) !important;
 }
 
@@ -1854,6 +1859,208 @@ html, body {
   cursor: pointer !important;
   margin-bottom: 14px !important;
   padding: 0 !important;
+}
+
+/* ========================================================
+   LICENSE BADGE & CARDS
+   ======================================================== */
+.license-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  background: rgba(166, 124, 50, 0.1) !important;
+  color: #a67c32 !important;
+  border: 1px solid rgba(166, 124, 50, 0.35) !important;
+  padding: 3px 9px !important;
+  border-radius: 999px !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2px !important;
+  vertical-align: middle !important;
+}
+
+/* ========================================================
+   WHATSAPP BRANCH SELECTION MODAL
+   ======================================================== */
+.wa-modal-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 10000 !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 16px !important;
+}
+
+.wa-modal-card {
+  background: #FCFBF8 !important;
+  border: 1.5px solid rgba(166, 124, 50, 0.35) !important;
+  border-radius: 24px !important;
+  max-width: 500px !important;
+  width: 100% !important;
+  padding: clamp(22px, 4.5vw, 32px) !important;
+  position: relative !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25), 0 0 40px rgba(37, 211, 102, 0.12) !important;
+  color: #221910 !important;
+}
+
+.wa-modal-close {
+  position: absolute !important;
+  top: 16px !important;
+  right: 16px !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  border: 1px solid #e8e1d5 !important;
+  background: #f7f1e7 !important;
+  color: #554d42 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  font-size: 15px !important;
+}
+
+.wa-modal-close:hover {
+  background: rgba(166, 124, 50, 0.15) !important;
+  border-color: #a67c32 !important;
+  color: #221910 !important;
+}
+
+.wa-modal-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(37, 211, 102, 0.12) !important;
+  border: 1px solid rgba(37, 211, 102, 0.4) !important;
+  padding: 5px 12px !important;
+  border-radius: 999px !important;
+  color: #128c7e !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  margin-bottom: 12px !important;
+}
+
+.wa-modal-title {
+  font-size: clamp(20px, 3.2vw, 24px) !important;
+  color: #221910 !important;
+  margin: 0 0 6px 0 !important;
+  font-weight: 700 !important;
+}
+
+.wa-modal-sub {
+  font-size: 13.5px !important;
+  color: #665d52 !important;
+  margin: 0 0 20px 0 !important;
+  line-height: 1.45 !important;
+}
+
+.wa-modal-branches {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+
+.wa-modal-branch-link {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  padding: 16px 18px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #e8e1d5 !important;
+  border-radius: 16px !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+.wa-modal-branch-link:hover {
+  border-color: #25d366 !important;
+  background: #fbfefc !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.15) !important;
+}
+
+.wa-modal-branch-top {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+}
+
+.wa-modal-branch-name {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #221910 !important;
+  display: block !important;
+}
+
+.wa-modal-branch-subtag {
+  font-size: 12px !important;
+  color: #8c8275 !important;
+  display: block !important;
+  margin-top: 1px !important;
+}
+
+.wa-modal-branch-pin {
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  color: #a67c32 !important;
+  background: rgba(166, 124, 50, 0.1) !important;
+  padding: 2px 8px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(166, 124, 50, 0.25) !important;
+  white-space: nowrap !important;
+}
+
+.wa-modal-branch-address {
+  font-size: 12.5px !important;
+  color: #665d52 !important;
+  line-height: 1.35 !important;
+}
+
+.wa-modal-branch-bottom {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-top: 6px !important;
+  padding-top: 10px !important;
+  border-top: 1px dashed rgba(0, 0, 0, 0.08) !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+}
+
+.wa-modal-number {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 14.5px !important;
+  font-weight: 700 !important;
+  color: #128c7e !important;
+  font-family: inherit !important;
+}
+
+.wa-modal-cta-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: #25d366 !important;
+  color: #ffffff !important;
+  padding: 6px 14px !important;
+  border-radius: 999px !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  transition: background 0.2s !important;
+}
+
+.wa-modal-branch-link:hover .wa-modal-cta-btn {
+  background: #1eb855 !important;
 }
 
 
@@ -3030,9 +3237,6 @@ iframe {
 }
 
 /* HIGH-CONTRAST HEADINGS & PARAGRAPHS */
-.hero h1,
-.hero.page-hero h1,
-.hero.about-hero h1,
 .section-heading h2,
 .final-cta h2,
 .contact-experience-title,
@@ -3043,7 +3247,6 @@ iframe {
 .getting-here-copy h2,
 .therapist-branch-head h2,
 .therapist-info h3,
-.page-hero h1,
 .why-card h3,
 .why-heading-content h2,
 .service-card h3,
@@ -3052,8 +3255,6 @@ iframe {
   text-shadow: none !important;
 }
 
-.hero-content > p:not(.kicker),
-.hero p,
 .section-heading p,
 .inner-hero p,
 .branches-hero-copy > p:not(.kicker),

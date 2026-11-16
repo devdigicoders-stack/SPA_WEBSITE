@@ -3,10 +3,12 @@
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { SPA_INFO, BRANCHES, REVIEWS, OFFICIAL_PRICE_LIST } from "@/data/spaData";
+import WhatsAppModal from "@/components/WhatsAppModal";
 
 export default function HomePage() {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [navOpen, setNavOpen] = useState(false);
+  const [whatsAppModalOpen, setWhatsAppModalOpen] = useState(false);
   const [bookingStep, setBookingStep] = useState<"branches" | "actions">("branches");
   const [selectedBranchSlug, setSelectedBranchSlug] = useState<string>("west-bay");
   const [bookingContext, setBookingContext] = useState<{ icon: string; text: string } | null>(null);
@@ -20,6 +22,7 @@ export default function HomePage() {
     string,
     {
       name: string;
+      licenseNo?: string;
       call_number: string;
       whatsapp_number: string;
       whatsapp_msg: string;
@@ -34,6 +37,7 @@ export default function HomePage() {
   > = {
     "jouri-hotel": {
       name: "Jouri, a Murwab Hotel",
+      licenseNo: "316057",
       call_number: "+97440041000",
       whatsapp_number: "97455883421",
       whatsapp_msg: "Hello Just Relax Spa at Jouri Murwab Hotel! I would like to book a treatment.",
@@ -47,6 +51,7 @@ export default function HomePage() {
     },
     "retaj-salwa": {
       name: "Retaj Salwa Resort & Spa",
+      licenseNo: "288593",
       call_number: "+97444298888",
       whatsapp_number: "97455883421",
       whatsapp_msg: "Hello Just Relax Spa Retaj Salwa! I would like to book a private suite appointment.",
@@ -60,6 +65,7 @@ export default function HomePage() {
     },
     "west-bay": {
       name: "Retaj Salwa Resort & Spa",
+      licenseNo: "288593",
       call_number: "+97444298888",
       whatsapp_number: "97455883421",
       whatsapp_msg: "Hello Just Relax Spa Retaj Salwa! I would like to book a private suite appointment.",
@@ -635,7 +641,7 @@ export default function HomePage() {
             {/* Royal Moroccan Bath */}
             <article className="service-card">
               <img
-                src="/assets/just-relax/treatments/royal-moroccan.jpg"
+                src="/assets/images/Just%20Relax%20Spa%20Treatments/Royal%20Moroccan%20Bath.png"
                 width="640"
                 height="480"
                 loading="lazy"
@@ -657,7 +663,7 @@ export default function HomePage() {
             {/* Moroccan Bath with Herbs */}
             <article className="service-card">
               <img
-                src="/assets/just-relax/treatments/moroccan-herbs.jpg"
+                src="/assets/images/Just%20Relax%20Spa%20Treatments/Moroccan%20Bath%20with%20Herbs.png"
                 width="640"
                 height="480"
                 loading="lazy"
@@ -679,7 +685,7 @@ export default function HomePage() {
             {/* Turkish Bath */}
             <article className="service-card">
               <img
-                src="/assets/just-relax/treatments/turkish-bath.jpg"
+                src="/assets/images/Just%20Relax%20Spa%20Treatments/Turkish%20Bath.png"
                 width="640"
                 height="480"
                 loading="lazy"
@@ -701,7 +707,7 @@ export default function HomePage() {
             {/* Swedish Massage */}
             <article className="service-card">
               <img
-                src="/assets/just-relax/treatments/swedish-massage.jpg"
+                src="/assets/images/Just%20Relax%20Spa%20Treatments/Swedish%20Massage.png"
                 width="640"
                 height="480"
                 loading="lazy"
@@ -723,7 +729,7 @@ export default function HomePage() {
             {/* Deep Tissue Massage */}
             <article className="service-card">
               <img
-                src="/assets/just-relax/treatments/deep-tissue.jpg"
+                src="/assets/images/Just%20Relax%20Spa%20Treatments/Deep%20Tissue%20Massage.png"
                 width="640"
                 height="480"
                 loading="lazy"
@@ -745,7 +751,7 @@ export default function HomePage() {
             {/* Hot Stone Massage */}
             <article className="service-card">
               <img
-                src="/assets/just-relax/treatments/hot-stone.jpg"
+                src="/assets/images/Just%20Relax%20Spa%20Treatments/Hot%20Stone%20Massage.png"
                 width="640"
                 height="480"
                 loading="lazy"
@@ -767,7 +773,7 @@ export default function HomePage() {
             {/* Jacuzzi with Organic Salts */}
             <article className="service-card">
               <img
-                src="/assets/just-relax/treatments/jacuzzi-salts.jpg"
+                src="/assets/images/Just%20Relax%20Spa%20Treatments/Jacuzzi%20With%20Organic%20Salts.png"
                 width="640"
                 height="480"
                 loading="lazy"
@@ -789,7 +795,7 @@ export default function HomePage() {
             {/* Underwater Soapy Massage */}
             <article className="service-card">
               <img
-                src="/assets/just-relax/treatments/underwater-soapy.jpg"
+                src="/assets/images/Just%20Relax%20Spa%20Treatments/Underwater%20Soapy%20Massage.png"
                 width="640"
                 height="480"
                 loading="lazy"
@@ -979,16 +985,15 @@ export default function HomePage() {
 
       {/* FLOATING CTAS */}
       <aside className="floating-ctas" aria-label="Quick contact actions">
-        <a
-          href="https://wa.me/97455883421"
+        <button
+          type="button"
           className="floating-cta floating-whatsapp"
-          target="_blank"
-          rel="noopener noreferrer"
+          onClick={() => setWhatsAppModalOpen(true)}
           aria-label="Chat on WhatsApp"
           title="WhatsApp"
         >
           <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
-        </a>
+        </button>
         <a
           href="tel:+97440041000"
           className="floating-cta floating-call"
@@ -1053,7 +1058,12 @@ export default function HomePage() {
                       className={`booking-branch-card ${closestBranchSlug === slug ? "is-closest" : ""}`}
                       onClick={() => handleSelectBranch(slug)}
                     >
-                      <span className="booking-branch-name">{b.name}</span>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%", gap: "8px" }}>
+                        <span className="booking-branch-name">{b.name}</span>
+                        <span className="license-badge" style={{ fontSize: "11px", padding: "2px 7px" }}>
+                          L.n : {b.licenseNo}
+                        </span>
+                      </div>
                       <span className="booking-branch-address">{b.address}</span>
                       {branchDistances[slug] && (
                         <span className="booking-branch-dist">
@@ -1115,6 +1125,11 @@ export default function HomePage() {
           )}
         </div>
       </dialog>
+
+      <WhatsAppModal
+        isOpen={whatsAppModalOpen}
+        onClose={() => setWhatsAppModalOpen(false)}
+      />
     </>
   );
 }

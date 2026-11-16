@@ -66,7 +66,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
       "Avoid heavy meals or caffeine within 90 minutes of the treatment.",
       "Please inform your therapist of any heat sensitivity, respiratory conditions, or skin allergies."
     ],
-    image: "/assets/just-relax/treatments/royal-moroccan.jpg",
+    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Royal%20Moroccan%20Bath.png",
     serviceId: "royal-moroccan",
     relatedSlugs: ["moroccan-herbs", "turkish-bath", "jacuzzi-salts"]
   },
@@ -113,7 +113,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
       "Arrive 10-15 minutes prior. Disclose any botanical sensitivities to your therapist beforehand.",
       "Stay hydrated before entering the warm steam suite."
     ],
-    image: "/assets/just-relax/treatments/moroccan-herbs.jpg",
+    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Moroccan%20Bath%20with%20Herbs.png",
     serviceId: "moroccan-herbs",
     relatedSlugs: ["royal-moroccan", "turkish-bath", "swedish-massage"]
   },
@@ -160,7 +160,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
       "Arrive 10-15 minutes early. Ensure you are well hydrated.",
       "Recommended as a prelude to a deep tissue massage for maximum muscular release."
     ],
-    image: "/assets/just-relax/treatments/turkish-bath.jpg",
+    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Turkish%20Bath.png",
     serviceId: "turkish-bath",
     relatedSlugs: ["royal-moroccan", "underwater-soapy", "swedish-massage"]
   },
@@ -207,7 +207,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
       "Arrive 10 minutes prior to unwind in the quiet suite.",
       "Communicate your desired pressure level openly at any point during your session."
     ],
-    image: "/assets/just-relax/treatments/swedish-massage.jpg",
+    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Swedish%20Massage.png",
     serviceId: "swedish-massage",
     relatedSlugs: ["deep-tissue", "hot-stone", "massage-natural-oils"]
   },
@@ -254,7 +254,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
       "Ensure you drink plenty of water before and after treatment to aid toxin flush.",
       "Expect moderate therapeutic pressure; communicate clearly with therapist."
     ],
-    image: "/assets/just-relax/treatments/deep-tissue.jpg",
+    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Deep%20Tissue%20Massage.png",
     serviceId: "deep-tissue",
     relatedSlugs: ["sports-massage", "gun-massage", "hot-stone"]
   },
@@ -301,7 +301,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
       "Avoid direct sun exposure or tanning immediately prior to your appointment.",
       "Inform therapist if you have high blood pressure or heat sensitivities."
     ],
-    image: "/assets/just-relax/treatments/hot-stone.jpg",
+    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Hot%20Stone%20Massage.png",
     serviceId: "hot-stone",
     relatedSlugs: ["swedish-massage", "deep-tissue", "argan-oil-massage"]
   },
@@ -348,7 +348,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
       "Shower before entering the bath. Stay hydrated during the session.",
       "Best enjoyed as a prelude to a hammam or full-body massage."
     ],
-    image: "/assets/just-relax/treatments/jacuzzi-salts.jpg",
+    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Jacuzzi%20With%20Organic%20Salts.png",
     serviceId: "jacuzzi-salts",
     relatedSlugs: ["underwater-soapy", "royal-moroccan", "swedish-massage"]
   },
@@ -395,7 +395,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
       "Arrive 15 minutes early. Private dressing suite and amenities provided.",
       "Ideal for individuals seeking a gentle, luxurious, and non-traditional experience."
     ],
-    image: "/assets/just-relax/treatments/underwater-soapy.jpg",
+    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Underwater%20Soapy%20Massage.png",
     serviceId: "underwater-soapy",
     relatedSlugs: ["jacuzzi-salts", "turkish-bath", "royal-moroccan"]
   },
@@ -441,7 +441,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
     preparation: [
       "Arrive 10 minutes prior. Mention any nut or botanical oil allergies."
     ],
-    image: "/assets/just-relax/treatments/massage-natural-oils.jpg",
+    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Massage%20with%20natural%20oil.png",
     serviceId: "massage-natural-oils",
     relatedSlugs: ["swedish-massage", "argan-oil-massage", "massage-organic-cream"]
   },
@@ -487,7 +487,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
     preparation: [
       "Arrive 10-15 minutes prior. Perfect option if returning to office or dinner."
     ],
-    image: "/assets/just-relax/treatments/massage-organic-cream.jpg",
+    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Massage%20with%20Organic%20Cream.png",
     serviceId: "massage-organic-cream",
     relatedSlugs: ["massage-natural-oils", "deep-tissue", "sports-massage"]
   },
@@ -533,7 +533,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
     preparation: [
       "Arrive 10-15 minutes early. Highly recommended following a Moroccan bath ritual."
     ],
-    image: "/assets/just-relax/treatments/argan-oil-massage.jpg",
+    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Argan%20Oil%20Massage.png",
     serviceId: "argan-oil-massage",
     relatedSlugs: ["royal-moroccan", "massage-natural-oils", "swedish-massage"]
   },
@@ -580,7 +580,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
       "Suitable either 24-48 hours before an athletic event or within 48 hours after heavy exertion.",
       "Wear comfortable gym attire if pre-stretching is desired."
     ],
-    image: "/assets/just-relax/treatments/sports-massage.jpg",
+    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Sports%20Massage.png",
     serviceId: "sports-massage",
     relatedSlugs: ["deep-tissue", "gun-massage", "hot-stone"]
   },
@@ -627,7 +627,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
       "Avoid direct percussion over bone prominences, fractures, or acute inflammation.",
       "Can be experienced fully clothed or with traditional spa drape."
     ],
-    image: "/assets/just-relax/treatments/gun-massage.jpg",
+    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Gun%20Massage.png",
     serviceId: "gun-massage",
     relatedSlugs: ["sports-massage", "deep-tissue", "swedish-massage"]
   },
@@ -674,7 +674,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
       "Arrive 15 minutes before your scheduled ritual to settle comfortably.",
       "Embrace the fluid, full-body drape and flow of this ancient technique."
     ],
-    image: "/assets/just-relax/treatments/lomi-lomi-massage.jpg",
+    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Lomi%20Lomi%20Massage.png",
     serviceId: "lomi-lomi-massage",
     relatedSlugs: ["swedish-massage", "hot-stone", "argan-oil-massage"]
   },
@@ -720,7 +720,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
     preparation: [
       "Arrive 15 minutes prior for an in-depth consultation with your therapist."
     ],
-    image: "/assets/just-relax/treatments/therapist-massage.jpg",
+    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Therapist%20Massage.png",
     serviceId: "therapist-massage",
     relatedSlugs: ["deep-tissue", "swedish-massage", "sports-massage"]
   },
@@ -767,7 +767,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
       "Hair should be at least 5mm in length (approx. 2-3 weeks of growth).",
       "Avoid sun exposure, hot tubs, or strenuous workouts for 24 hours post-waxing."
     ],
-    image: "/assets/just-relax/treatments/full-body-waxing.jpg",
+    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Full%20Body%20Waxing.png",
     serviceId: "full-body-waxing",
     relatedSlugs: ["full-body-shaving", "royal-moroccan", "swedish-massage"]
   },
@@ -813,7 +813,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
     preparation: [
       "No special preparation required. Clean and private shower suites available on site."
     ],
-    image: "/assets/just-relax/treatments/full-body-shaving.jpg",
+    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Full%20Body%20Shaving.png",
     serviceId: "full-body-shaving",
     relatedSlugs: ["full-body-waxing", "royal-moroccan", "turkish-bath"]
   }
