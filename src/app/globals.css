@@ -1534,29 +1534,170 @@ html, body {
   width: 100% !important;
 }
 
-/* Branch Grid Responsive 3-columns */
+/* ========================================================
+   HOMEPAGE SANCTUARY LOCATIONS (HORIZONTAL 2-BRANCH SPLIT CARDS)
+   ======================================================== */
 .branch-grid {
   display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: clamp(16px, 2.5vw, 24px) !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: clamp(18px, 2.5vw, 28px) !important;
   width: 100% !important;
+  align-items: stretch !important;
+}
+
+.branch-card {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: 210px 1fr !important;
+  background: #FCFBF8 !important;
+  border: 1.5px solid #e8dfd1 !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+  box-shadow: 0 10px 30px rgba(50, 30, 10, 0.05) !important;
+  min-height: 270px !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+.branch-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: #a67c32 !important;
+  box-shadow: 0 16px 40px rgba(166, 124, 50, 0.12) !important;
+}
+
+.branch-card:after {
+  display: none !important;
+}
+
+/* Left side: Branch Image */
+.branch-card-media {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 240px !important;
+  background: #f0ebe1 !important;
+  overflow: hidden !important;
+}
+
+.branch-card-media img,
+.branch-card > img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  transition: transform 0.4s ease !important;
+}
+
+.branch-card:hover .branch-card-media img,
+.branch-card:hover > img {
+  transform: scale(1.05) !important;
+}
+
+/* Right side: Branch Content & Details */
+.branch-card-content,
+.branch-card > div {
+  position: relative !important;
+  inset: auto !important;
+  z-index: 2 !important;
+  padding: 22px 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  background: #FCFBF8 !important;
+}
+
+.branch-card .rating-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 2px !important;
+}
+
+.branch-card h3 {
+  font-size: clamp(18px, 1.6vw, 22px) !important;
+  font-weight: 700 !important;
+  color: #1e150c !important;
+  margin: 4px 0 !important;
+  line-height: 1.25 !important;
+}
+
+.branch-card .branch-card-address {
+  font-size: 13px !important;
+  color: #554d42 !important;
+  line-height: 1.4 !important;
+  margin: 0 0 6px 0 !important;
+}
+
+.branch-card-hours {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 12px !important;
+  color: #6d6356 !important;
+  margin: 0 !important;
+}
+
+.branch-card-hours i {
+  color: #a67c32 !important;
+}
+
+.branch-card-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 10px !important;
+  flex-wrap: wrap !important;
+}
+
+.branch-card-actions .button {
+  margin-top: 0 !important;
+  flex: 1 !important;
+  min-width: 100px !important;
+  text-align: center !important;
+  justify-content: center !important;
+  font-size: 12.5px !important;
+  padding: 8px 14px !important;
+  min-height: 38px !important;
+}
+
+.button-ghost-gold {
+  background: transparent !important;
+  color: #a67c32 !important;
+  border: 1.5px solid #a67c32 !important;
+  font-weight: 600 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  border-radius: 999px !important;
+  transition: all 0.2s ease !important;
+}
+
+.button-ghost-gold:hover {
+  background: rgba(166, 124, 50, 0.12) !important;
+  color: #8c6726 !important;
+  transform: translateY(-1px) !important;
 }
 
 @media (max-width: 1024px) {
   .branch-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-
-@media (max-width: 680px) {
-  .branch-grid {
     grid-template-columns: 1fr !important;
   }
   .branch-card {
-    min-height: 410px !important;
+    grid-template-columns: 240px 1fr !important;
   }
-  .branch-card > div {
-    padding: 20px !important;
+}
+
+@media (max-width: 600px) {
+  .branch-card {
+    grid-template-columns: 1fr !important;
+  }
+  .branch-card-media {
+    min-height: 200px !important;
+    height: 200px !important;
   }
 }
 
