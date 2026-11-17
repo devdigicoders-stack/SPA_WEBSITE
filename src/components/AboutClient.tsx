@@ -110,8 +110,8 @@ export default function AboutClient() {
   > = {
     "jouri-hotel": {
       name: "Jouri, a Murwab Hotel",
-      call_number: "+97440041000",
-      whatsapp_number: "97455883421",
+      call_number: "+97470024322",
+      whatsapp_number: "97470024322",
       whatsapp_msg: "Hello Just Relax Spa Jouri Hotel! I would like to book an appointment.",
       address: "Al Muthaf Street, Old Salata / Corniche, Doha, Qatar",
       map_link: "https://maps.app.goo.gl/JbsB9BgUa1nxUPYeA?g_st=ac",
@@ -124,8 +124,8 @@ export default function AboutClient() {
     },
     "retaj-salwa": {
       name: "Retaj Salwa Resort & Spa",
-      call_number: "+97444298888",
-      whatsapp_number: "97455883421",
+      call_number: "+97433344048",
+      whatsapp_number: "97433344048",
       whatsapp_msg: "Hello Just Relax Spa Retaj Salwa! I would like to book an appointment.",
       address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
       map_link: "https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac",
@@ -138,8 +138,8 @@ export default function AboutClient() {
     },
     "west-bay": {
       name: "Retaj Salwa Resort & Spa",
-      call_number: "+97444298888",
-      whatsapp_number: "97455883421",
+      call_number: "+97433344048",
+      whatsapp_number: "97433344048",
       whatsapp_msg: "Hello Just Relax Spa Retaj Salwa! I would like to book an appointment.",
       address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
       map_link: "https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac",
@@ -464,7 +464,7 @@ export default function AboutClient() {
             <p>Two premier Doha destinations for authentic Moroccan baths, restorative sports massage, and executive relaxation designed around you.</p>
             <div className="footer-socials">
               <a
-                href="https://wa.me/97455883421"
+                href="https://wa.me/97433344048"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="West Bay Branch WhatsApp"
@@ -523,7 +523,7 @@ export default function AboutClient() {
           <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
         </button>
         <a
-          href="tel:+97440041000"
+          href="tel:+97470024322"
           className="floating-cta floating-call"
           aria-label="Call Just Relax Spa"
           title="Call"

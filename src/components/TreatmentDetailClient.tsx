@@ -40,8 +40,8 @@ export default function TreatmentDetailClient({
       slug: "west-bay",
       name: "West Bay Diplomatic Suite",
       address: "Tower 1, Diplomatic District, West Bay, Doha, Qatar",
-      phone: "+97444928888",
-      whatsappNumber: "97455883421",
+      phone: "+97433344048",
+      whatsappNumber: "97433344048",
       whatsappMsg: `Hello Just Relax Spa West Bay! I would like to book ${treatment.title}.`,
       lat: 25.3216,
       lng: 51.5312,
@@ -51,8 +51,8 @@ export default function TreatmentDetailClient({
       slug: "jouri-hotel",
       name: "Jouri, a Murwab Hotel",
       address: "Al Muthaf St, Street 137, Building 31, Zone 18, Old Salata, Doha",
-      phone: "+97440041000",
-      whatsappNumber: "97455883421",
+      phone: "+97470024322",
+      whatsappNumber: "97470024322",
       whatsappMsg: `Hello Just Relax Spa at Jouri Murwab Hotel! I would like to book ${treatment.title}.`,
       lat: 25.2892,
       lng: 51.5434,
@@ -374,7 +374,7 @@ export default function TreatmentDetailClient({
           <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
         </button>
         <a
-          href="tel:+97440041000"
+          href="tel:+97470024322"
           className="floating-cta floating-call"
           aria-label="Call Just Relax Spa"
           title="Call"

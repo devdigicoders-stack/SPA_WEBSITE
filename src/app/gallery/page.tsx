@@ -37,8 +37,8 @@ export default function GalleryPage() {
   > = {
     "retaj-salwa": {
       name: "Retaj Salwa Resort & Spa",
-      call_number: "+97444298888",
-      whatsapp_number: "97455883421",
+      call_number: "+97433344048",
+      whatsapp_number: "97433344048",
       whatsapp_msg: "Hello Just Relax Spa Retaj Salwa! I would like to book a suite appointment.",
       address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
       map_link: "https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac",
@@ -46,8 +46,8 @@ export default function GalleryPage() {
     },
     "west-bay": {
       name: "Retaj Salwa Resort & Spa",
-      call_number: "+97444298888",
-      whatsapp_number: "97455883421",
+      call_number: "+97433344048",
+      whatsapp_number: "97433344048",
       whatsapp_msg: "Hello Just Relax Spa Retaj Salwa! I would like to book a suite appointment.",
       address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
       map_link: "https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac",
@@ -55,8 +55,8 @@ export default function GalleryPage() {
     },
     "jouri-hotel": {
       name: "Jouri, a Murwab Hotel",
-      call_number: "+97440041000",
-      whatsapp_number: "97455883421",
+      call_number: "+97470024322",
+      whatsapp_number: "97470024322",
       whatsapp_msg: "Hello Just Relax Spa at Jouri Murwab Hotel! I would like to book a suite appointment.",
       address: "Al Muthaf St, Street 137, Building 31, Zone 18, Old Salata, Doha",
       map_link: "https://maps.app.goo.gl/JbsB9BgUa1nxUPYeA?g_st=ac",
@@ -366,7 +366,7 @@ export default function GalleryPage() {
             <p>Two premier Doha destinations for authentic Moroccan baths, restorative sports massage, and executive relaxation designed around you.</p>
             <div className="footer-socials">
               <a
-                href="https://wa.me/97455883421"
+                href="https://wa.me/97470024322"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="West Bay Branch WhatsApp"

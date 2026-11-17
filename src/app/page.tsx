@@ -38,8 +38,8 @@ export default function HomePage() {
     "jouri-hotel": {
       name: "Jouri, a Murwab Hotel",
       licenseNo: "316057",
-      call_number: "+97440041000",
-      whatsapp_number: "97455883421",
+      call_number: "+97470024322",
+      whatsapp_number: "97470024322",
       whatsapp_msg: "Hello Just Relax Spa at Jouri Murwab Hotel! I would like to book a treatment.",
       address: "Al Muthaf Street, Street 137, Building 31, Zone 18, Old Salata, Doha",
       map_link: "https://maps.app.goo.gl/JbsB9BgUa1nxUPYeA?g_st=ac",
@@ -52,8 +52,8 @@ export default function HomePage() {
     "retaj-salwa": {
       name: "Retaj Salwa Resort & Spa",
       licenseNo: "288593",
-      call_number: "+97444298888",
-      whatsapp_number: "97455883421",
+      call_number: "+97433344048",
+      whatsapp_number: "97433344048",
       whatsapp_msg: "Hello Just Relax Spa Retaj Salwa! I would like to book a private suite appointment.",
       address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
       map_link: "https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac",
@@ -66,8 +66,8 @@ export default function HomePage() {
     "west-bay": {
       name: "Retaj Salwa Resort & Spa",
       licenseNo: "288593",
-      call_number: "+97444298888",
-      whatsapp_number: "97455883421",
+      call_number: "+97433344048",
+      whatsapp_number: "97433344048",
       whatsapp_msg: "Hello Just Relax Spa Retaj Salwa! I would like to book a private suite appointment.",
       address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
       map_link: "https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac",
@@ -80,8 +80,8 @@ export default function HomePage() {
     // Aliases for legacy compatibility
     "sh-zayed": {
       name: "West Bay Diplomatic Suite",
-      call_number: "+97444928888",
-      whatsapp_number: "97455883421",
+      call_number: "+97433344048",
+      whatsapp_number: "97433344048",
       whatsapp_msg: "Hello Just Relax Spa West Bay! I would like to book an appointment.",
       address: "Tower 1, Diplomatic District, West Bay, Doha, Qatar",
       map_link: "https://maps.app.goo.gl/2y2YLqXKL9fuEeXg9?g_st=ac",
@@ -93,8 +93,8 @@ export default function HomePage() {
     },
     "business-bay": {
       name: "Jouri, a Murwab Hotel",
-      call_number: "+97440041000",
-      whatsapp_number: "97455883421",
+      call_number: "+97470024322",
+      whatsapp_number: "97470024322",
       whatsapp_msg: "Hello Just Relax Spa at Jouri Murwab Hotel! I would like to book an appointment.",
       address: "Al Muthaf Street, Street 137, Building 31, Zone 18, Old Salata, Doha",
       map_link: "https://maps.app.goo.gl/JbsB9BgUa1nxUPYeA?g_st=ac",
@@ -531,7 +531,7 @@ export default function HomePage() {
                   <h3>Jouri, a Murwab Hotel</h3>
                   <p className="branch-card-address">Al Muthaf St, Street 137, Zone 18, Old Salata / Corniche, Doha</p>
                   <p className="branch-card-hours">
-                    <i className="fa-regular fa-clock" aria-hidden="true"></i>Daily 10:00 AM – 3:00 AM · Tel: +974 4004 1000
+                    <i className="fa-regular fa-clock" aria-hidden="true"></i>Daily 10:00 AM – 3:00 AM · Tel: +974 7002 4322
                   </p>
                 </div>
                 <div className="branch-card-actions">
@@ -587,7 +587,7 @@ export default function HomePage() {
                   <h3>Retaj Salwa Resort &amp; Spa</h3>
                   <p className="branch-card-address">Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar</p>
                   <p className="branch-card-hours">
-                    <i className="fa-regular fa-clock" aria-hidden="true"></i>Daily 10:00 AM – 3:00 AM · Tel: +974 4429 8888
+                    <i className="fa-regular fa-clock" aria-hidden="true"></i>Daily 10:00 AM – 3:00 AM · Tel: +974 3334 4048
                   </p>
                 </div>
                 <div className="branch-card-actions">
@@ -966,7 +966,7 @@ export default function HomePage() {
             </p>
             <div className="footer-socials">
               <a
-                href="https://wa.me/97455883421"
+                href="https://wa.me/97433344048"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="West Bay Branch WhatsApp"
@@ -1027,7 +1027,7 @@ export default function HomePage() {
           <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
         </button>
         <a
-          href="tel:+97440041000"
+          href="tel:+97470024322"
           className="floating-cta floating-call"
           aria-label="Call Just Relax Spa"
           title="Call"

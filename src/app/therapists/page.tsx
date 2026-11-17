@@ -35,8 +35,8 @@ export default function TherapistsPage() {
       name: "Retaj Salwa Resort & Spa",
       licenseNo: "288593",
       address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
-      phone: "+97444298888",
-      whatsappNumber: "97455883421",
+      phone: "+97433344048",
+      whatsappNumber: "97433344048",
       whatsappMsg: "Hello Just Relax Spa Retaj Salwa! I would like to book a treatment.",
       lat: 25.1686,
       lng: 51.3158,
@@ -47,8 +47,8 @@ export default function TherapistsPage() {
       name: "Jouri, a Murwab Hotel",
       licenseNo: "316057",
       address: "Al Muthaf St, Street 137, Building 31, Zone 18, Old Salata, Doha",
-      phone: "+97440041000",
-      whatsappNumber: "97455883421",
+      phone: "+97470024322",
+      whatsappNumber: "97470024322",
       whatsappMsg: "Hello Just Relax Spa at Jouri Murwab Hotel! I would like to book a session with a therapist.",
       lat: 25.2892,
       lng: 51.5434,
@@ -317,7 +317,7 @@ export default function TherapistsPage() {
           <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
         </button>
         <a
-          href="tel:+97440041000"
+          href="tel:+97470024322"
           className="floating-cta floating-call"
           aria-label="Call Just Relax Spa"
           title="Call"

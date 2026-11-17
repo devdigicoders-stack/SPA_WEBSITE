@@ -47,8 +47,8 @@ export default function OurBranchesPage() {
         "Flagship 4-star hotel sanctuary situated inside Jouri, a Murwab Hotel on Al Muthaf Street in Old Salata, Doha. Features authentic Moroccan baths, heated hammam, private soundproof treatment rooms, indoor heated pool and jacuzzi.",
       address: "Al Muthaf Street, Street 137, Building 31, Zone 18, Old Salata, Doha, Qatar",
       hours: "Daily 10:00 AM – 3:00 AM",
-      phone: "+974 4004 1000",
-      whatsappNumber: "97455883421",
+      phone: "+974 7002 4322",
+      whatsappNumber: "97470024322",
       whatsappMsg:
         "Hello Just Relax Spa Jouri Hotel! I would like to book a treatment.",
       instagram: "https://www.instagram.com/justrelaxspa.qa",
@@ -83,8 +83,8 @@ export default function OurBranchesPage() {
         "Nestled within the 5-star Retaj Salwa Resort & Spa on Salwa Road, Abu Nakhlah, this peaceful sanctuary provides gentlemen and executives an elite wellness retreat. Private soundproof VIP suites, authentic Moroccan Beldi bath chambers, hydrotherapy, and late-night appointments.",
       address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
       hours: "Daily 10:00 AM – 3:00 AM",
-      phone: "+974 4429 8888",
-      whatsappNumber: "97455883421",
+      phone: "+974 3334 4048",
+      whatsappNumber: "97433344048",
       whatsappMsg:
         "Hello Just Relax Spa Retaj Salwa! I would like to book a private suite appointment.",
       instagram: "https://www.instagram.com/justrelaxspa.qa",
@@ -471,12 +471,12 @@ export default function OurBranchesPage() {
                 <i className="fa-brands fa-instagram" aria-hidden="true"></i>@justrelaxspa.qa
               </a>
               <a
-                href="https://wa.me/97455883421"
+                href="https://wa.me/97433344048"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="West Bay WhatsApp Concierge"
               >
-                <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>Retaj Salwa: +974 5588 3421
+                <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>Retaj Salwa: +974 3334 4048
               </a>
 
             </div>
@@ -537,7 +537,7 @@ export default function OurBranchesPage() {
           <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
         </button>
         <a
-          href="tel:+97440041000"
+          href="tel:+97470024322"
           className="floating-cta floating-call"
           aria-label="Call Just Relax Spa"
           title="Call"

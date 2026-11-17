@@ -42,9 +42,9 @@ const CONTACT_BRANCHES: BranchContactData[] = [
     hours: "Daily 10:00 AM – 3:00 AM",
     instagram: "https://www.instagram.com/justrelaxspa.qa",
     instagramHandle: "@justrelaxspa.qa",
-    phone: "+97440041000",
-    phoneDisplay: "+974 4004 1000",
-    whatsappNumber: "97455883421",
+    phone: "+97470024322",
+    phoneDisplay: "+974 7002 4322",
+    whatsappNumber: "97470024322",
     whatsappMsg: "Hello Just Relax Spa Jouri Hotel! I would like to book a treatment.",
     mapIframe:
       "https://maps.google.com/maps?q=Jouri+a+Murwab+Hotel+Doha&t=&z=15&ie=UTF8&iwloc=&output=embed",
@@ -73,9 +73,9 @@ const CONTACT_BRANCHES: BranchContactData[] = [
     hours: "Daily 10:00 AM – 3:00 AM",
     instagram: "https://www.instagram.com/justrelaxspa.qa",
     instagramHandle: "@justrelaxspa.qa",
-    phone: "+97444298888",
-    phoneDisplay: "+974 4429 8888",
-    whatsappNumber: "97455883421",
+    phone: "+97433344048",
+    phoneDisplay: "+974 3334 4048",
+    whatsappNumber: "97433344048",
     whatsappMsg: "Hello Just Relax Spa Retaj Salwa! I would like to book a private suite appointment.",
     mapIframe:
       "https://maps.google.com/maps?q=Retaj+Salwa+Resort+%26+Spa+Doha&t=&z=15&ie=UTF8&iwloc=&output=embed",
@@ -199,10 +199,10 @@ export default function ContactPage() {
               Direct concierge access for private VIP suites, Moroccan hammam bookings, and directions across Jouri Murwab Hotel and Retaj Salwa Resort &amp; Spa.
             </p>
             <div className="hero-actions">
-              <a className="button" href="https://wa.me/97455883421" target="_blank" rel="noopener noreferrer">
+              <a className="button" href="https://wa.me/97470024322" target="_blank" rel="noopener noreferrer">
                 <i className="fa-brands fa-whatsapp" style={{ marginInlineEnd: 8 }}></i>Chat on WhatsApp
               </a>
-              <a className="button button-ghost" href="tel:+97440041000">
+              <a className="button button-ghost" href="tel:+97470024322">
                 <i className="fa-solid fa-phone" style={{ marginInlineEnd: 8 }}></i>Call Concierge
               </a>
             </div>
@@ -517,7 +517,7 @@ export default function ContactPage() {
           <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
         </button>
         <a
-          href="tel:+97440041000"
+          href="tel:+97470024322"
           className="floating-cta floating-call"
           aria-label="Call Just Relax Spa"
           title="Call"

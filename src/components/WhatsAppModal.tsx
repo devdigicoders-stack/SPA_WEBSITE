@@ -16,8 +16,8 @@ export const BRANCH_WHATSAPP_DATA = [
     branchSub: "Old Salata / Doha Corniche",
     licenseNo: "316057",
     address: "Al Muthaf Street, Street 137, Building 31, Zone 18, Old Salata, Doha",
-    whatsappDisplay: "+974 5588 3421",
-    whatsappNumber: "97455883421",
+    whatsappDisplay: "+974 7002 4322",
+    whatsappNumber: "97470024322",
     defaultMsg: "Hello Just Relax Spa Jouri Hotel! I would like to book a treatment.",
   },
   {
@@ -27,8 +27,8 @@ export const BRANCH_WHATSAPP_DATA = [
     branchSub: "Salwa Road / Abu Nakhlah",
     licenseNo: "288593",
     address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
-    whatsappDisplay: "+974 5588 3421",
-    whatsappNumber: "97455883421",
+    whatsappDisplay: "+974 3334 4048",
+    whatsappNumber: "97433344048",
     defaultMsg: "Hello Just Relax Spa Retaj Salwa! I would like to book a private suite appointment.",
   },
 ];
