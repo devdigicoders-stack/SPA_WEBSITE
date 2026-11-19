@@ -1,5 +1,7 @@
 "use client";
 
+import SiteFooter from '@/components/SiteFooter';
+
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { SPA_INFO, BRANCHES, REVIEWS, OFFICIAL_PRICE_LIST } from "@/data/spaData";
@@ -37,7 +39,7 @@ export default function HomePage() {
   > = {
     "jouri-hotel": {
       name: "Jouri, a Murwab Hotel",
-      licenseNo: "316057",
+      
       call_number: "+97470024322",
       whatsapp_number: "97470024322",
       whatsapp_msg: "Hello Just Relax Spa at Jouri Murwab Hotel! I would like to book a treatment.",
@@ -46,12 +48,12 @@ export default function HomePage() {
       lat: 25.2892,
       lng: 51.5434,
       opens: "10:00",
-      closes: "03:00",
+      closes: "01:00",
       rating: "4.96",
     },
     "retaj-salwa": {
       name: "Retaj Salwa Resort & Spa",
-      licenseNo: "288593",
+      
       call_number: "+97433344048",
       whatsapp_number: "97433344048",
       whatsapp_msg: "Hello Just Relax Spa Retaj Salwa! I would like to book a private suite appointment.",
@@ -60,12 +62,12 @@ export default function HomePage() {
       lat: 25.1686,
       lng: 51.3158,
       opens: "10:00",
-      closes: "03:00",
+      closes: "00:00",
       rating: "4.95",
     },
     "west-bay": {
       name: "Retaj Salwa Resort & Spa",
-      licenseNo: "288593",
+      
       call_number: "+97433344048",
       whatsapp_number: "97433344048",
       whatsapp_msg: "Hello Just Relax Spa Retaj Salwa! I would like to book a private suite appointment.",
@@ -74,7 +76,7 @@ export default function HomePage() {
       lat: 25.1686,
       lng: 51.3158,
       opens: "10:00",
-      closes: "03:00",
+      closes: "00:00",
       rating: "4.95",
     },
     // Aliases for legacy compatibility
@@ -206,25 +208,9 @@ export default function HomePage() {
 
 
   const openModal = (preferredAction?: string, preselectBranch?: string) => {
-    if (preselectBranch && branchData[preselectBranch]) {
-      setSelectedBranchSlug(preselectBranch);
-      setBookingStep("actions");
-    } else {
-      setBookingStep("branches");
-    }
-
-    if (preferredAction === "whatsapp") {
-      setBookingContext({ icon: "fa-brands fa-whatsapp", text: "Continue via WhatsApp — choose your branch" });
-    } else if (preferredAction === "call") {
-      setBookingContext({ icon: "fa-solid fa-phone", text: "Call concierge — choose your branch" });
-    } else if (preferredAction === "directions") {
-      setBookingContext({ icon: "fa-solid fa-location-arrow", text: "Get directions — choose your branch" });
-    } else {
-      setBookingContext(null);
-    }
-
-    if (dialogRef.current) {
-      dialogRef.current.showModal();
+    if (typeof window !== "undefined" && (window as any).__openJustRelaxBooking) {
+      (window as any).__openJustRelaxBooking(preferredAction, preselectBranch);
+      return;
     }
   };
 
@@ -345,13 +331,13 @@ export default function HomePage() {
             <i className="fa-solid fa-award" aria-hidden="true"></i>Licensed by MOCI Qatar
           </span>
           <span className="trust-badge">
-            <i className="fa-solid fa-shield-halved" aria-hidden="true"></i>Commercial Reg. No. 184920
+            <i className="fa-solid fa-shield-halved" aria-hidden="true"></i>Commercial Registration
           </span>
           <span className="trust-badge">
             <i className="fa-solid fa-door-closed" aria-hidden="true"></i>100% Private Soundproof Suites
           </span>
           <span className="trust-badge">
-            <i className="fa-regular fa-moon" aria-hidden="true"></i>Open Daily Until 3:00 AM
+            <i className="fa-regular fa-moon" aria-hidden="true"></i>Open Daily Until Late Night
           </span>
           <span className="trust-badge">
             <i className="fa-solid fa-location-dot" aria-hidden="true"></i>Two Premier Doha Destinations
@@ -394,11 +380,11 @@ export default function HomePage() {
                 </div>
                 <div className="why-pillar">
                   <i className="fa-solid fa-circle-check" aria-hidden="true"></i>
-                  <span>Licensed by Ministry of Commerce &amp; Industry (CR No. 184920)</span>
+                  <span>Licensed by Ministry of Commerce &amp; Industry</span>
                 </div>
                 <div className="why-pillar">
                   <i className="fa-solid fa-circle-check" aria-hidden="true"></i>
-                  <span>Open Daily 10:00 AM – 3:00 AM with Valet Parking</span>
+                  <span>Open Daily 10:00 AM Until Late with Valet Parking</span>
                 </div>
               </div>
             </div>
@@ -408,7 +394,7 @@ export default function HomePage() {
               <i className="fa-solid fa-award" aria-hidden="true"></i>
               <h3>Licensed &amp; Verified in Qatar</h3>
               <p>
-                Just Relax Spa operates as a legally registered gentlemen&apos;s wellness sanctuary in Doha under Commercial Registration (CR) No. 184920, fully licensed by Qatar&apos;s Ministry of Commerce and Industry.
+                Just Relax Spa operates as a legally registered gentlemen&apos;s wellness sanctuary in Doha, fully licensed by Qatar&apos;s Ministry of Commerce and Industry.
               </p>
               <img
                 className="why-cert-logo"
@@ -436,7 +422,7 @@ export default function HomePage() {
               <i className="fa-solid fa-moon" aria-hidden="true"></i>
               <h3>Late Night Sanctuary</h3>
               <p>
-                Welcoming gentlemen daily until 3:00 AM — the ideal sanctuary for post-executive decompression, travel fatigue, or late evening recovery.
+                Welcoming gentlemen daily until late night — the ideal sanctuary for post-executive decompression, travel fatigue, or late evening recovery.
               </p>
             </article>
 
@@ -501,7 +487,7 @@ export default function HomePage() {
             <article className="branch-card">
               <div className="branch-card-media">
                 <img
-                  src="/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg"
+                  src="/assets/just-relax/branches/retaj-salwa/retaj-salwa-hero.jpg"
                   width="800"
                   height="600"
                   loading="lazy"
@@ -523,15 +509,12 @@ export default function HomePage() {
                     <span className="open-badge is-open" data-opens="10:00" data-closes="03:00">
                       Open now
                     </span>
-                    <span className="license-badge" title="Official Qatar Municipality License Number">
-                      <i className="fa-solid fa-award" aria-hidden="true"></i>
-                      L.n : 316057
-                    </span>
+                    
                   </div>
                   <h3>Jouri, a Murwab Hotel</h3>
                   <p className="branch-card-address">Al Muthaf St, Street 137, Zone 18, Old Salata / Corniche, Doha</p>
                   <p className="branch-card-hours">
-                    <i className="fa-regular fa-clock" aria-hidden="true"></i>Daily 10:00 AM – 3:00 AM · Tel: +974 7002 4322
+                    <i className="fa-regular fa-clock" aria-hidden="true"></i>Daily 10:00 AM – 1:00 AM · Tel: +974 7002 4322
                   </p>
                 </div>
                 <div className="branch-card-actions">
@@ -557,7 +540,7 @@ export default function HomePage() {
             <article className="branch-card">
               <div className="branch-card-media">
                 <img
-                  src="/assets/just-relax/branches/west-bay/west-bay-hero.jpg"
+                  src="/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg"
                   width="800"
                   height="600"
                   loading="lazy"
@@ -579,15 +562,12 @@ export default function HomePage() {
                     <span className="open-badge is-open" data-opens="10:00" data-closes="03:00">
                       Open now
                     </span>
-                    <span className="license-badge" title="Official Qatar Municipality License Number">
-                      <i className="fa-solid fa-award" aria-hidden="true"></i>
-                      L.n : 288593
-                    </span>
+                    
                   </div>
                   <h3>Retaj Salwa Resort &amp; Spa</h3>
                   <p className="branch-card-address">Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar</p>
                   <p className="branch-card-hours">
-                    <i className="fa-regular fa-clock" aria-hidden="true"></i>Daily 10:00 AM – 3:00 AM · Tel: +974 3334 4048
+                    <i className="fa-regular fa-clock" aria-hidden="true"></i>Daily 10:00 AM – 12:00 AM · Tel: +974 3334 4048
                   </p>
                 </div>
                 <div className="branch-card-actions">
@@ -655,7 +635,7 @@ export default function HomePage() {
               </div>
 
               <div className="price-list-sheet-footer">
-                <span><i className="fa-solid fa-award"></i> Licensed MOCI CR No. 184920</span>
+                <span><i className="fa-solid fa-award"></i> Licensed by MOCI Qatar</span>
                 <span><i className="fa-solid fa-hotel"></i> Available at Jouri Murwab Hotel &amp; Retaj Salwa Resort &amp; Spa</span>
                 <span><i className="fa-brands fa-whatsapp"></i> Instant WhatsApp VIP Confirmation</span>
               </div>
@@ -947,221 +927,15 @@ export default function HomePage() {
       </main>
 
       {/* FOOTER */}
-      <footer className="site-footer">
-        <div className="footer-top">
-          <div className="footer-brand">
-            <Link href="/">
-              <img
-                src="/assets/images/logo.png"
-                width="220"
-                height="48"
-                alt="Just Relax Spa Doha"
-              />
-            </Link>
-            <p>
-              Just Relax Spa is an elite men&apos;s wellness sanctuary in Doha, Qatar, delivering authentic Moroccan baths, Turkish hammams, and therapeutic recovery massages across Jouri Murwab Hotel and Retaj Salwa Resort & Spa.
-            </p>
-            <p className="footer-license">
-              Licensed by Ministry of Commerce &amp; Industry (MOCI Qatar) · CR No. 184920
-            </p>
-            <div className="footer-socials">
-              <a
-                href="https://wa.me/97433344048"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="West Bay Branch WhatsApp"
-              >
-                <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>Retaj Salwa
-              </a>
-
-            </div>
-          </div>
-
-          <div className="footer-column">
-            <h2>Doha Branches</h2>
-            <Link href="/our-branches/jouri-hotel">Jouri, a Murwab Hotel (Old Salata)</Link>
-            <Link href="/our-branches/retaj-salwa">Retaj Salwa Resort &amp; Spa (Salwa Rd)</Link>
-          </div>
-
-          <div className="footer-column">
-            <h2>Rituals</h2>
-            <Link href="/treatments/royal-moroccan">Royal Moroccan Bath</Link>
-            <Link href="/treatments/turkish-bath">Turkish Bath</Link>
-            <Link href="/treatments/deep-tissue">Deep Tissue Massage</Link>
-            <Link href="/treatments/swedish-massage">Swedish Massage</Link>
-            <Link href="/treatment-finder">Find Your Ritual</Link>
-          </div>
-
-          <div className="footer-column">
-            <h2>Company</h2>
-            <Link href="/about">About Us</Link>
-            <Link href="/therapists">Our Therapists</Link>
-            <Link href="/gallery">Gallery</Link>
-            <Link href="/contact">Concierge &amp; Locations</Link>
-            <Link href="/privacy-policy">Privacy Policy</Link>
-            <Link href="/terms-and-conditions">Terms of Service</Link>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          <div className="footer-legal-wrap">
-            <small>© 2026 Just Relax Spa Doha. All rights reserved.</small>
-            <small className="footer-legal-name">JUST RELAX SPA - MEN&apos;S SANCTUARY | MOCI Qatar CR No. 184920</small>
-            <Link href="/contact" className="footer-city-link" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "6px", color: "#c6a15b" }}>
-              <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
-              <span>Doha, State of Qatar</span>
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
 
       {/* FLOATING CTAS */}
-      <aside className="floating-ctas" aria-label="Quick contact actions">
-        <button
-          type="button"
-          className="floating-cta floating-whatsapp"
-          onClick={() => setWhatsAppModalOpen(true)}
-          aria-label="Chat on WhatsApp"
-          title="WhatsApp"
-        >
-          <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
-        </button>
-        <a
-          href="tel:+97470024322"
-          className="floating-cta floating-call"
-          aria-label="Call Just Relax Spa"
-          title="Call"
-        >
-          <i className="fa-solid fa-phone" aria-hidden="true"></i>
-        </a>
-        <button
-          type="button"
-          className="floating-cta floating-book"
-          data-book
-          onClick={() => openModal()}
-          aria-label="Book an appointment"
-          title="Book Appointment"
-        >
-          <i className="fa-regular fa-calendar-check" aria-hidden="true"></i>
-          <b>Book</b>
-        </button>
-      </aside>
+      
 
       {/* 2-STEP BOOKING MODAL */}
-      <dialog
-        ref={dialogRef}
-        className="booking-dialog"
-        data-booking
-        aria-labelledby="booking-title"
-        onClick={(e) => {
-          if (e.target === dialogRef.current) closeModal();
-        }}
-      >
-        <div className="booking-dialog-inner">
-          <button
-            type="button"
-            className="booking-close"
-            aria-label="Close dialog"
-            onClick={closeModal}
-          >
-            <i className="fa-solid fa-xmark" aria-hidden="true"></i>
-          </button>
+      
 
-          {bookingContext && (
-            <div className="booking-context-banner">
-              <i className={`fa-solid ${bookingContext.icon || "fa-sparkles"}`} aria-hidden="true"></i>
-              <span>{bookingContext.text}</span>
-            </div>
-          )}
-
-          {bookingStep === "branches" ? (
-            <div className="booking-step booking-step-branches is-active">
-              <h2 id="booking-title" className="booking-title">
-                Choose a Doha Branch
-              </h2>
-              <p className="booking-sub">Select your preferred sanctuary in Doha</p>
-              <div className="booking-branches-list">
-                {["jouri-hotel", "retaj-salwa"].map((slug) => {
-                  const b = branchData[slug];
-                  return (
-                    <button
-                      key={slug}
-                      type="button"
-                      className={`booking-branch-card ${closestBranchSlug === slug ? "is-closest" : ""}`}
-                      onClick={() => handleSelectBranch(slug)}
-                    >
-                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%", gap: "8px" }}>
-                        <span className="booking-branch-name">{b.name}</span>
-                        <span className="license-badge" style={{ fontSize: "11px", padding: "2px 7px" }}>
-                          L.n : {b.licenseNo}
-                        </span>
-                      </div>
-                      <span className="booking-branch-address">{b.address}</span>
-                      {branchDistances[slug] && (
-                        <span className="booking-branch-dist">
-                          <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
-                          {branchDistances[slug]}
-                          {closestBranchSlug === slug && " · Closest to you"}
-                        </span>
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          ) : (
-            <div className="booking-step booking-step-actions is-active">
-              <button
-                type="button"
-                className="booking-back"
-                onClick={() => setBookingStep("branches")}
-              >
-                <i className="fa-solid fa-arrow-left" aria-hidden="true"></i>
-                Change Branch
-              </button>
-              <h2 className="booking-title">{currentBranch.name}</h2>
-              <p className="booking-sub">{currentBranch.address}</p>
-              <div className="booking-actions-grid">
-                <a
-                  href={`https://wa.me/${currentBranch.whatsapp_number}?text=${encodeURIComponent(
-                    bookingContext ? `${currentBranch.whatsapp_msg} (${bookingContext.text})` : currentBranch.whatsapp_msg
-                  )}`}
-                  className="booking-action-btn booking-action-wa"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                  <span>Book via WhatsApp</span>
-                  <small>Instant concierge confirmation</small>
-                </a>
-                <a
-                  href={`tel:${currentBranch.call_number}`}
-                  className="booking-action-btn booking-action-call"
-                >
-                  <i className="fa-solid fa-phone" aria-hidden="true"></i>
-                  <span>Call Reception</span>
-                  <small>{currentBranch.call_number}</small>
-                </a>
-                <a
-                  href={currentBranch.map_link}
-                  className="booking-action-btn booking-action-map"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fa-solid fa-location-arrow" aria-hidden="true"></i>
-                  <span>Directions in Google Maps</span>
-                  <small>Open navigation to branch</small>
-                </a>
-              </div>
-            </div>
-          )}
-        </div>
-      </dialog>
-
-      <WhatsAppModal
-        isOpen={whatsAppModalOpen}
-        onClose={() => setWhatsAppModalOpen(false)}
-      />
+      
     </>
   );
 }

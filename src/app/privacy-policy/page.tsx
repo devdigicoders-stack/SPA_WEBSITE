@@ -1,5 +1,7 @@
 "use client";
 
+import SiteFooter from '@/components/SiteFooter';
+
 import React, { useState } from "react";
 import Link from "next/link";
 
@@ -120,58 +122,7 @@ export default function PrivacyPolicyPage() {
         </article>
       </main>
 
-      <footer className="site-footer" role="contentinfo">
-        <div className="footer-columns">
-          <div className="footer-brand">
-            <img
-              src="/assets/images/logo.png"
-              width="180"
-              height="40"
-              alt="Just Relax Spa"
-              loading="lazy"
-              decoding="async"
-            />
-            <p>
-              Just Relax Spa is an exclusive men's wellness sanctuary in Doha, Qatar, delivering authentic Moroccan baths,
-              Turkish hammams, and therapeutic massages across two premier destinations.
-            </p>
-            <p className="footer-license">
-              Licensed by Ministry of Commerce and Industry (MOCI Qatar) · CR No. 184920
-            </p>
-          </div>
-          <div>
-            <p className="footer-heading">Doha Branches</p>
-            <ul>
-              <li>
-                <Link href="/our-branches/west-bay">West Bay Diplomatic Suite</Link>
-              </li>
-              <li>
-                <Link href="/our-branches/jouri-hotel">Jouri, a Murwab Hotel (Old Salata)</Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p className="footer-heading">Company</p>
-            <ul>
-              <li>
-                <Link href="/about-laguna">About Us</Link>
-              </li>
-              <li>
-                <Link href="/privacy-policy">Privacy Policy</Link>
-              </li>
-              <li>
-                <Link href="/terms-and-conditions">Terms of Service</Link>
-              </li>
-              <li>
-                <Link href="/advertisement-policy">Advertisement Policy</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>© 2026 Just Relax Spa. All rights reserved.</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

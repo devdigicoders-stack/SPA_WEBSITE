@@ -196,7 +196,7 @@ export default function BookingModal() {
                                 <span>•</span>
                                 <span className="flex items-center gap-1 text-emerald-600 font-medium">
                                   <Clock className="w-3.5 h-3.5" />
-                                  Open till 3:00 AM
+                                  Open Daily
                                 </span>
                               </div>
                             </div>

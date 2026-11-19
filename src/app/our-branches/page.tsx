@@ -1,5 +1,7 @@
 "use client";
 
+import SiteFooter from '@/components/SiteFooter';
+
 import React, { useRef, useState } from "react";
 import Link from "next/link";
 import WhatsAppModal from "@/components/WhatsAppModal";
@@ -9,7 +11,7 @@ interface BranchItem {
   slug: string;
   name: string;
   rating: string;
-  licenseNo: string;
+  licenseNo?: string;
   description: string;
   address: string;
   hours: string;
@@ -42,11 +44,11 @@ export default function OurBranchesPage() {
       slug: "jouri-hotel",
       name: "Jouri, a Murwab Hotel",
       rating: "4.96",
-      licenseNo: "316057",
+      
       description:
         "Flagship 4-star hotel sanctuary situated inside Jouri, a Murwab Hotel on Al Muthaf Street in Old Salata, Doha. Features authentic Moroccan baths, heated hammam, private soundproof treatment rooms, indoor heated pool and jacuzzi.",
       address: "Al Muthaf Street, Street 137, Building 31, Zone 18, Old Salata, Doha, Qatar",
-      hours: "Daily 10:00 AM – 3:00 AM",
+      hours: "Daily 10:00 AM – 1:00 AM",
       phone: "+974 7002 4322",
       whatsappNumber: "97470024322",
       whatsappMsg:
@@ -65,12 +67,12 @@ export default function OurBranchesPage() {
         { name: "Hamad International Airport", mins: 10 },
       ],
       gallery: [
-        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
-        "/assets/just-relax/branches/west-bay/west-bay-moroccan-bath.jpg",
-        "/assets/just-relax/branches/west-bay/west-bay-relaxation.jpg",
-        "/assets/just-relax/branches/west-bay/west-bay-massage-suite.jpg",
-        "/assets/just-relax/branches/west-bay/west-bay-amenities.jpg",
-        "/assets/just-relax/branches/west-bay/west-bay-jacuzzi.jpg",
+        "/assets/just-relax/branches/retaj-salwa/retaj-salwa-hero.jpg",
+        "/assets/just-relax/branches/retaj-salwa/retaj-salwa-moroccan-bath.jpg",
+        "/assets/just-relax/branches/retaj-salwa/retaj-salwa-relaxation.jpg",
+        "/assets/just-relax/branches/retaj-salwa/retaj-salwa-massage-suite.jpg",
+        "/assets/just-relax/branches/retaj-salwa/retaj-salwa-amenities.jpg",
+        "/assets/just-relax/branches/retaj-salwa/retaj-salwa-jacuzzi.jpg",
       ],
     },
     {
@@ -78,11 +80,11 @@ export default function OurBranchesPage() {
       slug: "retaj-salwa",
       name: "Retaj Salwa Resort & Spa",
       rating: "4.95",
-      licenseNo: "288593",
+      
       description:
         "Nestled within the 5-star Retaj Salwa Resort & Spa on Salwa Road, Abu Nakhlah, this peaceful sanctuary provides gentlemen and executives an elite wellness retreat. Private soundproof VIP suites, authentic Moroccan Beldi bath chambers, hydrotherapy, and late-night appointments.",
       address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
-      hours: "Daily 10:00 AM – 3:00 AM",
+      hours: "Daily 10:00 AM – 12:00 AM",
       phone: "+974 3334 4048",
       whatsappNumber: "97433344048",
       whatsappMsg:
@@ -101,46 +103,21 @@ export default function OurBranchesPage() {
         { name: "Hamad International Airport", mins: 25 },
       ],
       gallery: [
-        "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
-        "/assets/just-relax/branches/west-bay/west-bay-massage-suite.jpg",
-        "/assets/just-relax/branches/west-bay/west-bay-moroccan-bath.jpg",
-        "/assets/just-relax/branches/west-bay/west-bay-jacuzzi.jpg",
-        "/assets/just-relax/branches/west-bay/west-bay-relaxation.jpg",
-        "/assets/just-relax/branches/west-bay/west-bay-amenities.jpg",
+        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
+        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-massage-suite.jpg",
+        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-moroccan-bath.jpg",
+        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-jacuzzi.jpg",
+        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-relaxation.jpg",
+        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-amenities.jpg",
       ],
     },
 
   ];
 
   const openModal = (preferredAction?: string, preselectBranch?: string) => {
-    if (preselectBranch) {
-      setSelectedBranchSlug(preselectBranch);
-      setBookingStep("actions");
-    } else {
-      setBookingStep("branches");
-    }
-
-    if (preferredAction === "whatsapp") {
-      setBookingContext({
-        icon: "fa-brands fa-whatsapp",
-        text: "Continue via WhatsApp — choose your branch",
-      });
-    } else if (preferredAction === "call") {
-      setBookingContext({
-        icon: "fa-solid fa-phone",
-        text: "Continue via Call — choose your branch",
-      });
-    } else if (preferredAction === "directions") {
-      setBookingContext({
-        icon: "fa-solid fa-location-arrow",
-        text: "Continue via Directions — choose your branch",
-      });
-    } else {
-      setBookingContext(null);
-    }
-
-    if (dialogRef.current) {
-      dialogRef.current.showModal();
+    if (typeof window !== "undefined" && (window as any).__openJustRelaxBooking) {
+      (window as any).__openJustRelaxBooking(preferredAction, preselectBranch);
+      return;
     }
   };
 
@@ -270,10 +247,7 @@ export default function OurBranchesPage() {
                     ★ {b.rating}
                   </a>
                   <span className="open-badge is-open">Open now</span>
-                  <span className="license-badge" title="Official Qatar Municipality License Number">
-                    <i className="fa-solid fa-award" aria-hidden="true"></i>
-                    L.n : {b.licenseNo}
-                  </span>
+                  
                   {closestBranchSlug === b.slug && (
                     <span className="closest-label">Closest to you</span>
                   )}
@@ -313,7 +287,7 @@ export default function OurBranchesPage() {
                   <span>Municipal License</span>
                   <p className="info-line">
                     <i className="fa-solid fa-award" aria-hidden="true" style={{ color: "#a67c32" }}></i>
-                    <strong style={{ color: "#a67c32", fontWeight: 700 }}>L.n : {b.licenseNo}</strong>
+                    
                   </p>
                 </section>
                 <section>
@@ -446,247 +420,15 @@ export default function OurBranchesPage() {
       </main>
 
       {/* FOOTER */}
-      <footer className="site-footer">
-        <div className="footer-top">
-          <div className="footer-brand">
-            <Link href="/?lang=en">
-              <img
-                src="/assets/images/logo.png"
-                width="140"
-                height="50"
-                alt="Just Relax Spa"
-              />
-              <span>JUST RELAX SPA</span>
-            </Link>
-            <p>
-              Two premier Doha destinations for men's therapeutic massage, authentic Moroccan baths, and royal Turkish hammam designed for absolute wellness.
-            </p>
-            <div className="footer-socials">
-              <a
-                href="https://www.instagram.com/justrelaxspa.qa"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Just Relax Spa Instagram"
-              >
-                <i className="fa-brands fa-instagram" aria-hidden="true"></i>@justrelaxspa.qa
-              </a>
-              <a
-                href="https://wa.me/97433344048"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="West Bay WhatsApp Concierge"
-              >
-                <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>Retaj Salwa: +974 3334 4048
-              </a>
-
-            </div>
-            <button className="button" type="button" onClick={() => openModal()}>
-              Book Your Visit
-            </button>
-          </div>
-
-          <div className="footer-column">
-            <h2>Explore</h2>
-            <Link href="/about-laguna?lang=en">About</Link>
-            <Link href="/our-branches?lang=en">Our Branches</Link>
-            <Link href="/treatments?lang=en">Treatments</Link>
-            <Link href="/treatment-finder?lang=en">Find Your Ritual</Link>
-            <Link href="/therapists?lang=en">Therapists</Link>
-            <Link href="/contact?lang=en">Contact</Link>
-          </div>
-
-          <div className="footer-column">
-            <h2>Doha Branches</h2>
-            <Link href="/our-branches/jouri-hotel?lang=en">
-              Jouri, a Murwab Hotel (Old Salata)
-            </Link>
-            <Link href="/our-branches/retaj-salwa?lang=en">
-              Retaj Salwa Resort &amp; Spa
-            </Link>
-          </div>
-
-          <div className="footer-column">
-            <h2>Policies</h2>
-            <Link href="/terms-and-conditions?lang=en">Terms &amp; Conditions</Link>
-            <Link href="/privacy-policy?lang=en">Privacy Policy</Link>
-            <Link href="/advertisement-policy?lang=en">
-              Advertisement Policy
-            </Link>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          <div>
-            <small>© 2026 Just Relax Spa. All rights reserved.</small>
-            <small className="footer-legal-name">
-              JUST RELAX SPA - MEN&apos;S MASSAGE &amp; HAMMAM CENTER | CR No. 184920 / MOCI Qatar
-            </small>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
 
       {/* FLOATING CTAs */}
-      <aside className="floating-ctas" aria-label="Quick contact actions">
-        <button
-          type="button"
-          className="floating-cta floating-whatsapp"
-          onClick={() => setWhatsAppModalOpen(true)}
-          aria-label="Chat on WhatsApp"
-          title="WhatsApp"
-        >
-          <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
-        </button>
-        <a
-          href="tel:+97470024322"
-          className="floating-cta floating-call"
-          aria-label="Call Just Relax Spa"
-          title="Call"
-        >
-          <i className="fa-solid fa-phone" aria-hidden="true"></i>
-        </a>
-        <button
-          type="button"
-          className="floating-cta floating-book"
-          data-book
-          onClick={() => openModal()}
-          aria-label="Book an appointment"
-          title="Book Appointment"
-        >
-          <i className="fa-regular fa-calendar-check" aria-hidden="true"></i>
-          <b>Book</b>
-        </button>
-      </aside>
+      
 
       {/* BOOKING DIALOG */}
-      <dialog
-        ref={dialogRef}
-        className="booking"
-        data-booking
-        aria-labelledby="booking-title"
-      >
-        <form method="dialog" className="booking-close-form">
-          <button
-            aria-label="Close"
-            className="icon-button"
-            onClick={closeModal}
-            type="button"
-          >
-            ×
-          </button>
-        </form>
+      
 
-        <div className="booking-progress">
-          <span className={bookingStep === "branches" ? "active" : ""}></span>
-          <span className={bookingStep === "actions" ? "active" : ""}></span>
-        </div>
-
-        {/* STEP 1: BRANCHES */}
-        {bookingStep === "branches" && (
-          <section data-booking-step="branches">
-            <p className="kicker">Choose your location</p>
-            <h2 id="booking-title">Which branch works for you?</h2>
-            <p>
-              Tap a branch to continue straight away, or let us recommend the
-              closest one.
-            </p>
-
-            {bookingContext && (
-              <p className="booking-context">
-                <i className={bookingContext.icon} aria-hidden="true"></i>
-                <span>{bookingContext.text}</span>
-              </p>
-            )}
-
-            
-
-            <div className="booking-branches">
-              {branches.map((b) => (
-                <button
-                  key={b.slug}
-                  type="button"
-                  className="booking-branch"
-                  onClick={() => handleSelectBranch(b.slug)}
-                >
-                  <img
-                    src={b.gallery[0]}
-                    width="88"
-                    height="88"
-                    loading="lazy"
-                    decoding="async"
-                    alt={b.name}
-                  />
-                  <span className="booking-branch-body">
-                    <strong>{b.name}</strong>
-                    <span className="booking-branch-meta">
-                      <i className="fa-solid fa-star" aria-hidden="true"></i>
-                      {b.rating}
-                      <em className="booking-branch-open is-open">Open now</em>
-                      <span className="license-badge" style={{ fontSize: "11px", padding: "2px 7px" }}>
-                        L.n : {b.licenseNo}
-                      </span>
-                    </span>
-                    <span className="booking-branch-address">{b.address}</span>
-                    {branchDistances[b.slug] && (
-                      <em>{branchDistances[b.slug]}</em>
-                    )}
-                  </span>
-                  <i
-                    className="fa-solid fa-chevron-right booking-branch-chevron"
-                    aria-hidden="true"
-                  ></i>
-                </button>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* STEP 2: ACTIONS */}
-        {bookingStep === "actions" && (
-          <section data-booking-step="actions">
-            <button
-              type="button"
-              className="back-button"
-              onClick={() => setBookingStep("branches")}
-            >
-              Back
-            </button>
-            <p className="kicker">Choose an action</p>
-            <h2>{currentBranch.name}</h2>
-            <div className="action-grid">
-              <a
-                href={`https://wa.me/${
-                  currentBranch.whatsappNumber
-                }?text=${encodeURIComponent(currentBranch.whatsappMsg)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                <span>WhatsApp</span>
-              </a>
-              <a href={`tel:${currentBranch.phone}`}>
-                <i className="fa-solid fa-phone" aria-hidden="true"></i>
-                <span>Call</span>
-              </a>
-              <a
-                href={currentBranch.mapLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i
-                  className="fa-solid fa-location-arrow"
-                  aria-hidden="true"
-                ></i>
-                <span>Directions</span>
-              </a>
-            </div>
-          </section>
-        )}
-      </dialog>
-
-      <WhatsAppModal
-        isOpen={whatsAppModalOpen}
-        onClose={() => setWhatsAppModalOpen(false)}
-      />
+      
     </>
   );
 }

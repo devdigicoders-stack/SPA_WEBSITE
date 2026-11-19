@@ -37,10 +37,10 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
     h1: "Men's Luxury Spa & Moroccan Bath at Jouri Murwab Hotel Doha",
     district: "Al Muthaf St, Old Salata / Corniche, Doha",
     rating: "★ 4.96 on Google (2.2K+ Hotel Reviews)",
-    licenseNo: "316057",
-    hours: "Daily 10:00 AM – 3:00 AM",
+    
+    hours: "Daily 10:00 AM – 1:00 AM",
     address: "Al Muthaf Street, Street 137, Building 31, Zone 18, Old Salata, Doha, Qatar",
-    heroImg: "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
+    heroImg: "/assets/just-relax/branches/retaj-salwa/retaj-salwa-hero.jpg",
     phone: "+974 7002 4322",
     whatsappNumber: "97470024322",
     instagram: "@justrelaxspa.qa",
@@ -71,16 +71,16 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
       },
       {
         icon: "fa-solid fa-moon",
-        label: "Open Late Night Till 3:00 AM",
+        label: "Open Late Night",
       },
     ],
     photos: [
-      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-moroccan-bath.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-relaxation.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-massage-suite.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-amenities.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-jacuzzi.jpg",
+      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-hero.jpg",
+      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-moroccan-bath.jpg",
+      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-relaxation.jpg",
+      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-massage-suite.jpg",
+      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-amenities.jpg",
+      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-jacuzzi.jpg",
     ],
     reviews: [
       {
@@ -117,10 +117,10 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
     h1: "Men's Luxury Spa & Moroccan Hammam at Retaj Salwa Resort Doha",
     district: "Salwa Road, Abu Nakhlah, Doha",
     rating: "★ 4.95 on Google",
-    licenseNo: "288593",
-    hours: "Daily 10:00 AM – 3:00 AM",
+    
+    hours: "Daily 10:00 AM – 12:00 AM",
     address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
-    heroImg: "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
+    heroImg: "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
     phone: "+974 3334 4048",
     whatsappNumber: "97433344048",
     instagram: "@justrelaxspa.qa",
@@ -151,16 +151,16 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
       },
       {
         icon: "fa-solid fa-moon",
-        label: "Open Late Night Till 3:00 AM",
+        label: "Open Late Night",
       },
     ],
     photos: [
-      "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-massage-suite.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-moroccan-bath.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-jacuzzi.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-relaxation.jpg",
-      "/assets/just-relax/branches/west-bay/west-bay-amenities.jpg",
+      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
+      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-massage-suite.jpg",
+      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-moroccan-bath.jpg",
+      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-jacuzzi.jpg",
+      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-relaxation.jpg",
+      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-amenities.jpg",
     ],
     reviews: [
       {
@@ -186,7 +186,7 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
     ],
     areaCopy: [
       "Nestled within the peaceful luxury of Retaj Salwa Resort & Spa on Salwa Road, our branch provides dignitaries, executives, and gentlemen an elite, confidential wellness sanctuary.",
-      "Every suite is completely private with en-suite showers, acoustic soundproofing, and dedicated Hammam chambers. Open daily until 3:00 AM for late-evening post-business recovery.",
+      "Every suite is completely private with en-suite showers, acoustic soundproofing, and dedicated Hammam chambers. Open daily until midnight for late-evening post-business recovery.",
     ],
     landmarks: [
       "Salwa Road Abu Nakhlah (Exit 29 / 31)",
@@ -204,7 +204,7 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
     h1: "Men's Luxury Spa & Moroccan Hammam at Retaj Salwa Resort Doha",
     district: "Salwa Road, Abu Nakhlah, Doha",
     rating: "★ 4.95 on Google",
-    licenseNo: "288593",
+    
     hours: "Daily 10:00 AM – 3:00 AM",
     address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
     heroImg: "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
@@ -230,7 +230,7 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
     h1: "Men's Luxury Spa & Moroccan Hammam in West Bay, Doha",
     district: "Diplomatic District, West Bay, Doha",
     rating: "★ 4.95 on Google",
-    licenseNo: "316057",
+    
     hours: "Daily 10:00 AM – 3:00 AM",
     address: "Tower 1, Diplomatic District, West Bay, Doha, Qatar",
     heroImg: "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
@@ -240,7 +240,7 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
     amenities: [
       { icon: "fa-solid fa-door-closed", label: "Private Soundproof VIP Suites" },
       { icon: "fa-solid fa-spa", label: "Authentic Moroccan Beldi Hammam" },
-      { icon: "fa-solid fa-moon", label: "Open Till 3:00 AM" },
+      { icon: "fa-solid fa-moon", label: "Open Late Night" },
     ],
     photos: [
       "/assets/just-relax/branches/west-bay/west-bay-hero.jpg",
@@ -275,7 +275,7 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
     amenities: [
       { icon: "fa-solid fa-spa", label: "Heated Marble Turkish Hammam" },
       { icon: "fa-solid fa-water", label: "Underwater Hydrotherapy Jacuzzi" },
-      { icon: "fa-solid fa-moon", label: "Open Till 3:00 AM" },
+      { icon: "fa-solid fa-moon", label: "Open Late Night" },
     ],
     photos: [
       "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",

@@ -256,7 +256,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
     ],
     image: "/assets/images/Just%20Relax%20Spa%20Treatments/Deep%20Tissue%20Massage.png",
     serviceId: "deep-tissue",
-    relatedSlugs: ["sports-massage", "gun-massage", "hot-stone"]
+    relatedSlugs: ["sports-massage", "hot-stone"]
   },
   {
     id: 6,
@@ -582,54 +582,7 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
     ],
     image: "/assets/images/Just%20Relax%20Spa%20Treatments/Sports%20Massage.png",
     serviceId: "sports-massage",
-    relatedSlugs: ["deep-tissue", "gun-massage", "hot-stone"]
-  },
-  {
-    id: 13,
-    slug: "gun-massage",
-    title: "Gun Massage (Percussion Therapy)",
-    category: "massage",
-    description: "Modern deep tissue treatment with a professional massage gun.",
-    about: [
-      "State-of-the-art percussive acoustic technology meets traditional manual therapy. Using high-frequency medical-grade percussion devices, rapid pulses reach 16mm deep into the muscle belly.",
-      "Instantly desensitizes painful trigger points and increases localized blood flow by up to 300%."
-    ],
-    duration: "30-60 minutes",
-    bookingNote: "Subject to branch availability",
-    locationsNote: "All branches",
-    benefits: [
-      "Delivers rapid acoustic vibrations that disarm tight muscle spasms effortlessly.",
-      "Reaches deeper than human fingers alone without creating surface bruising.",
-      "Perfect quick-relief treatment for calves, IT bands, trapezius, and lower back."
-    ],
-    technique: [
-      "Professional percussion applicator with interchangeable dampening heads.",
-      "Calibrated amplitude applied in 60-second intervals per muscle cluster, followed by soothing manual smoothing."
-    ],
-    journey: [
-      {
-        num: "01",
-        title: "Target Mapping",
-        desc: "Identification of hypertonic trigger zones and stubborn knots."
-      },
-      {
-        num: "02",
-        title: "Percussive Application",
-        desc: "Calibrated percussion treatment across tight muscle clusters."
-      },
-      {
-        num: "03",
-        title: "Manual Integration",
-        desc: "Manual effleurage smoothing strokes to flush lymphatic drainage."
-      }
-    ],
-    preparation: [
-      "Avoid direct percussion over bone prominences, fractures, or acute inflammation.",
-      "Can be experienced fully clothed or with traditional spa drape."
-    ],
-    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Gun%20Massage.png",
-    serviceId: "gun-massage",
-    relatedSlugs: ["sports-massage", "deep-tissue", "swedish-massage"]
+    relatedSlugs: ["deep-tissue", "hot-stone"]
   },
   {
     id: 14,
@@ -723,99 +676,6 @@ export const TREATMENTS_DATA: TreatmentItem[] = [
     image: "/assets/images/Just%20Relax%20Spa%20Treatments/Therapist%20Massage.png",
     serviceId: "therapist-massage",
     relatedSlugs: ["deep-tissue", "swedish-massage", "sports-massage"]
-  },
-  {
-    id: 16,
-    slug: "full-body-waxing",
-    title: "Full Body Waxing",
-    category: "grooming",
-    description: "Professional full-body waxing service.",
-    about: [
-      "Discreet, hygienic, and precise body grooming performed in private suites. We use premium hypoallergenic hot and strip waxes infused with soothing chamomile and azulene to minimize redness and discomfort.",
-      "Leaves skin silky smooth, hair-free, and clean for 4 to 6 weeks."
-    ],
-    duration: "60-90 minutes",
-    bookingNote: "Subject to branch availability",
-    locationsNote: "All branches",
-    benefits: [
-      "Long-lasting hair removal with significantly finer and softer regrowth.",
-      "Exfoliates top layer of dead skin while removing hairs from the root.",
-      "Carried out with complete professional discretion in private suites."
-    ],
-    technique: [
-      "Skin preparation with sanitizing and numbing botanical pre-wax lotion.",
-      "Low-temperature hot wax applied to delicate zones, followed by soothing post-depilatory tea tree oil."
-    ],
-    journey: [
-      {
-        num: "01",
-        title: "Skin Preparation",
-        desc: "Cleansing and degreasing of treatment areas with soothing toner."
-      },
-      {
-        num: "02",
-        title: "Precise Waxing",
-        desc: "Application of premium temperature-calibrated wax with swift, gentle removal."
-      },
-      {
-        num: "03",
-        title: "Calming Emulsion",
-        desc: "Cooling aloe vera and anti-inflammatory lotion applied to soothe follicles."
-      }
-    ],
-    preparation: [
-      "Hair should be at least 5mm in length (approx. 2-3 weeks of growth).",
-      "Avoid sun exposure, hot tubs, or strenuous workouts for 24 hours post-waxing."
-    ],
-    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Full%20Body%20Waxing.png",
-    serviceId: "full-body-waxing",
-    relatedSlugs: ["full-body-shaving", "royal-moroccan", "swedish-massage"]
-  },
-  {
-    id: 17,
-    slug: "full-body-shaving",
-    title: "Full Body Shaving",
-    category: "grooming",
-    description: "Professional body shaving service.",
-    about: [
-      "A pain-free, comfortable alternative to waxing. Using professional single-use surgical-grade razors, sanitizing foam, and lubricating oils, our groomers deliver an impeccably clean and smooth finish across any desired areas.",
-      "Includes skin soothing balms to eliminate razor burn, irritation, or ingrown hairs."
-    ],
-    duration: "60-90 minutes",
-    bookingNote: "Subject to branch availability",
-    locationsNote: "All branches",
-    benefits: [
-      "Completely painless grooming experience with instant results.",
-      "Guaranteed single-use sterile blades and hospital-grade sanitization.",
-      "Perfect for athletic events, photo sessions, or personal comfort."
-    ],
-    technique: [
-      "Warm towel prep to soften follicles followed by rich conditioning lather.",
-      "Skilled multi-pass shaving followed by antiseptic splash and soothing post-shave balm."
-    ],
-    journey: [
-      {
-        num: "01",
-        title: "Warm Towel Prep",
-        desc: "Hot towels applied to soften hair follicles and open skin pores."
-      },
-      {
-        num: "02",
-        title: "Discreet Shaving",
-        desc: "Gentle shaving using fresh sterile single-use blades and conditioning cream."
-      },
-      {
-        num: "03",
-        title: "Soothe & Nourish",
-        desc: "Antiseptic mist and cold-pressed hydrating lotion applied to calm skin."
-      }
-    ],
-    preparation: [
-      "No special preparation required. Clean and private shower suites available on site."
-    ],
-    image: "/assets/images/Just%20Relax%20Spa%20Treatments/Full%20Body%20Shaving.png",
-    serviceId: "full-body-shaving",
-    relatedSlugs: ["full-body-waxing", "royal-moroccan", "turkish-bath"]
   }
 ];
 

@@ -1,5 +1,7 @@
 "use client";
 
+import SiteFooter from '@/components/SiteFooter';
+
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { TREATMENTS_DATA, TreatmentItem } from "@/data/treatmentsData";
@@ -286,223 +288,15 @@ export default function TreatmentDetailClient({
       </main>
 
       {/* 3. SITE FOOTER */}
-      <footer className="site-footer" role="contentinfo">
-        <div className="footer-columns">
-          <div className="footer-brand">
-            <img
-              src="/assets/images/logo.png"
-              width="180"
-              height="45"
-              alt="Just Relax Spa Doha"
-              loading="lazy"
-              decoding="async"
-            />
-            <p>
-              Just Relax Spa is Doha&apos;s premier men&apos;s wellness sanctuary, delivering authentic Moroccan baths,
-              Turkish hammams, and therapeutic deep tissue recovery across two distinguished Doha locations.
-            </p>
-            <p className="footer-license">
-              Registered in Qatar · Ministry of Commerce and Industry (MOCI) · CR No. 184920
-            </p>
-          </div>
-          <div>
-            <p className="footer-heading">Branches</p>
-            <ul>
-              <li>
-                <Link href="/our-branches/west-bay">West Bay Diplomatic Suite</Link>
-              </li>
-              <li>
-                <Link href="/our-branches/jouri-hotel">Jouri, a Murwab Hotel (Old Salata)</Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p className="footer-heading">Rituals</p>
-            <ul>
-              <li>
-                <Link href="/treatments/royal-moroccan">Royal Moroccan Bath</Link>
-              </li>
-              <li>
-                <Link href="/treatments/turkish-bath">Turkish Bath</Link>
-              </li>
-              <li>
-                <Link href="/treatments/deep-tissue">Deep Tissue Massage</Link>
-              </li>
-              <li>
-                <Link href="/treatments/swedish-massage">Swedish Massage</Link>
-              </li>
-              <li>
-                <Link href="/treatment-finder">Find Your Ritual</Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p className="footer-heading">Company</p>
-            <ul>
-              <li>
-                <Link href="/about">About Just Relax Spa</Link>
-              </li>
-              <li>
-                <Link href="/therapists">Our Therapists</Link>
-              </li>
-              <li>
-                <Link href="/contact">Contact &amp; Locations</Link>
-              </li>
-              <li>
-                <Link href="/privacy-policy">Privacy Policy</Link>
-              </li>
-              <li>
-                <Link href="/terms-and-conditions">Terms of Service</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>© 2026 Just Relax Spa - Men&apos;s Sanctuary. All rights reserved.</p>
-        </div>
-      </footer>
+      <SiteFooter />
 
       {/* 4. FLOATING QUICK CTAS */}
-      <aside className="floating-ctas" aria-label="Quick contact actions">
-        <button
-          type="button"
-          className="floating-cta floating-whatsapp"
-          onClick={() => setWhatsAppModalOpen(true)}
-          aria-label="Chat on WhatsApp"
-          title="WhatsApp"
-        >
-          <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
-        </button>
-        <a
-          href="tel:+97470024322"
-          className="floating-cta floating-call"
-          aria-label="Call Just Relax Spa"
-          title="Call"
-        >
-          <i className="fa-solid fa-phone" aria-hidden="true"></i>
-        </a>
-        <button
-          type="button"
-          className="floating-cta floating-book"
-          data-book
-          onClick={() => openBookingModal()}
-          aria-label="Book an appointment"
-          title="Book Appointment"
-        >
-          <i className="fa-regular fa-calendar-check" aria-hidden="true"></i>
-          <b>Book</b>
-        </button>
-      </aside>
+      
 
       {/* 5. INTERACTIVE 2-STEP BOOKING MODAL */}
-      <dialog
-        ref={dialogRef}
-        className="booking-dialog"
-        data-booking
-        aria-labelledby="booking-title"
-        onClick={(e) => {
-          if (e.target === dialogRef.current) closeBookingModal();
-        }}
-      >
-        <div className="booking-dialog-inner">
-          <button
-            type="button"
-            className="booking-close"
-            aria-label="Close dialog"
-            onClick={closeBookingModal}
-          >
-            <i className="fa-solid fa-xmark" aria-hidden="true"></i>
-          </button>
+      
 
-          {bookingContext && (
-            <div className="booking-context-banner">
-              <i className={`fa-solid ${bookingContext.icon || "fa-sparkles"}`} aria-hidden="true"></i>
-              <span>{bookingContext.text}</span>
-            </div>
-          )}
-
-          {bookingStep === "branches" ? (
-            <div className="booking-step booking-step-branches is-active">
-              <h2 id="booking-title" className="booking-title">
-                Choose a Branch
-              </h2>
-              <p className="booking-sub">Select the Just Relax Spa branch closest to you to proceed with booking</p>
-              <div className="booking-branches-list">
-                {branches.map((b) => (
-                  <button
-                    key={b.id}
-                    type="button"
-                    className={`booking-branch-card ${
-                      closestBranchSlug === b.slug ? "is-closest" : ""
-                    }`}
-                    onClick={() => handleSelectBranch(b.slug)}
-                  >
-                    <span className="booking-branch-name">{b.name}</span>
-                    <span className="booking-branch-address">{b.address}</span>
-                    {branchDistances[b.slug] && (
-                      <span className="booking-branch-dist">
-                        <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
-                        {branchDistances[b.slug]}
-                        {closestBranchSlug === b.slug && " · Closest to you"}
-                      </span>
-                    )}
-                  </button>
-                ))}
-              </div>
-            </div>
-          ) : (
-            <div className="booking-step booking-step-actions is-active">
-              <button
-                type="button"
-                className="booking-back"
-                onClick={() => setBookingStep("branches")}
-              >
-                <i className="fa-solid fa-arrow-left" aria-hidden="true"></i>
-                Change Branch
-              </button>
-              <h2 className="booking-title">{currentBranch.name}</h2>
-              <p className="booking-sub">{currentBranch.address}</p>
-              <div className="booking-actions-grid">
-                <a
-                  href={`https://wa.me/${currentBranch.whatsappNumber}?text=${encodeURIComponent(
-                    bookingContext ? `${currentBranch.whatsappMsg} (${bookingContext.text})` : currentBranch.whatsappMsg
-                  )}`}
-                  className="booking-action-btn booking-action-wa"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                  <span>Book via WhatsApp</span>
-                  <small>Fastest response · Instant confirmation</small>
-                </a>
-                <a
-                  href={`tel:${currentBranch.phone}`}
-                  className="booking-action-btn booking-action-call"
-                >
-                  <i className="fa-solid fa-phone" aria-hidden="true"></i>
-                  <span>Call Reception</span>
-                  <small>{currentBranch.phone}</small>
-                </a>
-                <a
-                  href={`https://maps.google.com/?q=${currentBranch.lat},${currentBranch.lng}`}
-                  className="booking-action-btn booking-action-map"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fa-solid fa-location-arrow" aria-hidden="true"></i>
-                  <span>Directions in Google Maps</span>
-                  <small>Open navigation to branch</small>
-                </a>
-              </div>
-            </div>
-          )}
-        </div>
-      </dialog>
-
-      <WhatsAppModal
-        isOpen={whatsAppModalOpen}
-        onClose={() => setWhatsAppModalOpen(false)}
-      />
+      
     </>
   );
 }

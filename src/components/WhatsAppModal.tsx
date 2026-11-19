@@ -14,7 +14,7 @@ export const BRANCH_WHATSAPP_DATA = [
     slug: "jouri-hotel",
     name: "Jouri, a Murwab Hotel",
     branchSub: "Old Salata / Doha Corniche",
-    licenseNo: "316057",
+    
     address: "Al Muthaf Street, Street 137, Building 31, Zone 18, Old Salata, Doha",
     whatsappDisplay: "+974 7002 4322",
     whatsappNumber: "97470024322",
@@ -25,7 +25,7 @@ export const BRANCH_WHATSAPP_DATA = [
     slug: "retaj-salwa",
     name: "Retaj Salwa Resort & Spa",
     branchSub: "Salwa Road / Abu Nakhlah",
-    licenseNo: "288593",
+    
     address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
     whatsappDisplay: "+974 3334 4048",
     whatsappNumber: "97433344048",
@@ -108,7 +108,7 @@ export default function WhatsAppModal({
                   </div>
                   <span className="wa-modal-branch-pin">
                     <i className="fa-solid fa-award" style={{ marginRight: 4 }} aria-hidden="true"></i>
-                    L.n : {b.licenseNo}
+                    
                   </span>
                 </div>
                 <span className="wa-modal-branch-address">{b.address}</span>

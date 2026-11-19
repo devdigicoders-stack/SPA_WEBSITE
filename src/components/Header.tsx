@@ -164,7 +164,7 @@ export default function Header() {
 
               <div className="text-center text-xs text-[#695f53] mt-3 flex items-center justify-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#a67c32]" />
-                <span>Licensed Gents Spa in Doha • Open Daily until 3:00 AM</span>
+                <span>Licensed Gents Spa in Doha • Open Daily until Late Night</span>
               </div>
             </div>
           </div>

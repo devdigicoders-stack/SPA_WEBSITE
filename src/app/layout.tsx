@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { BookingProvider } from "@/context/BookingContext";
+import { GlobalModalsProvider } from "@/components/GlobalFloatingAndModals";
 
 export const metadata: Metadata = {
   title: "Just Relax Spa | Ultra-Luxury Men's Spa & Moroccan Hammam in Doha, Qatar",
@@ -98,7 +99,9 @@ export default function RootLayout({
       </head>
       <body>
         <BookingProvider>
-          {children}
+          <GlobalModalsProvider>
+            {children}
+          </GlobalModalsProvider>
         </BookingProvider>
       </body>
     </html>

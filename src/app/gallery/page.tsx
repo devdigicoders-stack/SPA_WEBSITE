@@ -1,5 +1,7 @@
 "use client";
 
+import SiteFooter from '@/components/SiteFooter';
+
 import React, { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -64,15 +66,10 @@ export default function GalleryPage() {
     },
   };
 
-  const openModal = (contextText?: string) => {
-    if (contextText) {
-      setBookingContext({ icon: "fa-solid fa-sparkles", text: contextText });
-    } else {
-      setBookingContext(null);
-    }
-    setBookingStep("branches");
-    if (dialogRef.current) {
-      dialogRef.current.showModal();
+  const openModal = (preferredAction?: string, preselectBranch?: string) => {
+    if (typeof window !== "undefined" && (window as any).__openJustRelaxBooking) {
+      (window as any).__openJustRelaxBooking(preferredAction, preselectBranch);
+      return;
     }
   };
 
@@ -356,182 +353,10 @@ export default function GalleryPage() {
       </main>
 
       {/* 3. FOOTER */}
-      <footer className="site-footer">
-        <div className="footer-top">
-          <div className="footer-brand">
-            <Link href="/">
-              <img src="/assets/images/logo.png" width="110" height="48" alt="Just Relax Spa" />
-              <span>JUST RELAX SPA</span>
-            </Link>
-            <p>Two premier Doha destinations for authentic Moroccan baths, restorative sports massage, and executive relaxation designed around you.</p>
-            <div className="footer-socials">
-              <a
-                href="https://wa.me/97470024322"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="West Bay Branch WhatsApp"
-              >
-                <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>West Bay
-              </a>
-
-            </div>
-            <button className="button" type="button" onClick={() => openModal()}>
-              Book Your Visit
-            </button>
-          </div>
-
-          <div className="footer-column">
-            <h2>Explore</h2>
-            <Link href="/about-laguna">About Us</Link>
-            <Link href="/our-branches">Our Branches</Link>
-            <Link href="/treatments">Treatments</Link>
-            <Link href="/treatment-finder">Find Your Ritual</Link>
-            <Link href="/therapists">Therapists</Link>
-            <Link href="/gallery">Gallery</Link>
-            <Link href="/contact">Contact</Link>
-          </div>
-
-          <div className="footer-column">
-            <h2>Doha Branches</h2>
-            <Link href="/our-branches#branch-west-bay">West Bay Diplomatic Suite</Link>
-            <Link href="/our-branches#branch-jouri-hotel">Jouri, a Murwab Hotel</Link>
-          </div>
-
-          <div className="footer-column">
-            <h2>Policies</h2>
-            <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
-            <Link href="/privacy-policy">Privacy Policy</Link>
-            <Link href="/advertisement-policy">Advertisement Policy</Link>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          <div>
-            <small>© 2026 Just Relax Spa. All rights reserved.</small>
-            <small className="footer-legal-name">JUST RELAX SPA - MEN'S WELLNESS L.L.C | MOCI Qatar CR No. 184920</small>
-          </div>
-          <Link href="/contact">Doha, Qatar</Link>
-        </div>
-      </footer>
+      <SiteFooter />
 
       {/* 4. BOOKING DIALOG */}
-      <dialog ref={dialogRef} className="booking" data-booking aria-labelledby="booking-title">
-        <form method="dialog" className="booking-close-form">
-          <button aria-label="Close" className="icon-button" onClick={closeModal} type="button">
-            ×
-          </button>
-        </form>
-
-        <div className="booking-progress">
-          <span className={bookingStep === "branches" ? "active" : ""}></span>
-          <span className={bookingStep === "actions" ? "active" : ""}></span>
-        </div>
-
-        {/* STEP 1: BRANCHES */}
-        {bookingStep === "branches" && (
-          <section data-booking-step="branches">
-            <p className="kicker">Choose your location</p>
-            <h2 id="booking-title">Which branch works for you?</h2>
-            <p>Tap a Doha branch to continue straight away.</p>
-
-            {bookingContext && (
-              <p className="booking-context">
-                <i className={bookingContext.icon} aria-hidden="true"></i>
-                <span>{bookingContext.text}</span>
-              </p>
-            )}
-
-            <div className="booking-branches">
-              <button
-                type="button"
-                className="booking-branch"
-                onClick={() => handleSelectBranch("west-bay")}
-              >
-                <img
-                  src="/assets/just-relax/branches/west-bay/west-bay-hero.jpg"
-                  width="88"
-                  height="88"
-                  loading="lazy"
-                  alt="West Bay Diplomatic Suite"
-                />
-                <span className="booking-branch-body">
-                  <strong>West Bay Diplomatic Suite</strong>
-                  <span className="booking-branch-meta">
-                    <i className="fa-solid fa-star" aria-hidden="true"></i>4.9
-                    <em className="booking-branch-open is-open">Open now</em>
-                  </span>
-                  <span className="booking-branch-address">
-                    Tower 1, Diplomatic District, West Bay, Doha
-                  </span>
-                </span>
-                <i className="fa-solid fa-chevron-right booking-branch-chevron" aria-hidden="true"></i>
-              </button>
-
-              <button
-                type="button"
-                className="booking-branch"
-                onClick={() => handleSelectBranch("jouri-hotel")}
-              >
-                <img
-                  src="/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg"
-                  width="88"
-                  height="88"
-                  loading="lazy"
-                  alt="Jouri, a Murwab Hotel"
-                />
-                <span className="booking-branch-body">
-                  <strong>Jouri, a Murwab Hotel</strong>
-                  <span className="booking-branch-meta">
-                    <i className="fa-solid fa-star" aria-hidden="true"></i>4.96
-                    <em className="booking-branch-open is-open">Open now</em>
-                  </span>
-                  <span className="booking-branch-address">
-                    Al Muthaf St, Old Salata / Corniche, Doha
-                  </span>
-                </span>
-                <i className="fa-solid fa-chevron-right booking-branch-chevron" aria-hidden="true"></i>
-              </button>
-            </div>
-          </section>
-        )}
-
-        {/* STEP 2: ACTIONS */}
-        {bookingStep === "actions" && (
-          <section data-booking-step="actions">
-            <button
-              type="button"
-              className="back-button"
-              onClick={() => setBookingStep("branches")}
-            >
-              Back
-            </button>
-            <p className="kicker">Choose an action</p>
-            <h2>{currentBranch.name}</h2>
-            <div className="action-grid">
-              <a
-                href={`https://wa.me/${currentBranch.whatsapp_number}?text=${encodeURIComponent(currentBranch.whatsapp_msg)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                <span>WhatsApp</span>
-              </a>
-              <a href={`tel:${currentBranch.call_number}`}>
-                <i className="fa-solid fa-phone" aria-hidden="true"></i>
-                <span>Call</span>
-              </a>
-              <a
-                href={currentBranch.map_link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fa-solid fa-location-arrow" aria-hidden="true"></i>
-                <span>Directions</span>
-              </a>
-            </div>
-          </section>
-        )}
-      </dialog>
+      
     </>
   );
 }
