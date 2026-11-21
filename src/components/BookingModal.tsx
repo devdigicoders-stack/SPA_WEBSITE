@@ -40,14 +40,41 @@ export default function BookingModal() {
   const currentBranchObj = BRANCHES.find((b) => b.id === selectedBranch) || BRANCHES[0];
   const currentTreatmentObj = TREATMENTS.find((t) => t.id === selectedTreatment) || TREATMENTS[0];
 
-  const handleWhatsAppBooking = () => {
+  const recordEnquiry = async (channel: string) => {
+    try {
+      const baseUrl = process.env.NEXT_PUBLIC_API_URL || "";
+      await fetch(`${baseUrl}/api/enquiries`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "booking",
+          branch: currentBranchObj.name,
+          treatment: currentTreatmentObj.title,
+          duration: selectedDuration,
+          date,
+          time,
+          guestName: guestName.trim() || "Gentleman Guest",
+          guestPhone: guestPhone.trim() || "Via WhatsApp",
+          notes: notes.trim(),
+          source: `Booking Modal (${channel})`,
+          status: "Pending",
+        }),
+      });
+    } catch (err) {
+      console.error("Failed to sync booking to API", err);
+    }
+  };
+
+  const handleWhatsAppBooking = async () => {
+    await recordEnquiry("WhatsApp CTA");
     const message = `Hello Just Relax Spa Doha!%0A%0A*New VIP Reservation Request*%0A- *Branch:* ${currentBranchObj.name}%0A- *Treatment:* ${currentTreatmentObj.title}%0A- *Duration:* ${selectedDuration}%0A- *Date:* ${date}%0A- *Time:* ${time}%0A- *Guest Name:* ${guestName || "Gentleman Guest"}%0A- *Phone:* ${guestPhone || "Via WhatsApp"}%0A${notes ? `- *Notes:* ${encodeURIComponent(notes)}%0A` : ""}%0APlease confirm suite availability.`;
     window.open(`https://wa.me/${currentBranchObj.whatsapp.replace(/\D/g, "")}?text=${message}`, "_blank");
     setIsSuccess(true);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    await recordEnquiry("Direct Form");
     setIsSuccess(true);
   };
 

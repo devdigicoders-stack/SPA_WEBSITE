@@ -107,6 +107,45 @@ export default function ContactPage() {
   const [branchDistances, setBranchDistances] = useState<Record<string, string>>({});
   const [closestBranchSlug, setClosestBranchSlug] = useState<string | null>(null);
 
+  // Quick inquiry state
+  const [formName, setFormName] = useState("");
+  const [formPhone, setFormPhone] = useState("");
+  const [formBranch, setFormBranch] = useState("Jouri, a Murwab Hotel");
+  const [formMessage, setFormMessage] = useState("");
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formSubmitting, setFormSubmitting] = useState(false);
+
+  const handleContactSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formName || !formPhone) return;
+
+    setFormSubmitting(true);
+    try {
+      const baseUrl = process.env.NEXT_PUBLIC_API_URL || "";
+      await fetch(`${baseUrl}/api/enquiries`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "contact",
+          branch: formBranch,
+          guestName: formName,
+          guestPhone: formPhone,
+          notes: formMessage,
+          source: "Contact Page Form",
+          status: "Pending",
+        }),
+      });
+      setFormSubmitted(true);
+      setFormName("");
+      setFormPhone("");
+      setFormMessage("");
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setFormSubmitting(false);
+    }
+  };
+
   const activeBranch =
     CONTACT_BRANCHES.find((b) => b.slug === activeBranchSlug) || CONTACT_BRANCHES[0];
   const currentBranch =
@@ -426,6 +465,117 @@ export default function ContactPage() {
               <h3>Directions for arrival</h3>
               <p>Open the correct branch in Google Maps before starting your journey.</p>
             </article>
+          </div>
+        </section>
+
+        {/* ONLINE ENQUIRY FORM */}
+        <section className="section" style={{ background: "var(--surface-alt, #F7F1E7)", padding: "4rem 1.5rem" }}>
+          <div style={{ maxWidth: "720px", margin: "0 auto", background: "#FCFBF8", padding: "2.5rem", borderRadius: "1.5rem", border: "1px solid #e8dfd1", boxShadow: "0 10px 30px rgba(0,0,0,0.05)" }}>
+            <div style={{ textAlign: "center", marginBottom: "2rem" }}>
+              <span style={{ fontSize: "0.75rem", fontWeight: "700", textTransform: "uppercase", letterSpacing: "0.15em", color: "#a67c32" }}>
+                Send Direct Message
+              </span>
+              <h2 style={{ fontFamily: "Playfair Display, serif", fontSize: "1.75rem", color: "#221910", marginTop: "0.25rem" }}>
+                Send Us An Inquiry
+              </h2>
+              <p style={{ fontSize: "0.875rem", color: "#7c7267" }}>
+                Our guest coordinators reply promptly via WhatsApp or call to assist your visit.
+              </p>
+            </div>
+
+            {formSubmitted ? (
+              <div style={{ padding: "2rem", background: "rgba(16, 185, 129, 0.1)", border: "1px solid rgba(16, 185, 129, 0.3)", borderRadius: "1rem", textAlign: "center" }}>
+                <p style={{ color: "#059669", fontWeight: "700", fontSize: "1.1rem" }}>
+                  Thank you! Your inquiry has been delivered directly to our front desk team.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setFormSubmitted(false)}
+                  style={{ marginTop: "1rem", padding: "0.5rem 1.25rem", background: "#a67c32", color: "#fff", border: "none", borderRadius: "0.5rem", cursor: "pointer", fontSize: "0.85rem", fontWeight: "600" }}
+                >
+                  Send Another Inquiry
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleContactSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1rem" }}>
+                  <div>
+                    <label style={{ display: "block", fontSize: "0.75rem", fontWeight: "600", color: "#554d42", marginBottom: "0.25rem" }}>
+                      Your Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="e.g. Sheikh Al-Thani"
+                      value={formName}
+                      onChange={(e) => setFormName(e.target.value)}
+                      style={{ width: "100%", padding: "0.75rem 1rem", borderRadius: "0.75rem", border: "1px solid #e8dfd1", background: "#fff", fontSize: "0.875rem" }}
+                    />
+                  </div>
+                  <div>
+                    <label style={{ display: "block", fontSize: "0.75rem", fontWeight: "600", color: "#554d42", marginBottom: "0.25rem" }}>
+                      Mobile / WhatsApp Number *
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      placeholder="+974 5500 0000"
+                      value={formPhone}
+                      onChange={(e) => setFormPhone(e.target.value)}
+                      style={{ width: "100%", padding: "0.75rem 1rem", borderRadius: "0.75rem", border: "1px solid #e8dfd1", background: "#fff", fontSize: "0.875rem" }}
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label style={{ display: "block", fontSize: "0.75rem", fontWeight: "600", color: "#554d42", marginBottom: "0.25rem" }}>
+                    Select Preferred Branch
+                  </label>
+                  <select
+                    value={formBranch}
+                    onChange={(e) => setFormBranch(e.target.value)}
+                    style={{ width: "100%", padding: "0.75rem 1rem", borderRadius: "0.75rem", border: "1px solid #e8dfd1", background: "#fff", fontSize: "0.875rem" }}
+                  >
+                    <option value="Jouri, a Murwab Hotel">Jouri Hotel (Old Salata, Doha)</option>
+                    <option value="Retaj Salwa Resort & Spa">Retaj Salwa Resort &amp; Spa (Salwa Road)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label style={{ display: "block", fontSize: "0.75rem", fontWeight: "600", color: "#554d42", marginBottom: "0.25rem" }}>
+                    Message / Special Requirements
+                  </label>
+                  <textarea
+                    rows={4}
+                    placeholder="Tell us what treatment, date, or amenities you would like to arrange..."
+                    value={formMessage}
+                    onChange={(e) => setFormMessage(e.target.value)}
+                    style={{ width: "100%", padding: "0.75rem 1rem", borderRadius: "0.75rem", border: "1px solid #e8dfd1", background: "#fff", fontSize: "0.875rem", resize: "vertical" }}
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={formSubmitting}
+                  style={{
+                    padding: "0.9rem 1.5rem",
+                    background: "linear-gradient(135deg, #a67c32, #d4b370)",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "0.75rem",
+                    fontSize: "0.9rem",
+                    fontWeight: "700",
+                    letterSpacing: "0.05em",
+                    textTransform: "uppercase",
+                    cursor: "pointer",
+                    boxShadow: "0 4px 15px rgba(166, 124, 50, 0.3)",
+                    marginTop: "0.5rem"
+                  }}
+                >
+                  {formSubmitting ? "Submitting Inquiry..." : "Submit Inquiry"}
+                </button>
+              </form>
+            )}
           </div>
         </section>
       </main>
