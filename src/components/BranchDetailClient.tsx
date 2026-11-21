@@ -200,13 +200,6 @@ export default function BranchDetailClient({
         <section className="branch-glance section">
           <div className="detail-band branch-info-band">
             <article>
-              <i className="fa-solid fa-award" aria-hidden="true"></i>
-              <div>
-                <span>Municipal License</span>
-                
-              </div>
-            </article>
-            <article>
               <i className="fa-regular fa-clock" aria-hidden="true"></i>
               <div>
                 <span>Working hours</span>

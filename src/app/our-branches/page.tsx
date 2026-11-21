@@ -67,12 +67,12 @@ export default function OurBranchesPage() {
         { name: "Hamad International Airport", mins: 10 },
       ],
       gallery: [
-        "/assets/just-relax/branches/retaj-salwa/retaj-salwa-hero.jpg",
-        "/assets/just-relax/branches/retaj-salwa/retaj-salwa-moroccan-bath.jpg",
-        "/assets/just-relax/branches/retaj-salwa/retaj-salwa-relaxation.jpg",
-        "/assets/just-relax/branches/retaj-salwa/retaj-salwa-massage-suite.jpg",
-        "/assets/just-relax/branches/retaj-salwa/retaj-salwa-amenities.jpg",
-        "/assets/just-relax/branches/retaj-salwa/retaj-salwa-jacuzzi.jpg",
+        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
+        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-moroccan-bath.jpg",
+        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-relaxation.jpg",
+        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-massage-suite.jpg",
+        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-amenities.jpg",
+        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-jacuzzi.jpg",
       ],
     },
     {
@@ -103,12 +103,12 @@ export default function OurBranchesPage() {
         { name: "Hamad International Airport", mins: 25 },
       ],
       gallery: [
-        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
-        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-massage-suite.jpg",
-        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-moroccan-bath.jpg",
-        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-jacuzzi.jpg",
-        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-relaxation.jpg",
-        "/assets/just-relax/branches/jouri-hotel/jouri-hotel-amenities.jpg",
+        "/assets/just-relax/branches/retaj-salwa/retaj-salwa-hero.jpg",
+        "/assets/just-relax/branches/retaj-salwa/retaj-salwa-massage-suite.jpg",
+        "/assets/just-relax/branches/retaj-salwa/retaj-salwa-moroccan-bath.jpg",
+        "/assets/just-relax/branches/retaj-salwa/retaj-salwa-jacuzzi.jpg",
+        "/assets/just-relax/branches/retaj-salwa/retaj-salwa-relaxation.jpg",
+        "/assets/just-relax/branches/retaj-salwa/retaj-salwa-amenities.jpg",
       ],
     },
 
@@ -236,6 +236,8 @@ export default function OurBranchesPage() {
               data-branch-card
               data-branch-slug={b.slug}
             >
+              <div id={b.slug} style={{ position: "relative", top: "-100px", visibility: "hidden" }}></div>
+              {b.slug === "retaj-salwa" && <div id="west-bay" style={{ position: "relative", top: "-100px", visibility: "hidden" }}></div>}
               <header className="branch-destination-header">
                 <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap", marginBottom: "8px" }}>
                   <a
@@ -284,29 +286,21 @@ export default function OurBranchesPage() {
               {/* INFORMATION GRID */}
               <div className="branch-information-grid">
                 <section>
-                  <span>Municipal License</span>
-                  <p className="info-line">
-                    <i className="fa-solid fa-award" aria-hidden="true" style={{ color: "#a67c32" }}></i>
-                    
-                  </p>
-                </section>
-                <section>
                   <span>Location</span>
-                  <p>{b.address}</p>
+                  <p style={{ color: "#221910" }}>{b.address}</p>
                 </section>
                 <section>
                   <span>Working hours</span>
-                  <p className="info-line">
-                    <i
-                      className="fa-regular fa-clock"
-                      aria-hidden="true"
-                    ></i>
+                  <p className="info-line" style={{ color: "#221910" }}>
+                    <i className="fa-regular fa-clock" aria-hidden="true"></i>
                     {b.hours}
                   </p>
                 </section>
                 <section>
                   <span>Booking and enquiries</span>
-                  <a href={`tel:${b.phone}`}>{b.phone}</a>
+                  <a href={`tel:${b.phone}`} style={{ color: "#221910", fontWeight: 700, fontSize: "16px", display: "inline-block" }}>
+                    {b.phone}
+                  </a>
                 </section>
                 <section>
                   <span>Follow us</span>
@@ -316,20 +310,17 @@ export default function OurBranchesPage() {
                       href={b.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
+                      style={{ color: "#221910", fontWeight: 700, fontSize: "15px" }}
                     >
-                      <i
-                        className="fa-brands fa-instagram"
-                        aria-hidden="true"
-                      ></i>
+                      <i className="fa-brands fa-instagram" aria-hidden="true" style={{ color: "#e1306c" }}></i>
                       {b.instagramHandle}
                     </a>
                   </p>
                 </section>
                 <section>
                   <span>Treatments</span>
-                  <p>
-                    Massage, Moroccan and Turkish baths, and wellness treatments
-                    subject to availability.
+                  <p style={{ color: "#221910" }}>
+                    Massage, Moroccan and Turkish baths, and wellness treatments subject to availability.
                   </p>
                 </section>
               </div>

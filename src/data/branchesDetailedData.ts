@@ -40,7 +40,7 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
     
     hours: "Daily 10:00 AM – 1:00 AM",
     address: "Al Muthaf Street, Street 137, Building 31, Zone 18, Old Salata, Doha, Qatar",
-    heroImg: "/assets/just-relax/branches/retaj-salwa/retaj-salwa-hero.jpg",
+    heroImg: "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
     phone: "+974 7002 4322",
     whatsappNumber: "97470024322",
     instagram: "@justrelaxspa.qa",
@@ -75,12 +75,12 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
       },
     ],
     photos: [
-      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-hero.jpg",
-      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-moroccan-bath.jpg",
-      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-relaxation.jpg",
-      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-massage-suite.jpg",
-      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-amenities.jpg",
-      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-jacuzzi.jpg",
+      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
+      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-moroccan-bath.jpg",
+      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-relaxation.jpg",
+      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-massage-suite.jpg",
+      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-amenities.jpg",
+      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-jacuzzi.jpg",
     ],
     reviews: [
       {
@@ -120,7 +120,7 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
     
     hours: "Daily 10:00 AM – 12:00 AM",
     address: "Salwa Road, Exit 29 / 31, Abu Nakhlah, Doha, Qatar",
-    heroImg: "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
+    heroImg: "/assets/just-relax/branches/retaj-salwa/retaj-salwa-hero.jpg",
     phone: "+974 3334 4048",
     whatsappNumber: "97433344048",
     instagram: "@justrelaxspa.qa",
@@ -155,12 +155,12 @@ export const BRANCHES_DETAILED_DATA: DetailedBranchItem[] = [
       },
     ],
     photos: [
-      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg",
-      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-massage-suite.jpg",
-      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-moroccan-bath.jpg",
-      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-jacuzzi.jpg",
-      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-relaxation.jpg",
-      "/assets/just-relax/branches/jouri-hotel/jouri-hotel-amenities.jpg",
+      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-hero.jpg",
+      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-massage-suite.jpg",
+      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-moroccan-bath.jpg",
+      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-jacuzzi.jpg",
+      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-relaxation.jpg",
+      "/assets/just-relax/branches/retaj-salwa/retaj-salwa-amenities.jpg",
     ],
     reviews: [
       {

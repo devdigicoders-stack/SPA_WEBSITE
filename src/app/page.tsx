@@ -487,7 +487,7 @@ export default function HomePage() {
             <article className="branch-card">
               <div className="branch-card-media">
                 <img
-                  src="/assets/just-relax/branches/retaj-salwa/retaj-salwa-hero.jpg"
+                  src="/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg"
                   width="800"
                   height="600"
                   loading="lazy"
@@ -540,7 +540,7 @@ export default function HomePage() {
             <article className="branch-card">
               <div className="branch-card-media">
                 <img
-                  src="/assets/just-relax/branches/jouri-hotel/jouri-hotel-hero.jpg"
+                  src="/assets/just-relax/branches/retaj-salwa/retaj-salwa-hero.jpg"
                   width="800"
                   height="600"
                   loading="lazy"

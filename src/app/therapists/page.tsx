@@ -25,7 +25,7 @@ export default function TherapistsPage() {
   const [navOpen, setNavOpen] = useState(false);
   const [whatsAppModalOpen, setWhatsAppModalOpen] = useState(false);
   const [bookingStep, setBookingStep] = useState<"branches" | "actions">("branches");
-  const [selectedBranchSlug, setSelectedBranchSlug] = useState<string>("west-bay");
+  const [selectedBranchSlug, setSelectedBranchSlug] = useState<string>("retaj-salwa");
   const [bookingContext, setBookingContext] = useState<{ icon: string; text: string } | null>(null);
   const [branchDistances, setBranchDistances] = useState<Record<string, string>>({});
   const [closestBranchSlug, setClosestBranchSlug] = useState<string | null>(null);
@@ -46,7 +46,7 @@ export default function TherapistsPage() {
     {
       id: 2,
       slug: "jouri-hotel",
-      name: "Jouri, a Murwab Hotel",
+      name: "Jouri Hotel",
       
       address: "Al Muthaf St, Street 137, Building 31, Zone 18, Old Salata, Doha",
       phone: "+97470024322",
@@ -167,7 +167,7 @@ export default function TherapistsPage() {
 
         {/* BRANCH TEAMS */}
         {THERAPISTS_DATA.filter(
-          (branch) => branch.branchSlug === "west-bay" || branch.branchSlug === "jouri-hotel"
+          (branch) => branch.branchSlug === "retaj-salwa" || branch.branchSlug === "jouri-hotel"
         ).map((branch) => (
           <section
             key={branch.branchSlug}
@@ -177,7 +177,7 @@ export default function TherapistsPage() {
             <div className="section-head">
               <p className="kicker">Branch team</p>
               <h2>{branch.branchName}</h2>
-              <Link className="section-link" href={`/our-branches#${branch.branchSlug}`}>
+              <Link className="section-link" href={`/our-branches#branch-${branch.branchSlug}`}>
                 Branch page ›
               </Link>
             </div>
