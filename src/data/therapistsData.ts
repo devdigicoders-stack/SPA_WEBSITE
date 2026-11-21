@@ -92,8 +92,8 @@ export const THERAPISTS_DATA: BranchTeam[] = [
       {
         id: "rs-3",
         name: "Lucky",
-        nationality: "Therapist",
-        languages: "English",
+        nationality: "Nepali",
+        languages: "English - Hindi",
         image: "/assets/just-relax/therapists/lucky.jpg",
         thankYouUrl: "/contact?branch=retaj-salwa&therapist=Lucky",
       },
