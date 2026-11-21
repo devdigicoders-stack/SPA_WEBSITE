@@ -30,24 +30,46 @@ export default function Footer() {
               Doha&apos;s premier sanctuary for gentlemen seeking authentic Moroccan baths, Turkish marble foam hammam, and therapeutic deep tissue recovery in 100% private VIP suites.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-1">
+            <div className="flex flex-wrap items-center gap-2.5 pt-1">
               <a
-                href={`https://wa.me/${SPA_INFO.whatsapp.replace(/\D/g, "")}`}
+                href="https://www.instagram.com/justrelaxspa.qa?jplx=eDl2dXIwYTNwZHN5&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FCFBF8] border border-[#e8dfd1] hover:border-[#1b9a59] text-xs text-[#383025] hover:text-[#1b9a59] shadow-sm transition-colors"
+                title="Instagram"
+                aria-label="Instagram"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-white bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] shadow-sm hover:scale-110 transition-transform"
               >
-                <MessageSquare className="w-3.5 h-3.5 text-[#1b9a59]" />
-                <span>WhatsApp Concierge</span>
+                <i className="fa-brands fa-instagram text-sm"></i>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.tiktok.com/@just.relax.salon?_r=1&_t=ZS-9BajOv52RwS"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FCFBF8] border border-[#e8dfd1] hover:border-[#a67c32] text-xs text-[#383025] hover:text-[#a67c32] shadow-sm transition-colors"
+                title="TikTok"
+                aria-label="TikTok"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-white bg-black shadow-sm hover:scale-110 transition-transform"
               >
-                <Instagram className="w-3.5 h-3.5 text-[#a67c32]" />
-                <span>@justrelaxspa.doha</span>
+                <i className="fa-brands fa-tiktok text-sm"></i>
+              </a>
+              <a
+                href="https://snapchat.com/t/DsRlTs5F"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Snapchat"
+                aria-label="Snapchat"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-black bg-[#FFFC00] shadow-sm hover:scale-110 transition-transform"
+              >
+                <i className="fa-brands fa-snapchat text-sm"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/share/1Co14mrWto/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Facebook"
+                aria-label="Facebook"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-white bg-[#1877F2] shadow-sm hover:scale-110 transition-transform"
+              >
+                <i className="fa-brands fa-facebook-f text-sm"></i>
               </a>
             </div>
 

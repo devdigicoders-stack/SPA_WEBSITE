@@ -214,19 +214,91 @@ export default function BranchDetailClient({
               </div>
             </article>
             <article>
-              <i className="fa-brands fa-instagram" aria-hidden="true"></i>
+              <i className="fa-solid fa-share-nodes" aria-hidden="true"></i>
               <div>
-                <span>Instagram</span>
-                <strong>
+                <span>Social Pages</span>
+                <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "4px" }}>
                   <a
-                    className="ig-chip"
-                    href={`https://www.instagram.com/${branch.instagram.replace('@', '')}`}
+                    href="https://www.instagram.com/justrelaxspa.qa?jplx=eDl2dXIwYTNwZHN5&utm_source=qr"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="Instagram"
+                    aria-label="Instagram"
+                    style={{
+                      width: "28px",
+                      height: "28px",
+                      borderRadius: "50%",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",
+                      color: "#fff",
+                      fontSize: "13px"
+                    }}
                   >
-                    {branch.instagram}
+                    <i className="fa-brands fa-instagram" aria-hidden="true"></i>
                   </a>
-                </strong>
+                  <a
+                    href="https://www.tiktok.com/@just.relax.salon?_r=1&_t=ZS-9BajOv52RwS"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="TikTok"
+                    aria-label="TikTok"
+                    style={{
+                      width: "28px",
+                      height: "28px",
+                      borderRadius: "50%",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: "#000000",
+                      color: "#fff",
+                      fontSize: "12px"
+                    }}
+                  >
+                    <i className="fa-brands fa-tiktok" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    href="https://snapchat.com/t/DsRlTs5F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Snapchat"
+                    aria-label="Snapchat"
+                    style={{
+                      width: "28px",
+                      height: "28px",
+                      borderRadius: "50%",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: "#FFFC00",
+                      color: "#000",
+                      fontSize: "13px"
+                    }}
+                  >
+                    <i className="fa-brands fa-snapchat" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/share/1Co14mrWto/?mibextid=wwXIfr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Facebook"
+                    aria-label="Facebook"
+                    style={{
+                      width: "28px",
+                      height: "28px",
+                      borderRadius: "50%",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: "#1877F2",
+                      color: "#fff",
+                      fontSize: "13px"
+                    }}
+                  >
+                    <i className="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                  </a>
+                </div>
               </div>
             </article>
             <article>

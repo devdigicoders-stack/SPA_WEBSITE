@@ -360,15 +360,93 @@ export default function ContactPage() {
                   <i className="fa-regular fa-clock" aria-hidden="true"></i>
                   {activeBranch.hours}
                 </p>
-                <a
-                  className="contact-ig"
-                  href={activeBranch.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fa-brands fa-instagram" aria-hidden="true"></i>
-                  Follow this branch on Instagram
-                </a>
+                <div className="contact-branch-socials" style={{ display: "flex", alignItems: "center", gap: "10px", margin: "10px 0" }}>
+                  <span style={{ fontSize: "12px", fontWeight: "600", color: "#7c7267" }}>Follow:</span>
+                  <a
+                    href="https://www.instagram.com/justrelaxspa.qa?jplx=eDl2dXIwYTNwZHN5&utm_source=qr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Instagram"
+                    aria-label="Instagram"
+                    style={{
+                      width: "32px",
+                      height: "32px",
+                      borderRadius: "50%",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",
+                      color: "#fff",
+                      fontSize: "15px",
+                      boxShadow: "0 2px 6px rgba(0,0,0,0.12)"
+                    }}
+                  >
+                    <i className="fa-brands fa-instagram" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@just.relax.salon?_r=1&_t=ZS-9BajOv52RwS"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="TikTok"
+                    aria-label="TikTok"
+                    style={{
+                      width: "32px",
+                      height: "32px",
+                      borderRadius: "50%",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: "#000000",
+                      color: "#fff",
+                      fontSize: "14px",
+                      boxShadow: "0 2px 6px rgba(0,0,0,0.12)"
+                    }}
+                  >
+                    <i className="fa-brands fa-tiktok" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    href="https://snapchat.com/t/DsRlTs5F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Snapchat"
+                    aria-label="Snapchat"
+                    style={{
+                      width: "32px",
+                      height: "32px",
+                      borderRadius: "50%",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: "#FFFC00",
+                      color: "#000",
+                      fontSize: "15px",
+                      boxShadow: "0 2px 6px rgba(0,0,0,0.12)"
+                    }}
+                  >
+                    <i className="fa-brands fa-snapchat" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/share/1Co14mrWto/?mibextid=wwXIfr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Facebook"
+                    aria-label="Facebook"
+                    style={{
+                      width: "32px",
+                      height: "32px",
+                      borderRadius: "50%",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: "#1877F2",
+                      color: "#fff",
+                      fontSize: "15px",
+                      boxShadow: "0 2px 6px rgba(0,0,0,0.12)"
+                    }}
+                  >
+                    <i className="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                  </a>
+                </div>
                 <a className="contact-phone" href={`tel:${activeBranch.phone}`}>
                   <i className="fa-solid fa-phone" aria-hidden="true"></i>
                   {activeBranch.phoneDisplay}

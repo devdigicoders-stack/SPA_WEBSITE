@@ -24,45 +24,45 @@ export default function SiteFooter() {
           </p>
           <div className="footer-socials">
             <a
-              href="https://www.snapchat.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Snapchat"
-              title="Snapchat"
-              className="social-snapchat"
-            >
-              <i className="fa-brands fa-snapchat" aria-hidden="true"></i>
-              <span>Snapchat</span>
-            </a>
-            <a
-              href="https://www.tiktok.com/@justrelaxspa"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="TikTok"
-              title="TikTok"
-              className="social-tiktok"
-            >
-              <i className="fa-brands fa-tiktok" aria-hidden="true"></i>
-              <span>TikTok</span>
-            </a>
-            <a
-              href="https://www.instagram.com/justrelaxspa.qa"
+              href="https://www.instagram.com/justrelaxspa.qa?jplx=eDl2dXIwYTNwZHN5&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
               title="Instagram"
-              className="social-instagram"
+              className="social-circle social-instagram"
             >
               <i className="fa-brands fa-instagram" aria-hidden="true"></i>
               <span>Instagram</span>
             </a>
             <a
-              href="https://www.facebook.com"
+              href="https://www.tiktok.com/@just.relax.salon?_r=1&_t=ZS-9BajOv52RwS"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+              title="TikTok"
+              className="social-circle social-tiktok"
+            >
+              <i className="fa-brands fa-tiktok" aria-hidden="true"></i>
+              <span>TikTok</span>
+            </a>
+            <a
+              href="https://snapchat.com/t/DsRlTs5F"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Snapchat"
+              title="Snapchat"
+              className="social-circle social-snapchat"
+            >
+              <i className="fa-brands fa-snapchat" aria-hidden="true"></i>
+              <span>Snapchat</span>
+            </a>
+            <a
+              href="https://www.facebook.com/share/1Co14mrWto/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
               title="Facebook"
-              className="social-facebook"
+              className="social-circle social-facebook"
             >
               <i className="fa-brands fa-facebook-f" aria-hidden="true"></i>
               <span>Facebook</span>
