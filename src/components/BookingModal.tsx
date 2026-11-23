@@ -422,7 +422,7 @@ export default function BookingModal() {
                       <input
                         type="text"
                         required
-                        placeholder="e.g. Mr. Al-Kuwari / John Smith"
+                        placeholder="Enter full name"
                         value={guestName}
                         onChange={(e) => setGuestName(e.target.value)}
                         className="w-full bg-[#FCFBF8] border border-[#e8dfd1] rounded-xl px-3.5 py-2.5 text-sm text-[#221910] focus:outline-none focus:border-[#a67c32]"
@@ -436,7 +436,7 @@ export default function BookingModal() {
                       <input
                         type="tel"
                         required
-                        placeholder="+974 XX XXX XXX"
+                        placeholder="Enter phone or WhatsApp number"
                         value={guestPhone}
                         onChange={(e) => setGuestPhone(e.target.value)}
                         className="w-full bg-[#FCFBF8] border border-[#e8dfd1] rounded-xl px-3.5 py-2.5 text-sm text-[#221910] focus:outline-none focus:border-[#a67c32]"
@@ -450,7 +450,7 @@ export default function BookingModal() {
                     </label>
                     <textarea
                       rows={2}
-                      placeholder="Pressure preference, focus areas (e.g. lower back, shoulders), or health condition..."
+                      placeholder="Enter preferences or health notes (optional)"
                       value={notes}
                       onChange={(e) => setNotes(e.target.value)}
                       className="w-full bg-[#FCFBF8] border border-[#e8dfd1] rounded-xl px-3.5 py-2 text-sm text-[#221910] focus:outline-none focus:border-[#a67c32] resize-none"

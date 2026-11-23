@@ -584,7 +584,7 @@ export default function ContactPage() {
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Sheikh Al-Thani"
+                      placeholder="Enter your full name"
                       value={formName}
                       onChange={(e) => setFormName(e.target.value)}
                       style={{ width: "100%", padding: "0.75rem 1rem", borderRadius: "0.75rem", border: "1px solid #e8dfd1", background: "#fff", fontSize: "0.875rem" }}
@@ -597,7 +597,7 @@ export default function ContactPage() {
                     <input
                       type="tel"
                       required
-                      placeholder="+974 5500 0000"
+                      placeholder="Enter mobile / WhatsApp number"
                       value={formPhone}
                       onChange={(e) => setFormPhone(e.target.value)}
                       style={{ width: "100%", padding: "0.75rem 1rem", borderRadius: "0.75rem", border: "1px solid #e8dfd1", background: "#fff", fontSize: "0.875rem" }}
@@ -625,7 +625,7 @@ export default function ContactPage() {
                   </label>
                   <textarea
                     rows={4}
-                    placeholder="Tell us what treatment, date, or amenities you would like to arrange..."
+                    placeholder="Enter message or special requirements"
                     value={formMessage}
                     onChange={(e) => setFormMessage(e.target.value)}
                     style={{ width: "100%", padding: "0.75rem 1rem", borderRadius: "0.75rem", border: "1px solid #e8dfd1", background: "#fff", fontSize: "0.875rem", resize: "vertical" }}
