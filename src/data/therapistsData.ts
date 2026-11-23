@@ -83,11 +83,11 @@ export const THERAPISTS_DATA: BranchTeam[] = [
       },
       {
         id: "rs-2",
-        name: "Helen",
-        nationality: "Ethiopian",
+        name: "Noura",
+        nationality: "Moroccan",
         languages: "Arabic - English - French",
-        image: "/assets/just-relax/therapists/helen-jouri.png",
-        thankYouUrl: "/contact?branch=retaj-salwa&therapist=Helen",
+        image: "/assets/just-relax/therapists/noura.jpg",
+        thankYouUrl: "/contact?branch=retaj-salwa&therapist=Noura",
       },
       {
         id: "rs-3",

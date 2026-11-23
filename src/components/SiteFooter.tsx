@@ -100,6 +100,17 @@ export default function SiteFooter() {
         <div className="footer-legal-wrap">
           <small>© 2026 Just Relax Spa Doha. All rights reserved.</small>
           <small className="footer-legal-name">JUST RELAX SPA - MEN&apos;S SANCTUARY | MOCI Qatar</small>
+          <small style={{ marginTop: "4px" }}>
+            Designed &amp; Developed by{" "}
+            <a
+              href="https://www.worknestconnect.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#a67c32", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "3px" }}
+            >
+              Worknest Connect
+            </a>
+          </small>
           <Link href="/contact" className="footer-city-link" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "6px", color: "#c6a15b" }}>
             <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
             <span>Doha, State of Qatar</span>

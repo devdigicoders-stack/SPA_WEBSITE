@@ -210,6 +210,18 @@ export default function Footer() {
             <span>© 2026 Just Relax Spa Doha. All rights reserved.</span>
             <span className="hidden sm:inline">•</span>
             <span>Commercial Registration: {SPA_INFO.commercialLicense}</span>
+            <span className="hidden sm:inline">•</span>
+            <span>
+              Designed &amp; Developed by{" "}
+              <a
+                href="https://www.worknestconnect.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#a67c32] hover:underline font-semibold"
+              >
+                Worknest Connect
+              </a>
+            </span>
           </div>
 
           <div className="flex items-center gap-4">
